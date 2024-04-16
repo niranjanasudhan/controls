@@ -1,0 +1,10 @@
+<div class="example">
+    <button
+      kendoButton
+      *ngFor="let color of themeColors; index as i"
+      [themeColor]="color"
+    >
+      {{ color | titlecase }}
+    </button>
+  </div>
+

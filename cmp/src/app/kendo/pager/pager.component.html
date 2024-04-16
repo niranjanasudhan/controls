@@ -1,0 +1,19 @@
+<span class="title"> Top European Destinations </span>
+    <div class="wrapper">
+      <div class="content-container" [id]="contentId">
+        <destination-component
+          *ngFor="let destination of pagedDestinations"
+          [data]="destination"
+        >
+        </destination-component>
+      </div>
+      <kendo-datapager
+        [attr.aria-controls]="contentId"
+        [style.width.%]="100"
+        [pageSize]="pageSize"
+        [skip]="skip"
+        [total]="total"
+        (pageChange)="onPageChange($event)"
+      >
+      </kendo-datapager>
+    </div>

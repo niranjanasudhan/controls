@@ -1,0 +1,13 @@
+.header
+{
+    margin-left: 100px;
+    font-size: 20px;
+}
+.header a{
+    color:#fff;
+    padding:10px
+}
+*
+{
+    text-decoration: none;
+}

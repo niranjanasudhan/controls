@@ -1,0 +1,278 @@
+<h4>Dropdown</h4>
+ <!--Load the font icons package:-->
+ <link rel="stylesheet" href="http://unpkg.com/@progress/kendo-theme-material/dist/all.css" />
+ <link
+ rel="stylesheet"
+ href="https://unpkg.com/@progress/kendo-font-icons/dist/index.css"
+/>
+
+<div class="food-demo card-container">
+ <div class="k-card custom-card">
+   <div class="card-row">
+     <div class="card-column">
+     
+       <div class="component-container">
+         <kendo-label text="Find restaurants in your area">
+           <kendo-dropdownlist [data]="areaList"></kendo-dropdownlist>
+         </kendo-label>
+       </div>
+       
+       
+     </div>
+   </div>
+   
+ </div>
+</div>
+
+<!-- autocomplete -->
+<h4>autocomplete</h4>
+
+<div class="food-demo card-container">
+  <div class="k-card custom-card">
+    <div class="card-row">
+      <div class="card-column">
+        <h4 class="k-h4">Time to order food</h4>
+        <div class="component-container">
+          <kendo-label text="Find restaurants in your area">
+            <kendo-autocomplete
+              [data]="areaList"
+              placeholder="e.g. New York"
+            >
+            </kendo-autocomplete>
+          </kendo-label>
+        </div>
+        
+       
+      </div>
+     
+    </div>
+    
+  </div>
+</div>
+
+<!-- combobox -->
+<h4>Combobox</h4>
+<div class="food-demo card-container">
+  <div class="k-card custom-card">
+    <div class="card-row">
+      <div class="card-column no-flex">
+        <div class="sidebar-container k-skeleton">
+          <div class="avatar-name-container">
+         
+           
+          </div>
+          
+        </div>
+      </div>
+      <div class="card-column">
+       
+        <div class="component-container">
+          <kendo-formfield showHints="always">
+            <kendo-label text="Favorite sport:">
+              <kendo-combobox
+                [data]="listItems"
+                [allowCustom]="allowCustom"
+                [(ngModel)]="selectedValues"
+              >
+              </kendo-combobox>
+            </kendo-label>
+            <kendo-formhint
+              >Add your favourite sport, if it is not in the
+              list.</kendo-formhint
+            >
+          </kendo-formfield>
+        </div>
+      
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- dropdown tree -->
+<h4>Dropdown Tree</h4>
+<div class="food-demo card-container">
+  <div class="k-card custom-card">
+    <div class="card-row">
+      <div class="card-column">
+        <h4 class="k-h4">Time to order food</h4>
+        <div class="component-container">
+          <kendo-label text="Find restaurants in your area">
+            <kendo-dropdowntree
+              kendoDropDownTreeExpandable
+              [kendoDropDownTreeHierarchyBinding]="areaData"
+              textField="text"
+              valueField="id"
+              childrenField="areas"
+            >
+            </kendo-dropdowntree>
+          </kendo-label>
+        </div>
+        
+        
+      </div>
+      
+    </div>
+  
+  </div>
+</div>
+
+<!-- multi column combobox
+<h4>Multi Column Combo Box</h4>
+<div class="orders-demo card-container">
+  <div class="k-card custom-card !k-flex-row">
+    <div class="custom-card-header k-skeleton">
+      <div
+        class="card-actions-container k-pt-4 k-gap-2.5 k-flex-layout k-align-items-center k-flex-col"
+      >
+        <div
+          class="custom-card-header-action k-skeleton k-rounded-full"
+        ></div>
+        <div
+          class="custom-card-header-action k-skeleton k-rounded-full"
+        ></div>
+      </div>
+    </div>
+    <div class="card-content k-p-8 k-w-full">
+      <h4 class="k-h4">Order History</h4>
+      <div class="card-columns k-gap-8 k-flex-layout">
+        <div class="card-content-column k-flex-1">
+          <kendo-label text="Contact person:">
+            <kendo-multicolumncombobox
+              [data]="contacts"
+              [listHeight]="145"
+              [popupSettings]="{ width: '22%' }"
+              textField="name"
+              valueField="id"
+            >
+              <kendo-combobox-column
+                field="name"
+                title="Contact Name"
+                [width]="200"
+              >
+                <ng-template
+                  kendoMultiColumnComboBoxColumnCellTemplate
+                  let-dataItem
+                >
+                  <img
+                    class="contact-image"
+                    [src]="getContactImageUrl(dataItem.id)"
+                  />
+                  <span>{{ dataItem.name }}</span>
+                </ng-template>
+              </kendo-combobox-column>
+              <kendo-combobox-column
+                field="jobTitle"
+                title="Title"
+                [width]="200"
+              >
+              </kendo-combobox-column>
+              <kendo-combobox-column
+                field="company"
+                title="Company"
+                [width]="200"
+              >
+              </kendo-combobox-column>
+              <ng-template kendoMultiColumnComboBoxFooterTemplate>
+                <strong> {{ contacts.length }} records in total </strong>
+              </ng-template>
+            </kendo-multicolumncombobox>
+          </kendo-label>
+          <div
+            class="skeleton-wrapper k-d-flex k-flex-col k-align-items-start k-gap-1 k-flex-layout k-mt-5"
+          >
+            <div class="k-skeleton k-rounded skeleton-text-small"></div>
+            <div
+              class="k-skeleton k-rounded skeleton-text-medium k-w-full"
+            ></div>
+          </div>
+          <div
+            class="skeleton-wrapper k-d-flex k-flex-col k-align-items-start k-gap-1 k-mt-5 padding-top-5"
+          >
+            <div class="k-skeleton k-rounded skeleton-text-small"></div>
+            <div
+              class="k-skeleton k-rounded skeleton-text-large k-w-full"
+            ></div>
+          </div>
+        </div>
+        <div class="card-content-column card-image-column k-flex-1">
+          <div
+            class="skeleton-wrapper k-h-full k-flex-col k-align-items-start k-gap-1"
+          >
+            <div
+              class="k-skeleton k-h-full k-rounded skeleton-image-large !k-d-flex k-justify-content-center k-align-items-center"
+            >
+              <span class="k-icon k-font-icon k-i-chart-pie"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+<!-- Multi Select -->
+<h4>Multi Select </h4>
+<div class="example-config">Current value: {{ value1 | json }}</div>
+    <div class="food-demo example-wrapper">
+      <kendo-label text="T-shirt size:">
+        <kendo-multiselect
+          [data]="listItems1"
+          [(ngModel)]="value1"
+          textField="text"
+          valueField="value"
+        >
+          <ng-template kendoMultiSelectItemTemplate let-dataItem>
+            <span class="template">{{ dataItem.value }}</span>
+            {{ dataItem.text }}
+          </ng-template>
+        </kendo-multiselect>
+      </kendo-label>
+    </div>
+
+
+    <!-- Multi select tree -->
+    <h4>Multi Select Tree</h4>
+    <div class="food-demo card-container">
+      <div class="k-card custom-card !k-flex-row">
+        <div class="custom-card-header k-skeleton">
+          <div
+            class="card-actions-container k-pt-4 k-gap-2.5 k-flex-layout k-align-items-center k-flex-col"
+          >
+            <div
+              class="custom-card-header-action k-skeleton k-rounded-full"
+            ></div>
+            <div
+              class="custom-card-header-action k-skeleton k-rounded-full"
+            ></div>
+          </div>
+        </div>
+        <div class="card-content k-p-8 k-w-full">
+          <h4 class="k-h4">Order History</h4>
+          <div class="card-columns k-gap-8 k-flex-layout">
+            <div class="card-content-column k-flex-1">
+              <kendo-label text="Contact person:">
+                <kendo-multiselecttree
+                  kendoMultiSelectTreeExpandable
+                  [kendoMultiSelectTreeHierarchyBinding]="data"
+                  childrenField="employees"
+                  textField="text"
+                  valueField="id"
+                  [(ngModel)]="value2"
+                  [tagMapper]="tagMapper"
+                  [expandedKeys]="['0']"
+                  class="furniture"
+                >
+                </kendo-multiselecttree>
+              </kendo-label>
+            
+           
+            </div>
+         
+          </div>
+        </div>
+      </div>
+    </div>

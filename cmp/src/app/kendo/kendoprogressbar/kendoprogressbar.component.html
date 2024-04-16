@@ -1,0 +1,18 @@
+<div class="example-config">
+    <button
+      kendoButton
+      themeColor="primary"
+      [disabled]="!!running || value >= 100"
+      (click)="startProgress()"
+    >
+      {{ value ? "Resume" : "Start" }}
+    </button>
+    <button kendoButton [disabled]="!running" (click)="stopProgress()">
+      Stop
+    </button>
+    <button kendoButton [disabled]="!value" (click)="resetProgress()">
+      Reset
+    </button>
+  </div>
+  <kendo-progressbar [value]="value"></kendo-progressbar>
+
