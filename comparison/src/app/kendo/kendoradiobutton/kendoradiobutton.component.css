@@ -1,0 +1,22 @@
+.mainhead
+{
+    font-size: 20px;
+    font-weight:600;
+    color: black;
+    text-align: center;
+}
+.example-wrapper {
+    min-height: 0;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+  }
+
+  .example-wrapper > div {
+    text-align: center;
+  }
+
+  .custom-size {
+    width: 40px;
+    height: 40px;
+  }

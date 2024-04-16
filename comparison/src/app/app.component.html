@@ -302,23 +302,25 @@
   }
 </style>
 
-<!-- Toolbar -->
-<div class="toolbar" role="banner">
-  
-  <!-- <span>Welcome</span> -->
+<mat-sidenav-container >
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <a [routerLink]="['/']">Home</a>
+    <a [routerLink]="['/kendo']">Kendo Controls</a>
+    <a [routerLink]="['/material']">Angular Material Controls</a>
+
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+<!-- <div class="toolbar" role="banner">
   <app-header ></app-header> 
  
   
 </div>
 
-<!-- <div class="content" role="main"> -->
+    <router-outlet></router-outlet> -->
 
-  <!-- <div class="card-container"> -->
-    
-
-    <router-outlet></router-outlet>
-
-   
-  <!-- </div> -->
-<!-- <app-home></app-home> -->
  

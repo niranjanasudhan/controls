@@ -82,3 +82,10 @@
     border: 1px solid #ECEBEB;
     display: inline-block; width: 100%;
 }
+.mainhead
+{
+    font-size: 20px;
+    font-weight:600;
+    color: black;
+    text-align: center;
+}

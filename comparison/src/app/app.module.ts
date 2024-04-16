@@ -39,7 +39,7 @@ import { IntlModule } from "@progress/kendo-angular-intl";
 import { DateInputsModule } from "@progress/kendo-angular-dateinputs";
 import { FormFieldModule } from "@progress/kendo-angular-inputs";
 import { IconsModule } from "@progress/kendo-angular-icons";
-
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
@@ -59,7 +59,29 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { PagerModule } from "@progress/kendo-angular-pager";
 import { PagerComponent } from './kendo/pager/pager.component';
 import { DestinationComponent } from './kendo/pager/destination.component';
-
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { KendodialogsComponent } from './kendo/kendodialogs/kendodialogs.component';
+import { MaterialdialogsComponent } from './material/materialdialogs/materialdialogs.component';
+import { DialogsModule } from "@progress/kendo-angular-dialog";
+import {MatDialog, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
+import { MaterialwizardComponent } from './material/materialwizard/materialwizard.component';
+import { KendowizardComponent } from './kendo/kendowizard/kendowizard.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import { LayoutModule } from "@progress/kendo-angular-layout";
+import { MaterialradiobuttonComponent } from './material/materialradiobutton/materialradiobutton.component';
+import { KendoradiobuttonComponent } from './kendo/kendoradiobutton/kendoradiobutton.component';
+import {MatRadioModule} from '@angular/material/radio';
+import { MaterialtoggleComponent } from './material/materialtoggle/materialtoggle.component';
+import { KendotoggleComponent } from './kendo/kendotoggle/kendotoggle.component';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { MaterialcheckboxComponent } from './material/materialcheckbox/materialcheckbox.component';
+import { KendocheckboxComponent } from './kendo/kendocheckbox/kendocheckbox.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { KendotooltipComponent } from './kendo/kendotooltip/kendotooltip.component';
+import { MaterialtooltipComponent } from './material/materialtooltip/materialtooltip.component';
+import {MatCardModule} from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
@@ -87,6 +109,18 @@ import { DestinationComponent } from './kendo/pager/destination.component';
     MaterialpaginatorComponent,
     PagerComponent,
     DestinationComponent,
+    KendodialogsComponent,
+    MaterialdialogsComponent,
+    MaterialwizardComponent,
+    KendowizardComponent,
+    MaterialradiobuttonComponent,
+    KendoradiobuttonComponent,
+    MaterialtoggleComponent,
+    KendotoggleComponent,
+    MaterialcheckboxComponent,
+    KendocheckboxComponent,
+    KendotooltipComponent,
+    MaterialtooltipComponent,
     
    
   
@@ -120,7 +154,7 @@ import { DestinationComponent } from './kendo/pager/destination.component';
     MatNativeDateModule,
     MatProgressBarModule,
     ProgressBarModule,
-
+    MatCardModule,
 
     MatFormFieldModule,
     MatInputModule,
@@ -129,7 +163,18 @@ import { DestinationComponent } from './kendo/pager/destination.component';
     MatPaginatorModule,
     JsonPipe,
     PagerModule,
-    
+    MatGridListModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    DialogsModule,
+    MatDialogModule,
+    MatStepperModule,
+    LayoutModule,
+    MatRadioModule,
+    MatButtonToggleModule,
+    MatCheckboxModule,
+    MatTooltipModule
+
     
   ],
   providers: [],

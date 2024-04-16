@@ -1,0 +1,57 @@
+<h2 class="mainhead">Toggle</h2>
+<div class="row">
+    <div class="col-xs-12 col-sm-6 example-col">
+      <p>Default Toggleable Button</p>
+      <p class="k-block">
+        <button
+          kendoButton
+          (selectedChange)="onSelectedChange($event)"
+          themeColor="primary"
+          [toggleable]="true"
+        >
+          Petrol
+        </button>
+        <button
+          kendoButton
+          (selectedChange)="onSelectedChange($event)"
+          [toggleable]="true"
+        >
+          Diesel
+        </button>
+      </p>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 example-col">
+      <p>Flat Toggleable Button</p>
+      <p class="k-block">
+        <button
+          kendoButton
+          fillMode="flat"
+          themeColor="primary"
+          [toggleable]="true"
+        >
+          Petrol
+        </button>
+        <button kendoButton fillMode="flat" [toggleable]="true">
+          Diesel
+        </button>
+      </p>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 example-col">
+      <p>Outline Toggleable Button</p>
+      <p class="k-block">
+        <button
+          kendoButton
+          fillMode="outline"
+          themeColor="primary"
+          [toggleable]="true"
+        >
+          Petrol
+        </button>
+        <button kendoButton fillMode="outline" [toggleable]="true">
+          Diesel
+        </button>
+      </p>
+    </div>
+  </div>

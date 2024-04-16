@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 
 @Component({
@@ -7,7 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./kendo.component.css']
 })
 export class KendoComponent {
+  @Output() closeSideNav = new EventEmitter();
 
+  constructor() { }
 
+   onToggleClose() {
+    this.closeSideNav.emit();
+}
+
+  ngOnInit() {
+  }
 
 }

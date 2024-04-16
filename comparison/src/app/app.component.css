@@ -6,3 +6,11 @@
     max-width: 100% !important;
     align-items: center;
 }
+mat-toolbar
+{
+    height:60px !important;
+}
+mat-toolbar a
+{
+    margin: 18px !important;
+}

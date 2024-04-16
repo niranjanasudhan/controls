@@ -10,3 +10,10 @@
   min-width: 80px;
   align-items: center;
 }
+.mainhead
+{
+    font-size: 20px;
+    font-weight:600;
+    color: black;
+    text-align: center;
+}

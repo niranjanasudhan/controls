@@ -20,4 +20,10 @@
   .demo-paginator {
     width: 600px;
   }
-  
+  .mainhead
+{
+    font-size: 20px;
+    font-weight:600;
+    color: black;
+    text-align: center;
+}

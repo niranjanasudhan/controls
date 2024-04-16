@@ -1,0 +1,16 @@
+<h2 class="mainhead">Progressbar</h2>
+<div class="section">
+    <h5>Association with native HTML label</h5>
+    <div class="wrap">
+      <label class="k-radio-label" for="foo">Foo</label>
+      <input type="radio" id="foo" kendoRadioButton />
+    </div>
+  </div>
+
+  <div class="section">
+    <h5>Association with the Label component</h5>
+    <div class="wrap">
+      <kendo-label class="k-radio-label" [for]="bar" text="Bar"></kendo-label>
+      <input type="radio" #bar kendoRadioButton />
+    </div>
+  </div>

@@ -20,6 +20,18 @@ import { MaterialprogressbarComponent } from './material/materialprogressbar/mat
 import { KendoprogressbarComponent } from './kendo/kendoprogressbar/kendoprogressbar.component';
 import { MaterialpaginatorComponent } from './material/materialpaginator/materialpaginator.component';
 import { PagerComponent } from '@progress/kendo-angular-pager';
+import { KendodialogsComponent } from './kendo/kendodialogs/kendodialogs.component';
+import { MaterialdialogsComponent } from './material/materialdialogs/materialdialogs.component';
+import { MaterialwizardComponent } from './material/materialwizard/materialwizard.component';
+import { KendowizardComponent } from './kendo/kendowizard/kendowizard.component';
+import { MaterialradiobuttonComponent } from './material/materialradiobutton/materialradiobutton.component';
+import { KendoradiobuttonComponent } from './kendo/kendoradiobutton/kendoradiobutton.component';
+import { KendotoggleComponent } from './kendo/kendotoggle/kendotoggle.component';
+import { MaterialtoggleComponent } from './material/materialtoggle/materialtoggle.component';
+import { MaterialcheckboxComponent } from './material/materialcheckbox/materialcheckbox.component';
+import { KendocheckboxComponent } from './kendo/kendocheckbox/kendocheckbox.component';
+import { KendotooltipComponent } from './kendo/kendotooltip/kendotooltip.component';
+import { MaterialtooltipComponent } from './material/materialtooltip/materialtooltip.component';
 
 
 
@@ -56,6 +68,25 @@ const routes: Routes = [
     },
     {
       path:'pager',component:PagerComponent
+    },
+    {
+      path:'dialogs',component:KendodialogsComponent
+    },
+    {
+      path:'wizard',component:KendowizardComponent
+    },
+    {
+      path:'radiobutton',component:KendoradiobuttonComponent
+    }
+    ,
+    {
+      path:'toggle',component:KendotoggleComponent
+    },
+    {
+      path:'checkbox',component:KendocheckboxComponent
+    },
+    {
+      path:'tooltip',component:KendotooltipComponent
     }
   ]
   },
@@ -84,8 +115,27 @@ const routes: Routes = [
     },
     {
       path:'paginator',component:MaterialpaginatorComponent
+    },
+    {
+      path:'dialogs',component:MaterialdialogsComponent
+    },
+    {
+      path:'wizard',component:MaterialwizardComponent
+    },
+    {
+      path:'radiobutton',component:MaterialradiobuttonComponent
+    },
+    {
+      path:'toggle',component:MaterialtoggleComponent
+    },
+    {
+      path:'checkbox',component:MaterialcheckboxComponent
+    },
+    {
+      path:'tooltip',component:MaterialtooltipComponent
     }
 
+    
     
   ]
   }
