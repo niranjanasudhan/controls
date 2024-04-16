@@ -9,8 +9,9 @@
     display: grid;
 }
 .header a{
-    color: brown;
-    padding: 10px;
+    color: #b598a3;
+    padding: 10px 10px 5px 25px;
+    border-bottom: 1px solid lightgray;
    
 }
 *
@@ -30,4 +31,11 @@
     font-weight:600;
     color: black;
     text-align: center;
+}
+.head123
+{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    color: #534157;
 }

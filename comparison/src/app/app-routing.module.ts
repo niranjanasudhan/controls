@@ -32,6 +32,7 @@ import { MaterialcheckboxComponent } from './material/materialcheckbox/materialc
 import { KendocheckboxComponent } from './kendo/kendocheckbox/kendocheckbox.component';
 import { KendotooltipComponent } from './kendo/kendotooltip/kendotooltip.component';
 import { MaterialtooltipComponent } from './material/materialtooltip/materialtooltip.component';
+import { AggridComponent } from './aggrid/aggrid.component';
 
 
 
@@ -40,6 +41,7 @@ import { MaterialtooltipComponent } from './material/materialtooltip/materialtoo
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'aggrid', component: AggridComponent },
   {path:'kendo',component:KendoComponent,
   children: [
     {

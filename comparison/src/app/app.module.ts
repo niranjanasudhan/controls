@@ -40,7 +40,7 @@ import { DateInputsModule } from "@progress/kendo-angular-dateinputs";
 import { FormFieldModule } from "@progress/kendo-angular-inputs";
 import { IconsModule } from "@progress/kendo-angular-icons";
 import {MatTooltipModule} from '@angular/material/tooltip';
-
+import { TooltipsModule } from "@progress/kendo-angular-tooltip";
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { KendotextboxComponent } from './kendo/kendotextbox/kendotextbox.component';
@@ -82,6 +82,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { KendotooltipComponent } from './kendo/kendotooltip/kendotooltip.component';
 import { MaterialtooltipComponent } from './material/materialtooltip/materialtooltip.component';
 import {MatCardModule} from '@angular/material/card';
+import { AggridComponent } from './aggrid/aggrid.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -121,6 +123,7 @@ import {MatCardModule} from '@angular/material/card';
     KendocheckboxComponent,
     KendotooltipComponent,
     MaterialtooltipComponent,
+    AggridComponent,
     
    
   
@@ -173,7 +176,8 @@ import {MatCardModule} from '@angular/material/card';
     MatRadioModule,
     MatButtonToggleModule,
     MatCheckboxModule,
-    MatTooltipModule
+    MatTooltipModule,
+    TooltipsModule
 
     
   ],
