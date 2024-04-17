@@ -21,11 +21,11 @@ export class KendoComponent {
 
 
     public navItems = [
-      {
-        title: 'Button',
-        route: '/kendo/',
+      // {
+      //   title: 'Button',
+      //   route: '/kendo/',
        
-      },
+      // },
     {
       title: 'Button',
       route: '/kendo/button',
@@ -67,7 +67,7 @@ export class KendoComponent {
       },
     {
       title: 'Stepper',
-      route: '/kendo/stepper',
+      route: '/kendo/wizard',
      
     },
     {

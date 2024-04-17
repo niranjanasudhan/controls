@@ -7,14 +7,11 @@ import { Component } from '@angular/core';
 })
 export class MaterialComponent {
   public navItems = [
-    {
-      title: 'Button',
-      route: '/material/',
-     
-    },
+    
     {
       title: 'Button',
       route: '/material/button',
+      
      
     },
     {
@@ -44,7 +41,7 @@ export class MaterialComponent {
     },
     {
       title: 'Pager',
-      route: '/material/pager',
+      route: '/material/paginator',
      
     },
     {
@@ -53,7 +50,7 @@ export class MaterialComponent {
       },
     {
       title: 'Stepper',
-      route: '/material/stepper',
+      route: '/material/wizard',
      
     },
     {
