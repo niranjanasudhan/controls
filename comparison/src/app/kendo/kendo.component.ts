@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-kendo',
@@ -7,9 +8,13 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./kendo.component.css']
 })
 export class KendoComponent {
+  public selectedItem=0;
   @Output() closeSideNav = new EventEmitter();
 
-  constructor() { }
+  constructor(
+    private router:Router,
+    
+    ) { }
 
    onToggleClose() {
     this.closeSideNav.emit();
@@ -111,5 +116,39 @@ export class KendoComponent {
      
     },
   ];
-  
+  handleClick(selectedItem:any) {
+    console.log(selectedItem);
+    this.selectedItem=selectedItem;
+   
+  }
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    if(event.key === 'ArrowUp')
+      {
+        if(this.selectedItem<(this.navItems.length)&&this.selectedItem>0)
+          {
+
+            this.router.navigate([this.navItems[this.selectedItem-1].route]);
+            this.selectedItem=this.selectedItem-1;
+          console.log(event.keyCode);
+            console.log(event.keyCode);
+          
+      }
+      }
+      if(event.key === 'ArrowDown')
+        {
+          if(this.selectedItem>=0&&this.selectedItem<this.navItems.length)
+            {
+
+
+              this.router.navigate([this.navItems[this.selectedItem+1].route]);
+              this.selectedItem=this.selectedItem+1;
+              console.log(event.keyCode);
+
+         
+            
+        }
+        }
+     
+  }
 }
