@@ -1,6 +1,6 @@
 <div class="header">
     <h4 class="head123">Angular Material Controls</h4>
-    <a [routerLink]="['/material']">Home</a>
+    <!-- <a [routerLink]="['/material']">Home</a> -->
     <a [routerLink]="['/material/button']">Button</a>
     <a [routerLink]="['/material/dropdown']">Dropdown</a>
     <a [routerLink]="['/material/dateinputs']">Date Inputs</a>
@@ -18,6 +18,15 @@
     <a [routerLink]="['/material/menu']">Menu</a>
     <a [routerLink]="['/material/tab']">Tab</a>
     <a [routerLink]="['/material/accordion']">Accordion</a>
-    
+    <mat-nav-list id="app-nav" aria-label="Main navigation" role="navigation">
+        <a mat-list-item [routerLink]="['/material/accordion']">
+          <mat-icon mat-list-icon>badge</mat-icon>
+          <span mat-line>Your profile</span>
+        </a>
+        <a mat-list-item [routerLink]="['/material/tab']">
+            <mat-icon mat-list-icon>badge</mat-icon>
+            <span mat-line>Your profile</span>
+          </a>
+      </mat-nav-list>
     
 </div>

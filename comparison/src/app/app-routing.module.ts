@@ -53,7 +53,7 @@ const routes: Routes = [
   {path:'kendo',component:KendoComponent,
   children: [
     {
-      path:'', component: KendohomeComponent
+      path:'', component: ButtonComponent
     },
     {
       path:'button', component: ButtonComponent
@@ -117,7 +117,7 @@ const routes: Routes = [
   {path:'material',component:MaterialComponent,
   children: [
     {
-      path:'', component: MaterialhomeComponent
+      path:'', component: MaterialbuttonComponent
     },
     {
       path:'button', component: MaterialbuttonComponent

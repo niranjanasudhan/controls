@@ -6,5 +6,95 @@ import { Component } from '@angular/core';
   styleUrls: ['./material.component.css']
 })
 export class MaterialComponent {
-
+  public navItems = [
+    {
+      title: 'Button',
+      route: '/material/',
+     
+    },
+    {
+      title: 'Button',
+      route: '/material/button',
+     
+    },
+    {
+      title: 'Dropdown',
+      route: '/material/dropdown',
+     
+    },
+    {
+      title: 'Date Inputs',
+      route: '/material/dateinputs',
+     
+    },
+    {
+      title: 'Textbox',
+      route: '/material/textbox',
+     
+    },
+    {
+      title: 'Icon',
+      route: '/material/icon',
+     
+    },
+    {
+      title: 'Progressbar',
+      route: '/material/progressbar',
+     
+    },
+    {
+      title: 'Pager',
+      route: '/material/pager',
+     
+    },
+    {
+      title: 'Dialogs',
+      route: '/material/dialogs',
+      },
+    {
+      title: 'Stepper',
+      route: '/material/stepper',
+     
+    },
+    {
+      title: 'Radio Button',
+      route: '/material/radiobutton',
+     
+    },
+    {
+      title: 'Toggle',
+      route: '/material/toggle',
+     
+    },
+    {
+      title: 'Checkbox',
+      route: '/material/checkbox',
+     
+    },
+    {
+      title: 'Tooltip',
+      route: '/material/tooltip',
+     
+    },
+    {
+      title: 'Popup',
+      route: '/material/popup',
+     
+    },
+    {
+      title: 'Menu',
+      route: '/material/menu',
+     
+    },
+    {
+      title: 'Tab',
+      route: '/material/tab',
+     
+    },
+    {
+      title: 'Accordion',
+      route: '/material/accordion',
+     
+    },
+  ];
 }

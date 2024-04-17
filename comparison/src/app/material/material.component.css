@@ -17,3 +17,30 @@
     /* height: 100px;
     border: 2px dashed red; */
   }
+
+  mat-sidenav-content
+  {
+    margin-left: 260px !important;
+    margin-top: 35px !important;
+  }
+  .mat-sidenav-container .mat-sidenav {
+    /* background-color: #b598a3 !important; */
+    /* background-color:#1976d2 !important; */
+    background-color: #5072A7!important;
+    padding: 10px !important;
+    min-width: 200px !important;
+  }
+  .mat-mdc-list-base {
+  
+    margin-left: 20px !important;
+  }
+  .mat-mdc-list-base.mat-mdc-list-base .mdc-list-item--activated .mdc-list-item__primary-text {
+    color: #ffffff !important;
+}
+.mat-sidenav-container {
+  /* height: 1000vh; */
+  min-height: 1000px !important;
+}
+.mdc-list-item__primary-text {
+  font-size: 15px !important;
+}
