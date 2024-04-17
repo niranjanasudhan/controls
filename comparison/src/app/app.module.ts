@@ -83,7 +83,22 @@ import { KendotooltipComponent } from './kendo/kendotooltip/kendotooltip.compone
 import { MaterialtooltipComponent } from './material/materialtooltip/materialtooltip.component';
 import {MatCardModule} from '@angular/material/card';
 import { AggridComponent } from './aggrid/aggrid.component';
-
+import { KendopopupComponent } from './kendo/kendopopup/kendopopup.component';
+import { MaterialpopupComponent } from './material/materialpopup/materialpopup.component';
+import { PopupModule } from "@progress/kendo-angular-popup";
+import {MatListModule} from '@angular/material/list'; 
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { KendomenuComponent } from './kendo/kendomenu/kendomenu.component';
+import { MaterialmenuComponent } from './material/materialmenu/materialmenu.component';
+import { MenusModule } from "@progress/kendo-angular-menu";
+import {MatMenuModule} from '@angular/material/menu';
+import { KendotabComponent } from './kendo/kendotab/kendotab.component';
+import { MaterialtabComponent } from './material/materialtab/materialtab.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { KendoaccordionComponent } from './kendo/kendoaccordion/kendoaccordion.component';
+import { MaterialaccordionComponent } from './material/materialaccordion/materialaccordion.component';
+import {CdkAccordionModule} from '@angular/cdk/accordion';
 @NgModule({
   declarations: [
     AppComponent,
@@ -124,6 +139,14 @@ import { AggridComponent } from './aggrid/aggrid.component';
     KendotooltipComponent,
     MaterialtooltipComponent,
     AggridComponent,
+    KendopopupComponent,
+    MaterialpopupComponent,
+    KendomenuComponent,
+    MaterialmenuComponent,
+    KendotabComponent,
+    MaterialtabComponent,
+    KendoaccordionComponent,
+    MaterialaccordionComponent,
     
    
   
@@ -158,7 +181,7 @@ import { AggridComponent } from './aggrid/aggrid.component';
     MatProgressBarModule,
     ProgressBarModule,
     MatCardModule,
-
+    PopupModule,
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
@@ -177,7 +200,15 @@ import { AggridComponent } from './aggrid/aggrid.component';
     MatButtonToggleModule,
     MatCheckboxModule,
     MatTooltipModule,
-    TooltipsModule
+    TooltipsModule,
+    MatListModule,
+    MatBottomSheetModule,
+    MatSnackBarModule,
+    MatBottomSheetModule,
+    MenusModule,
+    MatMenuModule,
+    MatTabsModule,
+    CdkAccordionModule
 
     
   ],

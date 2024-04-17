@@ -33,6 +33,14 @@ import { KendocheckboxComponent } from './kendo/kendocheckbox/kendocheckbox.comp
 import { KendotooltipComponent } from './kendo/kendotooltip/kendotooltip.component';
 import { MaterialtooltipComponent } from './material/materialtooltip/materialtooltip.component';
 import { AggridComponent } from './aggrid/aggrid.component';
+import { KendopopupComponent } from './kendo/kendopopup/kendopopup.component';
+import { MaterialpopupComponent } from './material/materialpopup/materialpopup.component';
+import { MaterialmenuComponent } from './material/materialmenu/materialmenu.component';
+import { KendomenuComponent } from './kendo/kendomenu/kendomenu.component';
+import { KendotabComponent } from './kendo/kendotab/kendotab.component';
+import { MaterialtabComponent } from './material/materialtab/materialtab.component';
+import { MaterialaccordionComponent } from './material/materialaccordion/materialaccordion.component';
+import { KendoaccordionComponent } from './kendo/kendoaccordion/kendoaccordion.component';
 
 
 
@@ -89,7 +97,21 @@ const routes: Routes = [
     },
     {
       path:'tooltip',component:KendotooltipComponent
+    },
+    {
+      path:'popup',component:KendopopupComponent
+    },
+    {
+      path:'menu',component:KendomenuComponent
+    },
+    {
+      path:'tab',component:KendotabComponent
+    },
+    {
+      path:'accordion',component:KendoaccordionComponent
     }
+
+    
   ]
   },
   {path:'material',component:MaterialComponent,
@@ -135,6 +157,18 @@ const routes: Routes = [
     },
     {
       path:'tooltip',component:MaterialtooltipComponent
+    },
+    {
+      path:'popup',component:MaterialpopupComponent
+    },
+    {
+      path:'menu',component:MaterialmenuComponent
+    },
+    {
+      path:'tab',component:MaterialtabComponent
+    },
+    {
+      path:'accordion',component:MaterialaccordionComponent
     }
 
     

@@ -1,0 +1,21 @@
+<h2 class="mainhead">Popup</h2>
+<br>
+<h4>Bottom Sheet</h4>
+<p>You have received a file called "cat-picture.jpeg".</p>
+
+<button mat-raised-button (click)="openBottomSheet()">Open file</button>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h4>Snackbar</h4>
+  <mat-form-field>
+    <mat-label>Snack bar duration (seconds)</mat-label>
+    <input type="number" [(ngModel)]="durationInSeconds" matInput>
+  </mat-form-field>
+  
+  <button mat-stroked-button (click)="openSnackBar()" aria-label="Show an example snack-bar">
+    Pizza party
+  </button>

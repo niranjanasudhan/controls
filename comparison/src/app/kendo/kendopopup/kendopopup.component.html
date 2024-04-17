@@ -1,0 +1,16 @@
+<h2 class="mainhead">Popup</h2>
+<div class="example-config">
+    <kendo-button #anchor (click)="onToggle()"
+      >{{ toggleText }} Popup</kendo-button
+    >
+  </div>
+  <kendo-popup
+    [anchor]="anchor.element"
+    (anchorViewportLeave)="show = false"
+    *ngIf="show"
+  >
+    <div class="content">
+      <!-- User-defined content -->
+      Popup content.
+    </div>
+  </kendo-popup>
