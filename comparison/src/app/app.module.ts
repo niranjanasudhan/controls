@@ -115,6 +115,8 @@ import { MaterialchatComponent } from './material/materialchat/materialchat.comp
 import { ConversationalUIModule } from "@progress/kendo-angular-conversational-ui";
 import { KendoattachmentComponent } from './kendo/kendoattachment/kendoattachment.component';
 import { MaterialattachmentComponent } from './material/materialattachment/materialattachment.component';
+import { KendoqrcodeComponent } from './kendo/kendoqrcode/kendoqrcode.component';
+import { MaterialqrcodeComponent } from './material/materialqrcode/materialqrcode.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -170,7 +172,9 @@ import { MaterialattachmentComponent } from './material/materialattachment/mater
     KendochatComponent,
     MaterialchatComponent,
     KendoattachmentComponent,
-    MaterialattachmentComponent
+    MaterialattachmentComponent,
+    KendoqrcodeComponent,
+    MaterialqrcodeComponent
     
    
   

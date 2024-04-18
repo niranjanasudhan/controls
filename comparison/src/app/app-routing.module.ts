@@ -51,6 +51,8 @@ import { KendochatComponent } from './kendo/kendochat/kendochat.component';
 import { MaterialchatComponent } from './material/materialchat/materialchat.component';
 import { KendoattachmentComponent } from './kendo/kendoattachment/kendoattachment.component';
 import { MaterialattachmentComponent } from './material/materialattachment/materialattachment.component';
+import { MaterialqrcodeComponent } from './material/materialqrcode/materialqrcode.component';
+import { KendoqrcodeComponent } from './kendo/kendoqrcode/kendoqrcode.component';
 
 
 
@@ -134,6 +136,9 @@ const routes: Routes = [
     },
     {
       path:'attachment',component:KendoattachmentComponent
+    },
+    {
+      path:'qrcode',component:KendoqrcodeComponent
     }
 
     
@@ -209,6 +214,9 @@ const routes: Routes = [
     },
     {
       path:'attachment',component:MaterialattachmentComponent
+    },
+    {
+      path:'qrcode',component:MaterialqrcodeComponent
     }
 
 

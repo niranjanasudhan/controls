@@ -121,6 +121,10 @@ export class MaterialComponent {
       title: 'Attachment',
       route: '/material/attachment',
      
+    },{
+      title: 'QR Code',
+      route: '/material/qrcode',
+     
     },
     
   ];

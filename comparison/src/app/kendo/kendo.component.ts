@@ -139,6 +139,11 @@ export class KendoComponent {
       route: '/kendo/attachment',
      
     },
+    {
+      title: 'QR Code',
+      route: '/kendo/qrcode',
+     
+    },
   ];
   handleClick(selectedItem:any) {
     console.log(selectedItem);
