@@ -163,16 +163,6 @@
     z-index: -10;
   }
 
-  a,
-  a:visited,
-  a:hover {
-    color: #1976d2;
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: #125699;
-  }
 
   .terminal {
     position: relative;
@@ -300,15 +290,39 @@
       visibility: hidden;
     }
   }
+
+  a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0px 10px;
+  }
+
+  a:hover {
+    color: #000080;
+    background-color: #ffffff;
+    border-radius: 33px;
+  }
+
+  a:focus, .active {
+    color: rgb(255, 255, 115);
+    background-color: #000080;
+  }
+
+  .custom-toolbar {
+    background-color: #000080;
+  }
+
 </style>
+
 
 <mat-sidenav-container >
   <mat-sidenav-content>
-    <mat-toolbar>
-      <a [routerLink]="['/']">Home</a>
-    <a [routerLink]="['/kendo']">Kendo Controls</a>
-    <a [routerLink]="['/material']">Angular Material Controls</a>
-    <a [routerLink]="['/aggrid']">AG Grid</a>
+    <mat-toolbar class="custom-toolbar">
+      <a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      <a [routerLink]="['/kendo']" routerLinkActive="active">Kendo Controls</a>
+      <a [routerLink]="['/material']" routerLinkActive="active">Angular Material Controls</a>
+      <a [routerLink]="['/aggrid']" routerLinkActive="active">AG Grid</a>
+      <a [routerLink]="['/dashboard']" routerLinkActive="active">Dashboard</a>
     
 
     </mat-toolbar>

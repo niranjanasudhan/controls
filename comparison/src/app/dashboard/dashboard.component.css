@@ -1,0 +1,35 @@
+.dashboard {
+    background-color: #F1F2F3;
+    min-height: 100vh !important;
+}
+  .mat-grid-tile
+  {
+    display: block !important;
+  }
+  .mat-sidenav-container .mat-sidenav {
+    background-color: #ffffff!important;
+    padding: 10px !important;
+    min-width: 90px !important;
+    justify-content: center;
+    margin: 0px auto !important;
+  }
+
+  .mat-mdc-list-base {
+    text-align: center;
+  }
+
+  .mat-mdc-list-base.mat-mdc-list-base .mdc-list-item--activated .mdc-list-item__primary-text {
+    padding: 10px auto !important;
+}
+
+  .nav-icons{
+    margin: 10px auto !important;
+  }
+
+.header-bar{
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}

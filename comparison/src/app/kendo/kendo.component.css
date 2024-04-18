@@ -45,20 +45,26 @@
   .mat-sidenav-container .mat-sidenav {
     /* background-color: #b598a3 !important; */
     /* background-color:#1976d2 !important; */
-    background-color: #5072A7!important;
+    background-color: #ffffff!important;
     padding: 10px !important;
     min-width: 200px !important;
   }
   .mat-mdc-list-base {
   
-    margin-left: 20px !important;
+    margin-left: 0px !important;
   }
   .mat-mdc-list-base.mat-mdc-list-base .mdc-list-item--activated .mdc-list-item__primary-text {
-    color: #ffffff !important;
+    color: #000080 !important;
+    font-weight: 500;
+}
+
+.mdc-list-item__primary-text:hover{
+  color: #000080 !important;
+  font-weight: 500;
 }
 .mat-sidenav-container {
   /* height: 1000vh; */
-  min-height: 1000px !important;
+  min-height: 100vh !important;
 }
 .mdc-list-item__primary-text {
   font-size: 15px !important;

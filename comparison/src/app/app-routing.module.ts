@@ -53,9 +53,13 @@ import { KendoattachmentComponent } from './kendo/kendoattachment/kendoattachmen
 import { MaterialattachmentComponent } from './material/materialattachment/materialattachment.component';
 import { MaterialqrcodeComponent } from './material/materialqrcode/materialqrcode.component';
 import { KendoqrcodeComponent } from './kendo/kendoqrcode/kendoqrcode.component';
+<<<<<<< Updated upstream
 import { AggridbasicComponent } from './aggrid/aggridbasic/aggridbasic.component';
 import { AggridcolumnfilterComponent } from './aggrid/aggridcolumnfilter/aggridcolumnfilter.component';
 
+=======
+import { DashboardComponent } from './dashboard/dashboard.component';
+>>>>>>> Stashed changes
 
 
 
@@ -236,7 +240,8 @@ const routes: Routes = [
     
     
   ]
-  }
+  },
+  {path:"dashboard", component:DashboardComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -25,6 +25,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "@angular/material/prebuilt-themes/indigo-pink.css",
               {
                 "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
@@ -102,5 +103,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "50d81d34-afff-4c9e-ae84-3631f993c0d0"
   }
 }

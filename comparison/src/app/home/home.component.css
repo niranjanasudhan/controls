@@ -4,6 +4,7 @@
     /* margin-top: 100px;
   width: 50%; */
   margin-top: 40px;
+  margin-bottom: 40px;
     width: 85%;
   /* border: 3px solid green; */
   padding: 10px;
@@ -21,7 +22,7 @@ body {
   justify-content: center;
   align-items: center;
   background: #000;
-  min-height: 100vh;
+  /* min-height: 100vh !important; */
 }
 .list {
   position: relative;
@@ -65,10 +66,15 @@ body {
   width: 100%;
   height: 100%;
   background: #b598a3;
+  color: #fff;
   transform: scaleX(0);
   transform-origin: left;
   transition: 0.5s;
 }
 .list ul li:hover:before {
   transform: scaleX(1);
+}
+
+.list ul li span h3{
+  font-weight: bold;
 }

@@ -12,6 +12,8 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~bootstrap-icons/font/bootstrap-icons.css';
 
 html, body {
   font-family: 'Roboto';
@@ -19,9 +21,9 @@ html, body {
   margin: 0px;
 }
 
-.mat-sidenav-container  {
-  height: 1000vh;
-}
+/* .mat-sidenav-container  {
+  height: 100vh !important;
+} */
 
 .mat-sidenav-container .mat-sidenav {
   background-color: #3f51b5;
