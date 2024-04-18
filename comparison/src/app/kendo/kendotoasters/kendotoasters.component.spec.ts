@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MaterialheaderComponent } from './materialheader.component';
+import { KendotoastersComponent } from './kendotoasters.component';
 
-describe('MaterialheaderComponent', () => {
-  let component: MaterialheaderComponent;
-  let fixture: ComponentFixture<MaterialheaderComponent>;
+describe('KendotoastersComponent', () => {
+  let component: KendotoastersComponent;
+  let fixture: ComponentFixture<KendotoastersComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MaterialheaderComponent ]
+      declarations: [ KendotoastersComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MaterialheaderComponent);
+    fixture = TestBed.createComponent(KendotoastersComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

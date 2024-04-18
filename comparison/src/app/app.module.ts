@@ -17,10 +17,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import { KendohomeComponent } from './kendo/kendohome/kendohome.component';
 import { ButtonComponent } from './kendo/button/button.component';
-import { KendoheaderComponent } from './kendo/kendoheader/kendoheader.component';
 import { MaterialbuttonComponent } from './material/materialbutton/materialbutton.component';
 import { MaterialhomeComponent } from './material/materialhome/materialhome.component';
-import { MaterialheaderComponent } from './material/materialheader/materialheader.component';
 import { MaterialdropdownComponent } from './material/materialdropdown/materialdropdown.component';
 import { MatRippleModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field'; 
@@ -99,6 +97,24 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { KendoaccordionComponent } from './kendo/kendoaccordion/kendoaccordion.component';
 import { MaterialaccordionComponent } from './material/materialaccordion/materialaccordion.component';
 import {CdkAccordionModule} from '@angular/cdk/accordion';
+import { KendoloaderComponent } from './kendo/kendoloader/kendoloader.component';
+import { MaterialloaderComponent } from './material/materialloader/materialloader.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { IndicatorsModule } from '@progress/kendo-angular-indicators';
+import { KendotoastersComponent } from './kendo/kendotoasters/kendotoasters.component';
+import { MaterialtoastersComponent } from './material/materialtoasters/materialtoasters.component';
+import { NotificationService } from '@progress/kendo-angular-notification';
+import { MaterialtreelistComponent } from './material/materialtreelist/materialtreelist.component';
+import { TreeListModule } from "@progress/kendo-angular-treelist";
+import { KendotreelistComponent } from './kendo/kendotreelist/kendotreelist.component';
+import { ExcelModule } from "@progress/kendo-angular-treelist";
+import { PDFModule } from "@progress/kendo-angular-treelist";
+import { MatTreeModule } from '@angular/material/tree';
+import { KendochatComponent } from './kendo/kendochat/kendochat.component';
+import { MaterialchatComponent } from './material/materialchat/materialchat.component';
+import { ConversationalUIModule } from "@progress/kendo-angular-conversational-ui";
+import { KendoattachmentComponent } from './kendo/kendoattachment/kendoattachment.component';
+import { MaterialattachmentComponent } from './material/materialattachment/materialattachment.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -108,10 +124,8 @@ import {CdkAccordionModule} from '@angular/cdk/accordion';
     MaterialComponent,
     KendohomeComponent,
     ButtonComponent,
-    KendoheaderComponent,
     MaterialbuttonComponent,
     MaterialhomeComponent,
-    MaterialheaderComponent,
     MaterialdropdownComponent,
     KendodropdownComponent,
     KendodateinputsComponent,
@@ -147,6 +161,16 @@ import {CdkAccordionModule} from '@angular/cdk/accordion';
     MaterialtabComponent,
     KendoaccordionComponent,
     MaterialaccordionComponent,
+    KendoloaderComponent,
+    MaterialloaderComponent,
+    KendotoastersComponent,
+    MaterialtoastersComponent,
+    MaterialtreelistComponent,
+    KendotreelistComponent,
+    KendochatComponent,
+    MaterialchatComponent,
+    KendoattachmentComponent,
+    MaterialattachmentComponent
     
    
   
@@ -208,11 +232,18 @@ import {CdkAccordionModule} from '@angular/cdk/accordion';
     MenusModule,
     MatMenuModule,
     MatTabsModule,
-    CdkAccordionModule
-
+    CdkAccordionModule,
+    MatProgressSpinnerModule,
+    IndicatorsModule,
+    TreeListModule,
+    PDFModule,
+    ExcelModule,
+    MatTreeModule,
+    ConversationalUIModule
+    // NotificationService
     
   ],
-  providers: [],
+  providers: [NotificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -41,6 +41,16 @@ import { KendotabComponent } from './kendo/kendotab/kendotab.component';
 import { MaterialtabComponent } from './material/materialtab/materialtab.component';
 import { MaterialaccordionComponent } from './material/materialaccordion/materialaccordion.component';
 import { KendoaccordionComponent } from './kendo/kendoaccordion/kendoaccordion.component';
+import { MaterialloaderComponent } from './material/materialloader/materialloader.component';
+import { KendoloaderComponent } from './kendo/kendoloader/kendoloader.component';
+import { KendotoastersComponent } from './kendo/kendotoasters/kendotoasters.component';
+import { MaterialtoastersComponent } from './material/materialtoasters/materialtoasters.component';
+import { MaterialtreelistComponent } from './material/materialtreelist/materialtreelist.component';
+import { KendotreelistComponent } from './kendo/kendotreelist/kendotreelist.component';
+import { KendochatComponent } from './kendo/kendochat/kendochat.component';
+import { MaterialchatComponent } from './material/materialchat/materialchat.component';
+import { KendoattachmentComponent } from './kendo/kendoattachment/kendoattachment.component';
+import { MaterialattachmentComponent } from './material/materialattachment/materialattachment.component';
 
 
 
@@ -109,6 +119,21 @@ const routes: Routes = [
     },
     {
       path:'accordion',component:KendoaccordionComponent
+    },
+    {
+      path:'loader',component:KendoloaderComponent
+    },
+    {
+      path:'toasters',component:KendotoastersComponent
+    },
+    {
+      path:'treelist',component:KendotreelistComponent
+    },
+    {
+      path:'chat',component:KendochatComponent
+    },
+    {
+      path:'attachment',component:KendoattachmentComponent
     }
 
     
@@ -169,8 +194,25 @@ const routes: Routes = [
     },
     {
       path:'accordion',component:MaterialaccordionComponent
+    },
+    {
+      path:'loader',component:MaterialloaderComponent
+    },
+    {
+      path:'toasters',component:MaterialtoastersComponent
+    },
+    {
+      path:'treelist',component:MaterialtreelistComponent
+    },
+    {
+      path:'chat',component:MaterialchatComponent
+    },
+    {
+      path:'attachment',component:MaterialattachmentComponent
     }
 
+
+    
     
     
   ]

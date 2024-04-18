@@ -1,0 +1,16 @@
+<h2 class="mainhead">Loader</h2>
+<div class="example">
+    <div class="wrap">
+      <div class="example-item" *ngFor="let loader of loaders">
+        <div class="example-item-title">{{ loader.type | titlecase }}</div>
+        <div class="k-block">
+          <kendo-loader
+            [type]="loader.type"
+            [themeColor]="loader.themeColor"
+            [size]="loader.size"
+          >
+          </kendo-loader>
+        </div>
+      </div>
+    </div>
+  </div>

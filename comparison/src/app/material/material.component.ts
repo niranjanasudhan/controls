@@ -99,7 +99,30 @@ export class MaterialComponent {
       title: 'Accordion',
       route: '/material/accordion',
      
+    },{
+      title: 'Loader',
+      route: '/material/loader',
+     
     },
+    {
+      title: 'Toasters',
+      route: '/material/toasters',
+     
+    },{
+      title: 'Tree list',
+      route: '/material/treelist',
+     
+    },
+    {
+      title: 'Chat',
+      route: '/material/chat',
+     
+    },{
+      title: 'Attachment',
+      route: '/material/attachment',
+     
+    },
+    
   ];
   handleClick(selectedItem:any) {
     console.log(selectedItem);

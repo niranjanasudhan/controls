@@ -115,6 +115,30 @@ export class KendoComponent {
       route: '/kendo/accordion',
      
     },
+    {
+      title: 'Loader',
+      route: '/kendo/loader',
+     
+    },
+    {
+      title: 'Toasters',
+      route: '/kendo/toasters',
+     
+    },{
+      title: 'Tree list',
+      route: '/kendo/treelist',
+     
+    },
+    {
+      title: 'Chat',
+      route: '/kendo/chat',
+     
+    },
+    {
+      title: 'Attachment',
+      route: '/kendo/attachment',
+     
+    },
   ];
   handleClick(selectedItem:any) {
     console.log(selectedItem);

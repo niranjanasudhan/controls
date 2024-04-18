@@ -1,0 +1,26 @@
+.mainhead
+{
+    font-size: 20px;
+    font-weight:600;
+    color: black;
+    text-align: center;
+}
+.wrap {
+    display: flex;
+    align-items: center;
+    margin: 0 -10px;
+  }
+  .example-item {
+    flex: 0 0 33%;
+    padding: 10px;
+  }
+  .example-item-title {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .k-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px;
+  }
