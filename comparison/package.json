@@ -27,12 +27,9 @@
     "@angular/platform-browser": "^15.2.0",
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
-<<<<<<< Updated upstream
     "@progress/kendo-angular-barcodes": "^15.4.0",
-=======
     "@ng-bootstrap/ng-bootstrap": "^14.2.0",
     "@popperjs/core": "^2.11.6",
->>>>>>> Stashed changes
     "@progress/kendo-angular-buttons": "15.4.0",
     "@progress/kendo-angular-common": "15.4.0",
     "@progress/kendo-angular-conversational-ui": "^15.4.0",
@@ -60,12 +57,9 @@
     "@progress/kendo-svg-icons": "^2.0.0",
     "@progress/kendo-theme-default": "^7.2.0",
     "@progress/kendo-theme-material": "^7.2.1",
-<<<<<<< Updated upstream
     "ag-grid-angular": "^31.2.1",
-=======
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
->>>>>>> Stashed changes
     "core-js": "file:3@babel/runtime",
     "highcharts": "^11.4.1",
     "highcharts-angular": "^4.0.0",

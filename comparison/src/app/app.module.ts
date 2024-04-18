@@ -185,8 +185,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     KendoqrcodeComponent,
     MaterialqrcodeComponent,
     AggridbasicComponent,
-    AggridcolumnfilterComponent
-    DashboardComponent
+    AggridcolumnfilterComponent,
+    DashboardComponent,
     
    
   
