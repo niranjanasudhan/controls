@@ -1,0 +1,19 @@
+<h2 class="mainhead">Column Filter</h2>
+<p>Column Athlete has a Text Filter.</p>
+<p>Column Age has a Number Filter.</p>
+<p>Column Date has a Date Filter.</p>
+<p>Column Country has a Set Filter.</p>
+<p>Column Sport has a Multi Filter (consisting of a Text Filter and a Set Filter).</p>
+
+
+<br>
+<br>
+<br>
+<ag-grid-angular
+    style="width: 100%; height: 100%;"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    [rowData]="rowData"
+    [class]="themeClass"
+    (gridReady)="onGridReady($event)"
+  ></ag-grid-angular>

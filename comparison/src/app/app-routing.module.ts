@@ -53,6 +53,8 @@ import { KendoattachmentComponent } from './kendo/kendoattachment/kendoattachmen
 import { MaterialattachmentComponent } from './material/materialattachment/materialattachment.component';
 import { MaterialqrcodeComponent } from './material/materialqrcode/materialqrcode.component';
 import { KendoqrcodeComponent } from './kendo/kendoqrcode/kendoqrcode.component';
+import { AggridbasicComponent } from './aggrid/aggridbasic/aggridbasic.component';
+import { AggridcolumnfilterComponent } from './aggrid/aggridcolumnfilter/aggridcolumnfilter.component';
 
 
 
@@ -61,7 +63,17 @@ import { KendoqrcodeComponent } from './kendo/kendoqrcode/kendoqrcode.component'
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'aggrid', component: AggridComponent },
+  { path: 'aggrid', component: AggridComponent,
+    children:[
+      {
+        path:'',component:AggridbasicComponent
+      },
+      {
+        path:'columnfilter',component:AggridcolumnfilterComponent
+      }
+    ]
+   },
+
   {path:'kendo',component:KendoComponent,
   children: [
     {

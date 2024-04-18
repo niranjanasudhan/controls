@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -117,6 +117,11 @@ import { KendoattachmentComponent } from './kendo/kendoattachment/kendoattachmen
 import { MaterialattachmentComponent } from './material/materialattachment/materialattachment.component';
 import { KendoqrcodeComponent } from './kendo/kendoqrcode/kendoqrcode.component';
 import { MaterialqrcodeComponent } from './material/materialqrcode/materialqrcode.component';
+import { BarcodesModule } from "@progress/kendo-angular-barcodes";
+import { AggridbasicComponent } from './aggrid/aggridbasic/aggridbasic.component';
+import { AgGridAngular } from 'ag-grid-angular';
+import { AggridcolumnfilterComponent } from './aggrid/aggridcolumnfilter/aggridcolumnfilter.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -174,7 +179,9 @@ import { MaterialqrcodeComponent } from './material/materialqrcode/materialqrcod
     KendoattachmentComponent,
     MaterialattachmentComponent,
     KendoqrcodeComponent,
-    MaterialqrcodeComponent
+    MaterialqrcodeComponent,
+    AggridbasicComponent,
+    AggridcolumnfilterComponent
     
    
   
@@ -243,11 +250,17 @@ import { MaterialqrcodeComponent } from './material/materialqrcode/materialqrcod
     PDFModule,
     ExcelModule,
     MatTreeModule,
-    ConversationalUIModule
+    ConversationalUIModule,
+    BarcodesModule,
+    MatNativeDateModule,
+    AgGridAngular,
+    HttpClientModule
+    
     // NotificationService
     
   ],
   providers: [NotificationService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }

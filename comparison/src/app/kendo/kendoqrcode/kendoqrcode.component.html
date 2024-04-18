@@ -1,1 +1,40 @@
-<p>kendoqrcode works!</p>
+<h2 class="mainhead">QR Code</h2>
+<div class="k-card-deck">
+    <div class="k-card k-text-center">
+      <div class="k-card-header">
+        <div class="k-card-title">URL</div>
+      </div>
+      <div class="k-card-body">
+        <kendo-qrcode
+          value="https://www.telerik.com/kendo-angular-ui/"
+          errorCorrection="M"
+        >
+        </kendo-qrcode>
+      </div>
+    </div>
+    <div class="k-card k-text-center">
+      <div class="k-card-header">
+        <div class="k-card-title">Location</div>
+      </div>
+      <div class="k-card-body">
+        <kendo-qrcode
+          value="geo:42.65956,23.3782001;crs=wgs84;u=40"
+          errorCorrection="H"
+          color="#166a83"
+        >
+        </kendo-qrcode>
+      </div>
+    </div>
+    <div class="k-card k-card-type-rich">
+      <div class="k-card-header">
+        <div class="k-card-title">E-mail</div>
+      </div>
+      <div class="k-card-body">
+        <kendo-qrcode
+          value="mailto:clientservice@progress.com"
+          color="#e15613"
+        >
+        </kendo-qrcode>
+      </div>
+    </div>
+  </div>

@@ -1,1 +1,46 @@
-<p>aggrid works!</p>
+
+<!-- <div class="main">
+
+
+
+<div id="container">
+    <div id="left"><app-kendoheader ></app-kendoheader> </div>
+    <div id="right">
+      <h1>Kendo Controls</h1>
+      <router-outlet></router-outlet></div>
+  </div>
+
+
+
+</div> -->
+
+
+<mat-sidenav-container>
+    <mat-sidenav mode="side" opened #sidenav>
+      <mat-nav-list appNavListKeyManager>
+      
+        <a *ngFor="let item of navItems; index as i"
+          mat-list-item
+          appListItemFocusable
+          [routerLink]="[item.route]"
+          routerLinkActive
+          [routerLinkActiveOptions]="{ exact: true }"
+          #rla="routerLinkActive"
+          [activated]="rla.isActive" (click)="handleClick(i)"
+        >
+          <span matListItemTitle>{{ item.title }}</span>
+          <!-- <mat-icon matListItemIcon>{{ item.icon }}</mat-icon> -->
+        </a>
+        
+        
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <h1>AG Grid</h1>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
+  
+  
+  
