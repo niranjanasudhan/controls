@@ -117,18 +117,15 @@ import { KendoattachmentComponent } from './kendo/kendoattachment/kendoattachmen
 import { MaterialattachmentComponent } from './material/materialattachment/materialattachment.component';
 import { KendoqrcodeComponent } from './kendo/kendoqrcode/kendoqrcode.component';
 import { MaterialqrcodeComponent } from './material/materialqrcode/materialqrcode.component';
-<<<<<<< Updated upstream
 import { BarcodesModule } from "@progress/kendo-angular-barcodes";
 import { AggridbasicComponent } from './aggrid/aggridbasic/aggridbasic.component';
 import { AgGridAngular } from 'ag-grid-angular';
 import { AggridcolumnfilterComponent } from './aggrid/aggridcolumnfilter/aggridcolumnfilter.component';
 import { HttpClientModule } from '@angular/common/http';
-=======
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // import { HighchartsChartModule } from 'highcharts-angular';
 
->>>>>>> Stashed changes
 @NgModule({
   declarations: [
     AppComponent,
@@ -187,12 +184,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MaterialattachmentComponent,
     KendoqrcodeComponent,
     MaterialqrcodeComponent,
-<<<<<<< Updated upstream
     AggridbasicComponent,
     AggridcolumnfilterComponent
-=======
     DashboardComponent
->>>>>>> Stashed changes
     
    
   
@@ -262,16 +256,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ExcelModule,
     MatTreeModule,
     ConversationalUIModule,
-<<<<<<< Updated upstream
     BarcodesModule,
     MatNativeDateModule,
     AgGridAngular,
-    HttpClientModule
+    HttpClientModule,
     
-=======
     NgbModule,
     // HighchartsChartModule
->>>>>>> Stashed changes
     // NotificationService
     
   ],
