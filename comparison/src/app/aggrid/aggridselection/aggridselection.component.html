@@ -1,0 +1,112 @@
+<h2 class="mainhead">Selection</h2>
+
+
+  <mat-accordion class="example-headers-align" multi>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+            <b >Row Selection</b>
+           
+        </mat-panel-title>
+        <mat-panel-description>
+          
+            
+
+
+
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      
+     
+
+
+
+<br>
+<br>
+<div class="example-wrapper">
+    <div class="example-header">
+      Selection:
+      <span id="selectedRows"></span>
+    </div>
+    <ag-grid-angular
+      style="height: 500px;"
+      [columnDefs]="columnDefs"
+      [defaultColDef]="defaultColDef"
+      [rowSelection]="rowSelection"
+      [rowData]="rowData"
+      [class]="themeClass"
+      (selectionChanged)="onSelectionChanged()"
+      (gridReady)="onGridReady($event)"
+    ></ag-grid-angular>
+  </div> 
+    </mat-expansion-panel>
+   
+      
+   
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+              <b>  Range Selection </b>
+             
+          </mat-panel-title>
+          <mat-panel-description>
+            
+              
+  
+  
+  
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        
+       
+  
+  
+  
+  <br>
+  <br>
+  <ag-grid-angular
+  style="height: 500px;"
+  [columnDefs]="columnDefs"
+  [defaultColDef]="defaultColDef" 
+  [enableRangeSelection]="true"
+  [rowData]="rowData"
+  [class]="themeClass"
+  (gridReady)="onGridReady($event)"
+></ag-grid-angular>
+      </mat-expansion-panel>
+
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+              <b>  Cell Text Selection</b>
+             
+          </mat-panel-title>
+          <mat-panel-description>
+            
+              
+  
+  
+  
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        
+       
+  
+  
+  
+  <br>
+  <br>
+  <ag-grid-angular
+  style="height: 500px;"
+  [columnDefs]="columnDefs"
+  [defaultColDef]="defaultColDef"
+  enableCellTextSelection="true"
+  ensureDomOrder="true" 
+  [rowData]="rowData"
+  [class]="themeClass"
+  (gridReady)="onGridReady($event)"
+></ag-grid-angular>
+      </mat-expansion-panel>
+  </mat-accordion>
+  

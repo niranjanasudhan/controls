@@ -57,6 +57,8 @@ import { AggridbasicComponent } from './aggrid/aggridbasic/aggridbasic.component
 import { AggridcolumnfilterComponent } from './aggrid/aggridcolumnfilter/aggridcolumnfilter.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AggridthemeComponent } from './aggrid/aggridtheme/aggridtheme.component';
+import { AggridselectionComponent } from './aggrid/aggridselection/aggridselection.component';
 
 
 
@@ -71,6 +73,12 @@ const routes: Routes = [
       },
       {
         path:'columnfilter',component:AggridcolumnfilterComponent
+      },
+      {
+        path:'theme',component:AggridthemeComponent
+      },
+      {
+        path:'selection',component:AggridselectionComponent
       }
     ]
    },

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { AgGridAngular } from "@ag-grid-community/angular";
 import {
@@ -22,6 +22,13 @@ ModuleRegistry.registerModules([
   SetFilterModule,
 ]);
 import { IOlympicData } from "./interfaces";
+
+ModuleRegistry.registerModules([
+  ClientSideRowModelModule,
+  MenuModule,
+  MultiFilterModule,
+  SetFilterModule,
+]);
 @Component({
   selector: 'app-aggridcolumnfilter',
   templateUrl: './aggridcolumnfilter.component.html',

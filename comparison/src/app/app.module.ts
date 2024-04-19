@@ -124,8 +124,10 @@ import { AggridcolumnfilterComponent } from './aggrid/aggridcolumnfilter/aggridc
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AggridthemeComponent } from './aggrid/aggridtheme/aggridtheme.component';
 // import { HighchartsChartModule } from 'highcharts-angular';
-
+import {MatAccordion, MatExpansionModule} from '@angular/material/expansion';
+import { AggridselectionComponent } from './aggrid/aggridselection/aggridselection.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -187,6 +189,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AggridbasicComponent,
     AggridcolumnfilterComponent,
     DashboardComponent,
+    AggridthemeComponent,
+    AggridselectionComponent,
     
    
   
@@ -261,7 +265,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AgGridAngular,
     HttpClientModule,
     
-    NgbModule,
+    NgbModule,MatExpansionModule
     // HighchartsChartModule
     // NotificationService
     

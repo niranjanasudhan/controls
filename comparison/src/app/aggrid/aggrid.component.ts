@@ -35,10 +35,19 @@ export class AggridComponent {
       title: 'Basic Grid',
       route: '/aggrid/',
      
+    }, {
+      title: 'Theme',
+      route: '/aggrid/theme',
+     
     },
     {
-      title: 'Column Filter',
+      title: 'Filter',
       route: '/aggrid/columnfilter',
+     
+    },
+    {
+      title: 'Selection',
+      route: '/aggrid/selection',
      
     },
    

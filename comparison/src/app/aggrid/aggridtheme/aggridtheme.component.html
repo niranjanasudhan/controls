@@ -1,0 +1,212 @@
+<h2 class="mainhead">Theme</h2>
+<!-- <div class="example-action-buttons">
+    <button mat-button (click)="accordion.openAll()">Expand All</button>
+    <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+  </div> -->
+  <mat-accordion class="example-headers-align" multi>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+            <b >ag-theme-quartz</b>
+           
+        </mat-panel-title>
+        <mat-panel-description>
+            <b style="margin-right:10px">ag-theme-quartz</b>
+            <b style="margin-right:10px">   ag-theme-quartz-dark</b>
+            <b style="margin-right:10px">   ag-theme-quartz-auto-dark *</b>
+            
+
+
+
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      Modern looking themes with high contrast and generous padding.
+
+      This is the recommended grid theme and an excellent choice for most applications.
+<br>
+<br>
+      <b style="margin-right:10px">ag-theme-quartz</b>
+      <br>
+      <!-- The AG Grid component -->
+<ag-grid-angular class="ag-theme-quartz" domLayout='autoHeight'
+[rowData]="rowData"
+[columnDefs]="colDefs">
+</ag-grid-angular>
+<br>
+<br>
+      <b> ag-theme-quartz-dark</b>
+      <br>
+      <!-- The AG Grid component -->
+<ag-grid-angular class=" ag-theme-quartz-dark"
+domLayout='autoHeight'
+[rowData]="rowData"
+[columnDefs]="colDefs">
+</ag-grid-angular>
+
+<br>
+<br>
+      <b> ag-theme-quartz-auto-dark</b>
+      <br>
+      <!-- The AG Grid component -->
+<ag-grid-angular class="ag-theme-quartz-auto-dark"
+domLayout='autoHeight'
+[rowData]="rowData"
+[columnDefs]="colDefs">
+</ag-grid-angular>
+    </mat-expansion-panel>
+    <mat-expansion-panel >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+            <b >ag-theme-balham</b>
+        </mat-panel-title>
+        <mat-panel-description>
+            
+
+
+            <b style="margin-right:10px">ag-theme-balham</b>
+            <b style="margin-right:10px">   ag-theme-balham-dark</b>
+            <b style="margin-right:10px">   ag-theme-balham-auto-dark *</b>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      Balham has a more traditional look modelled after a spreadsheet application. It is appropriate for applications that need to fit more data onto each page.
+      <br>
+      <br>
+            <b style="margin-right:10px">ag-theme-balham</b>
+            <br>
+            <!-- The AG Grid component -->
+      <ag-grid-angular class="ag-theme-balham" domLayout='autoHeight'
+      [rowData]="rowData"
+      [columnDefs]="colDefs">
+      </ag-grid-angular>
+      <br>
+      <br>
+            <b> ag-theme-balham-dark</b>
+            <br>
+            <!-- The AG Grid component -->
+      <ag-grid-angular class="ag-theme-balham-dark"
+      domLayout='autoHeight'
+      [rowData]="rowData"
+      [columnDefs]="colDefs">
+      </ag-grid-angular>
+      
+      <br>
+      <br>
+            <b> ag-theme-balham-auto-dark</b>
+            <br>
+            <!-- The AG Grid component -->
+      <ag-grid-angular class="ag-theme-balham-auto-dark"
+      domLayout='autoHeight'
+      [rowData]="rowData"
+      [columnDefs]="colDefs">
+      </ag-grid-angular>
+    </mat-expansion-panel>
+  
+    
+    
+    <mat-expansion-panel >
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+              <b >ag-theme-material</b>
+          </mat-panel-title>
+          <mat-panel-description>
+              
+  
+  
+              <b style="margin-right:10px">ag-theme-material</b>
+              <b style="margin-right:10px">   ag-theme-material-dark</b>
+              <b style="margin-right:10px">   ag-theme-material-auto-dark *</b>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+       <p> A theme designed according to the Google Material Language Specs.</p>
+
+       <p> This theme looks great for simple applications with lots of white space, and is the obvious choice if the rest of your application follows the Google Material Design spec. However, the Material spec doesn't cater for advanced grid features such as grouped columns and tool panels. If your application uses these features, consider using ag-theme-quartz instead.
+    </p>
+        <br>
+        <br>
+              <b style="margin-right:10px">ag-theme-material</b>
+              <br>
+              <!-- The AG Grid component -->
+        <ag-grid-angular class="ag-theme-material" domLayout='autoHeight'
+        [rowData]="rowData"
+        [columnDefs]="colDefs">
+        </ag-grid-angular>
+        <br>
+        <br>
+              <b> ag-theme-material-dark</b>
+              <br>
+              <!-- The AG Grid component -->
+        <ag-grid-angular class=" ag-theme-material-dark"
+        domLayout='autoHeight'
+        [rowData]="rowData"
+        [columnDefs]="colDefs">
+        </ag-grid-angular>
+        
+        <br>
+        <br>
+              <b> ag-theme-material-auto-dark</b>
+              <br>
+              <!-- The AG Grid component -->
+        <ag-grid-angular class="ag-theme-material-auto-dark"
+        domLayout='autoHeight'
+        [rowData]="rowData"
+        [columnDefs]="colDefs">
+        </ag-grid-angular>
+      </mat-expansion-panel>
+
+
+
+      <mat-expansion-panel >
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+              <b >ag-theme-alpine</b>
+          </mat-panel-title>
+          <mat-panel-description>
+              
+  
+  
+              <b style="margin-right:10px">ag-theme-alpine</b>
+              <b style="margin-right:10px">   ag-theme-alpine-dark</b>
+              <b style="margin-right:10px">   ag-theme-alpine-auto-dark *</b>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+   
+
+       <p>Alpine was the default theme before Quartz was released. It is still supported, but we recommend Quartz for new applications.
+    </p>
+        <br>
+        <br>
+              <b style="margin-right:10px">ag-theme-alpine</b>
+              <br>
+              <!-- The AG Grid component -->
+        <ag-grid-angular class="ag-theme-alpine" domLayout='autoHeight'
+        [rowData]="rowData"
+        [columnDefs]="colDefs">
+        </ag-grid-angular>
+        <br>
+        <br>
+              <b>ag-theme-alpine-dark</b>
+              <br>
+              <!-- The AG Grid component -->
+        <ag-grid-angular class="ag-theme-alpine-dark"
+        domLayout='autoHeight'
+        [rowData]="rowData"
+        [columnDefs]="colDefs">
+        </ag-grid-angular>
+        
+        <br>
+        <br>
+              <b> ag-theme-alpine-auto-dark</b>
+              <br>
+              <!-- The AG Grid component -->
+        <ag-grid-angular class="ag-theme-alpine-auto-dark"
+        domLayout='autoHeight'
+        [rowData]="rowData"
+        [columnDefs]="colDefs">
+        </ag-grid-angular>
+      </mat-expansion-panel>
+
+      
+
+
+  </mat-accordion>
+  
