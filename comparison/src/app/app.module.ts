@@ -123,7 +123,11 @@ import { AggridcolumnfilterComponent } from './aggrid/aggridcolumnfilter/aggridc
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+<<<<<<< Updated upstream
 import { AggridthemeComponent } from './aggrid/aggridtheme/aggridtheme.component';
+=======
+import { BaseComponent } from './base/base.component';
+>>>>>>> Stashed changes
 // import { HighchartsChartModule } from 'highcharts-angular';
 import {MatAccordion, MatExpansionModule} from '@angular/material/expansion';
 import { AggridselectionComponent } from './aggrid/aggridselection/aggridselection.component';
@@ -191,11 +195,15 @@ import { AggridmasterdetailComponent } from './aggrid/aggridmasterdetail/aggridm
     AggridbasicComponent,
     AggridcolumnfilterComponent,
     DashboardComponent,
+<<<<<<< Updated upstream
     AggridthemeComponent,
     AggridselectionComponent,
     AggrideditingComponent,
     AggridgroupingComponent,
     AggridmasterdetailComponent,
+=======
+    BaseComponent,
+>>>>>>> Stashed changes
     
    
   
