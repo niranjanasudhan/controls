@@ -1,7 +1,15 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, AfterViewInit  } from '@angular/core';
 import { Router } from '@angular/router';
 import { HostListener } from '@angular/core';
 import * as Highcharts from 'highcharts';
+
+// Import Highcharts modules as needed
+import HC_exporting from 'highcharts/modules/exporting';
+import HC_exportData from 'highcharts/modules/export-data';
+
+// Initialize the modules
+HC_exporting(Highcharts);
+HC_exportData(Highcharts);
 
 
 @Component({
@@ -9,13 +17,40 @@ import * as Highcharts from 'highcharts';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
+export class DashboardComponent implements AfterViewInit {
   public selectedItem = 0;
   @Output() closeSideNav = new EventEmitter();
 
   constructor(
     private router: Router,
   ) { }
+
+  ngAfterViewInit(): void {
+    this.renderChart();
+  }
+
+  renderChart(): void {
+    Highcharts.chart('chart-container', {
+      chart: {
+        type: 'line'
+      },
+      title: {
+        text: 'Sample Line Chart'
+      },
+      xAxis: {
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May']
+      },
+      yAxis: {
+        title: {
+          text: 'Value'
+        }
+      },
+      series: [{
+        name: 'Series 1',
+        data: [1, 3, 2, 4, 5]
+      }] as Highcharts.SeriesOptionsType[] 
+    });
+  }
 
   onToggleClose() {
     this.closeSideNav.emit();
@@ -99,6 +134,16 @@ export class DashboardComponent {
     }
   }
   
+
+  public onButtonClick(): void {
+    console.log("click");
+  }
+
+  public textboxValue = "";
+
+  selectedValue: string = 'Action';
+  selctedWidgetsValue: string = "Widgets";
+  selctedRegionsValue: string = "All Regions"
 }
 
 
