@@ -57,16 +57,13 @@ import { AggridbasicComponent } from './aggrid/aggridbasic/aggridbasic.component
 import { AggridcolumnfilterComponent } from './aggrid/aggridcolumnfilter/aggridcolumnfilter.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
-<<<<<<< Updated upstream
 import { AggridthemeComponent } from './aggrid/aggridtheme/aggridtheme.component';
 import { AggridselectionComponent } from './aggrid/aggridselection/aggridselection.component';
 import { AggrideditingComponent } from './aggrid/aggridediting/aggridediting.component';
 import { AggridgroupingComponent } from './aggrid/aggridgrouping/aggridgrouping.component';
 import { AggridmasterdetailComponent } from './aggrid/aggridmasterdetail/aggridmasterdetail.component';
 
-=======
 import { BaseComponent } from './base/base.component';
->>>>>>> Stashed changes
 
 
 
