@@ -35,9 +35,25 @@ export class AggridComponent {
       title: 'Basic Grid',
       route: '/aggrid/',
      
-    }, {
+    },
+     {
       title: 'Theme',
       route: '/aggrid/theme',
+     
+    },
+    {
+      title: 'Columns',
+      route: '/aggrid/column',
+     
+    },
+    {
+      title: 'Rows',
+      route: '/aggrid/row',
+     
+    },
+    {
+      title: 'Cells',
+      route: '/aggrid/cell',
      
     },
     {
@@ -64,6 +80,17 @@ export class AggridComponent {
       route: '/aggrid/masterdetail',
      
     },
+    {
+      title: 'Tool panel',
+      route: '/aggrid/toolpanel',
+     
+    },
+    {
+      title: 'Import & Export',
+      route: '/aggrid/importexport',
+     
+    },
+    
    
   ];
   handleClick(selectedItem:any) {

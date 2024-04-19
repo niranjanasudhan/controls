@@ -1,0 +1,49 @@
+
+<h2 class="mainhead">Cell</h2>
+<h4>Cell Components</h4>
+<ag-grid-angular
+    style="height: 500px;"
+    [defaultColDef]="defaultColDef"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    [class]="themeClass"
+    (gridReady)="onGridReady($event)"
+  ></ag-grid-angular>
+  <br>
+  <br>
+  <br>
+  <h4>Highlighting Changes</h4>
+
+  <div style="height: 500px; display: flex; flex-direction: column;">
+    <div style="margin-bottom: 4px;">
+      <button (click)="onUpdateSomeValues()">Update Some Data</button>
+      <button (click)="onFlashOneCell()" style="margin-left: 15px;">
+        Flash One Cell
+      </button>
+      <button (click)="onFlashTwoRows()">Flash Two Rows</button>
+      <button (click)="onFlashTwoColumns()">Flash Two Columns</button>
+    </div>
+    <div style="flex-grow: 1;">
+      <ag-grid-angular
+        style="height: 500px;"
+        [columnDefs]="columnDefs1"
+        [defaultColDef]="defaultColDef1"
+        [rowData]="rowData1"
+        [class]="themeClass1"
+        (gridReady)="onGridReady1($event)"
+      ></ag-grid-angular>
+    </div>
+  </div> 
+  <br>
+  <br>
+  <br>
+  <h4>Tooltips</h4>
+  <ag-grid-angular
+    style="height: 500px;"
+    [columnDefs]="columnDefs2"
+    [defaultColDef]="defaultColDef2"
+    [rowData]="rowData2"
+    [tooltipShowDelay]="tooltipShowDelay"
+    [class]="themeClass"
+    (gridReady)="onGridReady2($event)"
+  ></ag-grid-angular>

@@ -62,6 +62,11 @@ import { AggridselectionComponent } from './aggrid/aggridselection/aggridselecti
 import { AggrideditingComponent } from './aggrid/aggridediting/aggridediting.component';
 import { AggridgroupingComponent } from './aggrid/aggridgrouping/aggridgrouping.component';
 import { AggridmasterdetailComponent } from './aggrid/aggridmasterdetail/aggridmasterdetail.component';
+import { AggridtoolpanelComponent } from './aggrid/aggridtoolpanel/aggridtoolpanel.component';
+import { AggridimportexportComponent } from './aggrid/aggridimportexport/aggridimportexport.component';
+import { AggridcolumnComponent } from './aggrid/aggridcolumn/aggridcolumn.component';
+import { AggridrowComponent } from './aggrid/aggridrow/aggridrow.component';
+import { AggridcellComponent } from './aggrid/aggridcell/aggridcell.component';
 
 
 
@@ -91,6 +96,21 @@ const routes: Routes = [
       },
       {
         path:'masterdetail',component:AggridmasterdetailComponent
+      },
+      {
+        path:'toolpanel',component:AggridtoolpanelComponent
+      },
+      {
+        path:'importexport',component:AggridimportexportComponent
+      },
+      {
+        path:'column',component:AggridcolumnComponent
+      },
+      {
+        path:'row',component:AggridrowComponent
+      },
+      {
+        path:'cell',component:AggridcellComponent
       }
     ]
    },

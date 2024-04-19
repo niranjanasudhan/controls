@@ -1,3 +1,4 @@
+import 'ag-grid-enterprise';
 import { NgModule,CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -130,6 +131,18 @@ import { AggridselectionComponent } from './aggrid/aggridselection/aggridselecti
 import { AggrideditingComponent } from './aggrid/aggridediting/aggridediting.component';
 import { AggridgroupingComponent } from './aggrid/aggridgrouping/aggridgrouping.component';
 import { AggridmasterdetailComponent } from './aggrid/aggridmasterdetail/aggridmasterdetail.component';
+import { AggridtoolpanelComponent } from './aggrid/aggridtoolpanel/aggridtoolpanel.component';
+import { FiltersToolPanelModule } from "@ag-grid-enterprise/filter-tool-panel";
+import { AggridimportexportComponent } from './aggrid/aggridimportexport/aggridimportexport.component';
+import { AggridcolumnComponent } from './aggrid/aggridcolumn/aggridcolumn.component';
+import { AggridrowComponent } from './aggrid/aggridrow/aggridrow.component';
+import { AggridcellComponent } from './aggrid/aggridcell/aggridcell.component';
+
+import { CompanyLogoRenderer } from "./aggrid/aggridcell/companyLogoRenderer.component";
+import { CompanyRenderer } from "./aggrid/aggridcell/companyRenderer.component";
+import { CustomButtonComponent } from "./aggrid/aggridcell/customButtonComponent.component";
+import { MissionResultRenderer } from "./aggrid/aggridcell/missionResultRenderer.component";
+import { PriceRenderer } from "./aggrid/aggridcell/priceRenderer.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -196,6 +209,11 @@ import { AggridmasterdetailComponent } from './aggrid/aggridmasterdetail/aggridm
     AggrideditingComponent,
     AggridgroupingComponent,
     AggridmasterdetailComponent,
+    AggridtoolpanelComponent,
+    AggridimportexportComponent,
+    AggridcolumnComponent,
+    AggridrowComponent,
+    AggridcellComponent,
     
    
   
@@ -269,8 +287,12 @@ import { AggridmasterdetailComponent } from './aggrid/aggridmasterdetail/aggridm
     MatNativeDateModule,
     AgGridAngular,
     HttpClientModule,
-    
-    NgbModule,MatExpansionModule
+    NgbModule,MatExpansionModule,
+CompanyLogoRenderer,
+CompanyRenderer,
+CustomButtonComponent,
+MissionResultRenderer,
+PriceRenderer,
     // HighchartsChartModule
     // NotificationService
     

@@ -1,0 +1,52 @@
+<h2 class="mainhead">Import & Export</h2>
+<h4>CSV Export</h4>
+<div style="display: flex; flex-direction: column; height: 100%;">
+    <div style="margin: 10px 0;">
+      <button (click)="onBtnUpdate()">Show CSV export content text</button>
+      <button (click)="onBtnExport()">Download CSV export file</button>
+    </div>
+    <div
+      style="flex: 1 1 0; position: relative; display: flex; flex-direction: row; gap: 20px;"
+    >
+      <div id="gridContainer" style="flex: 1;">
+        <ag-grid-angular
+          style="height: 500px;"
+          [defaultColDef]="defaultColDef"
+          [suppressExcelExport]="true"
+          [popupParent]="popupParent"
+          [columnDefs]="columnDefs"
+          [rowData]="rowData"
+          [class]="themeClass"
+          (gridReady)="onGridReady($event)"
+        ></ag-grid-angular>
+      </div>
+      <textarea
+        id="csvResult"
+        style="flex: 1;"
+        placeholder="Click the Show CSV export content button to view exported CSV here"
+      ></textarea>
+    </div>
+  </div>
+  <br>
+  <br>
+  <h4>Excel Export</h4>
+  <div class="container">
+    <div>
+      <button
+        (click)="onBtExport()"
+        style="margin-bottom: 5px; font-weight: bold;"
+      >
+        Export to Excel
+      </button>
+    </div>
+    <div class="grid-wrapper">
+      <ag-grid-angular
+        style="height: 500px;"
+        [columnDefs]="columnDefs1"
+        [defaultColDef]="defaultColDef1"
+        [rowData]="rowData1"
+        [class]="themeClass"
+        (gridReady)="onGridReady1($event)"
+      ></ag-grid-angular>
+    </div>
+  </div>

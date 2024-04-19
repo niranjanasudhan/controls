@@ -1,0 +1,60 @@
+<h2 class="mainhead">Columns</h2>
+<h4>Column Moving</h4>
+<div class="example-wrapper">
+    <div style="margin-bottom: 1rem;">
+      <button (click)="onMedalsFirst()">Medals First</button>
+      <button (click)="onMedalsLast()">Medals Last</button>
+      <button (click)="onCountryFirst()">Country First</button>
+      <button (click)="onSwapFirstTwo()">Swap First Two</button>
+      <button (click)="onPrintColumns()">Print Columns</button>
+    </div>
+    <ag-grid-angular
+      style="height: 500px;"
+      [columnDefs]="columnDefs"
+      [defaultColDef]="defaultColDef"
+      [suppressDragLeaveHidesColumns]="true"
+      [rowData]="rowData"
+      [class]="themeClass"
+      (gridReady)="onGridReady($event)"
+    ></ag-grid-angular>
+  </div>
+  <br>
+  <br>
+  <br>
+  <h4>Column Pinning</h4>
+  <div class="example-wrapper">
+    <div class="example-header">
+      <div style="padding: 4px;">
+        <button (click)="clearPinned()">Clear Pinned</button>
+        <button (click)="resetPinned()">
+          Left = #, Athlete, Age; Right = Total
+        </button>
+        <button (click)="pinCountry()">Left = Country</button>
+      </div>
+
+      <div style="padding: 4px;">
+        Jump to:
+        <input
+          placeholder="row"
+          type="text"
+          style="width: 40px"
+          id="row"
+          (input)="jumpToRow()"
+        />
+        <input
+          placeholder="col"
+          type="text"
+          style="width: 40px"
+          id="col"
+          (input)="jumpToCol()"
+        />
+      </div>
+    </div>
+    <ag-grid-angular
+      style="height: 500px;"
+      [columnDefs]="columnDefs"
+      [rowData]="rowData"
+      [class]="themeClass"
+      (gridReady)="onGridReady($event)"
+    ></ag-grid-angular>
+  </div> 
