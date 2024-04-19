@@ -125,6 +125,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AggridthemeComponent } from './aggrid/aggridtheme/aggridtheme.component';
+import { BaseComponent } from './base/base.component';
 // import { HighchartsChartModule } from 'highcharts-angular';
 import {MatAccordion, MatExpansionModule} from '@angular/material/expansion';
 import { AggridselectionComponent } from './aggrid/aggridselection/aggridselection.component';
@@ -209,11 +210,15 @@ import { PriceRenderer } from "./aggrid/aggridcell/priceRenderer.component";
     AggrideditingComponent,
     AggridgroupingComponent,
     AggridmasterdetailComponent,
+
     AggridtoolpanelComponent,
     AggridimportexportComponent,
     AggridcolumnComponent,
     AggridrowComponent,
     AggridcellComponent,
+
+    BaseComponent,
+
     
    
   

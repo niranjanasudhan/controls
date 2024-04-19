@@ -68,6 +68,7 @@ import { AggridcolumnComponent } from './aggrid/aggridcolumn/aggridcolumn.compon
 import { AggridrowComponent } from './aggrid/aggridrow/aggridrow.component';
 import { AggridcellComponent } from './aggrid/aggridcell/aggridcell.component';
 
+import { BaseComponent } from './base/base.component';
 
 
 
@@ -278,7 +279,8 @@ const routes: Routes = [
     
   ]
   },
-  {path:"dashboard", component:DashboardComponent}
+  {path:"dashboard", component:DashboardComponent},
+  {path:"normal-dashboard", component:BaseComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
