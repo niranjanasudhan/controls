@@ -59,6 +59,9 @@ import { AggridcolumnfilterComponent } from './aggrid/aggridcolumnfilter/aggridc
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AggridthemeComponent } from './aggrid/aggridtheme/aggridtheme.component';
 import { AggridselectionComponent } from './aggrid/aggridselection/aggridselection.component';
+import { AggrideditingComponent } from './aggrid/aggridediting/aggridediting.component';
+import { AggridgroupingComponent } from './aggrid/aggridgrouping/aggridgrouping.component';
+import { AggridmasterdetailComponent } from './aggrid/aggridmasterdetail/aggridmasterdetail.component';
 
 
 
@@ -79,6 +82,15 @@ const routes: Routes = [
       },
       {
         path:'selection',component:AggridselectionComponent
+      },
+      {
+        path:'editing',component:AggrideditingComponent
+      },
+      {
+        path:'grouping',component:AggridgroupingComponent
+      },
+      {
+        path:'masterdetail',component:AggridmasterdetailComponent
       }
     ]
    },

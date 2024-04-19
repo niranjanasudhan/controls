@@ -41,7 +41,7 @@ export class AggridselectionComponent {
   public rowSelection: "single" | "multiple" = "single";
   public rowData!: IOlympicData[];
   public themeClass: string =
-    "ag-theme-quartz-dark";
+    "ag-theme-quartz";
 
   constructor(private http: HttpClient) {}
 

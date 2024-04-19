@@ -49,6 +49,20 @@ export class AggridComponent {
       title: 'Selection',
       route: '/aggrid/selection',
      
+    },{
+      title: 'Editing',
+      route: '/aggrid/editing',
+     
+    },
+    // {
+    //   title: 'Grouping',
+    //   route: '/aggrid/grouping',
+     
+    // },
+    {
+      title: 'Master Detail',
+      route: '/aggrid/masterdetail',
+     
     },
    
   ];

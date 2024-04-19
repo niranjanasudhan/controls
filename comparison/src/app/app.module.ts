@@ -1,6 +1,5 @@
 import { NgModule,CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -128,6 +127,9 @@ import { AggridthemeComponent } from './aggrid/aggridtheme/aggridtheme.component
 // import { HighchartsChartModule } from 'highcharts-angular';
 import {MatAccordion, MatExpansionModule} from '@angular/material/expansion';
 import { AggridselectionComponent } from './aggrid/aggridselection/aggridselection.component';
+import { AggrideditingComponent } from './aggrid/aggridediting/aggridediting.component';
+import { AggridgroupingComponent } from './aggrid/aggridgrouping/aggridgrouping.component';
+import { AggridmasterdetailComponent } from './aggrid/aggridmasterdetail/aggridmasterdetail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -191,6 +193,9 @@ import { AggridselectionComponent } from './aggrid/aggridselection/aggridselecti
     DashboardComponent,
     AggridthemeComponent,
     AggridselectionComponent,
+    AggrideditingComponent,
+    AggridgroupingComponent,
+    AggridmasterdetailComponent,
     
    
   

@@ -1,0 +1,26 @@
+<h2 class="mainhead">Master Detail</h2>
+
+<p>The example below shows a simple Master / Detail with all the above configured.</p>
+
+    <p> The grid property masterDetail=true is set. This tells the grid to allow expanding rows to display Detail Grids.</p>
+    
+        <p> The Cell Renderer on the first column in the Master Grid is set to agGroupCellRenderer. This tells the grid to use the Group Cell Renderer which in turn includes the expand / collapse functionality for that column.</p>
+    
+            <p>  The Detail Cell Renderer parameter detailGridOptions is set. This contains configuration for the Detail Grid, such as which columns to display and which grid features to enable inside the Detail Grid.</p>
+    
+                <p>   A callback is provided via the Detail Cell Renderer parameter getDetailRowData. This callback is called for each Detail Grid and sets the rows to display in each Detail Grid.</p>
+<br>
+<br>
+<br>
+
+                <ag-grid-angular
+    style="height: 500px"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    [masterDetail]="true"
+    [detailCellRendererParams]="detailCellRendererParams"
+    [rowData]="rowData"
+    [class]="themeClass"
+    (firstDataRendered)="onFirstDataRendered($event)"
+    (gridReady)="onGridReady($event)"
+  ></ag-grid-angular>

@@ -10,6 +10,9 @@ Commercial
 @ag-grid-enterprise/core
 Commercial
 
+@ag-grid-enterprise/master-detail
+Commercial
+
 @ag-grid-enterprise/menu
 Commercial
 

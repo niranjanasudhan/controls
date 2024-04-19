@@ -59,7 +59,7 @@ export class AggridcolumnfilterComponent {
   };
   public rowData!: IOlympicData[];
   public themeClass: string =
-    "ag-theme-quartz-dark";
+    "ag-theme-quartz";
 
   constructor(private http: HttpClient) {}
 
