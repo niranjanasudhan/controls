@@ -22,25 +22,25 @@
     <mat-sidenav-content>
       <header class="header-bar d-lg-flex">
         <div class="d-flex">
-            <button class="btn btn-primary text-nowrap">
+            <button class="btn btn-primary btn-sm text-nowrap ">
               My Dashboard
             </button>
-            <button class="btn btn-outline mx-2">
+            <button class="btn btn-outline btn-sm mx-2">
               Vessel View
             </button>
-            <button class="btn btn-outline">
+            <button class="btn btn-outline btn-sm">
               Miscellaneous
             </button>
         </div>
         <div class="d-md-flex">
-            <button class="btn btn-primary mx-2 my-1 text-nowrap" (click)="onButtonClick()">
+            <button class="btn btn-outline btn-sm mx-2 my-1 text-nowrap text-primary" (click)="onButtonClick()">
                 Add Tile Group
             </button>
-            <input type="text" class="form-control mx-2 my-1" placeholder="Search" >
-            <select class="form-select mx-2 my-1" [(ngModel)]="selectedValue">
+            <input type="text" class="form-control form-control-sm mx-2 my-1" placeholder="Search" >
+            <select class="form-select form-select-sm mx-2 my-1" [(ngModel)]="selectedValue">
                 <option>Action</option>
             </select>
-            <select class="form-select mx-2 my-1" [(ngModel)]="selctedWidgetsValue">
+            <select class="form-select form-select-sm mx-2 my-1" [(ngModel)]="selctedWidgetsValue">
                 <option>Widgets</option>
             </select>
         </div>
