@@ -2,6 +2,7 @@ import { Component, EventEmitter, Output, AfterViewInit  } from '@angular/core';
 import { Router } from '@angular/router';
 import { HostListener } from '@angular/core';
 import * as Highcharts from 'highcharts';
+import { HttpClient } from '@angular/common/http';
 
 // Import Highcharts modules as needed
 import HC_exporting from 'highcharts/modules/exporting';
@@ -24,11 +25,9 @@ export class BaseComponent implements AfterViewInit {
 
   constructor(
     private router: Router,
+    private http: HttpClient
   ) { }
 
-  ngAfterViewInit(): void {
-    this.renderChart();
-  }
 
   
   chartData = [
@@ -330,22 +329,45 @@ export class BaseComponent implements AfterViewInit {
 
   searchQuery: string = '';
 
-  rowData = [
-    { title: "Certificates", surveyScheuled: '23', Expired: 15,  In30days: 11, In60days: null, In90days: null, commenced: null, nullCertificate: 41  },
-    { title: "Survey", surveyScheuled: '12', Expired: 29, In30days: 10, In60days: null, In90days: 12, commenced: 14, nullCertificate: null },
-    { title: "Conditions", surveyScheuled: '09', Expired: 22, In30days: 26, In60days: 13, In90days: null, commenced: 16, nullCertificate: null },
-    { title: "Memos/Remarks", surveyScheuled: '29', Expired: null, In30days: 19, In60days: null, In90days: null, commenced: 21, nullCertificate: null }
-  ];
+  // {athlete: 'Michael Phelps', age: 23, country: 'United States', year: 2008, date: '24/08/2008', …}
+
+  // rowData = [
+  //   { title: "Certificates", surveyScheuled: '23', Expired: 15,  In30days: 11, In60days: null, In90days: null, commenced: null, nullCertificate: 41  },
+  //   { title: "Survey", surveyScheuled: '12', Expired: 29, In30days: 10, In60days: null, In90days: 12, commenced: 14, nullCertificate: null },
+  //   { title: "Conditions", surveyScheuled: '09', Expired: 22, In30days: 26, In60days: 13, In90days: null, commenced: 16, nullCertificate: null },
+  //   { title: "Memos/Remarks", surveyScheuled: '29', Expired: null, In30days: 19, In60days: null, In90days: null, commenced: 21, nullCertificate: null }
+  // ];
+
+rowData: any[] = [];
+
+  ngAfterViewInit(): void {
+    this.renderChart();
+    
+    this.http.get<any[]>('https://www.ag-grid.com/example-assets/olympic-winners.json')
+      .subscribe(data => {
+        this.rowData = data;
+      },
+      error => {
+        console.error('Error fetching data:', error);
+      }
+    );
+      
+  }
   
   columnDefs = [
-    { headerName: '', field: 'title', width: 'auto', cellStyle: { color:"#186CAA" } },
-    { headerName: 'No. Survey Scheuled', field: 'surveyScheuled' },
-    { headerName: 'Expired', field: 'Expired' },
-    { headerName: 'In 30 days', field: 'In30days' },
-    { headerName: 'In 31-60 days', field: 'In60days' },
-    { headerName: 'In 61-90 days', field: 'In90days' },
-    { headerName: 'Commenced', field: 'commenced' },
-    { headerName: 'Null Certificate', field: 'nullCertificate' }
+    // { headerName: '', field: 'title', width: 'auto', cellStyle: { color:"#186CAA" } },
+    // { headerName: 'No. Survey Scheuled', field: 'surveyScheuled' },
+    // { headerName: 'Expired', field: 'Expired' },
+    // { headerName: 'In 30 days', field: 'In30days' },
+    // { headerName: 'In 31-60 days', field: 'In60days' },
+    // { headerName: 'In 61-90 days', field: 'In90days' },
+    // { headerName: 'Commenced', field: 'commenced' },
+    // { headerName: 'Null Certificate', field: 'nullCertificate' }
+    { headerName: 'Name', field: 'athlete', width: 'auto' },
+    { headerName: 'Age', field: 'age' },
+    { headerName: 'Country', field: 'country', width: 'auto' },
+    { headerName: 'Year', field: 'year'},
+    { headerName: 'Date', field: 'date', width: 'auto'  },
   ];
 
   defaultColDef = {
