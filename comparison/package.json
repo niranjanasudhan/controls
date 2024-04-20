@@ -41,6 +41,7 @@
     "@progress/kendo-angular-dateinputs": "^15.4.0",
     "@progress/kendo-angular-dialog": "15.4.0",
     "@progress/kendo-angular-dropdowns": "15.4.0",
+    "@progress/kendo-angular-grid": "^15.4.0",
     "@progress/kendo-angular-icons": "15.4.0",
     "@progress/kendo-angular-indicators": "^15.4.0",
     "@progress/kendo-angular-inputs": "15.4.0",

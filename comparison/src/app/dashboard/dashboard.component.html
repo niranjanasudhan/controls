@@ -10,7 +10,7 @@
           [routerLinkActiveOptions]="{ exact: true }"
           #rla="routerLinkActive"
           [activated]="rla.isActive" (click)="handleClick(i)"
-          style="padding: 10px 0px;"
+          style="padding: 5px 0px;"
         >
           <!-- <span matListItemTitle>{{ item.title }}</span> -->
           <img [src]="item.imageUrl" alt="{{ item.title }} Icon" class="nav-icons">
@@ -50,103 +50,122 @@
       <!-- Body section -->
       <div class="container my-4">
         <div class="row my-4">
-            <div class="col-4 d-flex">
-                    <mat-card class="flex-grow-1">
-                        <mat-card-header class="d-flex justify-content-between">
-                          <mat-card-title>Requisition Statistics</mat-card-title>
-                          <div class="d-flex justify-content-between align-items-center">
-                            <i class="bi bi-funnel mx-2" style="font-size: 20px;"></i>
-                            <i class="bi bi-box-arrow-up-right mx-2" style="font-size: 20px;"></i>
-                            <i class="bi bi-three-dots mx-2" style="font-size: 20px;"></i>
-                          </div>
-                        </mat-card-header>
-                        <mat-card-content class="mt-2">
-                          <kendo-dropdownlist [data]="['All Regions']" class="w-50" [(ngModel)]="selctedRegionsValue"></kendo-dropdownlist>
-                          <div id="chart-container" style="width: 100%; height: 200px;">
-                        </div>
-                        </mat-card-content>
-                        <mat-card-actions>
-                          <button mat-button>Action</button>
-                        </mat-card-actions>
-                      </mat-card>
-            </div>
-            <div class="col-4 d-flex">
-                    <mat-card class="flex-grow-1">
-                        <mat-card-header class="d-flex justify-content-between">
-                          <mat-card-title>Accident Category</mat-card-title>
-                          <div class="d-flex justify-content-between align-items-center">
-                            <i class="bi bi-funnel mx-2" style="font-size: 20px;"></i>
-                            <i class="bi bi-box-arrow-up-right mx-2" style="font-size: 20px;"></i>
-                            <i class="bi bi-three-dots mx-2" style="font-size: 20px;"></i>
-                          </div>
-                        </mat-card-header>
-                        <mat-card-content>
-                            <div id="chart-container" style="width: 100%; height: 200px;"></div>
-                        </mat-card-content>
-                        <mat-card-actions>
-                          <button mat-button>Action</button>
-                        </mat-card-actions>
-                      </mat-card>
-            </div>
-            <div class="col-4 d-flex">
-                    <mat-card class="flex-grow-1">
-                        <mat-card-header class="d-flex justify-content-between">
-                          <mat-card-title>Crtical Equipments</mat-card-title>
-                          <div class="d-flex justify-content-between align-items-center">
-                            <i class="bi bi-funnel mx-2" style="font-size: 20px;"></i>
-                            <i class="bi bi-box-arrow-up-right mx-2" style="font-size: 20px;"></i>
-                            <i class="bi bi-three-dots mx-2" style="font-size: 20px;"></i>
-                          </div>
-                        </mat-card-header>
-                        <mat-card-content>
-                            <div id="chart-container" style="width: 100%; height: 200px;"></div>
-                        </mat-card-content>
-                        <mat-card-actions>
-                          <button mat-button>Action</button>
-                        </mat-card-actions>
-                      </mat-card>
-                      
+            <div class="col-xl-4 col-lg-6 d-flex my-2">
+              <mat-card class="card flex-grow-1 d-flex align-items-start" style="flex-flow: column; justify-content: space-evenly;">
+                <div class="w-100">
+                  <mat-card-header class="d-flex justify-content-between">
+                    <mat-card-title>Requisition Statistics</mat-card-title>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <i class="bi bi-funnel mx-2" style="font-size: 20px;"></i>
+                      <i class="bi bi-box-arrow-up-right mx-2" style="font-size: 20px;"></i>
+                      <i class="bi bi-three-dots mx-2" style="font-size: 20px;"></i>
+                    </div>
+                  </mat-card-header>
+                  <mat-card-content class="mt-2">
+                    <kendo-dropdownlist [data]="['All Regions']" class="w-50"
+                      [(ngModel)]="selctedRegionsValue"></kendo-dropdownlist>
+                  </mat-card-content>
                 </div>
+                <div id="chart-container-1" style="width: 100%; height: 300px;"></div>
+              </mat-card>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 d-flex my-2">
+              <mat-card class="card flex-grow-1 d-flex align-items-start" style="flex-flow: column; justify-content: space-evenly;">
+                <div class="w-100">
+                  <mat-card-header class="d-flex justify-content-between">
+                    <mat-card-title>Accident Category</mat-card-title>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <i class="bi bi-funnel mx-2" style="font-size: 20px;"></i>
+                      <i class="bi bi-box-arrow-up-right mx-2" style="font-size: 20px;"></i>
+                      <i class="bi bi-three-dots mx-2" style="font-size: 20px;"></i>
+                    </div>
+                  </mat-card-header>
+                  <mat-card-content class="mt-2">
+                    <div class="d-flex justify-content-center align-items-center">
+                      <div class="flex-grow-1">
+                        <kendo-datepicker [format]="'dd/MM/yyyy'" placeholder="DD-MM-YYYY"></kendo-datepicker>
+                      </div>
+                      <div class="flex-grow-1 d-flex justify-content-center align-items-center mx-2">
+                          <span class="">To</span>
+                      </div>
+                      <div class="flex-grow-1">
+                        <kendo-datepicker [format]="'dd/MM/yyyy'" placeholder="DD-MM-YYYY"></kendo-datepicker>
+                      </div>
+                    </div>
+                    
+                    
+                  </mat-card-content>
+                </div>
+                <div id="two-chart-1" style="width: 100%; height: 300px;"></div>
+              </mat-card>
+            </div>
+            
+            <div class="col-xl-4 col-lg-6 d-flex my-2">
+              <mat-card class="card flex-grow-1 d-flex align-items-start" style="flex-flow: column; justify-content: space-between;">
+                  <mat-card-header class="d-flex justify-content-between w-100">
+                    <mat-card-title>Crtical Equipments</mat-card-title>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <i class="bi bi-funnel mx-2" style="font-size: 20px;"></i>
+                      <i class="bi bi-box-arrow-up-right mx-2" style="font-size: 20px;"></i>
+                      <i class="bi bi-three-dots mx-2" style="font-size: 20px;"></i>
+                    </div>
+                  </mat-card-header>
+                <div id="third-chart-1" style="width: 100%; height: 300px;"></div>
+              </mat-card>
+            </div>
         </div>
 
         <div class="row my-4">
-            <div class="col-8 d-flex">
-                    <mat-card class="flex-grow-1">
-                        <mat-card-header class="d-flex justify-content-between">
-                          <mat-card-title>Certification Due Date Overview</mat-card-title>
-                          <div class="d-flex justify-content-between align-items-center">
-                            <i class="bi bi-funnel mx-2" style="font-size: 20px;"></i>
-                            <i class="bi bi-box-arrow-up-right mx-2" style="font-size: 20px;"></i>
-                            <i class="bi bi-three-dots mx-2" style="font-size: 20px;"></i>
-                          </div>
-                        </mat-card-header>
-                        <mat-card-content>
-                            <div id="container" style="width: 100%; height: 200px;"></div>
-                        </mat-card-content>
-                        <mat-card-actions>
-                          <button mat-button>Action</button>
-                        </mat-card-actions>
-                      </mat-card>
-                      
+
+          <div class="col-lg-8 col-md-12 d-flex my-2">
+            <mat-card class="card flex-grow-1 d-flex align-items-start" style="flex-flow: column; justify-content: space-evenly;">
+              <div class="w-100">
+                <mat-card-header class="d-flex justify-content-between">
+                  <mat-card-title>Certification Due Date Overview</mat-card-title>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <i class="bi bi-funnel mx-2" style="font-size: 20px;"></i>
+                    <i class="bi bi-box-arrow-up-right mx-2" style="font-size: 20px;"></i>
+                    <i class="bi bi-three-dots mx-2" style="font-size: 20px;"></i>
+                  </div>
+                </mat-card-header>
+                <mat-card-content class="mt-2">
+                  <kendo-textbox placeholder="Search" class="w-50"></kendo-textbox>
+                </mat-card-content>
+              </div>
+              <kendo-grid [data]="rowData" style="padding: 0px 20px;" >
+                <kendo-grid-column 
+                    [headerStyle]="{ 'background-color': '#F2F4F7', 'padding':'20px 10px', 'font-weight' : 'bold' }"
+                    [cellStyle]="{ 'text-wrap' : 'nowrap' }"
+                    *ngFor="let columnDef of columnDefs; let i = index" 
+                    [field]="columnDef.field" 
+                    [title]="columnDef.headerName"
+                    [ngStyle]="i === 0 ? { color: '#186CAA' } : {}"
+                >
+                </kendo-grid-column>
+              </kendo-grid>
+            </mat-card>
             </div>
-            <div class="col-4 d-flex">
-                    <mat-card class="flex-grow-1">
-                        <mat-card-header class="d-flex justify-content-between">
-                          <mat-card-title>Quote Statistics</mat-card-title>
-                          <div class="d-flex justify-content-between align-items-center">
-                            <i class="bi bi-funnel mx-2" style="font-size: 20px;"></i>
-                            <i class="bi bi-box-arrow-up-right mx-2" style="font-size: 20px;"></i>
-                            <i class="bi bi-three-dots mx-2" style="font-size: 20px;"></i>
-                          </div>
-                        </mat-card-header>
-                        <mat-card-content>
-                            <div id="chart-container" style="width: 100%; height: 200px;"></div>
-                        </mat-card-content>
-                        <mat-card-actions>
-                          <button mat-button>Action</button>
-                        </mat-card-actions>
-                      </mat-card>
-            </div>
+
+            <div class="col-lg-4 col-md-12 d-flex my-2">
+              <mat-card class="card flex-grow-1 d-flex align-items-start" style="flex-flow: column; justify-content: space-evenly;">
+                <div class="w-100">
+                  <mat-card-header class="d-flex justify-content-between">
+                    <mat-card-title>Quote Statistics</mat-card-title>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <i class="bi bi-funnel mx-2" style="font-size: 20px;"></i>
+                      <i class="bi bi-box-arrow-up-right mx-2" style="font-size: 20px;"></i>
+                      <i class="bi bi-three-dots mx-2" style="font-size: 20px;"></i>
+                    </div>
+                  </mat-card-header>
+                  <mat-card-content class="mt-2">
+                    <kendo-dropdownlist [data]="['All Regions']" class="w-50"
+                      [(ngModel)]="selctedRegionsValue"></kendo-dropdownlist>
+                  </mat-card-content>
+                </div>
+                <div id="last-chart-1" style="width: 100%; height: 300px;"></div>
+              </mat-card>
+              </div>
         </div>
       </div>
     

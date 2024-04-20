@@ -144,6 +144,9 @@ import { CompanyRenderer } from "./aggrid/aggridcell/companyRenderer.component";
 import { CustomButtonComponent } from "./aggrid/aggridcell/customButtonComponent.component";
 import { MissionResultRenderer } from "./aggrid/aggridcell/missionResultRenderer.component";
 import { PriceRenderer } from "./aggrid/aggridcell/priceRenderer.component";
+
+import { GridModule } from '@progress/kendo-angular-grid';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -298,9 +301,11 @@ CompanyRenderer,
 CustomButtonComponent,
 MissionResultRenderer,
 PriceRenderer,
+    
+    NgbModule,MatExpansionModule,
     // HighchartsChartModule
     // NotificationService
-    
+    GridModule 
   ],
   providers: [NotificationService],
   bootstrap: [AppComponent],

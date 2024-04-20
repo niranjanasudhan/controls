@@ -294,7 +294,9 @@
   a {
     color: #ffffff;
     text-decoration: none;
-    padding: 0px 10px;
+    padding: 0px 5px;
+    margin: 5px !important;
+    font-size: 16px;
   }
 
   a:hover {
@@ -305,6 +307,8 @@
 
   a:focus, .active {
     color: rgb(255, 255, 115);
+    text-decoration: underline 1px;
+    text-underline-position: under;
     background-color: #000080;
   }
 
@@ -318,7 +322,7 @@
 <mat-sidenav-container >
   <mat-sidenav-content>
     <mat-toolbar class="custom-toolbar">
-      <a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      <a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" style="font-size: 24px;"><i class="bi bi-house-fill"></i></a>
       <a [routerLink]="['/kendo']" routerLinkActive="active">Kendo Controls</a>
       <a [routerLink]="['/material']" routerLinkActive="active">Angular Material Controls</a>
       <a [routerLink]="['/aggrid']" routerLinkActive="active">AG Grid</a>
