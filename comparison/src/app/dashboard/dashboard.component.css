@@ -23,7 +23,9 @@
 }
 
   .nav-icons{
-    margin: 10px auto !important;
+    margin: 0px auto !important;
+    width: 30px;
+    height: 30px;
   }
 
 .header-bar{
@@ -32,4 +34,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+}
+kendo-grid tr
+{
+text-wrap: nowrap !important;
 }

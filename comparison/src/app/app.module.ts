@@ -144,7 +144,7 @@ import { CompanyRenderer } from "./aggrid/aggridcell/companyRenderer.component";
 import { CustomButtonComponent } from "./aggrid/aggridcell/customButtonComponent.component";
 import { MissionResultRenderer } from "./aggrid/aggridcell/missionResultRenderer.component";
 import { PriceRenderer } from "./aggrid/aggridcell/priceRenderer.component";
-import { GridModule } from "@progress/kendo-angular-grid";
+import { GridModule } from '@progress/kendo-angular-grid';
 import { AggridintegratedchartComponent } from './aggrid/aggridintegratedchart/aggridintegratedchart.component';
 @NgModule({
   declarations: [
@@ -301,10 +301,9 @@ CompanyRenderer,
 CustomButtonComponent,
 MissionResultRenderer,
 PriceRenderer,
-GridModule,
     // HighchartsChartModule
     // NotificationService
-    
+    GridModule 
   ],
   providers: [NotificationService],
   bootstrap: [AppComponent],

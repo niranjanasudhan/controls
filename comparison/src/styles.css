@@ -64,7 +64,7 @@ html, body {
 
 .mat-sidenav-container .mat-sidenav-content .mat-toolbar {
   height: 40px;
-  padding: 0px;
+  padding: 0px 20px;
 }
 
 .mat-sidenav-container .mat-sidenav-content .mat-toolbar header {

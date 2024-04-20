@@ -259,42 +259,42 @@ export class BaseComponent implements AfterViewInit {
     {
       title: 'Dashboard',
       route: '/dashboard',
-      imageUrl: '../../assets/Icons/Dashboard.png'
+      imageUrl: '../../assets/Icons/Dashboard1.png'
     },
     {
       title: 'Graph',
       route: '/',
-      imageUrl: '../../assets/Icons/Graph.png'
+      imageUrl: '../../assets/Icons/Graph1.png'
     },
     {
       title: 'Service',
       route: '/dashboard',
-      imageUrl: '../../assets/Icons/Service.png'
+      imageUrl: '../../assets/Icons/Service1.png'
     },
     {
       title: 'Shipping',
       route: '/dashboard',
-      imageUrl: '../../assets/Icons/Ship.png'
+      imageUrl: '../../assets/Icons/Ship1.png'
     },
     {
       title: 'Setting',
       route: '/dashboard',
-      imageUrl: '../../assets/Icons/Settings.png'
+      imageUrl: '../../assets/Icons/Settings1.png'
     },
     {
       title: 'Notes',
       route: '/dashboard',
-      imageUrl: '../../assets/Icons/Notes.png'
+      imageUrl: '../../assets/Icons/Notes1.png'
     },
     {
       title: 'Builders',
       route: '/dashboard',
-      imageUrl: '../../assets/Icons/Builder.png'
+      imageUrl: '../../assets/Icons/Builder1.png'
     },
     {
       title: 'Shop',
       route: '/dashboard',
-      imageUrl: '../../assets/Icons/Shop.png'
+      imageUrl: '../../assets/Icons/Shop1.png'
     },
   ];
   handleClick(selectedItem: any) {
@@ -327,20 +327,6 @@ export class BaseComponent implements AfterViewInit {
   selectedValue: string = 'Action';
   selctedWidgetsValue: string = "Widgets";
   selctedRegionsValue: string = "All Regions";
-
-
-  generateDummyData(count: number): any[] {
-    const data = [];
-    for (let i = 0; i < count; i++) {
-      data.push({
-        id: i + 1,
-        name: `Item ${i + 1}`,
-        price: Math.floor(Math.random() * 1000) + 1, // Random price between 1 and 1000
-        quantity: Math.floor(Math.random() * 10) + 1 // Random quantity between 1 and 10
-      });
-    }
-    return data;
-  }
 
   searchQuery: string = '';
 
