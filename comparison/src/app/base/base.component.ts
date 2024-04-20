@@ -340,18 +340,25 @@ export class BaseComponent implements AfterViewInit {
 
 rowData: any[] = [];
 
+isLoading = false;
+
   ngAfterViewInit(): void {
     this.renderChart();
-    
+    this.loadData();
+      
+  }
+
+  loadData() {
+    this.isLoading = true; // Set loading flag to true
     this.http.get<any[]>('https://www.ag-grid.com/example-assets/olympic-winners.json')
       .subscribe(data => {
         this.rowData = data;
+        this.isLoading = false; 
       },
       error => {
         console.error('Error fetching data:', error);
       }
     );
-      
   }
   
   columnDefs = [
@@ -363,11 +370,12 @@ rowData: any[] = [];
     // { headerName: 'In 61-90 days', field: 'In90days' },
     // { headerName: 'Commenced', field: 'commenced' },
     // { headerName: 'Null Certificate', field: 'nullCertificate' }
-    { headerName: 'Name', field: 'athlete', width: 'auto' },
-    { headerName: 'Age', field: 'age' },
-    { headerName: 'Country', field: 'country', width: 'auto' },
-    { headerName: 'Year', field: 'year'},
-    { headerName: 'Date', field: 'date', width: 'auto'  },
+    { headerName: 'Title', field: 'athlete', width: 'auto' },
+    { headerName: 'No. Survey Scheuled', field: 'age', width: '150px' },
+    { headerName: 'Expired', field: 'gold', width: '150px' },
+    { headerName: 'In 30 days', field: 'silver', width: '150px'},
+    { headerName: 'In 31-60 days', field: 'bronze', width: '150px'  },
+    { headerName: 'In 61-90 days', field: 'total', width: '150px'  },
   ];
 
   defaultColDef = {
@@ -376,14 +384,20 @@ rowData: any[] = [];
       fontWeight: 'bold',
       border: '1px solid #ccc' // Add border styling to each cell
     },
+    resizable: true
   };
 
   gridOptions = {
     headerHeight: 50, // Adjust this value based on your header content
     autoHeight: true, // Automatically adjust the grid height based on row content
     suppressAutoSize: true, // Prevent automatic column resizing
+    pagination: true,
+    paginationPageSize: 10,
+    overlayLoadingTemplate: `
+    <div class="ag-overlay-loading-center" style="background-color: rgba(255, 255, 255, 0.5);">
+      <i class="fas fa-spinner fa-spin"></i> Loading...
+    </div>`
   };
-
 }
 
 
