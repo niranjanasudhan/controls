@@ -69,6 +69,7 @@ import { AggridrowComponent } from './aggrid/aggridrow/aggridrow.component';
 import { AggridcellComponent } from './aggrid/aggridcell/aggridcell.component';
 
 import { BaseComponent } from './base/base.component';
+import { AggridintegratedchartComponent } from './aggrid/aggridintegratedchart/aggridintegratedchart.component';
 
 
 
@@ -112,6 +113,9 @@ const routes: Routes = [
       },
       {
         path:'cell',component:AggridcellComponent
+      },
+      {
+        path:'integratedcharts',component:AggridintegratedchartComponent
       }
     ]
    },
@@ -133,9 +137,9 @@ const routes: Routes = [
     {
       path:'textbox',component:KendotextboxComponent
     },
-    {
-      path:'button',component:KendobuttonComponent
-    },
+    // {
+    //   path:'button',component:KendobuttonComponent
+    // },
     {
       path:'icon',component:KendoiconComponent
     },

@@ -15,3 +15,12 @@
     flex: 1 1 0px;
     width: 100%;
 }
+button
+{
+    margin: 5px;
+}
+input 
+{
+    margin: 5px;
+    border: 1px solid lightgray;
+}

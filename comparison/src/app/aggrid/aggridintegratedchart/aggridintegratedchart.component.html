@@ -1,0 +1,14 @@
+<h2 class="mainhead">Integrated Charts</h2>
+<ag-grid-angular
+    style="height: 500px;"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    [popupParent]="popupParent"
+    [enableRangeSelection]="true"
+    [enableCharts]="true"
+    [chartThemeOverrides]="chartThemeOverrides"
+    [rowData]="rowData"
+    [class]="themeClass"
+    (firstDataRendered)="onFirstDataRendered($event)"
+    (gridReady)="onGridReady($event)"
+  ></ag-grid-angular>

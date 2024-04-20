@@ -1,4 +1,4 @@
-<h2 class="mainhead">Theme</h2>
+<h2 class="mainhead">Tool Panel</h2>
 <br>
 <br>
 <h4>Side Bar</h4>
@@ -15,14 +15,45 @@
   ></ag-grid-angular>
   <br>
   <br>
-  <!-- <h4>Columns Tool Panel</h4>
+  <h4>Columns Tool Panel</h4>
+  <p>The Columns Tool Panel provides functions for managing the grid's columns.</p>
   <ag-grid-angular
     style="height: 500px;"
-    [columnDefs]="columnDefs"
-    [defaultColDef]="defaultColDef"
-    [autoGroupColumnDef]="autoGroupColumnDef"
-    [sideBar]="sideBar"
-    [rowData]="rowData"
+    [columnDefs]="columnDefs1"
+    [defaultColDef]="defaultColDef1"
+    [autoGroupColumnDef]="autoGroupColumnDef1"
+    [sideBar]="sideBar1"
+    [rowData]="rowData1"
     [class]="themeClass"
-    (gridReady)="onGridReady($event)"
-  ></ag-grid-angular> -->
+    (gridReady)="onGridReady1($event)"
+  ></ag-grid-angular>
+  <br>
+  <br>
+  <h4>Filters Tool Panel</h4>
+  <p>The Filters Tool Panel allows accessing the grid's filters without needing to open up the column menu.</p>
+  <ag-grid-angular
+    style="height: 500px;"
+    [columnDefs]="columnDefs2"
+    [defaultColDef]="defaultColDef2"
+    [sideBar]="sideBar2"
+    [rowData]="rowData2"
+    [class]="themeClass"
+    (gridReady)="onGridReady2($event)"
+  ></ag-grid-angular>
+  <br>
+  <br>
+  <h4>Custom Toolpanel</h4>
+  <p>Custom Tool Panel Components can be included into the grid's Side Bar. Implement these when you require more Tool Panels to meet your application requirements.</p>
+  <div style=" box-sizing: border-box;">
+    <ag-grid-angular
+      style="height: 500px;"
+      [columnDefs]="columnDefs3"
+      [defaultColDef]="defaultColDef3"
+      [icons]="icons"
+      [sideBar]="sideBar3"
+      [rowData]="rowData3"
+      [class]="themeClass"
+      (cellValueChanged)="onCellValueChanged($event)"
+      (gridReady)="onGridReady3($event)"
+    ></ag-grid-angular>
+  </div>

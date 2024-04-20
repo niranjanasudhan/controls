@@ -89,6 +89,10 @@ export class AggridComponent {
       title: 'Import & Export',
       route: '/aggrid/importexport',
      
+    },{
+      title: 'Integrated Charts',
+      route: '/aggrid/integratedcharts',
+     
     },
     
    

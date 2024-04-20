@@ -144,6 +144,8 @@ import { CompanyRenderer } from "./aggrid/aggridcell/companyRenderer.component";
 import { CustomButtonComponent } from "./aggrid/aggridcell/customButtonComponent.component";
 import { MissionResultRenderer } from "./aggrid/aggridcell/missionResultRenderer.component";
 import { PriceRenderer } from "./aggrid/aggridcell/priceRenderer.component";
+import { GridModule } from "@progress/kendo-angular-grid";
+import { AggridintegratedchartComponent } from './aggrid/aggridintegratedchart/aggridintegratedchart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -218,6 +220,7 @@ import { PriceRenderer } from "./aggrid/aggridcell/priceRenderer.component";
     AggridcellComponent,
 
     BaseComponent,
+      AggridintegratedchartComponent,
 
     
    
@@ -298,6 +301,7 @@ CompanyRenderer,
 CustomButtonComponent,
 MissionResultRenderer,
 PriceRenderer,
+GridModule,
     // HighchartsChartModule
     // NotificationService
     

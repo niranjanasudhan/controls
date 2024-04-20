@@ -17,7 +17,7 @@ export class MaterialComponent {
     
     {
       title: 'Button',
-      route: '/material/button',
+      route: ['/material/button','/material/'],
       
      
     },

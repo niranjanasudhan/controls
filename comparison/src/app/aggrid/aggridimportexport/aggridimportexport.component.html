@@ -2,8 +2,8 @@
 <h4>CSV Export</h4>
 <div style="display: flex; flex-direction: column; height: 100%;">
     <div style="margin: 10px 0;">
-      <button (click)="onBtnUpdate()">Show CSV export content text</button>
-      <button (click)="onBtnExport()">Download CSV export file</button>
+      <button mat-stroked-button (click)="onBtnUpdate()">Show CSV export content text</button>
+      <button mat-stroked-button (click)="onBtnExport()">Download CSV export file</button>
     </div>
     <div
       style="flex: 1 1 0; position: relative; display: flex; flex-direction: row; gap: 20px;"
@@ -20,11 +20,14 @@
           (gridReady)="onGridReady($event)"
         ></ag-grid-angular>
       </div>
-      <textarea
+      <!-- <textarea
         id="csvResult"
         style="flex: 1;"
         placeholder="Click the Show CSV export content button to view exported CSV here"
-      ></textarea>
+      ></textarea> -->
+
+      <textarea matInput id="csvResult"
+      style="flex: 1;" placeholder="Click the Show CSV export content button to view exported CSV here"></textarea>
     </div>
   </div>
   <br>
@@ -32,7 +35,7 @@
   <h4>Excel Export</h4>
   <div class="container">
     <div>
-      <button
+      <button mat-stroked-button
         (click)="onBtExport()"
         style="margin-bottom: 5px; font-weight: bold;"
       >

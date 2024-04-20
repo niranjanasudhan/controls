@@ -33,7 +33,7 @@ export class KendoComponent {
       // },
     {
       title: 'Button',
-      route: '/kendo/button',
+      route: ['/kendo/button','/kendo/'],
      
     },
     {

@@ -16,12 +16,12 @@
 
   <div style="height: 500px; display: flex; flex-direction: column;">
     <div style="margin-bottom: 4px;">
-      <button (click)="onUpdateSomeValues()">Update Some Data</button>
-      <button (click)="onFlashOneCell()" style="margin-left: 15px;">
+      <button mat-stroked-button (click)="onUpdateSomeValues()">Update Some Data</button>
+      <button mat-stroked-button (click)="onFlashOneCell()" style="margin-left: 15px;">
         Flash One Cell
       </button>
-      <button (click)="onFlashTwoRows()">Flash Two Rows</button>
-      <button (click)="onFlashTwoColumns()">Flash Two Columns</button>
+      <button mat-stroked-button (click)="onFlashTwoRows()">Flash Two Rows</button>
+      <button mat-stroked-button (click)="onFlashTwoColumns()">Flash Two Columns</button>
     </div>
     <div style="flex-grow: 1;">
       <ag-grid-angular
