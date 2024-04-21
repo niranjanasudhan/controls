@@ -10,7 +10,29 @@ mat-toolbar
 {
     height:60px !important;
 }
-/* mat-toolbar a
-{
-    margin: 18px !important;
-} */
+
+
+@media screen and (width > 800px) {
+    .custom-toolbar{
+        background-color: #000080;
+        display: flex;
+    }
+
+    .mobile-toolbar{
+        display: none;
+    }
+}
+
+@media screen and (width < 800px) {
+    .custom-toolbar{
+        background-color: #000080;
+        display: none;
+    }
+
+    .mobile-toolbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #000080;
+    }
+}

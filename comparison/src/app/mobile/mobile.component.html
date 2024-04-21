@@ -1,0 +1,295 @@
+<div class="dashboard" style="margin-left: 0px;">
+    <!-- <mat-sidenav mode="side" opened #sidenav>
+      <mat-nav-list appNavListKeyManager>
+      
+        <a *ngFor="let item of navItems; index as i"
+          mat-list-item
+          appListItemFocusable
+          [routerLink]="[item.route]"
+          routerLinkActive
+          [routerLinkActiveOptions]="{ exact: true }"
+          #rla="routerLinkActive"
+          [activated]="rla.isActive" (click)="handleClick(i)"
+          style="margin: 5px 0px;"
+        >
+          <img [src]="item.imageUrl" alt="{{ item.title }} Icon" class="nav-icons">
+        </a>
+        
+        
+      </mat-nav-list>
+    </mat-sidenav> -->
+
+    <mat-sidenav #sidenav mode="side" [opened]="sidebarOpen">
+        <mat-nav-list appNavListKeyManager>
+          <!-- Render desktop navigation links if storedValue is true -->
+          <ng-container *ngIf="sidebarOpen; else mobileLinks">
+            <a *ngFor="let item of mobilenavItems; index as i"
+              mat-list-item
+              appListItemFocusable
+              [routerLink]="[item.route]"
+              routerLinkActive
+              [routerLinkActiveOptions]="{ exact: true }"
+              #rla="routerLinkActive"
+              [activated]="rla.isActive" 
+              (click)="handleClick(i)"
+              style="margin: 5px 0px; text-align: start; display: flex; justify-content: left; align-items: center; border-bottom: 2px solid #F1F2F3;">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="me-4">
+                    <img [src]="item.imageUrl" alt="{{ item.title }} Icon" class="nav-icons me-2" >
+                    <span class="ms-2">{{ item.title }}</span>
+                </div>
+                <i class="bi bi-chevron-right"></i>
+              </div>
+            </a>
+          </ng-container>
+      
+          <!-- Render mobile navigation links if storedValue is false -->
+          <ng-template #mobileLinks>
+            <a *ngFor="let item of navItems; index as i"
+              mat-list-item
+              appListItemFocusable
+              [routerLink]="[item.route]"
+              routerLinkActive
+              [routerLinkActiveOptions]="{ exact: true }"
+              #rla="routerLinkActive"
+              [activated]="rla.isActive" 
+              (click)="handleClick(i)"
+              style="margin: 5px 0px; text-align: start; display: flex; justify-content: left; align-items: center;">
+              <img [src]="item.imageUrl" alt="{{ item.title }} Icon" class="nav-icons">
+            </a>
+          </ng-template>
+        </mat-nav-list>
+      </mat-sidenav>
+      
+
+    <mat-sidenav-content>
+      <header class="header-bar d-lg-flex">
+        <div class="d-flex">
+            <button class="btn btn-primary btn-sm text-nowrap ">
+              My Dashboard
+            </button>
+            <button class="btn btn-outline btn-sm mx-2">
+              Vessel View
+            </button>
+            <button class="btn btn-outline btn-sm">
+              Miscellaneous
+            </button>
+        </div>
+        <div class="d-md-flex">
+            <button class="btn btn-outline btn-sm mx-2 my-1 text-nowrap text-primary" (click)="onButtonClick()">
+                Add Tile Group
+            </button>
+            <input type="text" class="form-control form-control-sm mx-2 my-1" placeholder="Search" >
+            <select class="form-select form-select-sm mx-2 my-1" [(ngModel)]="selectedValue">
+                <option>Action</option>
+            </select>
+            <select class="form-select form-select-sm mx-2 my-1" [(ngModel)]="selctedWidgetsValue">
+                <option>Widgets</option>
+            </select>
+        </div>
+        
+      </header>
+
+      <header class="mobile-headerbar">
+        <div class="row">
+            <div class="col-6 d-flex">
+                <div class="flex-grow-1 box-card">
+                    <p class="box-card-title">Expired</p>
+                    <h4 class="box-card-value">816
+                        <span class="box-card-title"><i class="bi bi-caret-down-fill"></i>-176</span>
+                    </h4>
+                </div>
+            </div>
+            <div class="col-6 d-flex">
+                <div class="flex-grow-1 box-card">
+                    <p class="box-card-title">In a month</p>
+                    <h4 class="box-card-value">21
+                        <span class="box-card-title"><i class="bi bi-caret-down-fill"></i>-176</span>
+                    </h4>
+                </div>
+            </div>
+            <div class="col-6 d-flex">
+                <div class="flex-grow-1 box-card">
+                    <p class="box-card-title">In two months</p>
+                    <h4 class="box-card-value">04</h4>
+                </div>
+            </div>
+            <div class="col-6 d-flex">
+                <div class="flex-grow-1 box-card">
+                    <p class="box-card-title">In three months</p>
+                    <h4 class="box-card-value">01</h4>
+                </div>
+            </div>
+            <div class="col-6 d-flex">
+                <div class="flex-grow-1 box-card">
+                    <p class="box-card-title">In six months</p>
+                    <h4 class="box-card-value">01</h4>
+                </div>
+            </div>
+            <div class="col-6 d-flex">
+                <div class="flex-grow-1">
+                    <div class="d-flex justify-content-center align-items-center py-3">
+                        <div style="position: relative;">
+                            
+                            <div class="d-flex justify-content-around align-items-center">
+                                <div style="border-radius: 50%; background-color: #000080; width: 20px; height: 20px; margin-right: 15px;"></div> <input class="form-control form-control-sm" type="date" placeholder="From Date">
+                            </div>
+                            <div class="vertical-line" style="height: 30px; padding: 30px 0px;"></div>
+                            <div class="d-flex justify-content-around align-items-center mt-3">
+                                <div style="border-radius: 50%; background-color: #000080; width: 20px; height: 20px; margin-right: 15px;"></div> <input class="form-control form-control-sm" type="date" placeholder="From Date">
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="purple-box card p-3">
+            <p class="purple-box-title">Smoke / Fire Detection Systems</p>
+            <div class="d-flex justify-content-around align-items-center my-2">
+                <p class="purple-box-date">01/01/2023</p>
+                <div class="d-flex align-items-center purple-box-text"><img src="../../assets/Icons/mobile-icon-ship.png" alt="mobile-icon-ship">Foxtrot</div>
+                <div class="d-flex align-items-center purple-box-text"><img src="../../assets/Icons/mobile-icon-notes.png" alt="mobile-icon-ship">xxxxxxx</div>
+            </div>
+            <div class="d-flex justify-content-around align-items-center">
+                <button class="btn btn-primary w-100 mx-2" style="background-color: #000080; border-color: #000080;">Renew</button>
+                <button class="btn btn-none w-100 mx-2" style="border-color: #000080; color: #000080;">Delete</button>
+            </div>
+        </div>
+
+        <div class="purple-box card p-3 mb-0">
+            <p class="purple-box-title">Review of Company DMLC</p>
+            <div class="d-flex justify-content-around align-items-center my-2">
+                <p class="purple-box-date">01/01/2023</p>
+                <div class="d-flex align-items-center purple-box-text"><img src="../../assets/Icons/mobile-icon-ship.png" alt="mobile-icon-ship">Foxtrot</div>
+                <div class="d-flex align-items-center purple-box-text"><img src="../../assets/Icons/mobile-icon-notes.png" alt="mobile-icon-ship">xxxxxxx</div>
+            </div>
+            <div class="d-flex justify-content-around align-items-center">
+                <button class="btn btn-primary w-100 mx-2" style="background-color: #000080; border-color: #000080;">Renew</button>
+                <button class="btn btn-none w-100 mx-2" style="border-color: #000080; color: #000080;">Delete</button>
+            </div>
+        </div>
+      </header>
+      <!-- Body section -->
+      <div class="container my-4">
+        <div class="row my-4">
+
+            <div class="col-xl-4 col-lg-6 d-flex my-2">
+                <div class="card flex-grow-1 d-flex align-items-start" style="flex-flow: column; justify-content: space-evenly;">
+                    <div class="card-body w-100">
+                        <div class="d-flex justify-content-between">
+                            <h2 class="card-title">Requisition Statistics</h2>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <i class="bi bi-funnel mx-2" style="font-size: 20px;"></i>
+                              <i class="bi bi-box-arrow-up-right mx-2" style="font-size: 20px;"></i>
+                              <i class="bi bi-three-dots mx-2" style="font-size: 20px;"></i>
+                            </div>
+                        </div>
+                        <select class="form-select mx-2 w-50" [(ngModel)]="selctedRegionsValue">
+                            <option>All Regions</option>
+                        </select>
+                    </div>
+                        <div id="chart-container2" style="width: 100%; height: 300px;"></div>
+                    </div>
+                </div>
+
+            <div class="col-xl-4 col-lg-6 d-flex my-2">
+                <div class="card flex-grow-1 d-flex align-items-start" style="flex-flow: column; justify-content: space-evenly;">
+                    <div class="card-body w-100">
+                        <div class="d-flex justify-content-between">
+                            <h2 class="card-title">Accident Category</h2>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <i class="bi bi-funnel mx-2" style="font-size: 20px;"></i>
+                              <i class="bi bi-box-arrow-up-right mx-2" style="font-size: 20px;"></i>
+                              <i class="bi bi-three-dots mx-2" style="font-size: 20px;"></i>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div class="flex-grow-1">
+                                <input type="date" class="form-control" id="fromDate" name="fromDate">
+                            </div>
+                            <div class="flex-grow-1 d-flex justify-content-center align-items-center">
+                                <span class="">To</span>
+                            </div>
+                            <div class="flex-grow-1">
+                                <input type="date" class="form-control" id="toDate" name="toDate">
+                            </div>
+                          </div>
+                    </div>
+                        <div id="two-chart-container2" style="width: 100%; height: 300px;"></div>
+                    </div>
+                </div>
+
+            <div class="col-xl-4 col-lg-6 d-flex my-2">
+                <div class="card flex-grow-1 d-flex align-items-start" style="flex-flow: column; justify-content: space-evenly;">
+                    <div class="card-body w-100">
+                        <div class="d-flex justify-content-between">
+                            <h2 class="card-title">Crtical Equipments</h2>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <i class="bi bi-funnel mx-2" style="font-size: 20px;"></i>
+                              <i class="bi bi-box-arrow-up-right mx-2" style="font-size: 20px;"></i>
+                              <i class="bi bi-three-dots mx-2" style="font-size: 20px;"></i>
+                            </div>
+                        </div>
+                    </div>
+                        <div id="third-chart-container2" style="width: 100%; height: 300px;"></div>
+                    </div>
+                </div>
+        </div>
+
+        
+
+        <div class="row my-4">
+
+            <div class="col-lg-8 col-md-12 d-flex my-2">
+                <div class="card flex-grow-1 d-flex align-items-start" style="flex-flow: column; justify-content: space-evenly;">
+                    <div class="card-body w-100">
+                        <div class="d-flex justify-content-between">
+                            <h2 class="card-title">Certification Due Date Overview</h2>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <i class="bi bi-funnel mx-2" style="font-size: 20px;"></i>
+                              <i class="bi bi-box-arrow-up-right mx-2" style="font-size: 20px;"></i>
+                              <i class="bi bi-three-dots mx-2" style="font-size: 20px;"></i>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control w-50 mx-2" placeholder="Search" [(ngModel)]="searchQuery"/>
+                    </div>
+                        <ag-grid-angular 
+                            class="ag-theme-quartz"
+                            style="width: 100%; height: 260px; padding: 10px 20px;" 
+                            [defaultColDef]="defaultColDef"
+                            [gridOptions]="gridOptions"
+                            [rowData]="rowData" 
+                            [columnDefs]="columnDefs"
+                        >
+                        </ag-grid-angular>
+                    </div>
+                </div>
+
+            <div class="col-lg-4 col-md-12 d-flex my-2">
+                <div class="card flex-grow-1 d-flex align-items-start" style="flex-flow: column; justify-content: space-evenly;">
+                    <div class="card-body w-100">
+                        <div class="d-flex justify-content-between">
+                            <h2 class="card-title">Quote Statistics</h2>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <i class="bi bi-funnel mx-2" style="font-size: 20px;"></i>
+                              <i class="bi bi-box-arrow-up-right mx-2" style="font-size: 20px;"></i>
+                              <i class="bi bi-three-dots mx-2" style="font-size: 20px;"></i>
+                            </div>
+                        </div>
+                        <select class="form-select mx-2 w-50" [(ngModel)]="selctedRegionsValue">
+                            <option>All Regions</option>
+                        </select>
+                    </div>
+                        <div id="last-chart-container2" style="width: 100%; height: 260px;"></div>
+                    </div>
+                </div>
+        </div>
+      </div>
+    
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</div>
