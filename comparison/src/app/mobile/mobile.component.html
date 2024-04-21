@@ -1,5 +1,6 @@
-<div class="dashboard" style="margin-left: 0px;">
-    <!-- <mat-sidenav mode="side" opened #sidenav>
+<mat-sidenav-container class="dashboard" >
+    
+    <mat-sidenav class="disktopsidenav" mode="side" opened *ngIf="screenWidth > 800" >
       <mat-nav-list appNavListKeyManager>
       
         <a *ngFor="let item of navItems; index as i"
@@ -17,12 +18,10 @@
         
         
       </mat-nav-list>
-    </mat-sidenav> -->
+    </mat-sidenav>
 
-    <mat-sidenav #sidenav mode="side" [opened]="sidebarOpen">
+    <mat-sidenav class="mobilesidenav " mode="side" [opened]="sidebarOpen" *ngIf="screenWidth < 800">
         <mat-nav-list appNavListKeyManager>
-          <!-- Render desktop navigation links if storedValue is true -->
-          <ng-container *ngIf="sidebarOpen; else mobileLinks">
             <a *ngFor="let item of mobilenavItems; index as i"
               mat-list-item
               appListItemFocusable
@@ -41,24 +40,7 @@
                 <i class="bi bi-chevron-right"></i>
               </div>
             </a>
-          </ng-container>
-      
-          <!-- Render mobile navigation links if storedValue is false -->
-          <ng-template #mobileLinks>
-            <a *ngFor="let item of navItems; index as i"
-              mat-list-item
-              appListItemFocusable
-              [routerLink]="[item.route]"
-              routerLinkActive
-              [routerLinkActiveOptions]="{ exact: true }"
-              #rla="routerLinkActive"
-              [activated]="rla.isActive" 
-              (click)="handleClick(i)"
-              style="margin: 5px 0px; text-align: start; display: flex; justify-content: left; align-items: center;">
-              <img [src]="item.imageUrl" alt="{{ item.title }} Icon" class="nav-icons">
-            </a>
-          </ng-template>
-        </mat-nav-list>
+          </mat-nav-list>
       </mat-sidenav>
       
 
@@ -292,4 +274,4 @@
     
       <router-outlet></router-outlet>
     </mat-sidenav-content>
-</div>
+</mat-sidenav-container>

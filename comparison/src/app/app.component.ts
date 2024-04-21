@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { SharedService } from './shared.service';
+
 
 @Component({
   selector: 'app-root',
@@ -10,10 +12,10 @@ export class AppComponent {
 
   sidebarOpen: boolean = false;
 
+  constructor(private sharedService: SharedService) {}
+
   toggleSidebar() {
     this.sidebarOpen = !this.sidebarOpen;
-    console.log('New sidebarOpen value:', this.sidebarOpen); // Log the new value
-    localStorage.setItem('sidebarOpen', this.sidebarOpen.toString());
-    console.log('Stored in localStorage:', localStorage.getItem('sidebarOpen')); // Log the value stored in localStorage
+    this.sharedService.menuToggle.next(this.sidebarOpen);
   }
 }

@@ -1,8 +1,9 @@
-import { Component, EventEmitter, Output, OnInit, ChangeDetectorRef  } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit, Renderer2  } from '@angular/core';
 import { Router } from '@angular/router';
 import { HostListener } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import { HttpClient } from '@angular/common/http';
+import { SharedService } from '../shared.service';
 
 // Import Highcharts modules as needed
 import HC_exporting from 'highcharts/modules/exporting';
@@ -22,14 +23,32 @@ export class MobileComponent implements OnInit {
   public selectedItem = 0;
   @Output() closeSideNav = new EventEmitter();
 
+  screenWidth: number = window.innerWidth; 
+
   // Declare storedValue property
   sidebarOpen: boolean = false;
 
   constructor(
     private router: Router,
     private http: HttpClient,
-    private changeDetectorRef: ChangeDetectorRef
-  ) { }
+    private sharedService: SharedService,
+    private renderer: Renderer2
+  ) {
+    this.getScreenWidth();
+   }
+
+  @HostListener('window:resize', ['$event'])
+  getScreenWidth(event?: Event) {
+    this.screenWidth = window.innerWidth;
+  }
+
+  ngOnInit(): void {
+    this.renderChart();
+    this.loadData();
+    this.sharedService.menuToggle.subscribe((newValue:any)=>{
+      this.sidebarOpen = newValue;
+    })
+  }
 
   
   chartData2 = [
@@ -382,26 +401,6 @@ export class MobileComponent implements OnInit {
 rowData: any[] = [];
 
 isLoading = false;
-
-ngOnInit(): void {
-    this.renderChart();
-    this.loadData();
-
-    const storedValue: string | null = localStorage.getItem('sidebarOpen');
-    this.sidebarOpen = storedValue === 'true';
-
-    // Listen for changes in localStorage
-    window.addEventListener('storage', this.onStorageChange.bind(this));
-  }
-
-  // Handle storage change event
-  onStorageChange(event: StorageEvent): void {
-    if (event.key === 'sidebarOpen') {
-      const newValue: string | null = event.newValue;
-      this.sidebarOpen = newValue === 'true';
-    }
-  }
-
 
   loadData() {
     this.isLoading = true; // Set loading flag to true

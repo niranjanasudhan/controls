@@ -1,7 +1,7 @@
 .dashboard {
     background-color: #F1F2F3;
     min-height: 100vh !important;
-    position: relative;
+    /* position: relative; */
     z-index: 1;
     margin-left: 0px;
 }
@@ -20,7 +20,7 @@
   {
     display: block !important;
   }
-  .mat-sidenav {
+  .mat-sidenav-container .mat-sidenav {
     background-color: #ffffff!important;
     padding: 10px !important;
     min-width: 90px !important;
@@ -54,7 +54,7 @@
     .mobile-headerbar {
         display: none;
     }
-    .mat-sidenav {
+    .mobilesidenav {
         display: none;
     }
 }
@@ -69,6 +69,9 @@
         justify-content: space-between;
         align-items: center;
         padding: 10px;
+    }
+    .disktopsidenav {
+        display: none;
     }
 }
 
