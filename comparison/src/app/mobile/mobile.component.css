@@ -1,19 +1,19 @@
 .dashboard {
     background-color: #F1F2F3;
     min-height: 100vh !important;
-    /* position: relative; */
+    position: relative;
     z-index: 1;
     margin-left: 0px;
 }
 
 .sidenav {
-    position: absolute; /* Position the overlay relative to its closest positioned ancestor */
+    position: absolute; 
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
-    z-index: 2; /* Ensure the overlay is above the main content */
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 2;
 }
 
   .mat-grid-tile

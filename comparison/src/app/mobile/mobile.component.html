@@ -44,7 +44,7 @@
       </mat-sidenav>
       
 
-    <mat-sidenav-content>
+    <mat-sidenav-content [style.margin-left.px]="(screenWidth < 800) ? 0 : 90">
       <header class="header-bar d-lg-flex">
         <div class="d-flex">
             <button class="btn btn-primary btn-sm text-nowrap ">
