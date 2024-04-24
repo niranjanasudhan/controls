@@ -1,0 +1,52 @@
+
+<mat-grid-list cols="1" rows="1" rowHeight="500px">
+    <mat-grid-tile>
+        <!-- <mat-card class="flex-me"></mat-card> -->
+        <mat-card class="flex-me">
+            <kendo-grid [data]="gridData" scrollable="scrollable">
+                <kendo-grid-column field="Name" title="" [headerClass]="'headerCustomClass'" class="aln"  [class]="'cellCustomClass'" [width]="245"   [headerStyle]="{ 'background-color': '#F2F4F7','height':'48px','color':'#444444' }" > </kendo-grid-column>
+                <kendo-grid-column field="NoSurveyScheuled" title="No. Survey Scheuled" [headerClass]="'headerCustomClass'"  [class]="'cellCustomClass1'"
+                [headerStyle]="">
+
+            </kendo-grid-column>
+                <kendo-grid-column field="Expired" title="Expired" [headerClass]="'headerCustomClass'" [class]="'cellCustomClass1'"> </kendo-grid-column>
+                <kendo-grid-column field="In30days" title="In 30 days" [headerClass]="'headerCustomClass'" [class]="'cellCustomClass1'">
+                </kendo-grid-column>
+                <kendo-grid-column field="In31to60days" title="In 31-60 days" [headerClass]="'headerCustomClass'" [class]="'cellCustomClass1'"> </kendo-grid-column>
+                <kendo-grid-column field="In61to90days" title="In 61-90 days" [headerClass]="'headerCustomClass'" [class]="'cellCustomClass1'"> </kendo-grid-column>
+                <kendo-grid-column field="Commenced" title="Commenced" [headerClass]="'headerCustomClass'" [class]="'cellCustomClass1'"> </kendo-grid-column>
+                <kendo-grid-column field="NullCertificate" title="Null Certificate" [headerClass]="'headerCustomClass'" [class]="'cellCustomClass1'"> </kendo-grid-column>
+              
+              </kendo-grid>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
+
+
+<!-- <mat-grid-list cols="1" rows="1" rowHeight="500px">
+    <mat-grid-tile>
+        <mat-card class="flex-me">
+            <kendo-grid [kendoGridBinding]="view | async"  [loading]="loading" [pageable]="true" [pageSize]="5">
+                <kendo-grid-column  [headerStyle]="{ 'background-color': '#F2F4F7', 'padding':'20px 10px', 'font-weight' : 'bold','text-wrap' : 'nowrap' }"
+                  field="athlete" title="title"> </kendo-grid-column>
+                <kendo-grid-column [headerStyle]="{ 'background-color': '#F2F4F7', 'padding':'20px 10px', 'font-weight' : 'bold' }"
+                field="age" title="No. Survey Scheduled">
+                </kendo-grid-column>
+                <kendo-grid-column [headerStyle]="{ 'background-color': '#F2F4F7', 'padding':'20px 10px', 'font-weight' : 'bold' }"
+                 field="gold" title="Expired">
+                </kendo-grid-column>
+                <kendo-grid-column [headerStyle]="{ 'background-color': '#F2F4F7', 'padding':'20px 10px', 'font-weight' : 'bold' }"
+                field="silver" title="In 30 days">
+                </kendo-grid-column>
+                <kendo-grid-column [headerStyle]="{ 'background-color': '#F2F4F7', 'padding':'20px 10px', 'font-weight' : 'bold' }"
+                field="bronze" title="In 31-60 days">
+                </kendo-grid-column>
+                <kendo-grid-column [headerStyle]="{ 'background-color': '#F2F4F7', 'padding':'20px 10px', 'font-weight' : 'bold' }"
+                 field="total" title="In 61-90 days">
+                </kendo-grid-column>
+              </kendo-grid>    
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list> -->
+
+

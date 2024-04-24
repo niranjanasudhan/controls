@@ -71,6 +71,7 @@ import { AggridcellComponent } from './aggrid/aggridcell/aggridcell.component';
 import { BaseComponent } from './base/base.component';
 import { MobileComponent } from './mobile/mobile.component';
 import { AggridintegratedchartComponent } from './aggrid/aggridintegratedchart/aggridintegratedchart.component';
+import { GridstylingComponent } from './gridstyling/gridstyling.component';
 
 
 
@@ -286,7 +287,8 @@ const routes: Routes = [
   },
   {path:"dashboard", component:DashboardComponent},
   {path:"normal-dashboard", component:BaseComponent},
-  {path:"mobile", component:MobileComponent }
+  {path:"mobile", component:MobileComponent },
+  {path:"gridstyling",component:GridstylingComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

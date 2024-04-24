@@ -147,6 +147,7 @@ import { PriceRenderer } from "./aggrid/aggridcell/priceRenderer.component";
 import { GridModule } from '@progress/kendo-angular-grid';
 import { AggridintegratedchartComponent } from './aggrid/aggridintegratedchart/aggridintegratedchart.component';
 import { MobileComponent } from './mobile/mobile.component';
+import { GridstylingComponent } from './gridstyling/gridstyling.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -223,6 +224,7 @@ import { MobileComponent } from './mobile/mobile.component';
     BaseComponent,
       AggridintegratedchartComponent,
       MobileComponent,
+      GridstylingComponent,
 
     
    
