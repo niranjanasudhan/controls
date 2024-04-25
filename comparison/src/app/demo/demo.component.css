@@ -140,3 +140,9 @@
     background-color: #000080; /* Color of the line */
     content: ''; /* Needed for ::before pseudo-element */
   }
+  .weblist
+  {
+    font-size: 15px;
+    padding-left: 13px !important;
+    text-decoration: none;
+  }

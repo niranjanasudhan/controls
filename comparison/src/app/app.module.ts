@@ -150,6 +150,7 @@ import { MobileComponent } from './mobile/mobile.component';
 import { GridstylingComponent } from './gridstyling/gridstyling.component';
 import { DemoComponent } from './demo/demo.component';
 import { DepartmentsComponent } from './demo/departments/departments.component';
+import { NavigationModule } from '@progress/kendo-angular-navigation';
 @NgModule({
   declarations: [
     AppComponent,
@@ -311,7 +312,8 @@ MissionResultRenderer,
 PriceRenderer,
     // HighchartsChartModule
     // NotificationService
-    GridModule 
+    GridModule,
+    NavigationModule 
   ],
   providers: [NotificationService],
   bootstrap: [AppComponent],

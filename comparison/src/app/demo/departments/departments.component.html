@@ -1,0 +1,264 @@
+<mat-sidenav-container class="dashboard" >
+    
+    <mat-sidenav class="disktopsidenav" mode="side" opened *ngIf="screenWidth > 800" >
+      <mat-nav-list appNavListKeyManager>
+      
+        <a *ngFor="let item of navItems; index as i"
+          mat-list-item
+          appListItemFocusable
+          [routerLink]="[item.route]"
+          routerLinkActive
+          [routerLinkActiveOptions]="{ exact: true }"
+          #rla="routerLinkActive"
+          [activated]="rla.isActive" (click)="handleClick(i)"
+          style="margin: 5px 0px;"
+        >
+          <img [src]="item.imageUrl" alt="{{ item.title }} Icon" class="nav-icons">
+        </a>
+        
+        
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav class="mobilesidenav " mode="side" [opened]="sidebarOpen" *ngIf="screenWidth < 800">
+        <mat-nav-list appNavListKeyManager>
+            <a *ngFor="let item of mobilenavItems; index as i"
+              mat-list-item
+              appListItemFocusable
+              [routerLink]="[item.route]"
+              routerLinkActive
+              [routerLinkActiveOptions]="{ exact: true }"
+              #rla="routerLinkActive"
+              [activated]="rla.isActive" 
+              (click)="handleClick(i)"
+              style="margin: 5px 0px; text-align: start; display: flex; justify-content: left; align-items: center; border-bottom: 2px solid #F1F2F3;">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="me-4">
+                    <img [src]="item.imageUrl" alt="{{ item.title }} Icon" class="nav-icons me-2" >
+                    <span class="ms-2">{{ item.title }}</span>
+                </div>
+                <i class="bi bi-chevron-right"></i>
+              </div>
+            </a>
+          </mat-nav-list>
+      </mat-sidenav>
+      
+
+    <mat-sidenav-content [style.margin-left.px]="(screenWidth < 800) ? 0 : 90">
+        <div class="pageHead"> 
+        <label >Departments</label>
+    </div>
+      <header class="header-bar d-lg-flex">  
+     
+        <div class="d-flex">
+          
+              <kendo-breadcrumb
+                [items]="items"
+                (itemClick)="onItemClick($event)"
+              ></kendo-breadcrumb>
+        </div>
+       
+        
+      </header>
+
+      <header class="mobile-headerbar">
+        <div class="row">
+            <div class="col-6 d-flex">
+                <div class="flex-grow-1 box-card">
+                    <p class="box-card-title">Expired</p>
+                    <h4 class="box-card-value">816
+                        <span class="box-card-title"><i class="bi bi-caret-down-fill"></i>-176</span>
+                    </h4>
+                </div>
+            </div>
+            <div class="col-6 d-flex">
+                <div class="flex-grow-1 box-card">
+                    <p class="box-card-title">In a month</p>
+                    <h4 class="box-card-value">21
+                        <span class="box-card-title"><i class="bi bi-caret-down-fill"></i>-176</span>
+                    </h4>
+                </div>
+            </div>
+            <div class="col-6 d-flex">
+                <div class="flex-grow-1 box-card">
+                    <p class="box-card-title">In two months</p>
+                    <h4 class="box-card-value">04</h4>
+                </div>
+            </div>
+            <div class="col-6 d-flex">
+                <div class="flex-grow-1 box-card">
+                    <p class="box-card-title">In three months</p>
+                    <h4 class="box-card-value">01</h4>
+                </div>
+            </div>
+            <div class="col-6 d-flex">
+                <div class="flex-grow-1 box-card">
+                    <p class="box-card-title">In six months</p>
+                    <h4 class="box-card-value">01</h4>
+                </div>
+            </div>
+            <div class="col-6 d-flex">
+                <div class="flex-grow-1">
+                    <div class="d-flex justify-content-center align-items-center py-3">
+                        <div style="position: relative;">
+                            
+                            <div class="d-flex justify-content-around align-items-center">
+                                <div style="border-radius: 50%; background-color: #000080; width: 20px; height: 20px; margin-right: 15px;"></div> <input class="form-control form-control-sm" type="date" placeholder="From Date">
+                            </div>
+                            <div class="vertical-line" style="height: 30px; padding: 30px 0px;"></div>
+                            <div class="d-flex justify-content-around align-items-center mt-3">
+                                <div style="border-radius: 50%; background-color: #000080; width: 20px; height: 20px; margin-right: 15px;"></div> <input class="form-control form-control-sm" type="date" placeholder="From Date">
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="purple-box card p-3">
+            <p class="purple-box-title">Smoke / Fire Detection Systems</p>
+            <div class="d-flex justify-content-around align-items-center my-2">
+                <p class="purple-box-date">01/01/2023</p>
+                <div class="d-flex align-items-center purple-box-text"><img src="../../assets/Icons/mobile-icon-ship.png" alt="mobile-icon-ship">Foxtrot</div>
+                <div class="d-flex align-items-center purple-box-text"><img src="../../assets/Icons/mobile-icon-notes.png" alt="mobile-icon-ship">xxxxxxx</div>
+            </div>
+            <div class="d-flex justify-content-around align-items-center">
+                <button class="btn btn-primary w-100 mx-2" style="background-color: #000080; border-color: #000080;">Renew</button>
+                <button class="btn btn-none w-100 mx-2" style="border-color: #000080; color: #000080;">Delete</button>
+            </div>
+        </div>
+
+        <div class="purple-box card p-3 mb-0">
+            <p class="purple-box-title">Review of Company DMLC</p>
+            <div class="d-flex justify-content-around align-items-center my-2">
+                <p class="purple-box-date">01/01/2023</p>
+                <div class="d-flex align-items-center purple-box-text"><img src="../../assets/Icons/mobile-icon-ship.png" alt="mobile-icon-ship">Foxtrot</div>
+                <div class="d-flex align-items-center purple-box-text"><img src="../../assets/Icons/mobile-icon-notes.png" alt="mobile-icon-ship">xxxxxxx</div>
+            </div>
+            <div class="d-flex justify-content-around align-items-center">
+                <button class="btn btn-primary w-100 mx-2" style="background-color: #000080; border-color: #000080;">Renew</button>
+                <button class="btn btn-none w-100 mx-2" style="border-color: #000080; color: #000080;">Delete</button>
+            </div>
+        </div>
+      </header>
+      <!-- Body section -->
+      <div class="my-4">
+        <div class="row my-4">
+
+            <div class="col-xl-12 col-lg-12 d-flex my-2">
+                <div class="card flex-grow-1 d-flex align-items-start" style="flex-flow: row; justify-content: space-evenly;">
+                    
+                        
+                    <div class="col-xl-4 col-lg-6 d-flex my-2">
+                        <div class="card flex-grow-1 d-flex align-items-start" style="flex-flow: column; justify-content: space-evenly;">
+                            <div class="card-body w-100">
+                                <div class="d-flex justify-content-between">
+                                    <h2 class="card-title">Departments</h2>
+                                   
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <div class="flex-grow-1">
+                                       <label>Lorem Ipsum </label>
+                                    </div>
+                                    <div class="flex-grow-1 d-flex justify-content-center align-items-center">
+                                        <input type="text" class="form-control form-control-sm mx-2 my-1" placeholder="Search" >
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <img src="../../../assets/Icons/dep3.png" alt="mobile-icon-ship">
+                                       
+                                        <img src="../../../assets/Icons/dep1.png" alt="mobile-icon-ship">
+                                        <img src="../../../assets/Icons/dep2.png" alt="mobile-icon-ship">
+                                    </div>
+                                  </div>
+                            </div>
+                            <kendo-grid class="glarge" [data]="gridData" style="height: 400px; width: 500px;">
+                                <kendo-grid-column field="Name" title="Lorem Ipsum" >
+                                </kendo-grid-column>
+                              
+                               
+                           
+                               
+                              </kendo-grid>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-8 col-lg-6 d-flex my-2">
+                            <div class="row section-head-main">
+                            <div class="card flex-grow-1 d-flex align-items-start" style="flex-flow: row; justify-content: space-evenly;border:none;">
+                               <div class="section-head">
+                                      <div class="flex-grow-1 d-flex align-items-start" style="flex-flow: column; justify-content: space-evenly;border:none;">
+                                        <label >Code: <b>MBDKAM</b> </label>
+                                        <label>Modified User: <b>Admin</b></label>
+                                       
+                                    </div>                       
+                               </div>
+                               <div class="section-head-large">
+                                <div class="flex-grow-1 d-flex align-items-start" style="flex-flow: column; justify-content: space-evenly;border:none;">
+                                    <label >Name: <b>Marketing, Business Development and ....</b> </label>
+                                    <label>Modified Date: <b>09 Feb 2017</b></label>
+                                   
+                                </div>                       
+                           </div>
+                               
+
+                               
+                               <div class="section-head">
+                                <div class="flex-grow-1 d-flex align-items-start" style="flex-flow: column; justify-content: space-evenly;border:none;">
+                                   
+
+                                      <kendo-label text="Active">
+                                        <kendo-switch [(ngModel)]="checked" size="small"></kendo-switch>
+                                      </kendo-label>
+                                </div> 
+                               </div>
+                            </div>
+
+                            <kendo-grid
+                            [data]="gridData"
+                            [selectable]="{ mode: 'multiple', drag: true }"
+                            [navigable]="true"
+                            [height]="300"
+                          >
+                            <kendo-grid-checkbox-column [width]="40"></kendo-grid-checkbox-column>
+                            <kendo-grid-column
+                              field="ProductName"
+                              title="Product Name"
+                            ></kendo-grid-column>
+                            <kendo-grid-column
+                              field="UnitsInStock"
+                              title="Units In Stock"
+                            ></kendo-grid-column>
+                            <kendo-grid-column
+                              field="UnitsOnOrder"
+                              title="Units On Order"
+                            ></kendo-grid-column>
+                            <kendo-grid-column
+                              field="ReorderLevel"
+                              title="Reorder Level"
+                            ></kendo-grid-column>
+                          </kendo-grid>
+                                </div>
+                            </div>
+
+
+
+
+                    </div>
+                </div>
+
+          
+
+          
+        </div>
+
+        
+
+      
+      </div>
+    
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
