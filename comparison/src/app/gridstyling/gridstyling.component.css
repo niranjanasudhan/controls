@@ -9,7 +9,6 @@ mat-card{
 .headerCustomClass
 {
     text-wrap:normal;
-    /* text-align: center; */
     background-color: #F2F4F7;
     vertical-align: middle;
     justify-content: center;
@@ -82,4 +81,14 @@ td.k-grid.cellCustomClass1{
 }
 .mat-mdc-card {
     box-shadow: none;
+}
+.mat-grid-tile-content 
+{
+    align-items: normal !important;
+    padding-top: 100px !important;
+}
+.k-grid,
+body,
+html {
+  height: 100%;
 }

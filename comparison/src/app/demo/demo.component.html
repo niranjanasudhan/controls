@@ -1,0 +1,72 @@
+<mat-sidenav-container class="dashboard" >
+    
+
+      
+
+    <mat-sidenav-content [style.margin-left.px]="(screenWidth < 800) ? 0 : 90">
+
+
+      <header class="mobile-headerbar">
+        <div class="row">
+          
+           
+           
+         
+          
+          
+        </div>
+
+
+        <div class="purple-box card p-3">
+            <p class="purple-box-title">Accounts</p>
+            
+            <div class="d-flex justify-content-around align-items-center">
+                <a [routerLink]="['/departments']" class="btn btn-none w-100 mx-2" style="border-color: #000080; color: #000080; width:50% !important"> Departments</a>
+            </div>
+        </div>
+
+       
+      </header>
+   
+    </mat-sidenav-content>
+    <mat-sidenav-content [style.margin-left.px]="(screenWidth > 800) ? 0 : 90">
+        <div class="container my-4 deskview">
+            <div class="row my-4">
+    
+                <div class="col-xl-12 col-lg-6 d-flex my-2">
+                    <div class="card flex-grow-1 d-flex align-items-start" style="flex-flow: column; justify-content: space-evenly;">
+                        <div class="card-body w-100">
+                            <div class="d-flex justify-content-between">
+                                <h2 class="card-title">Accounts</h2>
+                                <!-- <div class="d-flex justify-content-between align-items-center">
+                                  <i class="bi bi-funnel mx-2" style="font-size: 20px;"></i>
+                                  <i class="bi bi-box-arrow-up-right mx-2" style="font-size: 20px;"></i>
+                                  <i class="bi bi-three-dots mx-2" style="font-size: 20px;"></i>
+                                </div> -->
+                               
+                            </div>
+                           
+                        </div>
+                            <div id="chart-container2" style="width: 100%; height: 300px;">
+                                <!-- <button class="btn btn-primary w-100 mx-2" style="border-color: #000080; color: #000080; width: 40% !important;">Renew</button> -->
+                               <a [routerLink]="['/departments']" class="btn btn-none w-100 mx-2" style="border-color: #000080; color: #000080; width:50% !important"> Departments</a>
+                            </div>
+                        </div>
+                    </div>
+    
+    
+    
+            </div>
+    
+            
+    
+            <div class="row my-4">
+    
+              
+    
+               
+            </div>
+          </div>
+        </mat-sidenav-content>
+       
+</mat-sidenav-container>

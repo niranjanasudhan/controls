@@ -148,6 +148,8 @@ import { GridModule } from '@progress/kendo-angular-grid';
 import { AggridintegratedchartComponent } from './aggrid/aggridintegratedchart/aggridintegratedchart.component';
 import { MobileComponent } from './mobile/mobile.component';
 import { GridstylingComponent } from './gridstyling/gridstyling.component';
+import { DemoComponent } from './demo/demo.component';
+import { DepartmentsComponent } from './demo/departments/departments.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -225,6 +227,8 @@ import { GridstylingComponent } from './gridstyling/gridstyling.component';
       AggridintegratedchartComponent,
       MobileComponent,
       GridstylingComponent,
+      DemoComponent,
+      DepartmentsComponent,
 
     
    
