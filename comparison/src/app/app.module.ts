@@ -151,6 +151,8 @@ import { GridstylingComponent } from './gridstyling/gridstyling.component';
 import { DemoComponent } from './demo/demo.component';
 import { DepartmentsComponent } from './demo/departments/departments.component';
 import { NavigationModule } from '@progress/kendo-angular-navigation';
+import { RequisitionComponent } from './requisition/requisition.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -230,6 +232,7 @@ import { NavigationModule } from '@progress/kendo-angular-navigation';
       GridstylingComponent,
       DemoComponent,
       DepartmentsComponent,
+      RequisitionComponent,
 
     
    

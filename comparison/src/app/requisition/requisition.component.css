@@ -1,0 +1,111 @@
+.dashboard {
+    background-color: #ffffff;
+    min-height: 100vh !important;
+}
+  .mat-grid-tile
+  {
+    display: block !important;
+  }
+  .mat-sidenav-container .mat-sidenav {
+    background-color: #ffffff!important;
+    padding: 10px !important;
+    min-width: 90px !important;
+    justify-content: center;
+    margin: 0px auto !important;
+  }
+
+  .mat-mdc-list-base {
+    text-align: center;
+  }
+
+  .mat-mdc-list-base.mat-mdc-list-base .mdc-list-item--activated .mdc-list-item__primary-text {
+    padding: 10px auto !important;
+}
+
+  .nav-icons{
+    margin: 0px auto !important;
+    width: 30px;
+    height: 30px;
+  }
+
+.header-bar{
+    background-color: #ffffff;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.search-box {
+  background-color: #EEF2F6;
+  padding: 10px 10px 25px;
+  border-radius: 10px;
+}
+
+.kendo-grid-table-outer{
+  padding: 40px 20px 20px;
+  border: 2px solid #D6D6D6;
+  border-radius: 10px;
+  margin: 8px;
+  position: relative;
+}
+
+.filter-tab-outer-table{
+  position: absolute;
+  top: -18px;
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Move back by half of own width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0px 1px 1px #d1d1d1be;
+}
+
+.filter-tab-btn{
+  background-color: white; 
+  color: #444444;
+  border: 1px solid #D6D6D6;
+  border-radius: 0px;
+  font-family: Roboto;
+  padding: 8px;
+}
+
+.filter-tab-btn-number{
+  background-color: #EEF2F6;
+  color: #444444;
+  border-radius: 5px;
+  padding: 1px;
+  margin: 0px 5px;
+}
+
+.filter-tab-btn-active{
+  background-color: #000080; 
+  color: white;
+  border: 1px solid #000080;
+  border-radius: 0px;
+  font-family: Roboto;
+  padding: 8px;
+}
+
+.filter-tab-btn-start{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.filter-tab-btn-last{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.filter-tab-outer-dropdown{
+  background-color: white; 
+  color: #444444;
+  border: 1px solid #D6D6D6;
+  border-radius: 0px;
+  font-family: Roboto;
+  padding: 8.8px;
+  outline: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 150px;
+}
