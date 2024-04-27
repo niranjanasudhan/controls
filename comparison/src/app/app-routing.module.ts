@@ -67,13 +67,14 @@ import { AggridimportexportComponent } from './aggrid/aggridimportexport/aggridi
 import { AggridcolumnComponent } from './aggrid/aggridcolumn/aggridcolumn.component';
 import { AggridrowComponent } from './aggrid/aggridrow/aggridrow.component';
 import { AggridcellComponent } from './aggrid/aggridcell/aggridcell.component';
-
 import { BaseComponent } from './base/base.component';
 import { MobileComponent } from './mobile/mobile.component';
 import { AggridintegratedchartComponent } from './aggrid/aggridintegratedchart/aggridintegratedchart.component';
 import { GridstylingComponent } from './gridstyling/gridstyling.component';
 import { DemoComponent } from './demo/demo.component';
 import { DepartmentsComponent } from './demo/departments/departments.component';
+import { RequisitionComponent } from './requisition/requisition.component';
+
 
 
 
@@ -300,6 +301,8 @@ const routes: Routes = [
   // ]
   },
   {path:"departments",component:DepartmentsComponent}, 
+  {path:"requisition",component:RequisitionComponent},
+  {path:"requisition",component:RequisitionComponent},
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
