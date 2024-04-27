@@ -82,6 +82,14 @@
     .disktopsidenav {
         display: none;
     }
+    .pageHead
+    {
+      display:none;
+    }
+    .depwebsection
+    {
+      display: none;
+    }
 }
 
 
@@ -224,3 +232,101 @@
   .xgrid.k-grid-container {
       width: 100% !important;
   }
+  .table2head
+  {
+    text-align: end !important;
+    margin-top: 10px;
+    border: 1px solid lightgray;
+    padding: 4px;
+  }
+  .seahead
+  {
+    display: flex;
+  }
+  .bgsvgdown
+  {
+    margin-top: 4px;
+    margin-left: 3px;
+  }
+  .mobile-headerbar
+  {
+    background-color: #ffffff;
+  }
+  .xgridmobile
+  {
+    margin-left: 15px !important;
+    margin-top: 25px !important;
+  }
+  .labeldiv
+  {
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    font-size: 16px;
+}
+.k-expander-title {
+  color: #444444;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+
+/* Expansion css */
+
+.collapsible {
+  overflow: hidden;
+}
+
+section {
+  
+
+  font-size: 14px;
+  /* box-sizing: border-box; */
+}
+
+section.collapsible {
+  /* color: white;
+  background-color: coral; */
+}
+
+p {
+    margin: 0;
+    padding: 15px;
+}
+
+aside {
+    /* position: absolute;
+    top: 8px;
+    right: 8px; */
+}
+
+button {
+  font-size: 16px;
+  border: none;
+  background: #2196F3;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  /* height: 300px; Should be removed. Only for demonstration */
+}
+.main
+{
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}
+
+/* Clear floats after the columns */
+/* .row:after {
+  content: "";
+  display: table;
+  clear: both;
+} */

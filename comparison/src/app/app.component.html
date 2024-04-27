@@ -338,7 +338,7 @@
       <a [routerLink]="['/requisition']" routerLinkActive="active">Requisition</a>
     </mat-toolbar>
 
-    <mat-toolbar class="mobile-toolbar">
+    <mat-toolbar class="mobile-toolbar" [ngClass]="bgClass">
       <div>
         <button class="btn btn-none text-white fs-2" (click)="toggleSidebar()"><i class="bi bi-list"></i></button>
         <button class="btn btn-none text-white fs-2"><i class="bi bi-compass"></i></button>
@@ -346,6 +346,19 @@
       <div>
         <button class="btn btn-none text-white fs-2"><i class="bi bi-person-circle"></i></button>
         <button class="btn btn-none text-white fs-2"><i class="bi bi-three-dots-vertical"></i></button>
+      </div>
+    </mat-toolbar>
+
+    <mat-toolbar class="mobile-toolbar custombar" [ngClass]="bgClass1">
+      <div>
+        <!-- <button class="btn btn-none text-white fs-2" (click)="toggleSidebar()"><i class="bi bi-list"></i></button> -->
+        <kendo-svg-icon class="bgsvg" [icon]="icons.chevronlefticon"  style="font-size: 54px;"></kendo-svg-icon>
+        <label style="font-size: 18px;">Departments </label>
+      </div>
+      <div>
+        <kendo-svg-icon class="bgsvg" [icon]="icons.trashicon"  style="font-size: 54px;"></kendo-svg-icon>
+        <kendo-svg-icon class="bgsvg" [icon]="icons.pencilicon"  style="font-size: 54px;"></kendo-svg-icon>
+        <kendo-svg-icon class="bgsvg" [icon]="icons.plusoutline"  style="font-size: 54px;"></kendo-svg-icon>
       </div>
     </mat-toolbar>
 

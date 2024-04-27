@@ -36,3 +36,29 @@ mat-toolbar
         background-color: #000080;
     }
 }
+.setnone
+{
+    /* display: none; */
+    /* visibility: hidden; */
+    position: absolute;
+    z-index: 12;
+    top: 0;
+    left: 0;
+}
+.default
+{
+    /* visibility: visible; */
+    /* display: block; */
+    position: relative;
+    
+}
+.bgsvg {
+    width: 28px;
+    height: 28px;
+    color: #ffffff;
+    padding: 4px;
+}
+.custombar
+{
+    color: #ffffff;
+}
