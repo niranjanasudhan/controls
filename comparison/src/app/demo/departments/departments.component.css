@@ -173,10 +173,10 @@
   img{
     padding: 5px;
   }
-  .k-grid .k-grid-container {
+  /* .k-grid .k-grid-container {
   
     width: 90% !important;
-  }
+  } */
   .section-head-main
   {
     width: 100%;
@@ -213,4 +213,14 @@
   .glarge k-grid-container
   {
     width: 100% !important;
+  }
+  .xgrid
+  {
+    height: 300px;
+    margin-left: 25px !important;
+    margin-top: 25px !important;
+ 
+  }
+  .xgrid.k-grid-container {
+      width: 100% !important;
   }
