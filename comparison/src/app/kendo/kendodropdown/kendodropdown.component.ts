@@ -1,21 +1,24 @@
 import { Component } from '@angular/core';
 import { Contact, contacts } from "./contacts";
+import { SVGIcon, chevronDownIcon } from "@progress/kendo-svg-icons";
+
 @Component({
   selector: 'app-kendodropdown',
   templateUrl: './kendodropdown.component.html',
   styleUrls: ['./kendodropdown.component.css']
 })
 export class KendodropdownComponent {
+  public folderSVG: SVGIcon = chevronDownIcon;
   public areaList: Array<string> = [
     "Boston",
     "Chicago",
     "Houston",
     "Los Angeles",
-    "Miami",
-    "New York",
-    "Philadelphia",
-    "San Francisco",
-    "Seattle",
+    // "Miami",
+    // "New York",
+    // "Philadelphia",
+    // "San Francisco",
+    // "Seattle",
   ];
 
   public allowCustom = true;
@@ -54,16 +57,6 @@ export class KendodropdownComponent {
     },
   ];
 
-  //  public listItems: Array<string> = [
-  //   "Baseball",
-  //   "Basketball",
-  //   "Cricket",
-  //   "Field Hockey",
-  //   "Football",
-  //   "Table Tennis",
-  //   "Tennis",
-  //   "Volleyball",
-  // ];
   public value: any = ["Baseball"];
 
 
@@ -111,10 +104,22 @@ export class KendodropdownComponent {
   public tagMapper(tags: any[]): any[] {
     return tags.length < 3 ? tags : [tags];
   }
+// filter code
+  public datas: Array<string> = [];
 
+  constructor( ) {
+    this.datas = this.areaList.slice();
+  }
 
+  public onFilterChange(searchTerm: string): void {
+    const contains = (value: string) => (item: string) => item.toLowerCase().includes(value.toLowerCase());
+
+    this.datas = this.areaList.filter(contains(searchTerm));
+  }
 
 }
+
+
 type AreaData = {
   text: string;
   id: number;

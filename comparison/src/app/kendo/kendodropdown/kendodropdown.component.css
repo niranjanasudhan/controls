@@ -1,4 +1,4 @@
-.food-demo.card-container {
+/* .food-demo.card-container {
     margin-top: 20px;
     display: flex;
     justify-content: center;
@@ -135,4 +135,56 @@ h4
     font-weight:600;
     color: black;
     text-align: center;
+} */
+
+/* Drop down styles */
+.dropdown{
+    border: 1px solid #CDD5DF;
+    padding: 3px;
+}
+
+.dropdown:hover{
+    background-color: inherit;
+    color: inherit;
+}
+
+.dropdown:focus{
+    box-shadow: none;
+}
+
+/* Add more styles as needed */
+::ng-deep .k-popup {
+    margin-top: 3px;
+}
+
+::ng-deep .k-list-container {
+    border: 1px solid #CDD5DF;
+    border-radius: 6px;
+}
+
+::ng-deep .k-list {
+    border-radius: 6px;
+}
+
+::ng-deep .k-list-item {
+    border-bottom: 1px solid #CDD5DF;
+}
+
+::ng-deep .k-list-item:hover {
+    background:  #f0f0f0;
+}
+
+::ng-deep .k-list-item.k-focus{
+    box-shadow: none;
+}
+
+::ng-deep .k-list-item.k-focus.k-selected{
+    background: #E1EEF8;
+    color: #525252;
+}
+
+::ng-deep .k-checkbox:checked{
+    border-color: #000080;
+    color: white;
+    background-color: #000080;
 }

@@ -1,12 +1,39 @@
 <h2 class="mainhead">Dropdown</h2>
  <!--Load the font icons package:-->
- <link rel="stylesheet" href="http://unpkg.com/@progress/kendo-theme-material/dist/all.css" />
- <link
- rel="stylesheet"
- href="https://unpkg.com/@progress/kendo-font-icons/dist/index.css"
-/>
+ <!-- <link rel="stylesheet" href="http://unpkg.com/@progress/kendo-theme-material/dist/all.css" /> -->
+ <!-- <link rel="stylesheet" href="https://unpkg.com/@progress/kendo-font-icons/dist/index.css"/> -->
 
-<div class="food-demo card-container">
+
+ <div class="container">
+  <div class="row">
+    <div class="col-md-3 my-2">
+      <h4>Single-select Dropdown</h4>
+      <kendo-dropdownlist 
+          [data]="areaList" 
+          value="Basketball"
+          fillMode="outline"
+          class="dropdown"
+          [svgIcon]="folderSVG"
+      >
+      </kendo-dropdownlist>
+    </div> 
+
+    <div class="col-md-3 my-2">
+      <h4>Multi-select Dropdown</h4>
+      <kendo-multiselect
+      [data]="datas" 
+      [checkboxes]="true"
+      [autoClose]="false"
+      fillMode="outline"
+      class="dropdown"
+      filterable="true"
+      (filterChange)="onFilterChange($event)"
+  >
+  </kendo-multiselect>
+    </div>
+  </div>
+ </div>
+<!-- <div class="food-demo card-container"> filterable="true"
  <div class="k-card custom-card">
    <div class="card-row">
      <div class="card-column">
@@ -22,10 +49,10 @@
    </div>
    
  </div>
-</div>
+</div> -->
 
 <!-- autocomplete -->
-<h4>autocomplete</h4>
+<!-- <h4>autocomplete</h4>
 
 <div class="food-demo card-container">
   <div class="k-card custom-card">
@@ -48,10 +75,10 @@
     </div>
     
   </div>
-</div>
+</div> -->
 
 <!-- combobox -->
-<h4>Combobox</h4>
+<!-- <h4>Combobox</h4>
 <div class="food-demo card-container">
   <div class="k-card custom-card">
     <div class="card-row">
@@ -87,10 +114,10 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- dropdown tree -->
-<h4>Dropdown Tree</h4>
+<!-- <h4>Dropdown Tree</h4>
 <div class="food-demo card-container">
   <div class="k-card custom-card">
     <div class="card-row">
@@ -115,7 +142,7 @@
     </div>
   
   </div>
-</div>
+</div> -->
 
 <!-- multi column combobox
 <h4>Multi Column Combo Box</h4>
@@ -215,7 +242,7 @@
 
 
 <!-- Multi Select -->
-<h4>Multi Select </h4>
+<!-- <h4>Multi Select </h4>
 <div class="example-config">Current value: {{ value1 | json }}</div>
     <div class="food-demo example-wrapper">
       <kendo-label text="T-shirt size:">
@@ -231,11 +258,11 @@
           </ng-template>
         </kendo-multiselect>
       </kendo-label>
-    </div>
+    </div> -->
 
 
     <!-- Multi select tree -->
-    <h4>Multi Select Tree</h4>
+    <!-- <h4>Multi Select Tree</h4>
     <div class="food-demo card-container">
       <div class="k-card custom-card !k-flex-row">
         <div class="custom-card-header k-skeleton">
@@ -275,4 +302,4 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SVGIcon, folderIcon } from "@progress/kendo-svg-icons";
+import { SVGIcon, folderIcon, plusIcon } from "@progress/kendo-svg-icons";
 @Component({
   selector: 'app-button',
   templateUrl: './button.component.html',
@@ -7,7 +7,7 @@ import { SVGIcon, folderIcon } from "@progress/kendo-svg-icons";
 })
 export class ButtonComponent {
 //button
-public folderSVG: SVGIcon = folderIcon;
+public folderSVG: SVGIcon = plusIcon;
 public onButtonClick(): void {
   console.log("click");
 }

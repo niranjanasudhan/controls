@@ -105,7 +105,7 @@
   font-family: Roboto;
   padding: 8.8px;
   outline: none;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  width: 150px;
+  /* border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px; */
+  width: 120px;
 }

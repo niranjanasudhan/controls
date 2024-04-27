@@ -104,13 +104,13 @@
         </div>
         
 
-        <!-- kendo Grid Table -->
+        <!-- kendo Grid Table + (last && buttons.length > 5 ? ' filter-tab-btn-last' : '') --> 
 
         <div class="kendo-grid-table-outer my-5">
 
           <div class="filter-tab-outer-table">
             <ng-container *ngFor="let button of buttons; let i = index; let first = first ;let last = last;">
-              <button kendoButton [class]="isActive(button.label) + (first ? ' filter-tab-btn-start' : '') + (last && buttons.length > 5 ? ' filter-tab-btn-last' : '')" (click)="setActive(button.label)">
+              <button kendoButton [class]="isActive(button.label) + (first ? ' filter-tab-btn-start' : '') " (click)="setActive(button.label)">
                 {{ button.label }} <span class="filter-tab-btn-number">{{ button.count }}</span>
               </button>
             </ng-container>
@@ -123,8 +123,9 @@
                       <span> {{ item.label }} <span class="filter-tab-btn-number">{{ item.count }}</span></span>
               </option>
             </select>
-            
-            
+            <button kendoButton [class]="'filter-tab-btn filter-tab-btn-last'">
+              <i class="bi bi-three-dots-vertical"></i>
+            </button>
           </div>
           
           

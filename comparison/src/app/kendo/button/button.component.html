@@ -1,8 +1,417 @@
 <link rel="stylesheet" href="http://unpkg.com/@progress/kendo-theme-material/dist/all.css" />
-<h2 class="mainhead">Button</h2>
+<link rel="stylesheet" href="https://unpkg.com/@progress/kendo-font-icons/dist/index.css"/>
+<div class="row example-wrapper mx-0 my-5">
+    <h4>Primary Buttons</h4>
+    <div class="col-12 example-col d-flex">
+      <div class="flex-grow-1">
+        <p>Default</p>
+        <button
+        kendoButton
+        (click)="onButtonClick()"
+        title="Button"
+        class="btn-primary"
+        >Buttons</button>
+      </div>
+      <div class="flex-grow-1">
+        <p>Hover</p>
+        <button
+        kendoButton
+        (click)="onButtonClick()"
+        title="Button"
+        class="btn-primary btn-hover"
+        >Buttons</button>
+      </div>
+      <div class="flex-grow-1">
+        <p>Focus</p>
+        <button
+        kendoButton
+        (click)="onButtonClick()"
+        title="Button"
+        class="btn-primary btn-focus"
+        >Buttons</button>
+      </div>
+      <div class="flex-grow-1">
+        <p>Active</p>
+        <button
+        kendoButton
+        (click)="onButtonClick()"
+        title="Button"
+        class="btn-primary btn-active"
+        >Buttons</button>
+      </div>
+      <div class="flex-grow-1">
+        <p>Disabled</p>
+        <button
+        kendoButton
+        (click)="onButtonClick()"
+        title="Button"
+        class="btn-primary"
+        disabled="true"
+        >Buttons</button>
+      </div>
+    </div>
+    <hr class="mt-4">
+    <h4>Primary Buttons with Icon (Right)</h4>
+    <div class="col-12 example-col d-flex">
+      <div class="flex-grow-1">
+        <p>Default</p>
+        <button
+        kendoButton
+        (click)="onButtonClick()"
+        title="Button"
+        class="btn-primary"
+        [svgIcon]="folderSVG"
+        >Buttons</button>
+      </div>
+      <div class="flex-grow-1">
+        <p>Hover</p>
+        <button
+        kendoButton
+        (click)="onButtonClick()"
+        title="Button"
+        class="btn-primary btn-hover"
+        [svgIcon]="folderSVG"
+        >Buttons</button>
+      </div>
+      <div class="flex-grow-1">
+        <p>Focus</p>
+        <button
+        kendoButton
+        (click)="onButtonClick()"
+        title="Button"
+        class="btn-primary btn-focus"
+        [svgIcon]="folderSVG"
+        >Buttons</button>
+      </div>
+      <div class="flex-grow-1">
+        <p>Active</p>
+        <button
+        kendoButton
+        (click)="onButtonClick()"
+        title="Button"
+        class="btn-primary btn-active"
+        [svgIcon]="folderSVG"
+        >Buttons</button>
+      </div>
+      <div class="flex-grow-1">
+        <p>Disabled</p>
+        <button
+        kendoButton
+        (click)="onButtonClick()"
+        title="Button"
+        class="btn-primary"
+        [svgIcon]="folderSVG"
+        disabled="true"
+        >Buttons</button>
+      </div>
+    </div>
+    <hr class="mt-4">
+    <h4>Primary Buttons with Icon (left)</h4>
+    <div class="col-12 example-col d-flex">
+      <div class="flex-grow-1">
+        <p>Default</p>
+        <button 
+          kendoButton 
+          (click)="onButtonClick()" 
+          title="Button" 
+          class="btn-primary">
+          Buttons
+          <span class="k-icon k-font-icon k-i-plus ms-1"></span>
+        </button>        
+      </div>
+      <div class="flex-grow-1">
+        <p>Hover</p>
+        <button
+          kendoButton
+          (click)="onButtonClick()"
+          title="Button"
+          class="btn-primary btn-hover"
+          >Buttons
+          <span class="k-icon k-font-icon k-i-plus"></span>
+      </button>
+      </div>
+      <div class="flex-grow-1">
+        <p>Focus</p>
+        <button
+        kendoButton
+        (click)="onButtonClick()"
+        title="Button"
+        class="btn-primary btn-focus"
+        >Buttons
+        <span class="k-icon k-font-icon k-i-plus"></span>
+      </button>
+      </div>
+      <div class="flex-grow-1">
+        <p>Active</p>
+        <button
+        kendoButton
+        (click)="onButtonClick()"
+        title="Button"
+        class="btn-primary btn-active"
+        >Buttons
+        <span class="k-icon k-font-icon k-i-plus"></span>
+      </button>
+      </div>
+      <div class="flex-grow-1">
+        <p>Disabled</p>
+        <button
+        kendoButton
+        (click)="onButtonClick()"
+        title="Button"
+        class="btn-primary"
+        disabled="true"
+        >Buttons
+        <span class="k-icon k-font-icon k-i-plus"></span>
+      </button>
+      </div>
+    </div>
+    <hr class="mt-4">
+    <h4>Secondary Buttons (Outline)</h4>
+    <div class="col-12 example-col d-flex">
+      <div class="flex-grow-1">
+        <p>Default</p>
+        <button 
+          kendoButton 
+          (click)="onButtonClick()" 
+          title="Button" 
+          class="btn-primary btn-outline"
+          fillMode="outline"
+          >
+          Buttons
+        </button>        
+      </div>
+      <div class="flex-grow-1">
+        <p>Hover</p>
+        <button
+          kendoButton
+          (click)="onButtonClick()"
+          title="Button"
+          class="btn-primary btn-outline btn-outline-hover"
+          fillMode="outline"
+          >Buttons
+      </button>
+      </div>
+      <div class="flex-grow-1">
+        <p>Focus</p>
+        <button
+        kendoButton
+        (click)="onButtonClick()"
+        title="Button"
+        class="btn-primary btn-outline btn-outline-focus"
+        fillMode="outline"
+        >Buttons
+      </button>
+      </div>
+      <div class="flex-grow-1">
+        <p>Active</p>
+        <button
+        kendoButton
+        (click)="onButtonClick()"
+        title="Button"
+        class="btn-primary btn-outline btn-outline-active"
+        fillMode="outline"
+        >Buttons
+      </button>
+      </div>
+      <div class="flex-grow-1">
+        <p>Disabled</p>
+        <button
+        kendoButton
+        (click)="onButtonClick()"
+        title="Button"
+        class="btn-primary btn-outline"
+        fillMode="outline"
+        disabled="true"
+        >Buttons
+      </button>
+      </div>
+    </div>
+    <hr class="mt-4">
+    <h4>Text Button</h4>
+    <div class="col-12 example-col d-flex">
+      <div class="flex-grow-1">
+        <p>Default</p>
+        <button 
+          kendoButton 
+          (click)="onButtonClick()" 
+          title="Button" 
+          class="btn-text"
+          fillMode="clear"
+          size="small"
+          [svgIcon]="folderSVG"
+          >
+          Save
+        </button>        
+      </div>
+      <div class="flex-grow-1">
+        <p>Hover</p>
+        <button
+          kendoButton
+          (click)="onButtonClick()"
+          title="Button"
+          class="btn-text btn-text-hover"
+          fillMode="clear"
+          size="small"
+          [svgIcon]="folderSVG"
+          >Save
+      </button>
+      </div>
+      <div class="flex-grow-1">
+        <p>Focus</p>
+        <button
+        kendoButton
+        (click)="onButtonClick()"
+        title="Button"
+        class="btn-text btn-text-focus"
+        fillMode="clear"
+        size="small"
+        [svgIcon]="folderSVG"
+        >Save
+      </button>
+      </div>
+      <div class="flex-grow-1">
+        <p>Active</p>
+        <button
+        kendoButton
+        (click)="onButtonClick()"
+        title="Button"
+        class="btn-text btn-text-active"
+        fillMode="clear"
+        size="small"
+        [svgIcon]="folderSVG"
+        >Save
+      </button>
+      </div>
+      <div class="flex-grow-1">
+        <p>Disabled</p>
+        <button
+        kendoButton
+        (click)="onButtonClick()"
+        title="Button"
+        class="btn-text"
+        fillMode="clear"
+        size="small"
+        disabled="true"
+        [svgIcon]="folderSVG"
+        >Save
+      </button>
+      </div>
+    </div>
+    <hr class="mt-4">
+    <h4>Icon Buttons</h4>
+    <div class="col-12 example-col d-flex">
+      <div class="flex-grow-1">
+        <p>Default</p>
+        <button
+        kendoButton
+        (click)="onButtonClick()"
+        title="Button"
+        class="btn-primary"
+        [svgIcon]="folderSVG"
+        ></button>
+      </div>
+      <div class="flex-grow-1">
+        <p>Hover</p>
+        <button
+        kendoButton
+        (click)="onButtonClick()"
+        title="Button"
+        class="btn-primary btn-hover"
+        [svgIcon]="folderSVG"
+        ></button>
+      </div>
+      <div class="flex-grow-1">
+        <p>Focus</p>
+        <button
+        kendoButton
+        (click)="onButtonClick()"
+        title="Button"
+        class="btn-primary btn-focus"
+        [svgIcon]="folderSVG"
+        ></button>
+      </div>
+      <div class="flex-grow-1">
+        <p>Active</p>
+        <button
+        kendoButton
+        (click)="onButtonClick()"
+        title="Button"
+        class="btn-primary btn-active"
+        [svgIcon]="folderSVG"
+        ></button>
+      </div>
+      <div class="flex-grow-1">
+        <p>Disabled</p>
+        <button
+        kendoButton
+        (click)="onButtonClick()"
+        title="Button"
+        class="btn-primary"
+        disabled="true"
+        [svgIcon]="folderSVG"
+        ></button>
+      </div>
+    </div>
 
-<div class="row example-wrapper">
-    <div class="col-xs-12 col-sm-6 example-col">
+    <div class="col-12 example-col d-flex mt-4">
+      <div class="flex-grow-1">
+        <p>Default</p>
+        <button
+        kendoButton
+        (click)="onButtonClick()"
+        title="Button"
+        class="btn-primary btn-outline"
+        fillMode="outline"
+        [svgIcon]="folderSVG"
+        ></button>
+      </div>
+      <div class="flex-grow-1">
+        <p>Hover</p>
+        <button
+        kendoButton
+        (click)="onButtonClick()"
+        title="Button"
+        class="btn-primary btn-outline btn-outline-hover"
+        [svgIcon]="folderSVG"
+        fillMode="outline"
+        ></button>
+      </div>
+      <div class="flex-grow-1">
+        <p>Focus</p>
+        <button
+        kendoButton
+        (click)="onButtonClick()"
+        title="Button"
+        class="btn-primary btn-outline btn-outline-focus"
+        [svgIcon]="folderSVG"
+        fillMode="outline"
+        ></button>
+      </div>
+      <div class="flex-grow-1">
+        <p>Active</p>
+        <button
+        kendoButton
+        (click)="onButtonClick()"
+        title="Button"
+        class="btn-primary btn-outline btn-outline-active"
+        [svgIcon]="folderSVG"
+        fillMode="outline"
+        ></button>
+      </div>
+      <div class="flex-grow-1">
+        <p>Disabled</p>
+        <button
+        kendoButton
+        (click)="onButtonClick()"
+        title="Button"
+        class="btn-primary btn-outline"
+        disabled="true"
+        [svgIcon]="folderSVG"
+        fillMode="outline"
+        ></button>
+      </div>
+    </div>
+    <!-- <div class="col-xs-12 col-sm-6 example-col">
       <p>Default Buttons</p>
       <p>
         <button kendoButton (click)="onButtonClick()">Browse</button>
@@ -535,5 +944,5 @@
           themeColor="primary"
         ></button>
       </p>
-    </div>
+    </div> -->
   </div>
