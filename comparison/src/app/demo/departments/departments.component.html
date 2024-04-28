@@ -112,7 +112,7 @@
                 <div class="column" >
                   <label style="font-size: 14px;white-space: nowrap;
                   overflow: hidden;
-                  text-overflow: ellipsis;">Name: Marketing, Business, Development and Sales</label>
+                  text-overflow: ellipsis;">Name: Marketing, Bus...</label>
                 </div>
               </div>
               <div class="row">
@@ -132,24 +132,42 @@
              
             </section>
             <section class="collapsible" [@collapse]="collapsed">
-              <div class="content">
-              
-                <div class="flex-grow-1 d-flex  labeldiv">
-                  <label style="font-size: 14px;width:100%">Code: MBDKAM</label>
-                  <label style="font-size: 14px;">Name: Marketing, Business, Development and Sales</label>
-               </div>
-               <div class="flex-grow-1 d-flex  labeldiv">
-                <label style="font-size: 14px;width:100%">Modified User: Admin</label>
-                <label style="font-size: 14px;">Modified Date: 09 Feb 2024</label>
-             </div>
+
+              <div class="row">
+                <div class="column" >
+                  <div class="flex-grow-1 d-flex  labeldiv">
+                    <label style="font-size: 14px;">Code: MBDKAM</label>
+                  
+                 </div>
+                </div>
+                <div class="column" >
+                  <label >Name: Marketing, Business, Development and Sales</label>
+                </div>
               </div>
+              <div class="row">
+                <div class="column" >
+                  <label >Modified User: Admin</label>
+                </div>
+                <div class="column" >
+                  <label >Modified Date: 09 Feb 2024</label>
+                </div>
+              </div>
+
+
+
+
+
+
+            
             </section>
            
           </div>
           
           <aside>
-            <kendo-svg-icon *ngIf="collapsed" (click)="expand()" class="bgsvgdown" [icon]="chevrodownIcon" ></kendo-svg-icon>
-            <kendo-svg-icon *ngIf="!collapsed" (click)="collapse()" class="bgsvgdown" [icon]="chevrodownIcon" ></kendo-svg-icon>
+            <img class="clsopen" *ngIf="collapsed" (click)="expand()" src="../../../assets/Icons/open.svg" alt="mobile-icon-ship">
+            <img class="clsclose" *ngIf="!collapsed" (click)="collapse()"  src="../../../assets/Icons/close.svg" alt="mobile-icon-ship">
+            <!-- <kendo-svg-icon *ngIf="collapsed" (click)="expand()" class="bgsvgdown" [icon]="chevrodownIcon" ></kendo-svg-icon>
+            <kendo-svg-icon *ngIf="!collapsed" (click)="collapse()" class="bgsvgdown" [icon]="chevrodownIcon" ></kendo-svg-icon> -->
               <!-- <button *ngIf="collapsed" (click)="expand()">Expand</button>
               <button *ngIf="!collapsed" (click)="collapse()">Collapse</button> -->
           </aside>

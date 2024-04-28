@@ -298,6 +298,16 @@ aside {
     /* position: absolute;
     top: 8px;
     right: 8px; */
+    margin: auto;
+    width: 0%;
+}
+aside img
+{
+  margin-top: -10px;
+}
+.clsclose
+{
+  margin-top: -10px;
 }
 
 button {
@@ -315,7 +325,7 @@ button {
 .column {
   float: left;
   width: 50%;
-  padding: 10px;
+  padding: 5px 10px 0px 6px;
   /* height: 300px; Should be removed. Only for demonstration */
 }
 .main
