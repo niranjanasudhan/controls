@@ -51,7 +51,7 @@
   }
   
 
-
+  /* @media screen and (min-width> 800px){ */
 @media screen and (width > 800px) {
     .header-bar{
         background-color: #ffffff;
@@ -67,7 +67,7 @@
         display: none;
     }
 }
-
+/* @media screen and (min-width< 800px){ */
 @media screen and (width < 800px) {
     .header-bar{
         display: none;
@@ -332,6 +332,11 @@ button {
 {
   border-top: 1px solid lightgray;
   border-bottom: 1px solid lightgray;
+  padding: 5px;
+}
+.mainhead
+{
+  margin-bottom: 5px;
 }
 
 /* Clear floats after the columns */
@@ -340,3 +345,9 @@ button {
   display: table;
   clear: both;
 } */
+.fnlicon
+{
+  padding: 4px;
+  margin-top: 2px;
+  border: 1px solid lightgray;
+}

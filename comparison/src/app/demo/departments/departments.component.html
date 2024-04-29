@@ -64,17 +64,19 @@
       <header class="mobile-headerbar">
         <div class="row">
         
-          <div class="d-flex justify-content-center align-items-center">
+          <div class="d-flex justify-content-center align-items-center mainhead">
             <div class="flex-grow-1">
                <label class="seahead">Seafarer    <kendo-svg-icon class="bgsvgdown" [icon]="chevrodownIcon" ></kendo-svg-icon></label>
             
             </div>
           
             <div class="flex-grow-1" style="text-align: end;">
-              <kendo-label text="Active">
-                <kendo-switch [(ngModel)]="checked" size="small"></kendo-switch>
+              <kendo-switch [style.transform]="'scale(0.7, 0.6)'" [(ngModel)]="checked" size="small"></kendo-switch>
+              <kendo-label text="Active" style="    font-size: 13px;
+              margin-left: -8px;">
+              
               </kendo-label>
-              <i class="bi bi-funnel mx-2" style="font-size: 20px;float: right;"></i>
+              <i class="bi bi-funnel mx-2 fnlicon" style="font-size: 20px;float: right;"></i>
             </div>
            
           </div>
@@ -164,8 +166,8 @@
           </div>
           
           <aside>
-            <img class="clsopen" *ngIf="collapsed" (click)="expand()" src="../../../assets/Icons/open.svg" alt="mobile-icon-ship">
-            <img class="clsclose" *ngIf="!collapsed" (click)="collapse()"  src="../../../assets/Icons/close.svg" alt="mobile-icon-ship">
+            <img class="clsopen" *ngIf="collapsed" (click)="expand()" src="../../../assets/Icons/open.svg" alt="mobile-icon-ship" style="padding: 0px !important;    margin-left: -16px;">
+            <img class="clsclose" *ngIf="!collapsed" (click)="collapse()"  src="../../../assets/Icons/close.svg" alt="mobile-icon-ship" style="padding: 0px !important;    margin-left: -16px;">
             <!-- <kendo-svg-icon *ngIf="collapsed" (click)="expand()" class="bgsvgdown" [icon]="chevrodownIcon" ></kendo-svg-icon>
             <kendo-svg-icon *ngIf="!collapsed" (click)="collapse()" class="bgsvgdown" [icon]="chevrodownIcon" ></kendo-svg-icon> -->
               <!-- <button *ngIf="collapsed" (click)="expand()">Expand</button>
@@ -284,7 +286,7 @@
                                    
 
                                       <kendo-label text="Active">
-                                        <kendo-switch [(ngModel)]="checked" size="small"></kendo-switch>
+                                        <kendo-switch [(ngModel)]="checked" size="small" [style.transform]="'scale(0.7, 0.6)'"></kendo-switch>
                                       </kendo-label>
                                 </div> 
                                </div>
