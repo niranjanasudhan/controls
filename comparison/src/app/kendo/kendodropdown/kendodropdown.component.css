@@ -137,6 +137,8 @@ h4
     text-align: center;
 } */
 
+/* ========================================================================================================================================= */
+
 /* Drop down styles */
 .dropdown{
     border: 1px solid #CDD5DF;
@@ -151,8 +153,11 @@ h4
 .dropdown:focus{
     box-shadow: none;
 }
+/* dropdown style end */
 
-/* Add more styles as needed */
+/* ========================================================================================================================================= */
+
+/* custom dropdown style*/
 ::ng-deep .k-popup {
     margin-top: 3px;
 }
@@ -188,3 +193,5 @@ h4
     color: white;
     background-color: #000080;
 }
+
+/* end style custom dropdown style*/

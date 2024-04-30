@@ -42,6 +42,20 @@ export class KendoComponent {
      
     },
     {
+      title: 'Controls',
+      route: '/kendo/controls',
+     
+    },
+    {
+      title: 'Tab',
+      route: '/kendo/tab',
+    },
+    {
+      title: 'Stepper',
+      route: '/kendo/wizard',
+     
+    },
+    {
       title: 'Date Inputs',
       route: '/kendo/dateinputs',
      
@@ -71,11 +85,6 @@ export class KendoComponent {
       route: '/kendo/dialogs',
       },
     {
-      title: 'Stepper',
-      route: '/kendo/wizard',
-     
-    },
-    {
       title: 'Radio Button',
       route: '/kendo/radiobutton',
      
@@ -103,11 +112,6 @@ export class KendoComponent {
     {
       title: 'Menu',
       route: '/kendo/menu',
-     
-    },
-    {
-      title: 'Tab',
-      route: '/kendo/tab',
      
     },
     {

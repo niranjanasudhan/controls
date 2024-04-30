@@ -1,5 +1,89 @@
+<link rel="stylesheet" href="https://unpkg.com/@progress/kendo-font-icons/dist/index.css"/>
 <h2 class="mainhead">Tab</h2>
-<div class="wrapper">
+<div class="wrapper my-2">
+  <kendo-tabstrip (tabSelect)="onTabSelect($event)" class="tab-primary">
+    <kendo-tabstrip-tab title="Option A" [selected]="true">
+      <ng-template kendoTabContent>
+      </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab title="Option B">
+      <ng-template kendoTabContent>
+      </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab title="Option C">
+      <ng-template kendoTabContent>
+      </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab title="Option D">
+      <ng-template kendoTabContent>
+      </ng-template>
+    </kendo-tabstrip-tab>
+  </kendo-tabstrip>
+</div>
+<hr class="my-2">
+<div class="wrapper my-2">
+  <kendo-tabstrip (tabSelect)="onTabSelect($event)" class="tab-primary-outline">
+    <kendo-tabstrip-tab title="Option A" [selected]="true">
+      <ng-template kendoTabContent>
+      </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab title="Option B">
+      <ng-template kendoTabContent>
+      </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab title="Option C">
+      <ng-template kendoTabContent>
+      </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab title="Option D">
+      <ng-template kendoTabContent>
+      </ng-template>
+    </kendo-tabstrip-tab>
+  </kendo-tabstrip>
+</div>
+<hr class="my-2">
+<div class="wrapper my-2">
+  <kendo-tabstrip (tabSelect)="onTabSelect($event)" class="tab-primary">
+    <kendo-tabstrip-tab title="All" [selected]="true">
+      <ng-template kendoTabContent>
+      </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab title="Draft">
+      <ng-template kendoTabContent>
+      </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab title="Pending for Approval">
+      <ng-template kendoTabContent>
+      </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab title="Vendor not Acknowledged">
+      <ng-template kendoTabContent>
+      </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab title="PO not Sent">
+      <ng-template kendoTabContent>
+      </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab title="Cash PO1">
+      <ng-template kendoTabContent>
+      </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab>
+      <ng-template kendoTabTitle>
+        <span class="k-icon k-font-icon k-i-more-horizontal"></span>
+      </ng-template>
+      <ng-template kendoTabContent>
+      </ng-template>
+    </kendo-tabstrip-tab>    
+  </kendo-tabstrip>
+</div>
+
+
+
+
+
+
+<!-- <div class="wrapper"> <span class="k-icon k-font-icon k-i-x "></span>
     <kendo-tabstrip (tabSelect)="onTabSelect($event)">
       <kendo-tabstrip-tab title="Paris" [selected]="true">
         <ng-template kendoTabContent>
@@ -46,4 +130,4 @@
         </ng-template>
       </kendo-tabstrip-tab>
     </kendo-tabstrip>
-  </div>
+  </div> -->

@@ -11,6 +11,8 @@ button
     text-align: center;
 }
 
+/* ========================================================================================================================================= */
+
 /* Primary button */
 .btn-primary{
     background-color: #000080;
@@ -41,8 +43,11 @@ button
     color: white;
 }
 
+/* style primary button end style */
 
-/* Outline button */
+/* ========================================================================================================================================= */
+
+/* Outline primary button */
 .btn-outline{
     color: #000080;
 }
@@ -65,7 +70,11 @@ button
     opacity: 20%;
 }
 
-/* Text button */
+/* outline primary button style end */
+
+/* ========================================================================================================================================= */
+
+/* Text button blue button */
 .btn-text{
     color: #186CAA;
     padding: 2px 10px;
@@ -90,3 +99,5 @@ button
     color: #186CAA;
     opacity: 20%;
 } 
+
+/* text blue button style end */

@@ -152,6 +152,7 @@ import { DemoComponent } from './demo/demo.component';
 import { DepartmentsComponent } from './demo/departments/departments.component';
 import { NavigationModule } from '@progress/kendo-angular-navigation';
 import { RequisitionComponent } from './requisition/requisition.component';
+import { KendocontrolsComponent } from './kendo/kendocontrols/kendocontrols.component';
 
 @NgModule({
   declarations: [
@@ -233,6 +234,7 @@ import { RequisitionComponent } from './requisition/requisition.component';
       DemoComponent,
       DepartmentsComponent,
       RequisitionComponent,
+      KendocontrolsComponent,
 
     
    

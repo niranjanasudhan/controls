@@ -9,6 +9,7 @@ import { MaterialhomeComponent } from './material/materialhome/materialhome.comp
 import { MaterialbuttonComponent } from './material/materialbutton/materialbutton.component';
 import { MaterialdropdownComponent } from './material/materialdropdown/materialdropdown.component';
 import { KendodropdownComponent } from './kendo/kendodropdown/kendodropdown.component';
+import { KendocontrolsComponent } from './kendo/kendocontrols/kendocontrols.component';
 import { KendodateinputsComponent } from './kendo/kendodateinputs/kendodateinputs.component';
 import { MaterialdateinputsComponent } from './material/materialdateinputs/materialdateinputs.component';
 import { KendotextboxComponent } from './kendo/kendotextbox/kendotextbox.component';
@@ -135,6 +136,9 @@ const routes: Routes = [
     },
     {
       path:'dropdown', component: KendodropdownComponent
+    },
+    {
+      path:'controls', component: KendocontrolsComponent
     },
     {
       path:'dateinputs',component:KendodateinputsComponent
