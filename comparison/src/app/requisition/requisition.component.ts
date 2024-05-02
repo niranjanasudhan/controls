@@ -196,11 +196,11 @@ formatDate(field: string): void {
   
  
    // Font sizes and styles data
-   fontSizes = [9, 10, 11, 12, 13, 14, 15, 16];
+   fontSizes = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22];
    fontStyles = ['Normal', 'Bold'];
 
    // Selected font size and style
-   selectedFontSize: number = 9;
+   selectedFontSize: number = 16;
    selectedFontStyle: string = '';
     style = {
           'font-size': '16px', // Default font size

@@ -5,7 +5,11 @@
     font-family: 'PT Sans', sans-serif; 
 }
 
-h1, h2, h3, h4, h5, h6, p, span, a, i{
+h4{
+  font-size: 22px !important;
+}
+
+p, span, a, i{
   font-size: inherit;
   font-weight: inherit;
 }
