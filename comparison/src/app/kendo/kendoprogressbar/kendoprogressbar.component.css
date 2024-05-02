@@ -5,3 +5,21 @@
     color: black;
     text-align: center;
 }
+
+/* Green progressbar Style */
+
+.green-progressbar{
+    height: 6px;
+}
+
+.green-progressbar .k-progress-status  {
+    display: none;
+}
+
+::ng-deep .green-progressbar.k-progressbar .k-selected {
+    border-color: #098753;
+    color: white;
+    background-color: #098753;
+}
+
+/* end style Green progressbar Style */

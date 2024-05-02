@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./kendotoggle.component.css']
 })
 export class KendotoggleComponent {
+  public checked = true;
+  
   public onSelectedChange(e: boolean): void {
     console.log(e);
   }

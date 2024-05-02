@@ -1,7 +1,21 @@
-<h2 class="mainhead">Checkbox</h2>
-<kendo-label
-      class="k-checkbox-label"
-      [for]="notification"
-      text="Allow Notifications"
-    ></kendo-label>
-    <input type="checkbox" #notification kendoCheckBox />
+<h2 class="mainhead">CheckBox</h2>
+
+<div>
+  <h4>Primary Custom CheckBox button</h4>
+  <div>
+    <input kendoCheckBox type="checkbox" id="c1" class="checkbox-blue" checked />
+    <label class="k-checkbox-label" for="c1">Selected</label><br />
+    <input kendoCheckBox type="checkbox" id="c2" class="checkbox-blue" />
+    <label class="k-checkbox-label" for="c2">Unselected</label><br />
+</div>
+
+<hr class="my-5">
+<h4>Primary Custom CheckBox button Disable</h4>
+<div>
+    <input kendoCheckBox type="checkbox" id="cb1" class="checkbox-blue" checked disabled/>
+    <label class="k-checkbox-label" for="cb1">Disable Selected</label><br>
+    <input kendoCheckBox type="checkbox" id="cb2" class="checkbox-blue" disabled/>
+    <label class="k-checkbox-label" for="cb2">Disable Unselected</label>
+</div>
+
+</div>

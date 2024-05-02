@@ -2,13 +2,18 @@ import { Component } from '@angular/core';
 import { Contact, contacts } from "./contacts";
 import { SVGIcon, chevronDownIcon } from "@progress/kendo-svg-icons";
 
+
+
 @Component({
   selector: 'app-kendodropdown',
   templateUrl: './kendodropdown.component.html',
-  styleUrls: ['./kendodropdown.component.css']
+  styleUrls: ['./kendodropdown.component.css'],
 })
+
+
 export class KendodropdownComponent {
   public folderSVG: SVGIcon = chevronDownIcon;
+  isDropdownOpen: boolean = true;
   public areaList: Array<string> = [
     "Boston",
     "Chicago",
@@ -19,6 +24,14 @@ export class KendodropdownComponent {
     // "Philadelphia",
     // "San Francisco",
     // "Seattle",
+  ];
+
+  public exportdop: Array<string> = [
+    "txt",
+    "csv",
+    "xls",
+    "html",
+   
   ];
 
   public allowCustom = true;
@@ -117,7 +130,15 @@ export class KendodropdownComponent {
     this.datas = this.areaList.filter(contains(searchTerm));
   }
 
+  dropdownVisible: boolean = false; // Initially hide the dropdown
+
+  // Method to toggle the visibility of the dropdown
+  toggleDropdown() {
+    this.dropdownVisible = !this.dropdownVisible;
+  }
+
 }
+
 
 
 type AreaData = {

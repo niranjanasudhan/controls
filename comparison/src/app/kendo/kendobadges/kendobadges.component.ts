@@ -1,11 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
-  selector: 'app-kendocontrols',
-  templateUrl: './kendocontrols.component.html',
-  styleUrls: ['./kendocontrols.component.css']
+  selector: 'app-kendobadges',
+  templateUrl: './kendobadges.component.html',
+  styleUrls: ['./kendobadges.component.css']
 })
-export class KendocontrolsComponent implements OnInit, OnDestroy {
+export class KendobadgesComponent implements OnInit, OnDestroy {
   public checked = true;
 
   public labelhide = {

@@ -5,3 +5,66 @@
     color: black;
     text-align: center;
 }
+
+/* blue toggle button with on off text */
+::ng-deep .toggle-blue.k-switch-off .k-switch-track {
+    border-color: #666666;
+    color: #ffffff;
+    background-color: #666666;
+}
+
+::ng-deep .toggle-blue.k-switch-on .k-switch-track {
+    border-color: #000080;
+    color: #ffffff;
+    background-color: #000080;
+}
+
+::ng-deep .toggle-blue.k-switch-on:focus .k-switch-track, .k-switch-on.k-focus .k-switch-track {
+    outline: 2px solid rgba(0, 0, 128, 0.25);
+}
+
+
+::ng-deep .toggle-blue.k-switch-sm .k-switch-thumb {
+    width: 18px;
+    height: 18px;
+}
+
+/* end style blue toggle button with on off text */
+
+/* ========================================================================================================================================= */
+
+/* Green toggle button without on off text */
+
+::ng-deep .toggle-green.k-switch-off .k-switch-track {
+    border-color: #666666;
+    color: #ffffff;
+    background-color: #ffffff;
+}
+
+::ng-deep .toggle-green.k-switch-on .k-switch-track {
+    border-color: #098753;
+    color: #ffffff;
+    background-color: #098753;
+}
+
+::ng-deep .toggle-green.k-switch-on:focus .k-switch-track, .k-switch-on.k-focus .k-switch-track {
+    outline: 2px solid rgba(9,135,83, 0.25);
+}
+
+::ng-deep .toggle-green.k-switch-sm .k-switch-thumb {
+    width: 18px;
+    height: 18px;
+}
+
+::ng-deep .toggle-green .k-switch-track .k-switch-label-on,
+::ng-deep .toggle-green .k-switch-track .k-switch-label-off {
+  display: none;
+}
+
+::ng-deep .toggle-green.k-switch-off .k-switch-thumb {
+    border-color: rgba(0, 0, 0, 0.08);
+    color: #ffffff;
+    background-color: #666666;
+}
+
+/* end style Green toggle button without on off text */

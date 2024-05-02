@@ -152,7 +152,9 @@ import { DemoComponent } from './demo/demo.component';
 import { DepartmentsComponent } from './demo/departments/departments.component';
 import { NavigationModule } from '@progress/kendo-angular-navigation';
 import { RequisitionComponent } from './requisition/requisition.component';
-import { KendocontrolsComponent } from './kendo/kendocontrols/kendocontrols.component';
+import { KendobadgesComponent } from './kendo/kendobadges/kendobadges.component';
+import { TreeViewModule } from '@progress/kendo-angular-treeview';
+import { DropDownListModule } from '@progress/kendo-angular-dropdowns';
 
 @NgModule({
   declarations: [
@@ -234,7 +236,7 @@ import { KendocontrolsComponent } from './kendo/kendocontrols/kendocontrols.comp
       DemoComponent,
       DepartmentsComponent,
       RequisitionComponent,
-      KendocontrolsComponent,
+      KendobadgesComponent,
 
     
    
@@ -315,10 +317,12 @@ CompanyRenderer,
 CustomButtonComponent,
 MissionResultRenderer,
 PriceRenderer,
+DropDownListModule,
     // HighchartsChartModule
     // NotificationService
     GridModule,
-    NavigationModule 
+    NavigationModule,
+    TreeViewModule 
   ],
   providers: [NotificationService],
   bootstrap: [AppComponent],

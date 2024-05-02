@@ -1,4 +1,8 @@
-<mat-sidenav-container class="dashboard">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+<mat-sidenav-container class="dashboard" [ngStyle]="style">
     <mat-sidenav mode="side" opened #sidenav>
       <mat-nav-list appNavListKeyManager>
       
@@ -61,6 +65,26 @@
             <button kendoButton class="mx-2" style="background-color: #000080; color: white;">
                 <i class="bi bi-plus-circle"></i>
             </button>
+
+            <kendo-dropdownlist
+            [data]="fontSizes"
+            [(ngModel)]="selectedFontSize"
+            class="custom-dropdown-outline"
+            fillMode="outline"
+            (valueChange)="updateStyle()"
+
+        >
+        </kendo-dropdownlist>
+        
+        <kendo-dropdownlist
+            [data]="fontStyles"
+            [(ngModel)]="selectedFontStyle"
+            class="custom-dropdown-outline ms-2"
+            fillMode="outline"
+            (valueChange)="updateStyle()"
+
+        >
+        </kendo-dropdownlist> 
         </div>
         
       </header>
@@ -169,21 +193,21 @@
               <i class="bi bi-list"></i>
             </button>
           </ng-template>
-            <kendo-grid-column  [headerStyle]="{ 'background-color': '#F2F4F7', 'padding':'20px 10px', 'font-weight' : 'bold','text-wrap' : 'nowrap' }"
+            <kendo-grid-column  [headerStyle]="{ 'background-color': '#F2F4F7', 'padding':'20px 10px', 'font-weight' : 'inherit','text-wrap' : 'nowrap' }"
               field="athlete" title="title"> </kendo-grid-column>
-            <kendo-grid-column [headerStyle]="{ 'background-color': '#F2F4F7', 'padding':'20px 10px', 'font-weight' : 'bold' }"
+            <kendo-grid-column [headerStyle]="{ 'background-color': '#F2F4F7', 'padding':'20px 10px', 'font-weight' : 'inherit' }"
             field="age" title="No. Survey Scheduled">
             </kendo-grid-column>
-            <kendo-grid-column [headerStyle]="{ 'background-color': '#F2F4F7', 'padding':'20px 10px', 'font-weight' : 'bold' }"
+            <kendo-grid-column [headerStyle]="{ 'background-color': '#F2F4F7', 'padding':'20px 10px', 'font-weight' : 'inherit' }"
              field="gold" title="Expired">
             </kendo-grid-column>
-            <kendo-grid-column [headerStyle]="{ 'background-color': '#F2F4F7', 'padding':'20px 10px', 'font-weight' : 'bold' }"
+            <kendo-grid-column [headerStyle]="{ 'background-color': '#F2F4F7', 'padding':'20px 10px', 'font-weight' : 'inherit' }"
             field="silver" title="In 30 days">
             </kendo-grid-column>
-            <kendo-grid-column [headerStyle]="{ 'background-color': '#F2F4F7', 'padding':'20px 10px', 'font-weight' : 'bold' }"
+            <kendo-grid-column [headerStyle]="{ 'background-color': '#F2F4F7', 'padding':'20px 10px', 'font-weight' : 'inherit' }"
             field="bronze" title="In 31-60 days">
             </kendo-grid-column>
-            <kendo-grid-column [headerStyle]="{ 'background-color': '#F2F4F7', 'padding':'20px 10px', 'font-weight' : 'bold' }"
+            <kendo-grid-column [headerStyle]="{ 'background-color': '#F2F4F7', 'padding':'20px 10px', 'font-weight' : 'inherit' }"
              field="total" title="In 61-90 days">
             </kendo-grid-column>
           </kendo-grid>

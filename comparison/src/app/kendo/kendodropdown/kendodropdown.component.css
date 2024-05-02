@@ -195,3 +195,37 @@ h4
 }
 
 /* end style custom dropdown style*/
+
+
+::ng-deep .k-menu-popup {
+    border: 1px solid #CDD5DF;
+    border-radius: 6px;
+}
+
+::ng-deep .k-menu {
+    border-radius: 6px;
+}
+
+::ng-deep .k-menu-item {
+    border-bottom: 1px solid #CDD5DF;
+}
+
+::ng-deep .k-menu-item:hover {
+    background:  #f0f0f0;
+}
+
+::ng-deep .k-menu-group .k-item.k-focus > .k-link{
+    box-shadow: none;
+}
+
+
+::ng-deep .k-menu-group .k-item.k-selected > .k-link{
+    background: #E1EEF8;
+    color: #525252;
+}
+
+::ng-deep .k-checkbox:checked{
+    border-color: #000080;
+    color: white;
+    background-color: #000080;
+}

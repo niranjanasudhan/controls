@@ -1,7 +1,34 @@
+
 .dashboard {
     background-color: #ffffff;
     min-height: 100vh !important;
+    font-family: 'PT Sans', sans-serif; 
 }
+
+h1, h2, h3, h4, h5, h6, p, span, a, i{
+  font-size: inherit;
+  font-weight: inherit;
+}
+::ng-deep .k-button {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+::ng-deep .k-input-inner {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+::ng-deep .k-grid-toolbar{
+  font-size: inherit;
+  font-weight: inherit;
+}
+/* -md */
+::ng-deep .k-table{
+  font-size: inherit;
+  font-weight: inherit;
+}
+
   .mat-grid-tile
   {
     display: block !important;
@@ -47,6 +74,8 @@
   border-radius: 10px;
   margin: 8px;
   position: relative;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 .filter-tab-outer-table{
@@ -108,4 +137,80 @@
   /* border-top-right-radius: 5px;
   border-bottom-right-radius: 5px; */
   width: 120px;
+}
+
+
+
+/* custom dropdown style*/
+::ng-deep .custom-dropdown-outline .k-input-inner{
+  width: 35px;
+  font-size: inherit;
+}
+
+.custom-dropdown-outline{
+  border: 1px solid #9AA4B2;
+  padding: 1px;
+}
+
+.custom-dropdown-outline-red{
+  border: 1px solid #ff0000;
+  padding: 1px;
+}
+
+.custom-dropdown-outline:hover{
+  background-color: inherit;
+  color: inherit;
+}
+
+.custom-dropdown-outline:focus{
+  box-shadow: none;
+}
+
+::ng-deep .custom-dropdown-outline.k-disabled {
+  opacity: 1;
+  filter: grayscale(0);
+  background: #F2F2F2 !important;
+}
+
+::ng-deep .custom-dropdown-outline.k-readonly {
+  border: none !important;
+  padding: 0px;
+}
+
+
+::ng-deep .k-popup {
+  margin-top: 3px;
+}
+
+::ng-deep .k-list-container {
+  border: 1px solid #CDD5DF;
+  border-radius: 6px;
+}
+
+::ng-deep .k-list {
+  border-radius: 6px;
+}
+
+::ng-deep .k-list-item {
+  border-bottom: 1px solid #CDD5DF;
+}
+
+::ng-deep .k-list-item:hover {
+  background:  #f0f0f0;
+}
+
+::ng-deep .k-list-item.k-focus{
+  box-shadow: none;
+}
+
+::ng-deep .k-list-item.k-focus.k-selected{
+  background: #E1EEF8;
+  color: #525252;
+}
+
+
+/* ============================================================================================ */
+
+::ng-deep .k-grid{
+  font-size: inherit;
 }

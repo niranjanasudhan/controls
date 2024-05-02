@@ -7,23 +7,29 @@
 }
 
 
-::ng-deep .k-stepper .k-step-indicator {
+::ng-deep .green-progressbar.k-stepper .k-step-indicator {
     border-color: #cccccc;
     color: #424242;
     background-color: #D6D6D6;
 }
 
-::ng-deep .k-stepper .k-step-indicator-text  {
+::ng-deep .green-progressbar.k-stepper .k-step-indicator-text  {
     display: none;
 }
 
-::ng-deep .k-stepper .k-step-done .k-step-indicator {
+::ng-deep .green-progressbar.k-stepper .k-step-done .k-step-indicator {
     border-color: #098753;
     color: white;
     background-color: #098753;
 }
 
-::ng-deep .k-step.k-step-current .k-step-link .k-step-indicator.ng-star-inserted{
+::ng-deep .green-progressbar .k-progressbar .k-selected {
+    border-color: #098753;
+    color: white;
+    background-color: #098753;
+}
+
+::ng-deep .green-progressbar .k-step.k-step-current .k-step-link .k-step-indicator.ng-star-inserted{
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='16' viewBox='0 0 12 16' fill='none'%3e%3cpath d='M3.8 12.55H8M2.12 1H9.68C10.072 1 10.2681 1 10.4178 1.0763C10.5495 1.14341 10.6566 1.25049 10.7237 1.38221C10.8 1.53194 10.8 1.72796 10.8 2.12V3.57216C10.8 3.91459 10.8 4.0858 10.7613 4.24692C10.727 4.38978 10.6705 4.52634 10.5937 4.6516C10.5071 4.79288 10.3861 4.91395 10.1439 5.15608L8.09196 7.20804C7.81475 7.48525 7.67614 7.62386 7.62421 7.78369C7.57853 7.92428 7.57853 8.07572 7.62421 8.21631C7.67614 8.37614 7.81475 8.51475 8.09196 8.79196L10.1439 10.8439C10.3861 11.0861 10.5071 11.2071 10.5937 11.3484C10.6705 11.4737 10.727 11.6102 10.7613 11.7531C10.8 11.9142 10.8 12.0854 10.8 12.4278V13.88C10.8 14.272 10.8 14.4681 10.7237 14.6178C10.6566 14.7495 10.5495 14.8566 10.4178 14.9237C10.2681 15 10.072 15 9.68 15H2.12C1.72796 15 1.53194 15 1.38221 14.9237C1.25049 14.8566 1.14341 14.7495 1.0763 14.6178C1 14.4681 1 14.272 1 13.88V12.4278C1 12.0854 1 11.9142 1.03868 11.7531C1.07298 11.6102 1.12954 11.4737 1.2063 11.3484C1.29288 11.2071 1.41395 11.0861 1.65608 10.8439L3.70804 8.79196C3.98525 8.51475 4.12386 8.37614 4.17579 8.21631C4.22147 8.07572 4.22147 7.92428 4.17579 7.78369C4.12386 7.62386 3.98525 7.48525 3.70804 7.20804L1.65608 5.15608C1.41395 4.91395 1.29288 4.79288 1.2063 4.6516C1.12954 4.52634 1.07298 4.38978 1.03868 4.24692C1 4.0858 1 3.91459 1 3.57216V2.12C1 1.72796 1 1.53194 1.0763 1.38221C1.14341 1.25049 1.25049 1.14341 1.38221 1.0763C1.53194 1 1.72796 1 2.12 1Z' stroke='white' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
     background-repeat: no-repeat;
     background-position: center;
@@ -31,12 +37,134 @@
     border: 1px dotted #EFA516;
 }
 
-::ng-deep .k-step.k-step-current .k-step-link .k-step-indicator::after {
+::ng-deep .green-progressbar .k-step.k-step-done.k-step-error .k-step-link .k-step-indicator.ng-star-inserted{
+    background-color: #098753;
+    position: relative;
+}
+
+::ng-deep .green-progressbar .k-step.k-step-done.k-step-error .k-step-link .k-step-indicator.ng-star-inserted::before{
+    position: absolute;
+    top: -4px;
+    left: 10px;
+    background-color: #C2232D;
+    border: 2px solid white;
+    border-radius: 50%;
+    content: '';
+    width: 17px;
+    height: 17px;
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none"%3E%3Cpath d="M6 4.25132V6.25086M6 8.2504H6.00487M5.32543 1.69777L1.31854 8.79945C1.09629 9.19335 0.985167 9.3903 1.00159 9.55195C1.01592 9.69294 1.0879 9.82106 1.19964 9.90442C1.32774 10 1.54953 10 1.99311 10H10.0069C10.4505 10 10.6723 10 10.8004 9.90442C10.9121 9.82106 10.9841 9.69294 10.9984 9.55195C11.0148 9.3903 10.9037 9.19335 10.6815 8.79945L6.67457 1.69777C6.45312 1.30528 6.34239 1.10903 6.19794 1.04312C6.07193 0.985627 5.92807 0.985627 5.80206 1.04312C5.65761 1.10903 5.54688 1.30528 5.32543 1.69777Z" stroke="white" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/%3E%3C/svg%3E'); /* Embedded SVG code */
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+::ng-deep .green-progressbar .k-step.k-step-done.k-step-error .k-step-link .k-step-indicator.ng-star-inserted .k-step-indicator-icon{
+    display: none;
+}
+
+::ng-deep .green-progressbar.k-stepper .k-step-done:hover .k-step-indicator, .k-stepper .k-step-done.k-hover .k-step-indicator, .k-stepper .k-step-done.k-step-hover .k-step-indicator {
+    background-color: #EFA516;
+}
+
+::ng-deep .green-progressbar .k-step.k-step-current .k-step-link .k-step-indicator::after {
     box-shadow: inset 0 0 0 3px #ffffff;
 }
-::ng-deep .k-step.k-step-current .k-step-link .k-step-indicator::after {
+::ng-deep .green-progressbar .k-step.k-step-current .k-step-link .k-step-indicator::after {
     border-width: 1px;
     border-style: dotted;
     border-color: #EFA516;
     display: block;
 }
+
+.green-progressbar-label{
+    font-family: Roboto;
+    line-height: 16.8px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    color: #444444;
+}
+
+.green-progressbar-steps{
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.4px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    color: #a3a3a3;
+}
+
+/* ====================================================================================================================================== */
+
+::ng-deep .green-arrow-progressbar.k-stepper .k-step-list {
+    border: none
+}
+
+::ng-deep .green-arrow-progressbar .k-step-list-horizontal ~ .k-progressbar {
+    display: none;
+}
+
+::ng-deep .green-arrow-progressbar .k-step {
+    position: relative;
+    padding-left: 20px; 
+    border: 1px solid #D6D6D6;
+    border-right: none;
+    border-left: none;
+    background-color: #ffffff;
+}
+
+::ng-deep .green-arrow-progressbar .k-step::after {
+    content: '';
+  position: absolute;
+  top: 50%;
+  right: -18.5px;
+  transform: translateY(-50%) rotate(45deg);
+  width: 36px;
+  height: 36px;
+  border-top: 2px solid #D6D6D6;
+  border-right: 2px solid #D6D6D6;
+  background-color: inherit;
+  z-index: 1;
+  }
+
+::ng-deep .green-arrow-progressbar.k-stepper .k-step.k-focus .k-step-label:only-child, .k-stepper .k-step .k-step-link:focus .k-step-label:only-child {
+    box-shadow: none;
+}
+
+::ng-deep .green-arrow-progressbar.k-stepper .k-step-label:only-child {
+    border-color: rgba(0, 0, 0, 0.08);
+    color: #514C4C;
+    background-color: inherit;
+}
+
+
+::ng-deep .green-arrow-progressbar .k-step.k-step-done{
+    background-color: #DFF1E3;
+}
+
+::ng-deep .green-arrow-progressbar .k-step.k-step-current{
+    background-color: #FDEFDA;
+}
+
+.green-arrow-progressbar-label{
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 16px;
+    color: #514C4C;
+}
+
+.green-arrow-progressbar-steps{
+    font-family: Roboto;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 16px;
+    text-align: left;
+    color: #444444;
+}
+
+
+
+
+
+

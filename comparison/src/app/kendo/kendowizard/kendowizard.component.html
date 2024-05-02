@@ -1,9 +1,75 @@
 <h2 class="mainhead">Stepper</h2>
 <kendo-stepper
-      [steps]="steps"
-      [stepType]="stepType"
-      [(currentStep)]="current"
-      [style.width.px]="570"
-      themecolor="success"
-    >
-    </kendo-stepper>
+  [steps]="steps1"
+  stepType="full"
+  [(currentStep)]="current1"
+  [style.width.px]="570"
+  [linear]="false"
+  class="green-progressbar"
+>
+<ng-template kendoStepperLabelTemplate let-step>
+    <div class="flex-grow-1">
+        <span class="green-progressbar-steps">{{ step.stepcount }}</span><br>
+        <span class="green-progressbar-label">{{ step.label }}</span>
+    </div>
+  </ng-template>
+</kendo-stepper>
+<br>
+<br>
+<br>
+<kendo-stepper
+  [steps]="steps"
+  stepType="full"
+  [(currentStep)]="current"
+  [style.width.px]="570"
+  [linear]="false"
+  class="green-progressbar"
+>
+<ng-template kendoStepperLabelTemplate let-step>
+    <div class="flex-grow-1">
+        <span class="green-progressbar-steps">{{ step.stepcount }}</span><br>
+        <span class="green-progressbar-label">{{ step.label }}</span>
+    </div>
+  </ng-template>
+</kendo-stepper>
+<br>
+<br>
+<br>
+<kendo-stepper
+  [steps]="steps2"
+  stepType="full"
+  [(currentStep)]="current2"
+  [style.width.px]="570"
+  [linear]="false"
+  class="green-progressbar"
+>
+<ng-template kendoStepperLabelTemplate let-step>
+    <div class="flex-grow-1">
+        <span class="green-progressbar-steps">{{ step.stepcount }}</span><br>
+        <span class="green-progressbar-label">{{ step.label }}</span>
+    </div>
+  </ng-template>
+</kendo-stepper>
+
+<br>
+<br>
+<br>
+<kendo-stepper
+  [steps]="steps3"
+  stepType="label"
+  [(currentStep)]="current3"
+  [style.width.px]="670"
+  [linear]="false"
+  class="green-arrow-progressbar"
+>
+<ng-template kendoStepperLabelTemplate let-step>
+    <div class="flex-grow-1" style="text-align: start;">
+        <span class="green-arrow-progressbar-steps">{{ step.stepcount }}</span><br>
+        <span >{{ step.label }}</span>
+    </div>
+    
+  </ng-template>
+</kendo-stepper>
+<br>
+<br>
+<br>
