@@ -5,7 +5,11 @@
     font-family: 'PT Sans', sans-serif; 
 }
 
-h1, h2, h3, h4, h5, h6, p, span, a, i{
+h4{
+  font-size: 22px !important;
+}
+
+p, span, a, i{
   font-size: inherit;
   font-weight: inherit;
 }
@@ -214,3 +218,31 @@ h1, h2, h3, h4, h5, h6, p, span, a, i{
 ::ng-deep .k-grid{
   font-size: inherit;
 }
+
+
+/* Outline primary button */
+.btn-outline{
+  color: #000080;
+}
+
+.btn-outline:hover, .btn-outline-hover{
+  color: #4A3C9E;
+  background-color: #f2f2f2 !important;
+}
+
+
+.btn-outline:focus, .btn-outline-focus{
+  color: #000080;
+  border-color: #0185FF;
+}
+
+.btn-outline:active, .btn-outline-active{
+  color: #4A3C9E;
+}
+
+.btn-outline:disabled{
+  color: #4A3C9E;
+  opacity: 20%;
+}
+
+/* outline primary button style end */

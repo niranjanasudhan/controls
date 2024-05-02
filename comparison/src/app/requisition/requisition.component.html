@@ -76,7 +76,7 @@
         >
         </kendo-dropdownlist>
         
-        <kendo-dropdownlist
+        <!-- <kendo-dropdownlist
             [data]="fontStyles"
             [(ngModel)]="selectedFontStyle"
             class="custom-dropdown-outline ms-2"
@@ -84,7 +84,30 @@
             (valueChange)="updateStyle()"
 
         >
-        </kendo-dropdownlist> 
+        </kendo-dropdownlist>  -->
+
+        <kendo-buttongroup>
+          <button
+          kendoButton
+          [toggleable]="true"
+          [svgIcon]="boldSVG"
+          title="Bold"
+          (click)="toggleBold()"
+          [selected]="selectedFontStyle === 'B'"
+          class="btn-primary btn-outline ms-2"
+          fillMode="outline"
+        ></button>
+        <button
+          kendoButton
+          [toggleable]="true"
+          [svgIcon]="textboxSVG"
+          title="Normal"
+          (click)="toggleNormal()"
+          [selected]="selectedFontStyle === 'N'"
+          class="btn-primary btn-outline"
+          fillMode="outline"
+        ></button>
+        </kendo-buttongroup>
         </div>
         
       </header>
@@ -213,6 +236,26 @@
           </kendo-grid>
 
         </div>
+
+        <div class="row">
+          <div class="col-md-12 col-lg-12 ">
+           <p style="font-size:22px">22px The quick brown fox jumps over a lazy dog.</p>			
+           <p style="font-size:21px">21px The quick brown fox jumps over a lazy dog.</p>			
+           <p style="font-size:20px">20px The quick brown fox jumps over a lazy dog.</p>			
+           <p style="font-size:19px">19px The quick brown fox jumps over a lazy dog.</p>			
+           <p style="font-size:18px">18px The quick brown fox jumps over a lazy dog.</p>			
+           <p style="font-size:17px">17px The quick brown fox jumps over a lazy dog.</p>			
+           <p style="font-size:16px">16px The quick brown fox jumps over a lazy dog.</p>
+           <p style="font-size:15px">15px The quick brown fox jumps over a lazy dog.</p>
+           <p style="font-size:14px">14px The quick brown fox jumps over a lazy dog.</p>
+           <p style="font-size:13px">13px The quick brown fox jumps over a lazy dog.</p>
+           <p style="font-size:12px">12px The quick brown fox jumps over a lazy dog.</p>
+           <p style="font-size:11px">11px The quick brown fox jumps over a lazy dog.</p>
+           <p style="font-size:10px">10px The quick brown fox jumps over a lazy dog.</p>
+           <p style="font-size:9px">9px The quick brown fox jumps over a lazy dog.</p>
+           
+         </div>
+         </div>
       </div>
     
       <router-outlet></router-outlet>

@@ -6,6 +6,12 @@ import { HttpClient } from '@angular/common/http';
 import { map, tap } from "rxjs/operators";
 import { DataBindingDirective } from './dataBindingDirective';
 
+import {
+  SVGIcon,
+  boldIcon,
+  textboxIcon,
+} from "@progress/kendo-svg-icons";
+
 @Component({
   selector: 'app-requisition',
   templateUrl: './requisition.component.html',
@@ -15,6 +21,8 @@ export class RequisitionComponent implements OnInit  {
   @ViewChild(DataBindingDirective) dataBinding!: DataBindingDirective;
   isFullScreen = false;
 
+  public boldSVG: SVGIcon = boldIcon;
+  public textboxSVG: SVGIcon = textboxIcon;
   public navItems = [
     {
       title: 'Dashboard',
@@ -188,17 +196,28 @@ formatDate(field: string): void {
   
  
    // Font sizes and styles data
-   fontSizes = [9, 10, 11, 12, 13, 14, 15, 16];
+   fontSizes = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22];
    fontStyles = ['Normal', 'Bold'];
 
    // Selected font size and style
-   selectedFontSize: number = 9;
+   selectedFontSize: number = 16;
    selectedFontStyle: string = '';
     style = {
           'font-size': '16px', // Default font size
           'font-weight': 'normal' // Default font style
     };
 
+    toggleBold(): void {
+      this.selectedFontStyle = 'B';
+      this.updateStyle();
+      this.style['font-weight'] = 'bold';
+    }
+    
+    toggleNormal(): void {
+      this.selectedFontStyle = 'N';
+      this.updateStyle();
+      this.style['font-weight'] = 'normal';
+    }
 
     updateStyle() {
         this.style['font-size'] = `${this.selectedFontSize}px`;
