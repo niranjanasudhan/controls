@@ -14,3 +14,398 @@
       Popup content.
     </div>
   </kendo-popup>
+
+
+  <div class="grid-layout-container" style="margin-top:100px">
+    <kendo-gridlayout
+      [gap]="{ rows: 6, cols: 10 }"
+      [rows]="[
+        { height: 20 },
+        { height: 100 },
+        { height: 100 },
+        { height: 20 },
+        { height: 660 }
+      ]"
+      [cols]="[{ width: 270 }, { width: 270 }, { width: 310 }]"
+    >
+      <kendo-gridlayout-item [row]="1" [col]="1" [colSpan]="4" >
+        <div class="k-text-inverse k-text-uppercase k-font-weight-bold">
+         Pop Up styling
+        </div>
+      </kendo-gridlayout-item>
+      <kendo-gridlayout-item [row]="2" [col]="1">
+
+
+
+
+
+
+        <p>
+          <!-- <button kendoButton *ngIf="!opened" (click)="openClose(true)" class="mainbtn">
+            Popup contains grid
+          </button> -->
+          <button kendoButton  (click)="openClose(true)" class="mainbtn">
+            Popup contains grid
+          </button>
+        </p>
+       
+        
+    
+        <kendo-window 
+          [minWidth]="200"
+          [minHeight]="200"
+          [resizable]="isResizable"
+          *ngIf="opened"
+          (close)="openClose(false)"
+          title="ASSIGN REPORT"
+          width="800"
+          left="100"
+        >
+        <!-- <kendo-window-titlebar> -->
+          <!-- <span class="k-window-title">Custom action</span> -->
+          <!-- <button
+            kendoButton
+            (click)="onClick()"
+            [svgIcon]="folderIcon"
+            fillMode="flat"
+          ></button> -->
+          <!-- <button kendoWindowMaximizeAction></button>
+          <button kendoWindowMinimizeAction></button>
+          <button kendoWindowRestoreAction></button>
+          <button kendoWindowCloseAction></button>
+        </kendo-window-titlebar> -->
+        <div class="gridcontent"> 
+          <div class="row">
+            <form class="k-form k-form-md k-form-horizontal" [formGroup]="form">
+              <fieldset [orientation]="horizontal" class="k-form-fieldset">
+              <div class="col-md-12">
+
+
+                <div class="content">
+              
+                  <div class="flex-grow-1 d-flex  labeldiv">
+                  
+                    <kendo-formfield style="width:40%">
+                      <kendo-label [for]="from" text="From"></kendo-label>
+                      <kendo-textbox
+                        formControlName="from"
+                        [clearButton]="true"
+                        #from
+                        required></kendo-textbox>
+                      </kendo-formfield>
+                      <kendo-formfield style="width:40%">
+                        <kendo-label [for]="to" text="To"></kendo-label>
+                        <kendo-textbox
+                          formControlName="to"
+                          [clearButton]="true"
+                          #to
+                          required
+                        ></kendo-textbox>
+                      </kendo-formfield>
+                        <div class="k-form-buttons" style="width:20%; padding-left:40px;    margin-top: 25px;">
+                          <button kendoButton class="kbtn" (click)="submitForm()">
+                           Search
+                          </button>
+                          </div>
+                     
+                 </div>
+                
+                </div>
+
+
+
+
+
+
+
+                
+               
+              </div>
+            
+              </fieldset>
+
+
+           
+              </form>
+           
+          </div>
+          
+        
+        </div>
+        <div class="row">
+          <div class="d-flex justify-content-center align-items-center">
+            <div class="flex-grow-1">
+              <input type="text" class="form-control form-control-sm mx-2 my-1" placeholder="Search" >
+            </div>
+            <div class="flex-grow-1 d-flex justify-content-center align-items-center">
+           
+            </div>
+            <div class="flex-grow-1 imgdiv">
+              <button kendoButton class="kbtnsearch" >5 Records Found</button>
+                <img src="../../../assets/Icons/p1.png" alt="mobile-icon-ship">
+               
+                <img src="../../../assets/Icons/p2.png" alt="mobile-icon-ship">
+                <img src="../../../assets/Icons/p3.png" alt="mobile-icon-ship">
+            </div>
+          </div>
+        </div>
+        <kendo-grid class="xgrid xgridmobile"
+        [data]="gridData"
+        [selectable]="{ mode: 'multiple', drag: true }"
+        [navigable]="true"
+        [height]="300" filterable="menu" [sortable]="sortSettings"
+        [sort]="sort"
+        [resizable]="true"
+        [headerClass]="'headerCustomClass'"  [headerStyle]="{ 'background-color': '#F2F4F7','height':'48px','color':'#444444' }"
+      >
+        <kendo-grid-checkbox-column [width]="20"></kendo-grid-checkbox-column>
+        <kendo-grid-column [width]="60"
+          field="ReferenceNo"
+          title="Reference No."
+        ></kendo-grid-column>
+        <kendo-grid-column [width]="40"
+          field="InspectionDate"
+          title="Inspection Date"
+        ></kendo-grid-column>
+        <kendo-grid-column [width]="40"
+          field="Vessel"
+          title="Vessel"
+        ></kendo-grid-column>
+        <kendo-grid-column [width]="40"
+          field="Port"
+          title="Port"
+        ></kendo-grid-column>
+        <kendo-grid-column [width]="40"
+        field="Remarks"
+        title="Remarks"
+      ></kendo-grid-column>
+       
+       
+      </kendo-grid>
+ 
+        </kendo-window>
+
+      </kendo-gridlayout-item>
+      <kendo-gridlayout-item [row]="2" [col]="2">
+        <!-- <button kendoButton *ngIf="!opened1" (click)="openClose1(true)" class="mainbtn">
+          Popup contains form with kendo controls
+        </button> -->
+        <button kendoButton (click)="openClose1(true)" class="mainbtn">
+          Popup contains form with kendo controls
+        </button>
+
+        <kendo-window 
+          [minWidth]="200"
+          [minHeight]="200"
+          [resizable]="isResizable"
+          *ngIf="opened1"
+          (close)="openClose1(false)"
+          title="CREATE DEPARTMENT"
+          width="800"
+          left="100"
+        >
+        <div class="gridcontent"> 
+          <div class="row">
+            <form class="k-form k-form-md k-form-horizontal" [formGroup]="form">
+              <fieldset [orientation]="horizontal" class="k-form-fieldset">
+              <div class="col-md-12">
+
+
+                <div class="content1">
+              
+                  <div class="flex-grow-1 d-flex  labeldiv">
+                  
+                    <kendo-formfield style="width:25%">
+                      <kendo-label [for]="name" text="Name"></kendo-label>
+                      <kendo-textbox
+                        formControlName="name"
+                        [clearButton]="true"
+                        #from
+                        required></kendo-textbox>
+                      </kendo-formfield>
+                      <kendo-formfield style="width:25%">
+                        <kendo-label [for]="pageheading" text="Page Heading"></kendo-label>
+                        <kendo-textbox
+                          formControlName="pageheading"
+                          [clearButton]="true"
+                          #to
+                          required
+                        ></kendo-textbox>
+                      </kendo-formfield>
+                      <kendo-formfield style="width:25%">
+                        <kendo-label [for]="pagename" text="Page Name"></kendo-label>
+                        <kendo-textbox
+                          formControlName="pagename"
+                          [clearButton]="true"
+                          #to
+                          required
+                        ></kendo-textbox>
+                      </kendo-formfield>
+                      <kendo-formfield style="width:25%">
+                        <kendo-label [for]="iconname" text="Icon Name"></kendo-label>
+                        <kendo-textbox
+                          formControlName="iconname"
+                          [clearButton]="true"
+                          #to
+                          required
+                        ></kendo-textbox>
+                      </kendo-formfield>
+                     
+                 </div>
+
+                 <div class="flex-grow-1 d-flex  labeldiv2">
+                  
+                  <kendo-formfield style="width:25%">
+                      <kendo-label text="Applicable To">
+                        <kendo-dropdownlist  formControlName="applicableto" #applicableto [data]="applicabletolist"></kendo-dropdownlist>
+                      </kendo-label>
+                    </kendo-formfield>
+                    <kendo-formfield style="width:25%">
+                      <kendo-label text="Page Type">
+                        <kendo-dropdownlist  formControlName="pagetype" #pagetype [data]="pagetypelist"></kendo-dropdownlist>
+                      </kendo-label>
+                    </kendo-formfield>
+                    <kendo-formfield style="width:25%">
+                      <kendo-label text="From Version">
+                        <kendo-dropdownlist  formControlName="fromversion" #fromversion [data]="fromversionlist"></kendo-dropdownlist>
+                      </kendo-label>
+                    </kendo-formfield>
+                  
+                      <kendo-formfield style="width:25%">
+                        <kendo-label text="To Version">
+                          <kendo-dropdownlist  formControlName="toversion" #fromversion [data]="toversionlist"></kendo-dropdownlist>
+                        </kendo-label>
+                      </kendo-formfield>
+                 
+                   
+               </div>
+
+               <div class="flex-grow-1 d-flex  labeldiv">
+                  
+                <kendo-formfield style="width:50%">
+                  <kendo-label [for]="navigationurl" text="Navigation URL"></kendo-label>
+                  <kendo-textbox
+                    formControlName="navigationurl"
+                    [clearButton]="true"
+                    #from
+                    required></kendo-textbox>
+                  </kendo-formfield>
+                  <kendo-formfield style="width:50%">
+                    <kendo-label [for]="menuname" text="Menu Name"></kendo-label>
+                    <kendo-textbox
+                      formControlName="menuname"
+                      [clearButton]="true"
+                      #to
+                      required
+                    ></kendo-textbox>
+                  </kendo-formfield>
+                 
+                 
+             </div>
+
+             <div class="flex-grow-1 d-flex labeldiv">
+              <kendo-formfield showHints="initial" style="padding: 15px;width: 20%;">
+                <div class="k-form-field-checkbox-wrap">
+                  <input
+                    kendoCheckBox
+                    id="terms"
+                    type="checkbox"
+                    formControlName="active"
+                  />
+                  <kendo-label
+                    class="k-checkbox-label"
+                    for="active"
+                    text="Active"
+                  ></kendo-label>
+                </div>
+                <!-- <kendo-formhint
+                  >Active</kendo-formhint> -->
+               
+                <!-- <kendo-formerror>Error: This field is required</kendo-formerror> -->
+              </kendo-formfield>
+
+              <kendo-formfield showHints="initial" style="padding: 15px;width: 20%;">
+                <div class="k-form-field-checkbox-wrap">
+                  <input
+                    kendoCheckBox
+                    id="terms"
+                    type="checkbox"
+                    formControlName="leafnode"
+                  />
+                  <kendo-label
+                    class="k-checkbox-label"
+                    for="leafnode"
+                    text="Leaf Node"
+                  ></kendo-label>
+                </div>
+                <!-- <kendo-formhint
+                  >Active</kendo-formhint
+                > -->
+                <!-- <kendo-formerror>Error: This field is required</kendo-formerror> -->
+              </kendo-formfield>
+
+              <kendo-formfield showHints="initial" style="padding: 15px;width: 20%;">
+                <div class="k-form-field-checkbox-wrap">
+                  <input
+                    kendoCheckBox
+                    id="terms"
+                    type="checkbox"
+                    formControlName="visible"
+                  />
+                  <kendo-label
+                    class="k-checkbox-label"
+                    for="visible"
+                    text="Visible"
+                  ></kendo-label>
+                </div>
+                <!-- <kendo-formhint
+                  >Active</kendo-formhint
+                > -->
+                <!-- <kendo-formerror>Error: This field is required</kendo-formerror> -->
+              </kendo-formfield>
+              <kendo-formfield showHints="initial" style="padding: 15px;width: 20%;">
+                <div class="k-form-field-checkbox-wrap">
+                  <input
+                    kendoCheckBox
+                    id="terms"
+                    type="checkbox"
+                    formControlName="viewonly"
+                  />
+                  <kendo-label
+                    class="k-checkbox-label"
+                    for="viewonly"
+                    text="View Only"
+                  ></kendo-label>
+                </div>
+                <!-- <kendo-formhint
+                  >Active</kendo-formhint
+                > -->
+                <!-- <kendo-formerror>Error: This field is required</kendo-formerror> -->
+              </kendo-formfield>
+             </div>
+                
+                </div>
+              </div>
+            
+              </fieldset>          
+                          </form>
+           
+          </div>       
+        </div>
+       
+      
+  </kendo-window>
+
+
+
+      </kendo-gridlayout-item>
+      <kendo-gridlayout-item [row]="2" [col]="3">
+       
+      </kendo-gridlayout-item>
+      
+      
+   
+   
+
+    </kendo-gridlayout>
+  </div>
