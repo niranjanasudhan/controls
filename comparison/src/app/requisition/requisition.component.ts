@@ -6,6 +6,12 @@ import { HttpClient } from '@angular/common/http';
 import { map, tap } from "rxjs/operators";
 import { DataBindingDirective } from './dataBindingDirective';
 
+import {
+  SVGIcon,
+  boldIcon,
+  textboxIcon,
+} from "@progress/kendo-svg-icons";
+
 @Component({
   selector: 'app-requisition',
   templateUrl: './requisition.component.html',
@@ -15,6 +21,8 @@ export class RequisitionComponent implements OnInit  {
   @ViewChild(DataBindingDirective) dataBinding!: DataBindingDirective;
   isFullScreen = false;
 
+  public boldSVG: SVGIcon = boldIcon;
+  public textboxSVG: SVGIcon = textboxIcon;
   public navItems = [
     {
       title: 'Dashboard',
@@ -199,6 +207,17 @@ formatDate(field: string): void {
           'font-weight': 'normal' // Default font style
     };
 
+    toggleBold(): void {
+      this.selectedFontStyle = 'B';
+      this.updateStyle();
+      this.style['font-weight'] = 'bold';
+    }
+    
+    toggleNormal(): void {
+      this.selectedFontStyle = 'N';
+      this.updateStyle();
+      this.style['font-weight'] = 'normal';
+    }
 
     updateStyle() {
         this.style['font-size'] = `${this.selectedFontSize}px`;

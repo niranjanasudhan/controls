@@ -76,7 +76,7 @@
         >
         </kendo-dropdownlist>
         
-        <kendo-dropdownlist
+        <!-- <kendo-dropdownlist
             [data]="fontStyles"
             [(ngModel)]="selectedFontStyle"
             class="custom-dropdown-outline ms-2"
@@ -84,7 +84,30 @@
             (valueChange)="updateStyle()"
 
         >
-        </kendo-dropdownlist> 
+        </kendo-dropdownlist>  -->
+
+        <kendo-buttongroup>
+          <button
+          kendoButton
+          [toggleable]="true"
+          [svgIcon]="boldSVG"
+          title="Bold"
+          (click)="toggleBold()"
+          [selected]="selectedFontStyle === 'B'"
+          class="btn-primary btn-outline ms-2"
+          fillMode="outline"
+        ></button>
+        <button
+          kendoButton
+          [toggleable]="true"
+          [svgIcon]="textboxSVG"
+          title="Normal"
+          (click)="toggleNormal()"
+          [selected]="selectedFontStyle === 'N'"
+          class="btn-primary btn-outline"
+          fillMode="outline"
+        ></button>
+        </kendo-buttongroup>
         </div>
         
       </header>
