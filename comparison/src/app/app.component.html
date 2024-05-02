@@ -336,6 +336,18 @@
       <a [routerLink]="['/gridstyling']" routerLinkActive="active">Grid Styling</a>
       <a [routerLink]="['/demo']" routerLinkActive="active">Demo</a>
       <a [routerLink]="['/requisition']" routerLinkActive="active">Requisition</a>
+      
+
+      <!-- <kendo-dropdownlist
+        [data]="fontSizes"
+        [textField]="'text'"
+        [valueField]="'text'"
+        [valuePrimitive]="true"
+        (valueChange)="onChange($event)"
+        [defaultItem]="{ text: 'Select Font Size' }"
+        [value]="selectedFontSize"
+      ></kendo-dropdownlist> -->
+
     </mat-toolbar>
 
     <mat-toolbar class="mobile-toolbar" [ngClass]="bgClass">

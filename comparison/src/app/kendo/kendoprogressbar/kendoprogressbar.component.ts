@@ -1,33 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy  } from '@angular/core';
 
 @Component({
   selector: 'app-kendoprogressbar',
   templateUrl: './kendoprogressbar.component.html',
   styleUrls: ['./kendoprogressbar.component.css']
 })
-export class KendoprogressbarComponent {
-  public value = 0;
-  public running: any;
-  
-  public startProgress(): void {
+export class KendoprogressbarComponent implements OnInit, OnDestroy {
+  public labelhide = {
+    visible: false,
+};
+
+  value: number = 0;
+  running: any;
+
+  constructor() { }
+
+  ngOnInit(): void {
     this.running = setInterval(() => {
-      if (this.value <= 100) {
+      if (this.value < 45) {
         this.value++;
       } else {
         this.stopProgress();
       }
     }, 50);
   }
-  
-  public stopProgress(): void {
-    if (this.running) {
-      clearInterval(this.running);
-      this.running =null;
-    }
+
+  stopProgress() {
+    clearInterval(this.running);
   }
-  
-  public resetProgress(): void {
-    this.value = 0;
+
+  ngOnDestroy() {
     this.stopProgress();
   }
 }

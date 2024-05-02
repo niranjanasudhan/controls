@@ -1,6 +1,19 @@
 <h2 class="mainhead">Toggle</h2>
-<div class="row">
-    <div class="col-xs-12 col-sm-6 example-col">
+<div class="">
+  <div class="d-flex my-2 ">
+    <h4>Primary Custom toggle</h4>
+    <kendo-switch class="toggle-blue mx-2" size="small"></kendo-switch>
+    <kendo-switch class="toggle-blue mx-2" size="small" [(ngModel)]="checked"></kendo-switch>
+  </div>
+  <div class="d-flex my-2">
+    <h4>Success Custom toggle</h4>
+      <kendo-switch class="toggle-green mx-2" size="small"></kendo-switch>
+      <kendo-switch class="toggle-green mx-2" size="small" [(ngModel)]="checked"></kendo-switch>
+  </div>
+
+
+
+    <!-- <div class="col-xs-12 col-sm-6 example-col">
       <p>Default Toggleable Button</p>
       <p class="k-block">
         <button
@@ -53,5 +66,5 @@
           Diesel
         </button>
       </p>
-    </div>
+    </div> -->
   </div>

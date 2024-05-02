@@ -1,0 +1,22 @@
+/* Badges style */
+
+.Badges-gray{
+    background-color: #E3E8EF;
+    color: #364152;
+    border: none;
+    font-size: 14px;
+}
+
+.Badges-red{
+    background-color: #F7EAEA;
+    color: #C2232D;
+    border: none;
+    font-size: 14px;
+}
+
+.Badges-green{
+    background-color: #E4F3ED;
+    color: #098753;
+    border: none;
+    font-size: 14px;
+}

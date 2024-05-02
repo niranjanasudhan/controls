@@ -1,22 +1,276 @@
 <h2 class="mainhead">Textbox</h2>
-<div class="profile-demo card-container">
 
-    <div class="k-card custom-card">
-      <div class="card-row">
-       
-          <div class="component-container">
-            <kendo-label text="Name">
-              <kendo-textbox placeholder="John Smith"></kendo-textbox>
-            </kendo-label>
-          </div>
-         
-       
+<div class="container ">
+  <div class="row my-4">
+    <div class="col-2">
+      <p>Normal State</p>
+    </div>
+    <div class="col-3">
+      <p>Text Field</p>
+      <div>
+          <kendo-floatinglabel [text]="getPlaceholder('Select Option')">
+          <kendo-textbox 
+          [style.width.px]="180"
+          size="normal"
+          fillMode="outline"
+          class="custom-input-outline"
+          ></kendo-textbox>
+        </kendo-floatinglabel>
       </div>
+    </div>
+
+    <div class="col-3">
+      <p>Dropdown</p>
+      <div>
+          <kendo-floatinglabel [text]="getPlaceholder('Select Option')">
+            <kendo-dropdownlist 
+            [data]="areaList" 
+            fillMode="outline"
+            class="custom-dropdown-outline w-100"
+            [svgIcon]="folderSVG"
+        >
+        </kendo-dropdownlist>
+        </kendo-floatinglabel>
+      </div>
+    </div>
+
+    <div class="col-3">
+      <p>Date Picker</p>
+      <div>
+          <kendo-floatinglabel [text]="getPlaceholder('Select Date')">
+            <kendo-datepicker 
+            class="custom-datepicker"
+            placeholder=""
+            ></kendo-datepicker>
+        </kendo-floatinglabel>
+      </div>
+    </div>
+
+  </div>
+ 
+  <div class="row my-4">
+    <div class="col-2">
+      <p>Filled State</p>
+    </div>
+    <div class="col-3">
+      <div>
+          <kendo-floatinglabel [text]="getPlaceholder('Email/Username')">
+          <kendo-textbox 
+          [style.width.px]="180"
+          value="johndoe@email.com"
+          size="normal"
+          fillMode="outline"
+          class="custom-input-outline"
+          ></kendo-textbox>
+        </kendo-floatinglabel>
+      </div>
+    </div>
+
+    <div class="col-3">
+      <div>
+          <kendo-floatinglabel [text]="getPlaceholder('Select Option')">
+            <kendo-dropdownlist 
+            [data]="areaList" 
+            value="Houston"
+            fillMode="outline"
+            class="custom-dropdown-outline w-100"
+            [svgIcon]="folderSVG"
+        >
+        </kendo-dropdownlist>
+        </kendo-floatinglabel>
+      </div>
+    </div>
+
+
+    <div class="col-3">
+      <div>
+        <kendo-floatinglabel [text]="getPlaceholder('Select Date')">
+          <kendo-datepicker 
+          class="custom-datepicker"
+          [value]="value"
+          placeholder=""
+          ></kendo-datepicker>
+      </kendo-floatinglabel>
+    </div>
+    </div>
+
+  </div>
+
+  <div class="row my-4">
+    <div class="col-2">
+      <p>Disabled</p>
+    </div>
+    <div class="col-3">
+      <div>
+          <kendo-floatinglabel [text]="getPlaceholder('Email/Username')">
+          <kendo-textbox 
+          [style.width.px]="180"
+          value="johndoe@email.com"
+          size="normal"
+          fillMode="outline"
+          class="custom-input-outline"
+          disabled="true"
+          ></kendo-textbox>
+        </kendo-floatinglabel>
+      </div>
+    </div>
+
+
+    <div class="col-3">
+      <div>
+          <kendo-floatinglabel [text]="getPlaceholder('Select Option')">
+            <kendo-dropdownlist 
+            [data]="areaList" 
+            value="Houston"
+            fillMode="outline"
+            class="custom-dropdown-outline w-100"
+            [svgIcon]="folderSVG"
+            disabled="true"
+        >
+        </kendo-dropdownlist>
+        </kendo-floatinglabel>
+      </div>
+    </div>
+
+
+    <div class="col-3">
+      <div>
+        <kendo-floatinglabel [text]="getPlaceholder('Select Date')">
+          <kendo-datepicker 
+          class="custom-datepicker"
+          [value]="value"
+          placeholder=""
+          disabled="true"
+          ></kendo-datepicker>
+      </kendo-floatinglabel>
+    </div>
     </div>
   </div>
 
+  <div class="row my-4">
+    <div class="col-2">
+      <p>Read only</p>
+    </div>
+    <div class="col-3">
+      <div>
+          <kendo-floatinglabel [text]="getPlaceholder('Email/Username')">
+          <kendo-textbox 
+          [style.width.px]="180"
+          [readonly]="true"
+          value="johndoe@email.com"
+          size="normal"
+          fillMode="outline"
+          class="custom-input-outline"
+          ></kendo-textbox>
+        </kendo-floatinglabel>
+      </div>
+    </div>
 
-  <h4>TextArea</h4>
+    <div class="col-3">
+      <div>
+          <kendo-floatinglabel [text]="getPlaceholder('Select Option')">
+            <kendo-dropdownlist 
+            [data]="areaList" 
+            value="Houston"
+            [readonly]="true"
+            fillMode="outline"
+            class="custom-dropdown-outline w-100"
+            [svgIcon]="folderSVG"
+        >
+        </kendo-dropdownlist>
+        </kendo-floatinglabel>
+      </div>
+    </div>
+
+    <div class="col-3">
+      <div>
+        <kendo-floatinglabel [text]="getPlaceholder('Select Date')">
+          <kendo-datepicker 
+          class="custom-datepicker"
+          [value]="value"
+          placeholder=""
+          [readonly]="true"
+          ></kendo-datepicker>
+      </kendo-floatinglabel>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="row my-4">
+    <div class="col-2">
+      Validation
+    </div>
+    <div class="col-3">
+      <div>
+        <kendo-floatinglabel [text]="getPlaceholder('Email/Username')">
+          <kendo-textbox 
+            [style.width.px]="180"
+            size="normal"
+            fillMode="outline"
+            class="custom-input-outline"
+            [formControl]="emailUsernameControl"
+            required
+          ></kendo-textbox>
+        </kendo-floatinglabel>
+      </div>
+      
+      <div *ngIf="emailUsernameControl.invalid && (emailUsernameControl.dirty || emailUsernameControl.touched)">
+        <div *ngIf="emailUsernameControl.errors.required" class="text-danger">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="12" viewBox="0 0 15 12" fill="none">
+            <path d="M7.27065 4.47384V6.91772M7.27065 9.3616H7.27676M6.42465 1.35283L1.39949 10.0327C1.12076 10.5141 0.981397 10.7548 1.00199 10.9524C1.01996 11.1247 1.11024 11.2813 1.25037 11.3832C1.41103 11.5 1.68919 11.5 2.24549 11.5H12.2958C12.8521 11.5 13.1303 11.5 13.2909 11.3832C13.4311 11.2813 13.5213 11.1247 13.5393 10.9524C13.5599 10.7548 13.4205 10.5141 13.1418 10.0327L8.11665 1.35283C7.83892 0.873116 7.70006 0.633261 7.51889 0.552702C7.36086 0.482433 7.18045 0.482433 7.02242 0.552702C6.84125 0.633261 6.70238 0.873117 6.42465 1.35283Z" stroke="#C2232D" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          Enter a Valid Email/Username
+        </div>
+      </div>
+    </div>
+
+    <div class="col-3">
+      <div>
+        <kendo-floatinglabel [text]="getPlaceholder('Select Option')">
+        <kendo-dropdownlist 
+          [data]="areaList" 
+          fillMode="outline"
+          class="custom-dropdown-outline w-100"
+          [class.custom-dropdown-outline-red]="!isOptionSelected"
+          [svgIcon]="folderSVG"
+          [(ngModel)]="selectedArea"
+          (valueChange)="validateSelection()"
+        >
+        </kendo-dropdownlist>
+      </kendo-floatinglabel>
+        <div *ngIf="!isOptionSelected" class="text-danger">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="12" viewBox="0 0 15 12" fill="none">
+            <path d="M7.27065 4.47384V6.91772M7.27065 9.3616H7.27676M6.42465 1.35283L1.39949 10.0327C1.12076 10.5141 0.981397 10.7548 1.00199 10.9524C1.01996 11.1247 1.11024 11.2813 1.25037 11.3832C1.41103 11.5 1.68919 11.5 2.24549 11.5H12.2958C12.8521 11.5 13.1303 11.5 13.2909 11.3832C13.4311 11.2813 13.5213 11.1247 13.5393 10.9524C13.5599 10.7548 13.4205 10.5141 13.1418 10.0327L8.11665 1.35283C7.83892 0.873116 7.70006 0.633261 7.51889 0.552702C7.36086 0.482433 7.18045 0.482433 7.02242 0.552702C6.84125 0.633261 6.70238 0.873117 6.42465 1.35283Z" stroke="#C2232D" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          Please select an option</div>
+      </div>
+    </div>
+
+    <div class="col-3">
+      <div>
+        <kendo-floatinglabel [text]="getPlaceholder('Select Date')">
+          <kendo-datepicker 
+            class="custom-datepicker"
+            placeholder=""
+            [(ngModel)]="selectedDate"
+            (valueChange)="validateDateSelection()"
+            [incompleteDateValidation]="true"
+          ></kendo-datepicker>
+        </kendo-floatinglabel>
+        <div *ngIf="!isDateSelected" class="text-danger">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="12" viewBox="0 0 15 12" fill="none">
+            <path d="M7.27065 4.47384V6.91772M7.27065 9.3616H7.27676M6.42465 1.35283L1.39949 10.0327C1.12076 10.5141 0.981397 10.7548 1.00199 10.9524C1.01996 11.1247 1.11024 11.2813 1.25037 11.3832C1.41103 11.5 1.68919 11.5 2.24549 11.5H12.2958C12.8521 11.5 13.1303 11.5 13.2909 11.3832C13.4311 11.2813 13.5213 11.1247 13.5393 10.9524C13.5599 10.7548 13.4205 10.5141 13.1418 10.0327L8.11665 1.35283C7.83892 0.873116 7.70006 0.633261 7.51889 0.552702C7.36086 0.482433 7.18045 0.482433 7.02242 0.552702C6.84125 0.633261 6.70238 0.873117 6.42465 1.35283Z" stroke="#C2232D" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          Please select a date</div>        
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+
+
+  <!-- <h4>TextArea</h4>
   <div class="profile-demo card-container">
     <div class="k-card custom-card">
       <div class="card-row">
@@ -36,4 +290,4 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->

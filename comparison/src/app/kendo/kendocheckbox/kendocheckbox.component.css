@@ -5,3 +5,26 @@
     color: black;
     text-align: center;
 }
+
+/* checkbox-blue checkbox style */
+
+.checkbox-blue.k-checkbox:checked, .k-checkbox.k-checked {
+    border-color: #000080;
+    background-color: #000080;
+}
+
+
+.checkbox-blue.k-checkbox {
+    border-color: #737373;
+}
+
+.checkbox-blue.k-checkbox:checked:focus, .k-checkbox.k-checked.k-focus {
+    box-shadow: 0 0 0 2px rgba(0, 0, 128, 0.3);
+}
+
+.checkbox-blue.k-checkbox:disabled + .k-checkbox-label {
+    opacity: 0.5;
+}
+
+
+/* end style checkbox-blue checkbox style */

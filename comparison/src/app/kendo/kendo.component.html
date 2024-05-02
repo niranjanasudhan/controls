@@ -29,7 +29,7 @@
         [activated]="rla.isActive" (click)="handleClick(i)"
       >
         <span matListItemTitle>{{ item.title }}</span>
-        <!-- <mat-icon matListItemIcon>{{ item.icon }}</mat-icon> -->
+        <i *ngIf="item.icon" class="bi bi-check-circle-fill ms-2"></i>
       </a>
       
       

@@ -34,26 +34,57 @@ export class KendoComponent {
     {
       title: 'Button',
       route: ['/kendo/button','/kendo/'],
-     
+      icon: true
     },
     {
-      title: 'Dropdown',
-      route: '/kendo/dropdown',
-     
+      title: 'Radio Button',
+      route: '/kendo/radiobutton',
+      icon: true
     },
     {
-      title: 'Controls',
-      route: '/kendo/controls',
-     
+      title: 'Toggle',
+      route: '/kendo/toggle',
+      icon: true
+    },
+    {
+      title: 'Checkbox',
+      route: '/kendo/checkbox',
+      icon: true
+    },
+    {
+      title: 'Progressbar',
+      route: '/kendo/progressbar',
+      icon: true
+    },
+    {
+      title: 'Badges',
+      route: '/kendo/badges',
+      icon: true
     },
     {
       title: 'Tab',
       route: '/kendo/tab',
+      icon: true
     },
     {
       title: 'Stepper',
       route: '/kendo/wizard',
-     
+      icon: true
+    },
+    {
+      title: 'Tree list',
+      route: '/kendo/treelist',
+      icon: true
+    },
+    {
+      title: 'Dropdown',
+      route: '/kendo/dropdown',
+      icon: true
+    },
+    {
+      title: 'Textbox',
+      route: '/kendo/textbox',
+      icon: true
     },
     {
       title: 'Date Inputs',
@@ -61,62 +92,8 @@ export class KendoComponent {
      
     },
     {
-      title: 'Textbox',
-      route: '/kendo/textbox',
-     
-    },
-    {
-      title: 'Icon',
-      route: '/kendo/icon',
-     
-    },
-    {
-      title: 'Progressbar',
-      route: '/kendo/progressbar',
-     
-    },
-    {
-      title: 'Pager',
-      route: '/kendo/pager',
-     
-    },
-    {
-      title: 'Dialogs',
-      route: '/kendo/dialogs',
-      },
-    {
-      title: 'Radio Button',
-      route: '/kendo/radiobutton',
-     
-    },
-    {
-      title: 'Toggle',
-      route: '/kendo/toggle',
-     
-    },
-    {
-      title: 'Checkbox',
-      route: '/kendo/checkbox',
-     
-    },
-    {
       title: 'Tooltip',
       route: '/kendo/tooltip',
-     
-    },
-    {
-      title: 'Popup',
-      route: '/kendo/popup',
-     
-    },
-    {
-      title: 'Menu',
-      route: '/kendo/menu',
-     
-    },
-    {
-      title: 'Accordion',
-      route: '/kendo/accordion',
      
     },
     {
@@ -128,9 +105,34 @@ export class KendoComponent {
       title: 'Toasters',
       route: '/kendo/toasters',
      
-    },{
-      title: 'Tree list',
-      route: '/kendo/treelist',
+    },
+    {
+      title: 'Menu',
+      route: '/kendo/menu',
+     
+    },
+    {
+      title: 'Dialogs',
+      route: '/kendo/dialogs',
+      },
+      {
+        title: 'Popup',
+        route: '/kendo/popup',
+       
+      },
+    {
+      title: 'Accordion',
+      route: '/kendo/accordion',
+     
+    },
+    {
+      title: 'Icon',
+      route: '/kendo/icon',
+     
+    },
+    {
+      title: 'Pager',
+      route: '/kendo/pager',
      
     },
     {

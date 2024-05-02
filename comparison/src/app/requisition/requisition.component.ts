@@ -1,4 +1,4 @@
-import { Component, ViewChild, HostListener } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Athlete } from "../dashboard/model";
@@ -9,9 +9,9 @@ import { DataBindingDirective } from './dataBindingDirective';
 @Component({
   selector: 'app-requisition',
   templateUrl: './requisition.component.html',
-  styleUrls: ['./requisition.component.css']
+  styleUrls: ['./requisition.component.css'],
 })
-export class RequisitionComponent {
+export class RequisitionComponent implements OnInit  {
   @ViewChild(DataBindingDirective) dataBinding!: DataBindingDirective;
   isFullScreen = false;
 
@@ -77,11 +77,9 @@ export class RequisitionComponent {
    }
 
   ngOnInit() {
-    this.BASE_URL="https://www.ag-grid.com/example-assets/olympic-winners.json";
-    this.view=this.http.get(`${this.BASE_URL}`
-      
-      ).pipe(
-      map((response: any) => <Athlete[]>response),
+    this.BASE_URL = "https://www.ag-grid.com/example-assets/olympic-winners.json";
+    this.view = this.http.get<Athlete[]>(this.BASE_URL).pipe(
+      map((response: Athlete[]) => response.slice(0, 50)), // Slice the response to get only the first 50 items
       tap(() => (this.loading = false))
     );
 
@@ -188,6 +186,25 @@ formatDate(field: string): void {
     }
   }
   
-  
-  
+ 
+   // Font sizes and styles data
+   fontSizes = [9, 10, 11, 12, 13, 14, 15, 16];
+   fontStyles = ['Normal', 'Bold'];
+
+   // Selected font size and style
+   selectedFontSize: number = 9;
+   selectedFontStyle: string = '';
+    style = {
+          'font-size': '16px', // Default font size
+          'font-weight': 'normal' // Default font style
+    };
+
+
+    updateStyle() {
+        this.style['font-size'] = `${this.selectedFontSize}px`;
+        this.style['font-weight'] = this.selectedFontStyle.toLowerCase();
+    }
+
+
+
 }

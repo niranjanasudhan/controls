@@ -5,18 +5,31 @@
     color: black;
     text-align: center;
 }
-.example-wrapper {
-    min-height: 0;
-    display: flex;
-    justify-content: space-evenly;
-    text-align: center;
-  }
 
-  .example-wrapper > div {
-    text-align: center;
-  }
+  /* radio-blue radio style */
 
-  .custom-size {
-    width: 40px;
-    height: 40px;
-  }
+.radio-blue.k-radio:checked, .k-radio.k-checked {
+  border-color: #000080;
+  color: #000080;
+  background-color: #ffffff;
+}
+
+.radio-blue.k-radio {
+  border-color: #737373;
+}
+
+.radio-blue.k-radio:checked:focus, .k-radio.k-checked.k-focus {
+  box-shadow: 0 0 0 2px rgba(0, 0, 128, 0.3);
+}
+
+.radio-blue.k-radio:checked,
+.radio-blue.k-radio.k-checked {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 11'%3e%3ccircle cx='50%25' cy='50%25' r='4' fill='%23000080'/%3e%3c/svg%3e");
+}
+
+.radio-blue.k-radio:disabled + .k-radio-label {
+  opacity: 0.5;
+}
+
+
+/* end style radio-blue radio style */

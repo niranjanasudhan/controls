@@ -1,4 +1,122 @@
-.profile-demo.card-container {
+
+.mainhead
+{
+    font-size: 20px;
+    font-weight:600;
+    color: black;
+    text-align: center;
+}
+
+::ng-deep .custom-input-outline.k-input-outline {
+    border-color: #9AA4B2;
+    color: #525252;
+    padding: 1px;
+}
+
+::ng-deep .custom-input-outline.k-input-outline.k-disabled {
+    opacity: 1;
+    filter: grayscale(0);
+    background: #F2F2F2 !important;
+}
+
+::ng-deep .custom-input-outline.k-input-outline.k-readonly {
+    border: none !important;
+    padding: 0px;
+}
+
+/* custom dropdown style*/
+::ng-deep .custom-dropdown-outline .k-input-inner{
+    width: 160px;
+}
+
+.custom-dropdown-outline{
+    border: 1px solid #9AA4B2;
+    padding: 1px;
+}
+
+.custom-dropdown-outline-red{
+    border: 1px solid #ff0000;
+    padding: 1px;
+}
+
+.custom-dropdown-outline:hover{
+    background-color: inherit;
+    color: inherit;
+}
+
+.custom-dropdown-outline:focus{
+    box-shadow: none;
+}
+
+::ng-deep .custom-dropdown-outline.k-disabled {
+    opacity: 1;
+    filter: grayscale(0);
+    background: #F2F2F2 !important;
+}
+
+::ng-deep .custom-dropdown-outline.k-readonly {
+    border: none !important;
+    padding: 0px;
+}
+
+
+::ng-deep .k-popup {
+    margin-top: 3px;
+}
+
+::ng-deep .k-list-container {
+    border: 1px solid #CDD5DF;
+    border-radius: 6px;
+}
+
+::ng-deep .k-list {
+    border-radius: 6px;
+}
+
+::ng-deep .k-list-item {
+    border-bottom: 1px solid #CDD5DF;
+}
+
+::ng-deep .k-list-item:hover {
+    background:  #f0f0f0;
+}
+
+::ng-deep .k-list-item.k-focus{
+    box-shadow: none;
+}
+
+::ng-deep .k-list-item.k-focus.k-selected{
+    background: #E1EEF8;
+    color: #525252;
+}
+
+
+/* custom-datepicker ==================================================== */
+.custom-datepicker{
+    border-color: #9AA4B2;
+    color: #525252;
+    padding: 1px;
+}
+
+.custom-datepicker.k-readonly {
+    border: none !important;
+    padding: 0px;
+}
+
+.custom-datepicker.k-disabled {
+    opacity: 1;
+    filter: grayscale(0);
+    background: #F2F2F2 !important;
+}
+
+/* :host ::ng-deep  .k-floating-label-container .k-focus {
+    background-color: rgb(255, 0, 0); 
+    font-size: 12px;
+    color: #888; 
+    
+  } */
+  
+/* .profile-demo.card-container {
     margin-top: 20px;
     display: flex;
     justify-content: center;
@@ -164,11 +282,4 @@
     .profile-demo .skeleton-box-large-double {
         height: 78px;
     }
-}
-.mainhead
-{
-    font-size: 20px;
-    font-weight:600;
-    color: black;
-    text-align: center;
-}
+} */

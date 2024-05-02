@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { KendocontrolsComponent } from './kendocontrols.component';
+import { KendobadgesComponent } from './kendobadges.component';
 
-describe('KendocontrolsComponent', () => {
-  let component: KendocontrolsComponent;
-  let fixture: ComponentFixture<KendocontrolsComponent>;
+describe('KendobadgesComponent', () => {
+  let component: KendobadgesComponent;
+  let fixture: ComponentFixture<KendobadgesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ KendocontrolsComponent ]
+      declarations: [ KendobadgesComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(KendocontrolsComponent);
+    fixture = TestBed.createComponent(KendobadgesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

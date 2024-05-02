@@ -14,28 +14,42 @@ import { StepType } from "@progress/kendo-angular-layout";
   styleUrls: ['./kendowizard.component.css']
 })
 export class KendowizardComponent {
-  public stepType: StepType = "indicator";
-  public stepTypes: Array<StepType> = ["indicator", "label", "full"];
-  public current = 1;
+  public current1 = -1;
 
-  public steps = [
-    { label: "First step", isValid: true, svgIcon: checkIcon },
-    { label: "Second step", isValid: false },
-    { label: "Third step", isValid: true, optional: true },
-    { label: "Fourth step", isValid: true },
+  public steps1 = [
+    { index: 1, label: "General Details", isValid: true, stepcount: 'Step 1'},
+    { index: 2, label: "Vessel Details", isValid: false, stepcount: 'Step 2' },
+    { index: 3, label: "Port Details", isValid: true, optional: true, stepcount: 'Step 3' },
+    { index: 4, label: "Security Questions", isValid: true, stepcount: 'Step 4' },
   ];
 
-  public prev(): void {
-    if (this.current > 0) {
-      this.current -= 1;
-    }
-  }
 
-  public next(): void {
-    if (this.current < this.steps.length - 1) {
-      this.current += 1;
-    }
-  }
+  public current = 2;
+
+  public steps = [
+    { index: 1, label: "General Details", isValid: true, stepcount: 'Step 1'},
+    { index: 2, label: "Vessel Details", isValid: false, stepcount: 'Step 2' },
+    { index: 3, label: "Port Details", isValid: true, optional: true, stepcount: 'Step 3' },
+    { index: 4, label: "Security Questions", isValid: true, stepcount: 'Step 4' },
+  ];
+
+  public current2 = 3;
+
+  public steps2 = [
+    { index: 1, label: "General Details", isValid: true, stepcount: 'Step 1'},
+    { index: 2, label: "Vessel Details", isValid: false, stepcount: 'Step 2' },
+    { index: 3, label: "Port Details", isValid: true, optional: true, stepcount: 'Step 3' },
+    { index: 4, label: "Security Questions", isValid: true, stepcount: 'Step 4' },
+  ];
+
+  public current3 = 3;
+
+  public steps3 = [
+    { index: 1, label: "General Details", stepcount: 'Step 1'},
+    { index: 2, label: "Vessel Details", stepcount: 'Step 2' },
+    { index: 3, label: "Port Details", stepcount: 'Step 3' },
+    { index: 4, label: "Security Questions", stepcount: 'Step 4'},
+  ];
 }
 
 // <svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16" fill="none">
