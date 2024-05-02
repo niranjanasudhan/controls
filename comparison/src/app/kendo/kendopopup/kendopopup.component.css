@@ -146,3 +146,10 @@
     color: #000080;
     background-color: white;
   }
+  .k-checkbox:checked, .k-checkbox.k-checked {
+    background-image: url(../../../assets/Icons/tick.png);
+}
+.flex-grow-1 {
+  
+  padding: 10px;
+}
