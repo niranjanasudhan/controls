@@ -24,3 +24,8 @@
     line-height: 32px;
     padding-left: 10px;
   }
+
+  ::ng-deep .k-treeview-item *::before {
+    border: 1px solid red;
+    contain: "L";
+}

@@ -78,8 +78,74 @@
   </kendo-tabstrip>
 </div>
 
+<div class="wrapper my-2">
+  <kendo-tabstrip (tabSelect)="onTabSelect($event)" class="tab-primary-vertical">
+    <kendo-tabstrip-tab title="Option A" [selected]="true">
+      <ng-template kendoTabContent>
+      </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab title="Option B">
+      <ng-template kendoTabContent>
+      </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab title="Option C">
+      <ng-template kendoTabContent>
+      </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab title="Option D">
+      <ng-template kendoTabContent>
+      </ng-template>
+    </kendo-tabstrip-tab>
+  </kendo-tabstrip>
+</div>
 
+<hr class="my-2">
 
+<div class="wrapper my-2">
+  <kendo-tabstrip (tabSelect)="onTabSelect($event)" class="tab-primary">
+    <kendo-tabstrip-tab [selected]="true">
+      <ng-template kendoTabTitle>
+        Option A
+        <kendo-dropdownbutton [data]="data"  fillMode="clear" size="small" [svgIcon]="downSVG" class="ms-3">
+        </kendo-dropdownbutton>
+      </ng-template>
+      <ng-template kendoTabContent>
+        <!-- Tab content for Option A -->
+      </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab>
+      <ng-template kendoTabTitle>
+        Option B
+        <kendo-dropdownbutton [data]="data"  fillMode="clear" size="small" [svgIcon]="downSVG" class="ms-3">
+        </kendo-dropdownbutton>
+      </ng-template>
+      <ng-template kendoTabContent>
+        <!-- Tab content for Option B -->
+      </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab>
+      <ng-template kendoTabTitle>
+        Option C
+        <kendo-dropdownbutton [data]="data"  fillMode="clear" size="small" [svgIcon]="downSVG" class="ms-3">
+        </kendo-dropdownbutton>
+      </ng-template>
+      <ng-template kendoTabContent>
+        <!-- Tab content for Option C -->
+      </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab>
+      <ng-template kendoTabTitle>
+        Option D
+        <kendo-dropdownbutton [data]="data"  fillMode="clear" size="small" [svgIcon]="downSVG" class="ms-3">
+        </kendo-dropdownbutton>
+      </ng-template>
+      <ng-template kendoTabContent>
+        <!-- Tab content for Option D -->
+      </ng-template>
+    </kendo-tabstrip-tab>
+  </kendo-tabstrip>
+  
+</div>
 
 
 

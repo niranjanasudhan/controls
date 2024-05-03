@@ -87,15 +87,15 @@ export class KendoComponent {
       icon: true
     },
     {
-      title: 'Date Inputs',
-      route: '/kendo/dateinputs',
-     
-    },
-    {
       title: 'Tooltip',
       route: '/kendo/tooltip',
-     
+      icon: true
     },
+    // {
+    //   title: 'Date Inputs',
+    //   route: '/kendo/dateinputs',
+     
+    // },
     {
       title: 'Loader',
       route: '/kendo/loader',

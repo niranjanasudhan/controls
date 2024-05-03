@@ -1,5 +1,36 @@
+<link rel="stylesheet" href="https://unpkg.com/@progress/kendo-font-icons/dist/index.css"/>
 <h2 class="mainhead">Tooltip</h2>
-<div class="example-wrapper">
+
+<div class="container">
+  <div>
+    <div kendoTooltip style="text-align: center; padding-top: 10px;" position="bottom">
+      <button
+      kendoButton
+      title="Delete"
+      class="btn-primary btn-outline"
+      fillMode="outline"
+      [svgIcon]="deleteSVG"
+      size="large"
+      ></button>
+    </div>
+  </div>
+  <div class="my-5">
+    <div kendoTooltip style="text-align: center; padding-top: 10px;" position="top">
+      <kendo-floatinglabel [text]="'code'" title="Code" class="custom-input-float">
+        <kendo-textbox 
+          [style.width.px]="180"
+          size="normal"
+          fillMode="outline"
+          class="custom-input-outline"
+        ></kendo-textbox>
+      </kendo-floatinglabel>
+      
+      
+      
+    </div>
+  </div>
+</div>
+<!-- <div class="example-wrapper">  [closable]="true" showOn="click"
     <p class="instructions">
       Hover over the yellow dots or click the 'Summary' button.
     </p>
@@ -62,4 +93,4 @@
         </div>
       </ng-template>
     </kendo-popover>
-  </div>
+  </div> -->
