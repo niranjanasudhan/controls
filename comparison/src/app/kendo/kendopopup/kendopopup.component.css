@@ -153,3 +153,60 @@
   
   padding: 10px;
 }
+.k-checkbox {
+  border-color: #444444;
+  margin-top: 3px;
+  margin-right: -10px;
+}
+.k-button-solid-base:hover, .k-button-solid-base.k-hover {
+  background-color: #ebebeb;
+  color: #000080;
+  border: 1px solid #000080;
+}
+
+
+.kendo-textbox, .kendo-label {
+  border: 1px solid transparent;
+  line-height: 30px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+}
+.kendo-textbox {
+  display: block;
+  margin-bottom: 2px;
+  border-radius: 3px;
+  border-color: #ccc;
+  text-indent: 5px;
+  width: 250px;
+  height: 35px;
+}
+.kendo-textbox:focus {
+  border-color: #ccc;
+  outline: 0;
+}
+kendo-label > .k-label {
+  z-index: 2;
+  float: left;
+  height: 10px;
+  line-height: 10px;
+  padding: 0px 5px 0px 5px;
+  position: relative;
+  /* left: 100px; */
+  top: 5px;
+  color: #999;
+  background-color: #fff;
+  font-size: 14px;
+  position: relative !important;
+  z-index: 999;
+  /* background-color: #ffffff; */
+  margin-left: 10px;
+}
+body, .kendo-textbox {
+  font-size: 14px;
+  line-height: 20px;
+  font-family: sans-serif;
+}
+.k-grid td.k-selected, .k-grid .k-table-row.k-selected > td, .k-grid .k-table-td.k-selected, .k-grid .k-table-row.k-selected > .k-table-td {
+  background-color: #9AA4B2;
+}
