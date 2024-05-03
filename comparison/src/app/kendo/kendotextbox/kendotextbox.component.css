@@ -90,6 +90,40 @@
     color: #525252;
 }
 
+/* custom input floating label css*/
+::ng-deep .custom-input-float.k-floating-label-container {
+    padding-top: 0px;
+  }
+  
+  
+  ::ng-deep .custom-input-float.k-floating-label-container.k-empty > .k-label {
+    top: 5px;
+    left: 5px;
+    transform: scale(1);
+    font-size: inherit;
+  }
+  
+  ::ng-deep .custom-input-float.k-floating-label-container > .k-label {
+    top: -10px;
+    left: 8px;
+    transform: scale(1);
+    background-color: white;
+    border-radius: 5px;
+    padding: 0px 8px 0px 5px;
+    font-size: 11px;
+  }
+  
+  ::ng-deep .custom-input-float.k-floating-label-container:focus-within > .k-label {
+      top: -10px;
+      left: 8px;
+      transform: scale(1);
+      background-color: white;
+      border-radius: 5px;
+      padding: 0px 8px 0px 5px;
+      font-size: 11px;
+  }
+/* custom input floating label css end */
+
 
 /* custom-datepicker ==================================================== */
 .custom-datepicker{
