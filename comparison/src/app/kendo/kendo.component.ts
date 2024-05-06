@@ -150,6 +150,11 @@ export class KendoComponent {
       route: '/kendo/qrcode',
      
     },
+    {
+      title: 'Grid',
+      route: '/kendo/grid',
+     
+    },
   ];
   handleClick(selectedItem:any) {
     console.log(selectedItem);

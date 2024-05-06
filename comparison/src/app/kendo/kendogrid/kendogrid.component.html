@@ -1,0 +1,136 @@
+
+    
+        <!-- <mat-card class="flex-me"></mat-card> -->
+        <mat-card class="flex-me">
+          <h2>Grid with Locked Column - Horizontal Scrolling</h2>
+          <br>
+          <h4>Locked ID , Name Columns</h4>
+          <kendo-grid
+          [data]="gridData"
+          [height]="370"
+          [reorderable]="true"
+          style="width: 500px;"
+        >
+          <kendo-grid-column
+            field="ProductID"
+            title="ID"
+            [width]="40"
+            [locked]="true"
+          >
+          </kendo-grid-column>
+          <kendo-grid-column
+            field="ProductName"
+            title="Name"
+            [width]="200"
+            [locked]="true"
+          >
+          </kendo-grid-column>
+          <kendo-grid-column
+            field="Category.CategoryName"
+            [width]="200"
+            title="Category"
+          >
+          </kendo-grid-column>
+          <kendo-grid-column field="UnitPrice" title="Price" [width]="80">
+          </kendo-grid-column>
+          <kendo-grid-column field="UnitsInStock" title="In stock" [width]="80">
+          </kendo-grid-column>
+          <kendo-grid-column
+            field="Discontinued"
+            title="Discontinued"
+            [width]="120"
+          >
+            <ng-template kendoGridCellTemplate let-dataItem>
+              <input type="checkbox" [checked]="dataItem.Discontinued" disabled />
+            </ng-template>
+          </kendo-grid-column>
+        </kendo-grid>
+        <br>
+        <br> <br>
+        <h4>Locked In Stock Column</h4>
+        <kendo-grid
+        [data]="gridData"
+        [height]="370"
+        [reorderable]="true"
+        style="width: 500px;"
+      >
+        <kendo-grid-column
+          field="ProductID"
+          title="ID"
+          [width]="40"
+         
+        >
+        </kendo-grid-column>
+        <kendo-grid-column
+          field="ProductName"
+          title="Name"
+          [width]="200"
+        
+        >
+        </kendo-grid-column>
+        <kendo-grid-column
+          field="Category.CategoryName"
+          [width]="200"
+          title="Category"
+        >
+        </kendo-grid-column>
+        <kendo-grid-column field="UnitPrice" title="Price" [width]="80">
+        </kendo-grid-column>
+        <kendo-grid-column field="UnitsInStock" title="In stock" [width]="80"  [locked]="true">
+        </kendo-grid-column>
+        <kendo-grid-column
+          field="Discontinued"
+          title="Discontinued"
+          [width]="120"
+        >
+          <ng-template kendoGridCellTemplate let-dataItem>
+            <input type="checkbox" [checked]="dataItem.Discontinued" disabled />
+          </ng-template>
+        </kendo-grid-column>
+      </kendo-grid>
+
+      <br>
+        <br> <br>
+        <h4>Locked In Stock, discountinued, Product name columns </h4>
+        <kendo-grid
+        [data]="gridData"
+        [height]="370"
+        [reorderable]="true"
+        style="width: 500px;"
+      >
+        <kendo-grid-column
+          field="ProductID"
+          title="ID"
+          [width]="40"
+         
+        >
+        </kendo-grid-column>
+        <kendo-grid-column
+          field="ProductName"
+          title="Name"
+          [width]="200"
+          [locked]="true"
+        >
+        </kendo-grid-column>
+        <kendo-grid-column
+          field="Category.CategoryName"
+          [width]="200"
+          title="Category"
+        >
+        </kendo-grid-column>
+        <kendo-grid-column field="UnitPrice" title="Price" [width]="80" >
+        </kendo-grid-column>
+        <kendo-grid-column field="UnitsInStock" title="In stock" [width]="80"  [locked]="true">
+        </kendo-grid-column>
+        <kendo-grid-column
+          field="Discontinued"
+          title="Discontinued"
+          [width]="120"
+          [locked]="true" >
+          <ng-template kendoGridCellTemplate let-dataItem>
+            <input type="checkbox" [checked]="dataItem.Discontinued" disabled />
+          </ng-template>
+        </kendo-grid-column>
+      </kendo-grid>
+        </mat-card>
+  

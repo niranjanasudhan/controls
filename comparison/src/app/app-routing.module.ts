@@ -75,6 +75,7 @@ import { GridstylingComponent } from './gridstyling/gridstyling.component';
 import { DemoComponent } from './demo/demo.component';
 import { DepartmentsComponent } from './demo/departments/departments.component';
 import { RequisitionComponent } from './requisition/requisition.component';
+import { KendogridComponent } from './kendo/kendogrid/kendogrid.component';
 
 
 
@@ -206,6 +207,9 @@ const routes: Routes = [
     },
     {
       path:'qrcode',component:KendoqrcodeComponent
+    },
+    {
+      path:'grid',component:KendogridComponent
     }
 
     

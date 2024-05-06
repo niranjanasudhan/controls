@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Athlete } from "./model";
+import { products } from "./products";
 import { State } from "@progress/kendo-data-query";
 import { HttpClient } from '@angular/common/http';
 import { map, tap } from "rxjs/operators";
@@ -15,7 +15,8 @@ import { Survey } from "./model";
 export class GridstylingComponent {
   public loading=true;
   public BASE_URL="";
-  public view!: Observable<Athlete[]>;
+  // public view!: Observable<Athlete[]>;
+  public gridData1: unknown[] = products;
   public gridData: Survey[] = [
     {
       Name:"Certificates",
@@ -66,12 +67,12 @@ export class GridstylingComponent {
   ) { }
 
   ngOnInit() {
-    this.BASE_URL="https://www.ag-grid.com/example-assets/olympic-winners.json";
-    const queryStr = ``;
-    this.view=   this.http.get(`${this.BASE_URL}`     
-      ).pipe(
-      map((response: any) => <Athlete[]>response),
-      tap(() => (this.loading = false))
-    );
+    // this.BASE_URL="https://www.ag-grid.com/example-assets/olympic-winners.json";
+    // const queryStr = ``;
+    // this.view=   this.http.get(`${this.BASE_URL}`     
+    //   ).pipe(
+    //   map((response: any) => <Athlete[]>response),
+    //   tap(() => (this.loading = false))
+    // );
   }
 }
