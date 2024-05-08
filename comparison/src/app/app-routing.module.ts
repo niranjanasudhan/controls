@@ -76,6 +76,7 @@ import { DemoComponent } from './demo/demo.component';
 import { DepartmentsComponent } from './demo/departments/departments.component';
 import { RequisitionComponent } from './requisition/requisition.component';
 import { KendogridComponent } from './kendo/kendogrid/kendogrid.component';
+import { ActionSummaryComponent } from './action-summary/action-summary.component'
 
 
 
@@ -311,6 +312,7 @@ const routes: Routes = [
   {path:"departments",component:DepartmentsComponent}, 
   {path:"requisition",component:RequisitionComponent},
   {path:"requisition",component:RequisitionComponent},
+  {path:"action-summary",component:ActionSummaryComponent},
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

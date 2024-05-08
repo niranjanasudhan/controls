@@ -1,0 +1,437 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+
+<mat-sidenav-container class="dashboard">
+    <mat-sidenav mode="side" opened #sidenav>
+        <mat-nav-list appNavListKeyManager>
+            <a *ngFor="let item of navItems; index as i" mat-list-item appListItemFocusable [routerLink]="[item.route]"
+                routerLinkActive [routerLinkActiveOptions]="{ exact: true }" #rla="routerLinkActive"
+                [activated]="rla.isActive" (click)="handleClick(i)" style="margin: 5px 0px;">
+                <!-- <span matListItemTitle>{{ item.title }}</span> -->
+                <img [src]="item.imageUrl" alt="{{ item.title }} Icon" class="nav-icons">
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content [style.margin-right]="isPinSidebar ? '230px' : '0'">
+                <!-- header section -->
+                <header class="header-bar d-lg-flex">
+                    <div>
+                        <h4 class="m-0">Action Smmary</h4>
+                        <p class="m-0">HSEQ > Action Summary</p>
+                    </div>
+                    <div class="d-flex">
+                        <kendo-buttongroup>
+                            <button kendoButton class="bg-white" style="border-right: none;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="28" viewBox="0 0 32 28"
+                                    fill="none">
+                                    <rect width="31.5088" height="28.0078" rx="4" fill="#EEF2F6" />
+                                    <path
+                                        d="M22.1287 15.7079C22.1287 15.8523 22.0685 15.9907 21.9615 16.0928C21.8544 16.1948 21.7092 16.2522 21.5579 16.2522H19.8454V17.3407H20.987C21.1384 17.3407 21.2836 17.398 21.3907 17.5001C21.4977 17.6021 21.5579 17.7406 21.5579 17.8849C21.5579 18.0292 21.4977 18.1677 21.3907 18.2697C21.2836 18.3718 21.1384 18.4292 20.987 18.4292H19.8454V19.5176C19.8454 19.662 19.7853 19.8004 19.6782 19.9025C19.5712 20.0045 19.426 20.0619 19.2746 20.0619C19.1232 20.0619 18.978 20.0045 18.871 19.9025C18.7639 19.8004 18.7038 19.662 18.7038 19.5176V15.7079C18.7038 15.5636 18.7639 15.4252 18.871 15.3231C18.978 15.221 19.1232 15.1637 19.2746 15.1637H21.5579C21.7092 15.1637 21.8544 15.221 21.9615 15.3231C22.0685 15.4252 22.1287 15.5636 22.1287 15.7079ZM12.7103 17.0685C12.7103 17.5737 12.4998 18.0582 12.1251 18.4155C11.7505 18.7727 11.2423 18.9734 10.7124 18.9734H10.1416V19.5176C10.1416 19.662 10.0815 19.8004 9.97444 19.9025C9.86739 20.0045 9.7222 20.0619 9.57081 20.0619C9.41942 20.0619 9.27423 20.0045 9.16719 19.9025C9.06014 19.8004 9 19.662 9 19.5176V15.7079C9 15.5636 9.06014 15.4252 9.16719 15.3231C9.27423 15.221 9.41942 15.1637 9.57081 15.1637H10.7124C11.2423 15.1637 11.7505 15.3644 12.1251 15.7216C12.4998 16.0788 12.7103 16.5633 12.7103 17.0685ZM11.5687 17.0685C11.5687 16.852 11.4784 16.6444 11.3179 16.4913C11.1573 16.3382 10.9395 16.2522 10.7124 16.2522H10.1416V17.8849H10.7124C10.9395 17.8849 11.1573 17.7989 11.3179 17.6458C11.4784 17.4927 11.5687 17.2851 11.5687 17.0685ZM17.8476 17.6128C17.8476 18.2623 17.577 18.8853 17.0952 19.3446C16.6135 19.8039 15.9602 20.0619 15.2789 20.0619H14.1373C13.9859 20.0619 13.8407 20.0045 13.7337 19.9025C13.6266 19.8004 13.5665 19.662 13.5665 19.5176V15.7079C13.5665 15.5636 13.6266 15.4252 13.7337 15.3231C13.8407 15.221 13.9859 15.1637 14.1373 15.1637H15.2789C15.9602 15.1637 16.6135 15.4217 17.0952 15.881C17.577 16.3403 17.8476 16.9632 17.8476 17.6128ZM16.706 17.6128C16.706 17.2519 16.5556 16.9058 16.288 16.6507C16.0204 16.3955 15.6574 16.2522 15.2789 16.2522H14.7081V18.9734H15.2789C15.6574 18.9734 16.0204 18.83 16.288 18.5749C16.5556 18.3197 16.706 17.9736 16.706 17.6128ZM9 12.9867V8.08849C9 7.79981 9.12028 7.52294 9.33437 7.31881C9.54847 7.11468 9.83885 7 10.1416 7H16.9914C17.0663 6.99994 17.1406 7.01397 17.2099 7.04129C17.2792 7.0686 17.3422 7.10867 17.3952 7.15919L21.3909 10.9689C21.4439 11.0195 21.4859 11.0795 21.5145 11.1456C21.5432 11.2117 21.5579 11.2825 21.5579 11.354V12.9867C21.5579 13.131 21.4977 13.2695 21.3907 13.3715C21.2836 13.4736 21.1384 13.5309 20.987 13.5309C20.8356 13.5309 20.6905 13.4736 20.5834 13.3715C20.4764 13.2695 20.4162 13.131 20.4162 12.9867V11.8982H16.9914C16.84 11.8982 16.6948 11.8409 16.5877 11.7388C16.4807 11.6367 16.4205 11.4983 16.4205 11.354V8.08849H10.1416V12.9867C10.1416 13.131 10.0815 13.2695 9.97444 13.3715C9.86739 13.4736 9.7222 13.5309 9.57081 13.5309C9.41942 13.5309 9.27423 13.4736 9.16719 13.3715C9.06014 13.2695 9 13.131 9 12.9867ZM17.5622 10.8097H19.6092L17.5622 8.85792V10.8097Z"
+                                        fill="#364152" />
+                                </svg>
+                            </button>
+                            <button kendoButton class="bg-white" style="border-left: none;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="28" viewBox="0 0 32 28"
+                                    fill="none">
+                                    <rect width="31.5088" height="28.0078" rx="4" fill="#EEF2F6" />
+                                    <path
+                                        d="M18.3021 14.0092C18.3021 16.1896 18.3021 18.37 18.3021 20.5443C18.3021 20.6287 18.3021 20.719 18.2771 20.7973C18.2272 20.9419 18.0649 21.0202 17.8838 20.9901C16.5478 20.8033 15.2056 20.6166 13.8696 20.4299C12.671 20.2673 11.4661 20.1046 10.2674 19.942C10.0427 19.9119 9.81795 19.8818 9.59321 19.8517C9.22487 19.7975 9.00637 19.5445 9.00637 19.171C9.00637 18.1471 9.00637 17.1171 9.00637 16.0932C9.00637 13.7321 9.01261 11.377 9.00013 9.01596C8.99388 8.38955 9.21863 8.17874 9.84292 8.10646C10.9167 7.96793 11.9905 7.81132 13.0705 7.66074C14.1256 7.51619 15.1806 7.37765 16.2357 7.2331C16.7663 7.16082 17.2908 7.08854 17.8214 7.01024C18.146 6.96205 18.3021 7.08252 18.3021 7.40175C18.3021 9.60623 18.3021 11.8047 18.3021 14.0092ZM10.3361 9.33519C10.3361 12.4492 10.3361 15.5451 10.3361 18.6531C12.5524 18.9602 14.7561 19.2614 16.9724 19.5686C16.9724 15.8402 16.9724 12.142 16.9724 8.41966C14.7561 8.72685 12.5524 9.03403 10.3361 9.33519Z"
+                                        fill="#364152" />
+                                    <path
+                                        d="M20.9607 9.51552C20.3052 9.51552 19.6559 9.51552 18.9941 9.51552C18.9941 9.08788 18.9941 8.67228 18.9941 8.22656C19.0378 8.22656 19.094 8.22656 19.1502 8.22656C19.9556 8.22656 20.7609 8.22656 21.5662 8.22656C22.0345 8.22656 22.2967 8.47954 22.2967 8.93128C22.2967 11.2803 22.2967 13.6294 22.2967 15.9784C22.2967 16.9963 22.2842 18.0142 22.3029 19.0261C22.3154 19.5261 21.9346 19.779 21.535 19.767C20.7484 19.7489 19.9556 19.761 19.1689 19.761C19.1128 19.761 19.0566 19.761 18.9941 19.761C18.9941 19.3273 18.9941 18.9117 18.9941 18.478C19.6496 18.478 20.3052 18.478 20.9669 18.478C20.9607 15.4905 20.9607 12.5151 20.9607 9.51552Z"
+                                        fill="#364152" />
+                                    <path
+                                        d="M16.3042 16.5554C15.7798 16.5554 15.2803 16.5554 14.7809 16.5494C14.7309 16.5494 14.6748 16.4952 14.6435 16.453C14.3439 16.0495 14.0505 15.6459 13.757 15.2363C13.7258 15.1942 13.6884 15.152 13.6509 15.0978C13.37 15.4833 13.0766 15.8507 12.8268 16.2422C12.6708 16.4892 12.4897 16.5855 12.1901 16.5614C11.803 16.5313 11.4159 16.5554 11.0039 16.5554C11.0414 16.4952 11.0663 16.459 11.0913 16.4229C11.6532 15.6519 12.2088 14.881 12.7707 14.116C12.8393 14.0197 12.8331 13.9594 12.7707 13.8691C12.2088 13.1041 11.6532 12.3392 11.0976 11.5742C11.0726 11.5381 11.0476 11.502 11.0101 11.4478C11.0601 11.4417 11.0976 11.4357 11.135 11.4357C11.5783 11.4357 12.0153 11.4357 12.4585 11.4297C12.5584 11.4297 12.6146 11.4658 12.6708 11.5441C12.9892 11.9898 13.3138 12.4295 13.6447 12.8933C13.6821 12.8391 13.7133 12.803 13.7446 12.7608C14.038 12.3573 14.3376 11.9537 14.6248 11.5441C14.681 11.4658 14.7434 11.4357 14.8433 11.4357C15.2803 11.4417 15.7173 11.4357 16.1543 11.4357C16.1918 11.4357 16.2355 11.4417 16.2979 11.4417C16.0669 11.761 15.8422 12.0681 15.6237 12.3753C15.2553 12.8813 14.8933 13.3872 14.5249 13.8871C14.4625 13.9715 14.4687 14.0257 14.5312 14.11C15.093 14.8749 15.6424 15.6399 16.198 16.4048C16.2292 16.447 16.2542 16.4831 16.3042 16.5554Z"
+                                        fill="#364152" />
+                                </svg>
+                            </button>
+                            <button kendoButton class="bg-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="6" viewBox="0 0 11 6"
+                                    fill="none">
+                                    <path d="M1 1L5.5 5L10 1" stroke="#848484" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </kendo-buttongroup>
+
+                    </div>
+
+                </header>
+
+                <!-- body section -->
+                <div class="container-fluid my-5">
+                    <div class="kendo-grid-table-outer my-5">
+                        <div class="filter-tab-outer-table">
+                            <ng-container
+                                *ngFor="let button of buttons; let i = index; let first = first ;let last = last;">
+                                <button kendoButton
+                                    [class]="isActive(button.label) + (first ? ' filter-tab-btn-start' : '') "
+                                    (click)="setActive(button.label)">
+                                    {{ button.label }}
+                                </button>
+                            </ng-container>
+
+                            <select class="filter-tab-outer-dropdown " name="dropdown" id="dp" *ngIf="showDropdown"
+                                (change)="onOptionChange($event.target.value)">
+                                <option *ngFor="let item of dropdownButtons" [value]="item.label"
+                                    [class]="isActive(item.label)">
+                                    <span> {{ item.label }} </span>
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="row search-box " style="display: flex; justify-content: space-evenly;"  [style.display]="isSidebarOpen ? 'none' : 'flex'" >
+                            <div class="col-lg-2 my-2"
+                                style="display: flex; justify-content: center; align-items: center;">
+                                <span>
+                                <span class="d-flex">
+                                    <input kendoRadioButton type="radio" id="r1" name="rg1" class="radio-blue" checked />
+                                    <label class="k-radio-label" for="r1">Vessel</label>
+                                </span>
+                                <span class="d-flex mt-1">
+                                    <input kendoRadioButton type="radio" id="r2" name="rg1" class="radio-blue" />
+                                    <label class="k-radio-label" for="r2">Office</label>
+                                </span>
+                                </span>
+                                <span class="text-center">
+                                    <label class="k-radio-label" for="t1">My Vessel</label>
+                                    <kendo-switch class="toggle-blue mx-2" id="t1" size="small"></kendo-switch>
+                                </span>
+                                <span class="text-center">
+                                    <label class="k-radio-label" for="t2">My Actions</label>
+                                    <kendo-switch class="toggle-blue mx-2" id="t2" size="small" checked></kendo-switch>
+                                </span>
+                            </div>
+                            <div class="col-lg-8 my-2" style="display: flex; justify-content: center; align-items: center;">
+                                <kendo-floatinglabel text='Requisition' class="custom-input-float w-75">
+                                    <kendo-dropdownlist 
+                                        [data]="searchCriteria.category" 
+                                        [(ngModel)]="searchCriteria.category"
+                                        fillMode="outline"
+                                        class="custom-dropdown-outline w-100"
+                                        [svgIcon]="folderSVG"
+                                    >
+                                    </kendo-dropdownlist>
+                                  </kendo-floatinglabel>
+
+                                <kendo-floatinglabel text="Action" class="custom-input-float w-75 ms-2">
+                                    <kendo-dropdownlist 
+                                    [data]="searchCriteria.category" 
+                                    [(ngModel)]="searchCriteria.category"
+                                    fillMode="outline"
+                                    class="custom-dropdown-outline w-100"
+                                    [svgIcon]="folderSVG"
+                                >
+                                </kendo-dropdownlist>
+                                </kendo-floatinglabel>
+
+                                <kendo-floatinglabel text="Action" class="custom-input-float w-75 ms-2">
+                                    <kendo-dropdownlist 
+                                    [data]="searchCriteria.category" 
+                                    [(ngModel)]="searchCriteria.category"
+                                    fillMode="outline"
+                                    class="custom-dropdown-outline w-100"
+                                    [svgIcon]="folderSVG"
+                                >
+                                </kendo-dropdownlist>
+                                </kendo-floatinglabel>
+                            
+                                <kendo-floatinglabel text="From Date" class="custom-input-float w-75 ms-2">
+                                    <kendo-datepicker placeholder="dd/mm/yyyy" format="dd/MM/yyyy"
+                                        [(ngModel)]="searchCriteria.fromDate"
+                                        class="custom-datepicker"
+                                        (ngModelChange)="formatDate('fromDate')"></kendo-datepicker>
+                                </kendo-floatinglabel>
+                                <kendo-floatinglabel text="To Date" class="custom-input-float w-75 ms-2">
+                                    <kendo-datepicker placeholder="dd/mm/yyyy" format="dd/MM/yyyy"
+                                        [(ngModel)]="searchCriteria.toDate"
+                                        class="custom-datepicker"
+                                        (ngModelChange)="formatDate('toDate')"></kendo-datepicker>
+                                </kendo-floatinglabel>
+                            </div>
+                            <div class="col-lg-1 my-2"
+                                style="display: flex; justify-content: center; align-items: center;">
+                                <button kendoButton style="background-color: #000080; color: white;"
+                                    (click)="saveSearch()">
+                                    <i class="bi bi-search"></i>
+                                </button>
+
+                                <button kendoButton class="mx-2" style="background-color: white; color: #000080;">
+                                    <i class="bi bi-funnel"></i>
+                                </button>
+
+                                <button (click)="openSidebar()" kendoButton 
+                                    style="background-color: #000080; color: white;">
+                                    <i class="bi bi-sliders"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <kendo-grid 
+                            [kendoGridBinding]="view | async" 
+                            kendoGridSelectBy="id" 
+                            [rowReorderable]="true"
+                            [reorderable]="true"
+                            [loading]="loading"
+                            [pageable]="{
+                                info: false,
+                                type: 'input',
+                                pageSizes: true,
+                                previousNext: true,
+                              }"
+                            [pageSize]="10" 
+                            [sortable]="true" 
+                            [groupable]="true" 
+                            [resizable]="true"
+                            [filterable]="true" 
+                            [height]="400" 
+                            [columnMenu]="{ filter: true }"
+                            [size]="gridSize ? 'small' : 'medium'"
+                            
+                        >
+                            <ng-template kendoGridToolbarTemplate
+                                style="display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    All > Status = Cancel >
+                                    <ng-container *ngIf="searchCriteria.fromDate && searchCriteria.toDate">
+                                        Created date between {{ searchCriteria.fromDate }} and {{ searchCriteria.toDate
+                                        }}
+                                    </ng-container>
+                                </div>
+
+                                <kendo-grid-spacer></kendo-grid-spacer>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <rect width="24" height="24" rx="12" fill="url(#paint0_linear_1306_110944)"/>
+                                    <path d="M16.7855 10.6V12C16.7855 14.7062 14.6426 16.9 11.9992 16.9M7.21289 10.6V12C7.21289 14.7062 9.3558 16.9 11.9992 16.9M11.9992 16.9V19M9.26417 19H14.7343M11.9992 14.1C10.8663 14.1 9.94793 13.1598 9.94793 12V7.1C9.94793 5.9402 10.8663 5 11.9992 5C13.1321 5 14.0505 5.9402 14.0505 7.1V12C14.0505 13.1598 13.1321 14.1 11.9992 14.1Z" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <defs>
+                                    <linearGradient id="paint0_linear_1306_110944" x1="0" y1="12" x2="24" y2="12" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#4568DC"/>
+                                    <stop offset="1" stop-color="#B06AB3"/>
+                                    </linearGradient>
+                                    </defs>
+                                    </svg>
+
+                                <kendo-textbox [style.width.px]="165" placeholder="Search"
+                                    (valueChange)="onFilter($event)"></kendo-textbox>
+
+                                <button kendoButton type="button" (click)="toggleFullScreen()">
+                                    <i class="bi bi-arrows-fullscreen"></i>
+                                </button>
+                                <button kendoButton kendoGridExcelCommand type="button" (click)="toggleFullScreen()">
+                                    <i class="bi bi-upload"></i>
+                                </button>
+                                <button kendoButton type="button" (click)="toggleFullScreen()">
+                                    <i class="bi bi-camera"></i>
+                                </button>
+                                <button kendoButton type="button" (click)="gridSizeToggle()">
+                                    <i class="bi bi-list"></i>
+                                </button>
+                                <button kendoButton type="button">
+                                    <i class="bi bi-pen"></i>
+                                </button>
+                    
+                                <button kendoButton type="button" style="background-color: #000080; color: white;">
+                                    <i class="bi bi-plus-circle"></i>
+                                </button>
+                            </ng-template>
+
+                            <kendo-grid-rowreorder-column [width]="40" [headerStyle]="{ 'background-color': '#6767A9'}" field="" title=""></kendo-grid-rowreorder-column>
+                            <kendo-grid-column
+                                [headerStyle]="{ 'background-color': '#6767A9', 'color' : 'white','padding':'5px 10px', 'font-weight' : 'inherit','text-wrap' : 'nowrap'}"
+                                field="athlete" title="title"> 
+                            </kendo-grid-column>
+                            <kendo-grid-column
+                                [headerStyle]="{ 'background-color': '#6767A9', 'color' : 'white', 'padding':'5px 10px', 'font-weight' : 'inherit' }"
+                                field="age" title="No. Survey Scheduled">
+                            </kendo-grid-column>
+                            <kendo-grid-column
+                                [headerStyle]="{ 'background-color': '#6767A9', 'color' : 'white', 'padding':'5px 10px', 'font-weight' : 'inherit' }"
+                                field="gold" title="Expired">
+                            </kendo-grid-column>
+                            <kendo-grid-column
+                                [headerStyle]="{ 'background-color': '#6767A9', 'color' : 'white', 'padding':'5px 10px', 'font-weight' : 'inherit' }"
+                                field="silver" title="In 30 days">
+                            </kendo-grid-column>
+                            <kendo-grid-column
+                                [headerStyle]="{ 'background-color': '#6767A9', 'color' : 'white', 'padding':'5px 10px', 'font-weight' : 'inherit' }"
+                                field="bronze" title="In 31-60 days">
+                            </kendo-grid-column>
+                            <kendo-grid-column
+                                [headerStyle]="{ 'background-color': '#6767A9', 'color' : 'white', 'padding':'5px 10px', 'font-weight' : 'inherit' }"
+                                field="total" title="In 61-90 days">
+                            </kendo-grid-column>
+                            <ng-template
+                                kendoPagerTemplate
+                                let-totalPages="totalPages"
+                                let-currentPage="currentPage"
+                            >
+                                Show row per page<kendo-pager-page-sizes [pageSizes]="sizes" aria-label="false"></kendo-pager-page-sizes>                      
+                                <kendo-grid-spacer></kendo-grid-spacer>
+                                <kendo-pager-input></kendo-pager-input>
+                                <kendo-pager-prev-buttons></kendo-pager-prev-buttons>
+                                <kendo-pager-numeric-buttons [buttonCount]="buttonCount"></kendo-pager-numeric-buttons>
+                                <kendo-pager-next-buttons></kendo-pager-next-buttons>
+                            </ng-template>
+                        </kendo-grid>
+                        <div class="d-flex">
+                            filter by
+                            <input id="overdue" type="radio" class="error-radio ms-2" (change)="radioChanged('overdue')" kendoRadioButton checked/>
+                            <label for="overdue">Overdue</label>
+                            <input id="due" type="radio" class="warning-radio ms-2" (change)="radioChanged('due')" kendoRadioButton checked/>
+                            <label for="due">Due in 30 days</label>
+                            <input id="assigned" type="radio" class="success-radio ms-2"  (change)="radioChanged('assigned')" kendoRadioButton checked/>
+                            <label for="assigned">Completed/Report Assigned</label>
+                            <input id="notassigned" type="radio" class="primary-radio ms-2"  (change)="radioChanged('notassigned')" kendoRadioButton checked/>
+                            <label for="notassigned">Completed/Report Not Assigned</label>
+                        </div>
+                        
+                    </div>
+
+        </div>
+
+        
+
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+    <mat-sidenav class="mat-drawer" mode="side" opened #sidenav position="end" [style.display]="isSidebarOpen ? 'block' : 'none'">
+        <div class="d-block">
+          <div style="display: flex; justify-content: space-between; align-items: start;">
+            <div><h3 class="fw-bold">Filter</h3></div>
+            <div>
+              <button (click)="pinSidebar()" kendoButton style="background-color: white; color: #737373; border: none;">
+                <i class="bi bi-pin"></i>
+              </button>
+              <button (click)="closeSidebar()" kendoButton class="ms-2" style="background-color: white; color: #737373; border: none;">
+                <i class="bi bi-x-circle"></i>
+              </button>
+            </div>
+          </div>
+          <div class="d-block">
+            <div class="my-4">
+                <kendo-floatinglabel text='Requisition' class="custom-input-float w-100">
+                    <kendo-dropdownlist 
+                    [data]="searchCriteria.category" 
+                    [(ngModel)]="searchCriteria.category"
+                    fillMode="outline"
+                    class="custom-dropdown-outline w-100"
+                    [svgIcon]="folderSVG"
+                >
+                </kendo-dropdownlist>
+                </kendo-floatinglabel>
+            </div>
+            
+            <div class="my-4">
+                <kendo-floatinglabel text="Action" class="custom-input-float w-100">
+                    <kendo-dropdownlist 
+                    [data]="searchCriteria.category" 
+                    [(ngModel)]="searchCriteria.category"
+                    fillMode="outline"
+                    class="custom-dropdown-outline w-100"
+                    [svgIcon]="folderSVG"
+                >
+                </kendo-dropdownlist>
+                  </kendo-floatinglabel>
+            </div>
+            
+            <div class="my-4">
+                <kendo-floatinglabel text="From Date" class="custom-input-float">
+                    <kendo-datepicker placeholder="" format="dd/MM/yyyy"
+                                        [(ngModel)]="searchCriteria.fromDate"
+                                        class="custom-datepicker"
+                                        (ngModelChange)="formatDate('fromDate')"></kendo-datepicker>
+                  </kendo-floatinglabel>
+            </div>
+           
+            <div class="my-4">
+                <kendo-floatinglabel text="To Date" class="custom-input-float">
+                    <kendo-datepicker placeholder="" format="dd/MM/yyyy" [(ngModel)]="searchCriteria.toDate" class="custom-datepicker"
+                                       (ngModelChange)="formatDate('toDate')"></kendo-datepicker>
+                  </kendo-floatinglabel>
+            </div>
+
+            <div class="my-4">
+                <kendo-floatinglabel text='Result' class="custom-input-float w-100">
+                    <kendo-dropdownlist 
+                    [data]="searchCriteria.category" 
+                    [(ngModel)]="searchCriteria.category"
+                    fillMode="outline"
+                    class="custom-dropdown-outline w-100"
+                    [svgIcon]="folderSVG"
+                >
+                </kendo-dropdownlist>
+                  </kendo-floatinglabel>
+            </div>
+
+            <div class="my-4">
+                <kendo-floatinglabel text='Deficiency Status' class="custom-input-float w-100">
+                    <kendo-textbox 
+                        fillMode="outline"
+                        class="custom-input-outline"
+                        ></kendo-textbox>
+                  </kendo-floatinglabel>
+            </div>
+
+            <div class="my-4">
+                <kendo-floatinglabel text='Raised By' class="custom-input-float w-100">
+                    <kendo-textbox 
+                        fillMode="outline"
+                        class="custom-input-outline"
+                        ></kendo-textbox>
+                  </kendo-floatinglabel>
+            </div>
+
+            <div class="my-4">
+                <kendo-floatinglabel text="Workflow Status" class="custom-input-float w-100">
+                    <kendo-dropdownlist 
+                    [data]="searchCriteria.category" 
+                    [(ngModel)]="searchCriteria.category"
+                    fillMode="outline"
+                    class="custom-dropdown-outline w-100"
+                    [svgIcon]="folderSVG"
+                >
+                </kendo-dropdownlist>
+                  </kendo-floatinglabel>
+            </div>
+
+
+            <div class="my-4">
+                <kendo-floatinglabel text="Report Status" class="custom-input-float w-100">
+                     <kendo-dropdownlist 
+                                    [data]="searchCriteria.category" 
+                                    [(ngModel)]="searchCriteria.category"
+                                    fillMode="outline"
+                                    class="custom-dropdown-outline w-100"
+                                    [svgIcon]="folderSVG"
+                                >
+                                </kendo-dropdownlist>
+                  </kendo-floatinglabel>
+            </div>
+
+            <hr>
+
+            <div class="my-4 d-flex justify-content-center">
+              <button
+              kendoButton 
+                (click)="closeSidebar()" 
+                title="Button" 
+                class="btn-outline"
+                fillMode="outline"
+                [svgIcon]="closeSVG"
+              >Close</button>
+              <button
+              kendoButton
+              (click)="closeSidebar()"
+              title="Button"
+              class="btn-primary ms-2"
+              >Apply</button>
+            </div>
+            
+          </div>
+        </div>
+      </mat-sidenav>
+      
+</mat-sidenav-container>

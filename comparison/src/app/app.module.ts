@@ -156,6 +156,7 @@ import { KendobadgesComponent } from './kendo/kendobadges/kendobadges.component'
 import { TreeViewModule } from '@progress/kendo-angular-treeview';
 import { DropDownListModule } from '@progress/kendo-angular-dropdowns';
 import { KendogridComponent } from './kendo/kendogrid/kendogrid.component';
+import { ActionSummaryComponent } from './action-summary/action-summary.component';
 
 @NgModule({
   declarations: [
@@ -239,6 +240,7 @@ import { KendogridComponent } from './kendo/kendogrid/kendogrid.component';
       RequisitionComponent,
       KendobadgesComponent,
       KendogridComponent,
+      ActionSummaryComponent,
 
     
    
