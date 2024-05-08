@@ -276,15 +276,15 @@
                                 <kendo-pager-next-buttons></kendo-pager-next-buttons>
                             </ng-template>
                         </kendo-grid>
-                        <div class="d-flex">
+                        <div class="d-flex my-2">
                             filter by
-                            <input id="overdue" type="radio" class="error-radio ms-2" (change)="radioChanged('overdue')" kendoRadioButton checked/>
+                            <input id="overdue" type="radio" class="error-radio ms-2" (click)="radioOverdueChanged()" kendoRadioButton [checked]="overdue"/>
                             <label for="overdue">Overdue</label>
-                            <input id="due" type="radio" class="warning-radio ms-2" (change)="radioChanged('due')" kendoRadioButton checked/>
+                            <input id="due" type="radio" class="warning-radio ms-2" (click)="radioDueChanged()" kendoRadioButton [checked]="due"/>
                             <label for="due">Due in 30 days</label>
-                            <input id="assigned" type="radio" class="success-radio ms-2"  (change)="radioChanged('assigned')" kendoRadioButton checked/>
+                            <input id="assigned" type="radio" class="success-radio ms-2" (click)="radioAssignedChanged()" kendoRadioButton [checked]="assigned"/>
                             <label for="assigned">Completed/Report Assigned</label>
-                            <input id="notassigned" type="radio" class="primary-radio ms-2"  (change)="radioChanged('notassigned')" kendoRadioButton checked/>
+                            <input id="notassigned" type="radio" class="primary-radio ms-2" (click)="radioNotassignedChanged()" kendoRadioButton [checked]="notassigned"/>
                             <label for="notassigned">Completed/Report Not Assigned</label>
                         </div>
                         

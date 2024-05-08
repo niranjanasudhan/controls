@@ -209,9 +209,21 @@ formatDate(field: string): void {
     this.gridSize = !this.gridSize;
   }
 
-  radioChanged(value: string) {
-    // Do something based on the selected radio button value
-    console.log('Selected value:', value);
-  }
+  public overdue: boolean = true;
+  public due: boolean = true;
+  public assigned: boolean = true;
+  public notassigned: boolean = true;
 
+  radioOverdueChanged() {
+   this.overdue = !this.overdue;
+  }
+  radioDueChanged() {
+    this.due = !this.due;
+   }
+   radioAssignedChanged() {
+    this.assigned = !this.assigned;
+   }
+   radioNotassignedChanged() {
+    this.notassigned = !this.notassigned;
+   }
 }
