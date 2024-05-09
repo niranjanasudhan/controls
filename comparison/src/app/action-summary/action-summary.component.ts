@@ -84,7 +84,7 @@ export class ActionSummaryComponent {
 
 
   constructor(
-    private router: Router,private http:HttpClient
+    private router: Router,private http:HttpClient,
   ) {
     this.updateDropdownButtons();
    }
