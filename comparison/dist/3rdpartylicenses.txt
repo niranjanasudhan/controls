@@ -232,6 +232,9 @@ SEE LICENSE IN LICENSE.md
 @progress/kendo-angular-pdf-export
 SEE LICENSE IN LICENSE.md
 
+@progress/kendo-angular-pivotgrid
+SEE LICENSE IN LICENSE.md
+
 @progress/kendo-angular-popup
 SEE LICENSE IN LICENSE.md
 
@@ -328,6 +331,9 @@ For licensing information about Kendo UI, see the [License Agreements page](http
 SEE LICENSE IN LICENSE.md
 
 @progress/kendo-ooxml
+SEE LICENSE IN LICENSE.md
+
+@progress/kendo-pivotgrid-common
 SEE LICENSE IN LICENSE.md
 
 @progress/kendo-popup-common
@@ -2744,6 +2750,21 @@ Apache-2.0
  limitations under the License.
  
 
+
+tslib
+0BSD
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
 
 zone.js
 MIT

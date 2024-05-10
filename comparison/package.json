@@ -54,6 +54,7 @@
     "@progress/kendo-angular-navigation": "15.4.0",
     "@progress/kendo-angular-notification": "^15.4.0",
     "@progress/kendo-angular-pager": "^15.4.0",
+    "@progress/kendo-angular-pivotgrid": "^15.4.0",
     "@progress/kendo-angular-popup": "15.4.0",
     "@progress/kendo-angular-tooltip": "^15.4.0",
     "@progress/kendo-angular-treelist": "^15.4.0",

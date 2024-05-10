@@ -157,6 +157,8 @@ import { TreeViewModule } from '@progress/kendo-angular-treeview';
 import { DropDownListModule } from '@progress/kendo-angular-dropdowns';
 import { KendogridComponent } from './kendo/kendogrid/kendogrid.component';
 import { ActionSummaryComponent } from './action-summary/action-summary.component';
+import { PivotGridModule } from "@progress/kendo-angular-pivotgrid";
+import { ActionComponent } from './demo/action/action.component';
 
 @NgModule({
   declarations: [
@@ -241,6 +243,7 @@ import { ActionSummaryComponent } from './action-summary/action-summary.componen
       KendobadgesComponent,
       KendogridComponent,
       ActionSummaryComponent,
+      ActionComponent,
 
     
    
@@ -326,7 +329,8 @@ DropDownListModule,
     // NotificationService
     GridModule,
     NavigationModule,
-    TreeViewModule 
+    TreeViewModule ,
+    PivotGridModule
   ],
   providers: [NotificationService],
   bootstrap: [AppComponent],
