@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Athlete } from "../../dashboard/model";
@@ -17,6 +17,8 @@ import {
   transition,
   trigger
 } from '@angular/animations';
+import { GridComponent } from '@progress/kendo-angular-grid';
+import { ColumnBase } from '@progress/kendo-angular-grid';
 // this.filterData = [
 //   {
 //     text: "Heading 1",
@@ -42,6 +44,7 @@ interface lastOne {
 }
 const DEFAULT_DURATION = 300;
 @Component({
+  // encapsulation: ViewEncapsulation.None,
   selector: 'app-action',
   templateUrl: './action.component.html',
   styleUrls: ['./action.component.css'],
@@ -118,7 +121,7 @@ export class ActionComponent {
 
   public sizes = [10, 15, 20];
   public onTabSelect(e: SelectEvent): void {
-    console.log(e);
+    
   }
 
   searchCriteria: any = {
@@ -155,14 +158,13 @@ public map:any=[];
     );
         this.view.subscribe((value: any[]) => {
       this.fullData = value;
-      console.log(this.fullData );
-      console.log(this.fullData .length);
+     
 
       this.keys = Object.keys(this.fullData[0]);
-      console.log(this.keys);
+    
       for(let j=0;j<this.keys.length;j++) {
       let clname=this.keys[j];
-        console.log(clname);
+     
         for (let i = 0; i < this.fullData.length; i++) {
  
             if (typeof this.fullData[i][clname] !== "undefined") {
@@ -171,13 +173,11 @@ public map:any=[];
             }
 
             }
-console.log("this.item");
-console.log(this.item);
+
 this.filterData.push({text:clname,items:this.item});
 this.item=[];
 this.map=<lastOne>this.filterData;
-console.log(map);
-console.log("map");
+
 // this.filterData = [
 //   {
 //     text: "Heading 1",
@@ -200,9 +200,7 @@ console.log("map");
 
 
 }
-console.log("this.filterData");
-// this.lastOne=JSON.stringify(this.filterData)
-console.log(this.filterData);
+
   });
 
   }
@@ -352,11 +350,10 @@ formatDate(field: string): void {
     this.collapsedFilter=true;
     this.view.subscribe((value: any[]) => {
       this.fullData = value;
-      console.log(this.fullData );
-      console.log(this.fullData .length);
+    
 
       this.keys = Object.keys(this.fullData[0]);
-console.log(this.keys);
+
   });
 
   // console.log(this.view);
@@ -394,17 +391,15 @@ console.log(this.keys);
 //   },
 // ];
 // console.log(data);
-console.log(this.filterData);
+
 //     this.view.subscribe((value: any[]) => {
-//       this.fullData = value;
-//       console.log(this.fullData );
-//       console.log(this.fullData .length);
+
 
 //       this.keys = Object.keys(this.fullData[0]);
-// console.log(this.keys);
+
 // for(let j=0;j<this.keys.length;j++) {
 //   let clname=this.keys[j];
-//   console.log(clname);
+
 // for (let i = 0; i < this.fullData.length; i++) {
  
 //   if (typeof this.fullData[i][clname] !== "undefined") {
@@ -412,14 +407,12 @@ console.log(this.filterData);
 //   }
 
 // }
-// console.log("this.item");
-// console.log(this.item);
+
 // this.filterData.push({text:clname,items:this.item});
 // this.item=[];
 
 // }
-// console.log("this.filterData");
-// console.log(this.filterData);
+
 //   });
 
 
@@ -451,7 +444,21 @@ console.log(this.filterData);
   public isHidden(columnName: string): boolean {
     return this.hiddenColumns.indexOf(columnName) > -1;
   }
-
+  
+  public isHiddenAll(keys: any[]) {
+    let flag=false;
+   for(let i=0;i<keys.length;i++) {
+  
+    if(this.hiddenColumns.indexOf(keys[i]) > -1)
+      {
+      
+        flag=true;
+      }
+  
+   }
+  
+   return flag;
+  }
   public isDisabled(columnName: string): boolean {
     return (
       this.keys.length - this.hiddenColumns.length === 1 &&
@@ -469,9 +476,18 @@ console.log(this.filterData);
     }
   }
 
-  drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.keys, event.previousIndex, event.currentIndex);
+  public selectAll(keys: any): void {
+     const hiddenColumns = this.hiddenColumns;
+for(let i=0;i<keys.length;i++) {
+    if (!this.isHidden(keys[i])) {
+      hiddenColumns.push(keys[i]);
+    } else {
+      hiddenColumns.splice(hiddenColumns.indexOf(keys[i]), 1);
+    }
   }
+  }
+
+
   onFilterColumns(e:any)
   {
 
@@ -480,12 +496,28 @@ console.log(this.filterData);
 
 
   public finalData!:any[];
+  // customers = [
+  //   {id: 1, name: 'Adam', data:'sdfdf'  },
+  //   {id: 2, name: 'Jack', data:'sdfdf'  },
+  //   {id: 3, name: 'Katherin', data:'sdfdf'  },
+  //   {id: 4, name: 'John', data:'sdfdf'  },
+  //   {id: 5, name: 'Watson', data:'sdfdf'  },
+  //   {id: 6, name: 'Watson', data:'sdfdf'  },
+  //   {id: 7, name: 'Watson', data:'sdfdf'  },
+  // ];
 
-
- storeData()
-{
+  // drop(grid: GridComponent,event: CdkDragDrop<string[]>,col:ColumnBase) {
+    drop(grid: GridComponent,event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.keys, event.previousIndex, event.currentIndex);
+    this.keys[event.previousIndex];
+   
+   // grid.reorderColumn(grid.columns.get(),2);
+    //grid.reorderColumn(col, event.currentIndex, { before: true });
+   
+  }
   
-}
+
+ 
  
 }
 

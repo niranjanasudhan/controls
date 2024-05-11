@@ -159,6 +159,7 @@ import { KendogridComponent } from './kendo/kendogrid/kendogrid.component';
 import { ActionSummaryComponent } from './action-summary/action-summary.component';
 import { PivotGridModule } from "@progress/kendo-angular-pivotgrid";
 import { ActionComponent } from './demo/action/action.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -330,7 +331,8 @@ DropDownListModule,
     GridModule,
     NavigationModule,
     TreeViewModule ,
-    PivotGridModule
+    PivotGridModule,
+    DragDropModule
   ],
   providers: [NotificationService],
   bootstrap: [AppComponent],
