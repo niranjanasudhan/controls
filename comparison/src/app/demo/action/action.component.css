@@ -606,10 +606,14 @@
     display: contents;
   }
   .checkbox-blue.k-checkbox:checked, .k-checkbox.k-checked {
-    border-color: #000080;
-    background-color: #000080;
+    border-color: #000080 !important;
+    background-color: #000080 !important;
 }
-
+.k-checkbox:checked, .k-checkbox.k-checked {
+  border-color: #000080 !important;
+  color: white;
+  background-color: #000080 !important;
+}
 
 .checkbox-blue.k-checkbox {
     border-color: #737373;
@@ -624,7 +628,7 @@
 }
 .checkboxcls
 {
-  padding: 1px;
+  padding: 4px 0px 3px 9px;
 }
 .drag{
   margin-left: 6px !important;
@@ -698,4 +702,13 @@ i.disable{
 
 .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+.pivot-section
+{
+  padding: 1px 0px 7px 1px;
+}
+.search-section
+{
+  padding: 3px 0px 7px 9px;
+  border-bottom: 1px solid #CDD5DF
 }

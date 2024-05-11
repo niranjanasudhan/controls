@@ -17,7 +17,29 @@ import {
   transition,
   trigger
 } from '@angular/animations';
-
+// this.filterData = [
+//   {
+//     text: "Heading 1",
+//     items: [
+//       { text: "Item 1"},
+//       { text: "Item 2"},
+//     ],
+//   },
+//   {
+//     text: "Heading 2",
+//     items: [
+//       { text: "Item 1" },
+//       { text: "Item 2" },
+//       { text: "Item 3" },
+//     ],
+//   },
+// ];
+interface lastOne {
+  text?: string;
+  item?: [{
+    text?: string;
+  }];
+}
 const DEFAULT_DURATION = 300;
 @Component({
   selector: 'app-action',
@@ -39,7 +61,10 @@ const DEFAULT_DURATION = 300;
   ]
 })
 export class ActionComponent {
-
+  // public expandedKeys: any[] = ["0", "1"];
+  public checkedKeys: any[] = ["0_1"];
+  public expandedKeys: any[] = [];
+  // public checkedKeys: any[] = [];
   @ViewChild(DataBindingDirective) dataBinding!: DataBindingDirective;
   isFullScreen = false;
   collapsed = true;
@@ -107,7 +132,15 @@ export class ActionComponent {
   public BASE_URL="";
   public view!: Observable<Athlete[]>;
 public keys:any[] = [];
+public fullData:any[]=[];
+public item:any[]=[];
+public filterData:any[number]=[];
+
 public hiddenColumns: string[] = [];
+// public map!:lastOne[];
+public map:any=[]; 
+
+
   constructor(
     private router: Router,private http:HttpClient,
   ) {
@@ -120,7 +153,57 @@ public hiddenColumns: string[] = [];
       map((response: Athlete[]) => response.slice(0, 50)), // Slice the response to get only the first 50 items
       tap(() => (this.loading = false))
     );
+        this.view.subscribe((value: any[]) => {
+      this.fullData = value;
+      console.log(this.fullData );
+      console.log(this.fullData .length);
 
+      this.keys = Object.keys(this.fullData[0]);
+      console.log(this.keys);
+      for(let j=0;j<this.keys.length;j++) {
+      let clname=this.keys[j];
+        console.log(clname);
+        for (let i = 0; i < this.fullData.length; i++) {
+ 
+            if (typeof this.fullData[i][clname] !== "undefined") {
+              this.item.push( { text: this.fullData[i][clname]});
+              // this.lastOne.item.text.push( this.fullData[i][clname])
+            }
+
+            }
+console.log("this.item");
+console.log(this.item);
+this.filterData.push({text:clname,items:this.item});
+this.item=[];
+this.map=<lastOne>this.filterData;
+console.log(map);
+console.log("map");
+// this.filterData = [
+//   {
+//     text: "Heading 1",
+//     items: [
+//       { text: "Item 1"},
+//       { text: "Item 2"},
+//     ],
+//   },
+//   {
+//     text: "Heading 2",
+//     items: [
+//       { text: "Item 1" },
+//       { text: "Item 2" },
+//       { text: "Item 3" },
+//     ],
+//   },
+// ];
+
+
+
+
+}
+console.log("this.filterData");
+// this.lastOne=JSON.stringify(this.filterData)
+console.log(this.filterData);
+  });
 
   }
   
@@ -266,11 +349,13 @@ formatDate(field: string): void {
 
   expand() {
     this.collapsed = false;
+    this.collapsedFilter=true;
     this.view.subscribe((value: any[]) => {
-      let jobs: any[] = value;
-      console.log(jobs);
-      console.log(jobs.length);
-      this.keys = Object.keys(jobs[0]);
+      this.fullData = value;
+      console.log(this.fullData );
+      console.log(this.fullData .length);
+
+      this.keys = Object.keys(this.fullData[0]);
 console.log(this.keys);
   });
 
@@ -279,17 +364,88 @@ console.log(this.keys);
 
   collapse() {
     this.collapsed = true;
+    this.collapsedFilter=true;
   }
   toggleFilter() {
     this.collapsedFilter = !this.collapsedFilter;
   }
 
+
+
   expandFilter() {
     this.collapsedFilter = false;
+    this.collapsed=true;
+
+//   let data: any[] = [
+//   {
+//     text: "Heading 1",
+//     items: [
+//       { text: "Item 1"},
+//       { text: "Item 2"},
+//     ],
+//   },
+//   {
+//     text: "Heading 2",
+//     items: [
+//       { text: "Item 1" },
+//       { text: "Item 2" },
+//       { text: "Item 3" },
+//     ],
+//   },
+// ];
+// console.log(data);
+console.log(this.filterData);
+//     this.view.subscribe((value: any[]) => {
+//       this.fullData = value;
+//       console.log(this.fullData );
+//       console.log(this.fullData .length);
+
+//       this.keys = Object.keys(this.fullData[0]);
+// console.log(this.keys);
+// for(let j=0;j<this.keys.length;j++) {
+//   let clname=this.keys[j];
+//   console.log(clname);
+// for (let i = 0; i < this.fullData.length; i++) {
+ 
+//   if (typeof this.fullData[i][clname] !== "undefined") {
+//     this.item.push(this.fullData[i][clname]);
+//   }
+
+// }
+// console.log("this.item");
+// console.log(this.item);
+// this.filterData.push({text:clname,items:this.item});
+// this.item=[];
+
+// }
+// console.log("this.filterData");
+// console.log(this.filterData);
+//   });
+
+
+// public data: any[] = [
+//   {
+//     text: "Heading 1",
+//     items: [
+//       { text: "Item 1"},
+//       { text: "Item 2"},
+//     ],
+//   },
+//   {
+//     text: "Heading 2",
+//     items: [
+//       { text: "Item 1" },
+//       { text: "Item 2" },
+//       { text: "Item 3" },
+//     ],
+//   },
+// ];
+
   }
 
   collapseFilter() {
     this.collapsedFilter = true;
+    this.collapsed=true;
   }
 
   public isHidden(columnName: string): boolean {
@@ -316,5 +472,20 @@ console.log(this.keys);
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.keys, event.previousIndex, event.currentIndex);
   }
+  onFilterColumns(e:any)
+  {
+
+  }
+
+
+
+  public finalData!:any[];
+
+
+ storeData()
+{
+  
+}
+ 
 }
 

@@ -111,6 +111,17 @@
           *ngIf="show"
         > -->
           <div class="content"  [@collapse]="collapsed">
+            <div class="pivot-section">
+                
+                <kendo-switch class="toggle-blue mx-2" id="t1" size="small"></kendo-switch>
+                <label class="k-radio-label" for="t1">Pivot Mode</label>
+            </div>
+            <div class="search-section">
+                <input kendoCheckBox type="checkbox"  class="checkbox-blue" 
+                />
+                <kendo-textbox class="ms-2" [style.width.px]="165" placeholder="Search"
+                (valueChange)="onFilterColumns($event)"></kendo-textbox>
+            </div>
             <div *ngFor="let key of keys" class="checkboxcls">
                 <input kendoCheckBox type="checkbox" id="{{ column }}" class="checkbox-blue" [disabled]="isDisabled(key)"
                 [checked]="!isHidden(key)"
@@ -140,8 +151,26 @@
           </div>
 
           <div class="content"  [@collapse]="collapsedFilter">
-            <!-- User-defined content -->
-            Popup content Filter.
+            <div>
+                <kendo-treeview
+  [nodes]="map"
+  textField="text"
+  kendoTreeViewHierarchyBinding
+  childrenField="items"
+  [filterable]="true"
+  kendoTreeViewExpandable
+  [expandedKeys]="expandedKeys"
+kendoTreeViewCheckable
+[(checkedKeys)]="checkedKeys"
+  expand="k-icon k-font-icon k-i-plus-outline" 
+  collapse="k-icon k-font-icon k-i-minus-outline"
+>
+<ng-template kendoTreeViewNodeTemplate let-node>
+
+  {{ node.text }}
+</ng-template>
+</kendo-treeview>
+            </div>
           </div>
         <!-- </kendo-popup> -->
                         <kendo-grid 

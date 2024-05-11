@@ -35,6 +35,12 @@
           </kendo-grid-column>
           <kendo-grid-column field="UnitsInStock" title="In stock" [width]="80">
           </kendo-grid-column>
+          <kendo-grid-column field="QuantityPerUnit" title="Quantity Per Unit" [width]="80">
+          </kendo-grid-column>
+          <kendo-grid-column field="UnitsOnOrder" title="Units On Order" [width]="80">
+          </kendo-grid-column>
+          <kendo-grid-column field="Category.Description" title="Description" [width]="200">
+          </kendo-grid-column>
           <kendo-grid-column
             field="Discontinued"
             title="Discontinued"
@@ -52,7 +58,7 @@
         [data]="gridData"
         [height]="370"
         [reorderable]="true"
-        style="width: 500px;"
+        style="width: 1000px;"
       >
         <kendo-grid-column
           field="ProductID"
@@ -78,6 +84,12 @@
         </kendo-grid-column>
         <kendo-grid-column field="UnitsInStock" title="In stock" [width]="80"  [locked]="true">
         </kendo-grid-column>
+        <kendo-grid-column field="QuantityPerUnit" title="Quantity Per Unit" [width]="80">
+        </kendo-grid-column>
+        <kendo-grid-column field="UnitsOnOrder" title="Units On Order" [width]="80">
+        </kendo-grid-column>
+        <kendo-grid-column field="Category.Description" title="Description" [width]="200">
+        </kendo-grid-column>
         <kendo-grid-column
           field="Discontinued"
           title="Discontinued"
@@ -96,7 +108,7 @@
         [data]="gridData"
         [height]="370"
         [reorderable]="true"
-        style="width: 500px;"
+        style="width: 1000px;"
       >
         <kendo-grid-column
           field="ProductID"
@@ -121,6 +133,12 @@
         <kendo-grid-column field="UnitPrice" title="Price" [width]="80" >
         </kendo-grid-column>
         <kendo-grid-column field="UnitsInStock" title="In stock" [width]="80"  [locked]="true">
+        </kendo-grid-column>
+        <kendo-grid-column field="QuantityPerUnit" title="Quantity Per Unit" [width]="80">
+        </kendo-grid-column>
+        <kendo-grid-column field="UnitsOnOrder" title="Units On Order" [width]="80">
+        </kendo-grid-column>
+        <kendo-grid-column field="Category.Description" title="Description" [width]="200">
         </kendo-grid-column>
         <kendo-grid-column
           field="Discontinued"
