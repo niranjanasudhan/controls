@@ -117,6 +117,45 @@
 
 /* custom grid */
 
+::ng-deep .headerCustomClass{
+    background-color: #6767A9;
+    color: white;
+    padding: 5px 10px; 
+    font-weight: inherit;
+    text-wrap: balance;
+    border-left: 1px solid #D6D6D6 !important;
+    border-bottom: 1px solid #D6D6D6 !important;
+}
+
+::ng-deep .cellCustomClass {
+    border: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #D6D6D6 !important;
+}
+
+::ng-deep .cellCustomClass:focus {
+    border: 2px solid #DCDDFD !important;
+}
+
+::ng-deep .custom-grid .k-table-row.k-selected > .k-table-td {
+    background-color: inherit;
+}
+
+::ng-deep .custom-grid .k-master-row.k-table-row:hover, ::ng-deep .custom-grid .k-master-row.k-alt.k-table-alt-row:hover {
+    background-color: #DCDDFD !important;
+}
+
+::ng-deep .custom-grid .k-master-row.k-table-row{
+    background-color: #F8FAFC;
+    border: 1px solid #D6D6D6;
+}
+
+::ng-deep .custom-grid .k-master-row.k-alt.k-table-alt-row{
+    background-color: #ffffff;
+    border: 1px solid #D6D6D6;
+}
+
 /* grid toolbar starting element */
 
 ::ng-deep .custom-grid .k-grid-toolbar {

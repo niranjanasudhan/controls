@@ -6,6 +6,8 @@ import { HttpClient } from '@angular/common/http';
 import { map, tap } from "rxjs/operators";
 import { DataBindingDirective } from '../requisition/dataBindingDirective';
 import { SelectEvent } from "@progress/kendo-angular-layout";
+import { ColumnMenuSettings } from "@progress/kendo-angular-grid";
+import { GridComponent } from "@progress/kendo-angular-grid";
 
 
 import { SVGIcon, boldIcon, textboxIcon, xIcon, chevronDownIcon} from "@progress/kendo-svg-icons";
@@ -17,6 +19,7 @@ import { SVGIcon, boldIcon, textboxIcon, xIcon, chevronDownIcon} from "@progress
 })
 export class ActionSummaryComponent {
   @ViewChild(DataBindingDirective) dataBinding!: DataBindingDirective;
+  @ViewChild(GridComponent) public grid!: GridComponent;
   isFullScreen = false;
 
   public folderSVG: SVGIcon = chevronDownIcon;
@@ -66,6 +69,11 @@ export class ActionSummaryComponent {
     },
   ];
 
+  public menuSettings: ColumnMenuSettings = {
+    autoSizeColumn: true,
+    autoSizeAllColumns: true,
+  };
+
   public sizes = [10, 15, 20];
   public onTabSelect(e: SelectEvent): void {
     console.log(e);
@@ -81,7 +89,32 @@ export class ActionSummaryComponent {
   public loading=true;
   public BASE_URL="";
   public view!: Observable<Athlete[]>;
+  public autosizeCell: boolean = false;
 
+  public columnWidths: (number | string)[] = [200, 'auto', 'fit'];
+  public currentWidthIndex: number = 0;
+  public columnWidth: any = this.columnWidths[this.currentWidthIndex];
+
+  public cycleColumnWidth(): void {
+      this.currentWidthIndex = (this.currentWidthIndex + 1) % this.columnWidths.length;
+      this.updateColumnWidth();
+  }
+
+  private updateColumnWidth(): void {
+    if(this.columnWidths[this.currentWidthIndex] === 'auto'){
+      this.columnWidth = null;
+      this.grid.autoSize = true;
+    }
+    else if(this.columnWidths[this.currentWidthIndex] === 'fit'){
+      this.columnWidth = null;
+      this.grid.autoSize = false;
+      this.grid.autoFitColumns();
+    } 
+    else{
+      this.columnWidth = this.columnWidths[this.currentWidthIndex];
+      this.grid.autoSize = false;
+    }
+  }
 
   constructor(
     private router: Router,private http:HttpClient,
