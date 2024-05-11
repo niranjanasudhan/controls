@@ -82,7 +82,6 @@
                             </select>
                         </div>
 
-                        
 
                         <kendo-grid 
                             [kendoGridBinding]="view | async" 
@@ -100,10 +99,12 @@
                             [groupable]="true" 
                             [resizable]="true"
                             [filterable]="true" 
+                            [navigable]="true"
                             [height]="500" 
-                            [columnMenu]="{ filter: true }"
+                            [columnMenu]="menuSettings"
                             [size]="gridSize ? 'small' : 'medium'"
                             class="custom-grid"
+                           
                         >
                             <ng-template kendoGridToolbarTemplate>
                                 <div class="row search-box mb-2" style="display: flex; justify-content: space-evenly;"  [style.display]="isSidebarOpen ? 'none' : 'flex'" >
@@ -185,7 +186,6 @@
                                         <button kendoButton class="mx-2" style="background-color: white; color: #000080;">
                                             <i class="bi bi-funnel"></i>
                                         </button>
-        
                                         <button (click)="openSidebar()" kendoButton 
                                             style="background-color: #000080; color: white;">
                                             <i class="bi bi-sliders"></i>
@@ -222,19 +222,21 @@
                                         <button kendoButton class="ms-2" type="button" (click)="toggleFullScreen()">
                                             <i class="bi bi-arrows-fullscreen"></i>
                                         </button>
-                                        <button kendoButton class="ms-2" kendoGridExcelCommand type="button" (click)="toggleFullScreen()">
+                                        <button kendoButton class="ms-2" type="button" (click)="toggleFullScreen()">
                                             <i class="bi bi-upload"></i>
                                         </button>
                                         <button kendoButton class="ms-2" type="button" (click)="toggleFullScreen()">
                                             <i class="bi bi-camera"></i>
                                         </button>
                                         <button kendoButton class="ms-2" type="button" (click)="gridSizeToggle()">
-                                            <i class="bi bi-list"></i>
+                                            <i class="bi bi-arrows-expand"></i>
+                                        </button>
+                                        <button kendoButton class="ms-2" type="button" (click)="cycleColumnWidth()">
+                                            <i class="bi bi-arrows-expand-vertical"></i>
                                         </button>
                                         <button kendoButton class="ms-2" type="button">
                                             <i class="bi bi-pen"></i>
                                         </button>
-                            
                                         <button kendoButton class="ms-2" type="button" style="background-color: #000080; color: white;">
                                             <i class="bi bi-plus-circle"></i>
                                         </button>
@@ -244,31 +246,51 @@
                                 </div>
                             </ng-template>                           
 
-                            <kendo-grid-rowreorder-column [width]="40" [headerStyle]="{ 'background-color': '#6767A9'}" field="" title=""></kendo-grid-rowreorder-column>
+                            <kendo-grid-rowreorder-column [width]="40" [headerStyle]="{ 'background-color': '#6767A9', 'border-bottom': '1px solid #D6D6D6', 'vertical-align': 'middle'}" field="" title=""></kendo-grid-rowreorder-column>
                             <kendo-grid-column
-                                [headerStyle]="{ 'background-color': '#6767A9', 'color' : 'white','padding':'5px 10px', 'font-weight' : 'inherit','text-wrap' : 'nowrap'}"
+                            [width]="columnWidth"    
+                            [headerClass]="'headerCustomClass'"
+                                [class]="'cellCustomClass'"
+                                
                                 field="athlete" title="title"> 
                             </kendo-grid-column>
                             <kendo-grid-column
-                                [headerStyle]="{ 'background-color': '#6767A9', 'color' : 'white', 'padding':'5px 10px', 'font-weight' : 'inherit' }"
+                            [width]="columnWidth"    
+                            [headerClass]="'headerCustomClass'"
+                                [class]="'cellCustomClass'"
+                                
                                 field="age" title="No. Survey Scheduled">
                             </kendo-grid-column>
                             <kendo-grid-column
-                                [headerStyle]="{ 'background-color': '#6767A9', 'color' : 'white', 'padding':'5px 10px', 'font-weight' : 'inherit' }"
+                            [width]="columnWidth"    
+                            [headerClass]="'headerCustomClass'"
+                                [class]="'cellCustomClass'"
+                                
                                 field="gold" title="Expired">
                             </kendo-grid-column>
                             <kendo-grid-column
-                                [headerStyle]="{ 'background-color': '#6767A9', 'color' : 'white', 'padding':'5px 10px', 'font-weight' : 'inherit' }"
+                            [width]="columnWidth"    
+                            [headerClass]="'headerCustomClass'"
+                                [class]="'cellCustomClass'"
+                                
                                 field="silver" title="In 30 days">
                             </kendo-grid-column>
                             <kendo-grid-column
-                                [headerStyle]="{ 'background-color': '#6767A9', 'color' : 'white', 'padding':'5px 10px', 'font-weight' : 'inherit' }"
+                            [width]="columnWidth"    
+                            [headerClass]="'headerCustomClass'"
+                                [class]="'cellCustomClass'"
+                                
                                 field="bronze" title="In 31-60 days">
                             </kendo-grid-column>
                             <kendo-grid-column
-                                [headerStyle]="{ 'background-color': '#6767A9', 'color' : 'white', 'padding':'5px 10px', 'font-weight' : 'inherit' }"
+                            [width]="columnWidth"    
+                            [headerClass]="'headerCustomClass'"
+                                [class]="'cellCustomClass'"
+                                
                                 field="total" title="In 61-90 days">
                             </kendo-grid-column>
+
+                           
 
                             <ng-template
                                 kendoPagerTemplate
@@ -293,8 +315,11 @@
                                 pagerItemsPerPage=""
                             >
                             </kendo-grid-messages>
-                        </kendo-grid>
 
+                            
+
+                        </kendo-grid>
+                        
 
                         <div class="d-flex my-2">
                             <span class="fw-bold">Filter by</span>
