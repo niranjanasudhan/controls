@@ -38,13 +38,15 @@ import { ColumnBase } from '@progress/kendo-angular-grid';
 // ];
 interface lastOne {
   text?: string;
+  expand: false,
   item?: [{
     text?: string;
+    checked:false;
   }];
 }
 const DEFAULT_DURATION = 300;
 @Component({
-  // encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.None,
   selector: 'app-action',
   templateUrl: './action.component.html',
   styleUrls: ['./action.component.css'],
@@ -67,6 +69,7 @@ export class ActionComponent {
   // public expandedKeys: any[] = ["0", "1"];
   public checkedKeys: any[] = ["0_1"];
   public expandedKeys: any[] = [];
+  listChildChanged : any;
   // public checkedKeys: any[] = [];
   @ViewChild(DataBindingDirective) dataBinding!: DataBindingDirective;
   isFullScreen = false;
@@ -135,13 +138,15 @@ export class ActionComponent {
   public BASE_URL="";
   public view!: Observable<Athlete[]>;
 public keys:any[] = [];
+public source:any[] = [];
+public data:any[] = [];
 public fullData:any[]=[];
 public item:any[]=[];
 public filterData:any[number]=[];
 
 public hiddenColumns: string[] = [];
 // public map!:lastOne[];
-public map:any=[]; 
+public map:any; 
 
 
   constructor(
@@ -161,6 +166,8 @@ public map:any=[];
      
 
       this.keys = Object.keys(this.fullData[0]);
+      this.data=this.keys;
+      this.source=this.keys;
     
       for(let j=0;j<this.keys.length;j++) {
       let clname=this.keys[j];
@@ -168,13 +175,13 @@ public map:any=[];
         for (let i = 0; i < this.fullData.length; i++) {
  
             if (typeof this.fullData[i][clname] !== "undefined") {
-              this.item.push( { text: this.fullData[i][clname]});
+              this.item.push( { text: this.fullData[i][clname],checked:false});
               // this.lastOne.item.text.push( this.fullData[i][clname])
             }
 
             }
 
-this.filterData.push({text:clname,items:this.item});
+this.filterData.push({text:clname,items:this.item,expand:false});
 this.item=[];
 this.map=<lastOne>this.filterData;
 
@@ -488,11 +495,13 @@ for(let i=0;i<keys.length;i++) {
   }
 
 
-  onFilterColumns(e:any)
-  {
-
+  handleFilter(value:any) {
+    console.log(this.data);
+    console.log(value);
+    this.data = this.source.filter(
+      (s) => s.toLowerCase().indexOf(value.toLowerCase()) !== -1
+    );
   }
-
 
 
   public finalData!:any[];
@@ -517,7 +526,54 @@ for(let i=0;i<keys.length;i++) {
   }
   
 
- 
+  checkMinusSquare(item:any) {
+    const count = item.items.filter((x:any) => x.checked == true).length;
+    let flag = false;
+    if (count > 0 && count < item.items.length) {
+      flag= true;
+    } else if (count == 0) {
+      flag= false;
+    }
+    return flag
+  }
+
+  checkParent(i:any) {
+    this.map[i].checked = !this.map[i].checked;
+    if (this.map[i].checked) {
+      this.map[i].items.map((x:any) => (x.checked = true));
+    } else {
+      this.map[i].items.map((x:any) => (x.checked = false));
+    }
+    this.map[i].items.forEach((x:any) => {
+      if (this.listChildChanged.findIndex((el:any) => el.id == x.id) == -1) {
+        this.listChildChanged.push(x);
+      }
+    });
+  }
+
+  checkChild(parent_i:any, i:any) {
+    this.map[parent_i].items[i].checked =
+      !this.map[parent_i].items[i].checked;
+    const count = this.map[parent_i].items.filter(
+      (el:any) => el.checked == true
+    ).length;
+    if (count == this.map[parent_i].items.length) {
+      this.map[parent_i].checked = true;
+    } else {
+      this.map[parent_i].checked = false;
+    }
+    if (
+      this.listChildChanged.findIndex(
+        (el:any) => el.id == this.map[parent_i].items[i].id
+      ) == -1
+    ) {
+      this.listChildChanged.push(this.map[parent_i].items[i]);
+    }
+  }
+
+  getListChildChanged() {
+    console.log(this.listChildChanged);
+  }
  
 }
 

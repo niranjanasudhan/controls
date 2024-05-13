@@ -734,3 +734,55 @@ cursor: pointer;
   color: white;
   background-color: #000080;
 }
+.k-panelbar > .k-item > .k-link.k-selected, .k-panelbar > .k-panelbar-header > .k-link.k-selected {
+  color: #444444 !important;
+  background-color: #ffffff !important;
+}
+
+.k-panelbar > .k-item > .k-link, .k-panelbar > .k-panelbar-header > .k-link {
+  padding-block: 6px;
+  padding-inline: 17px;
+}
+
+/* Angular TreeView */
+/* Remove default bullets */
+ul {
+  list-style: none;
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+ul li {
+  clear: both;
+  padding-left: 0px;
+  position: relative;
+  margin: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.caret {
+  width: 10px;
+  margin-right: 2px;
+}
+
+.get-list-child-changed {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 40px;
+}
+
+.show-list-child-changed {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 40px;
+}
+.chklist
+{
+  margin-right: 5px;
+}

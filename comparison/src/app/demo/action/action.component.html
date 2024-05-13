@@ -171,13 +171,23 @@
                 class="ms-2"
                 [style.width.px]="165"
                 placeholder="Search"
-                (valueChange)="onFilterColumns($event)"
+                (valueChange)="handleFilter($event)"
               ></kendo-textbox>
+
+              <!-- <kendo-autocomplete
+              class="ms-2"
+                [style.width.px]="165"
+              [data]="data"
+              [filterable]="true"
+              (filterChange)="handleFilter($event)"
+              placeholder="Search"
+            >
+            </kendo-autocomplete> -->
             </div>
             <div cdkDropList
             cdkDropListOrientation="vertical"
             (cdkDropListDropped)="drop(grid,$event)">
-            <div *ngFor="let key of keys" class="checkboxcls" cdkDrag >
+            <div *ngFor="let key of data" class="checkboxcls" cdkDrag >
                
               <input
                 kendoCheckBox
@@ -204,7 +214,7 @@
 
           <div class="content" [@collapse]="collapsedFilter">
             <div>
-              <kendo-treeview
+              <!-- <kendo-treeview
                 [nodes]="map"
                 textField="text"
                 kendoTreeViewHierarchyBinding
@@ -220,7 +230,51 @@
                 <ng-template kendoTreeViewNodeTemplate let-node>
                   {{ node.text }}
                 </ng-template>
-              </kendo-treeview>
+              </kendo-treeview> -->
+              <!-- <div class="filterdata">
+                <div class="single-section">
+                  <div class="panelbar-wrapper">
+                    <kendo-panelbar>
+                      
+                      <kendo-panelbar-item *ngFor="let col of keys; index as i"   [title]="col">
+                        <kendo-panelbar-item title="New Business Plan"></kendo-panelbar-item>
+                        <kendo-panelbar-item title="Sales Reports"></kendo-panelbar-item>
+                      </kendo-panelbar-item>
+                    </kendo-panelbar>
+                  </div>
+
+                </div>
+
+              </div> -->
+            
+              <ul >
+               
+                <li *ngFor="let item of map; index as j">
+                  <span class="cursor-pointer caret"
+                    [ngClass]="item.expand ? 'bi bi-chevron-down' : 'bi bi-chevron-right'"
+                    (click)="item.expand = !item.expand"></span>
+                  <!-- <span class="mx-1" [ngClass]="item.checked ? 'fas fa-check-square' : 
+                    (checkMinusSquare(item) ? 'fas fa-minus-square' : 'far fa-square')"
+                    (click)="checkParent(j)">
+                  </span> -->
+                  <span class="cursor-pointer" (click)="item.expand = !item.expand">{{item.text}}</span>
+                  <ul [class.d-none]="!item.expand">
+                    <li *ngFor="let child of item.items; index as k">
+                     
+                     
+                      <!-- <span class="mr-1" [ngClass]="child.checked ? 'fas fa-check-square' : 'far fa-square'"
+                        (click)="checkChild(j, k)"> -->
+                        <input kendoCheckBox type="checkbox" class="checkbox-blue chklist"  
+                        [checked]="child.checked"
+                       (change)="checkChild(j, k)" 
+                         />
+
+                      <!-- </span> -->
+                      <span class="cursor-pointer" (click)="checkChild(i, j, k)">{{child.text}}</span>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
             </div>
           </div>
           <!-- </kendo-popup> -->
