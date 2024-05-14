@@ -578,3 +578,41 @@
     border-color: #ffc107; /* Warning color */
     background-color: #ffc107;
   }
+
+
+
+  /* grid sidepanel */
+
+  .grid-inner-table{
+    position: relative;
+  }
+
+  ::ng-deep .grid-column-btn .k-button .k-button-text::after{
+    content: "Columns";
+  }
+
+  .filterGroup
+  {
+        /* width: 260px; */
+        display: inline-flex;
+        border-radius: inherit;
+        width: 45px !important;
+        float: right;
+        right: 18px;
+        margin-right: 0px;
+        position: absolute;
+        margin: auto;
+        margin-right: 0;
+        margin-top: 215px;
+        z-index: 999;
+        height: 285px;
+  }
+  .filterGroup div
+  {
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    height: 90px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+

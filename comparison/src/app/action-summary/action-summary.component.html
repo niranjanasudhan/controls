@@ -82,7 +82,7 @@
                             </select>
                         </div>
 
-
+                        
                         <kendo-grid 
                             [kendoGridBinding]="view | async" 
                             kendoGridSelectBy="id" 
@@ -240,57 +240,37 @@
                                         <button kendoButton class="ms-2" type="button" style="background-color: #000080; color: white;">
                                             <i class="bi bi-plus-circle"></i>
                                         </button>
+
+                                        <!-- <kendo-grid-column-chooser class="grid-column-btn ms-2" ></kendo-grid-column-chooser> -->
+                                        <!-- <kendo-grid-columnmenu-filter [service]="view"></kendo-grid-columnmenu-filter> -->
                                     </div>
-    
-                                   
                                 </div>
-                            </ng-template>                           
+                            </ng-template>         
 
-                            <kendo-grid-rowreorder-column [width]="40" [headerStyle]="{ 'background-color': '#6767A9', 'border-bottom': '1px solid #D6D6D6', 'vertical-align': 'middle'}" field="" title=""></kendo-grid-rowreorder-column>
-                            <kendo-grid-column
-                            [width]="columnWidth"    
-                            [headerClass]="'headerCustomClass'"
-                                [class]="'cellCustomClass'"
-                                
-                                field="athlete" title="title"> 
-                            </kendo-grid-column>
-                            <kendo-grid-column
-                            [width]="columnWidth"    
-                            [headerClass]="'headerCustomClass'"
-                                [class]="'cellCustomClass'"
-                                
-                                field="age" title="No. Survey Scheduled">
-                            </kendo-grid-column>
-                            <kendo-grid-column
-                            [width]="columnWidth"    
-                            [headerClass]="'headerCustomClass'"
-                                [class]="'cellCustomClass'"
-                                
-                                field="gold" title="Expired">
-                            </kendo-grid-column>
-                            <kendo-grid-column
-                            [width]="columnWidth"    
-                            [headerClass]="'headerCustomClass'"
-                                [class]="'cellCustomClass'"
-                                
-                                field="silver" title="In 30 days">
-                            </kendo-grid-column>
-                            <kendo-grid-column
-                            [width]="columnWidth"    
-                            [headerClass]="'headerCustomClass'"
-                                [class]="'cellCustomClass'"
-                                
-                                field="bronze" title="In 31-60 days">
-                            </kendo-grid-column>
-                            <kendo-grid-column
-                            [width]="columnWidth"    
-                            [headerClass]="'headerCustomClass'"
-                                [class]="'cellCustomClass'"
-                                
-                                field="total" title="In 61-90 days">
-                            </kendo-grid-column>
+                            <ng-container class="grid-inner-table">
+                                <kendo-grid-rowreorder-column [width]="40" [headerStyle]="{ 'background-color': '#6767A9', 'border-bottom': '1px solid #D6D6D6', 'vertical-align': 'middle'}" field="" title=""></kendo-grid-rowreorder-column>
+                                <kendo-grid-column *ngFor="let column of columnsArray"
+                                        [width]="columnWidth"    
+                                        [headerClass]="'headerCustomClass'"
+                                        [class]="'cellCustomClass'"
+                                        field="{{ column.field }}"
+                                        title="{{ column.title }}">
 
-                           
+                                </kendo-grid-column>
+
+                                <kendo-card class="filterGroup">
+                                    <kendo-card-body>
+                                      <div>
+                                        <kendo-grid-column-chooser class="grid-column-btn ms-2" ></kendo-grid-column-chooser>
+                                      </div>
+                                      <div #anchor >
+                                        <i class="bi bi-filter-right"></i> Filters
+                                      </div>
+                                    </kendo-card-body>
+                                  </kendo-card>
+                        
+                            </ng-container>
+                            
 
                             <ng-template
                                 kendoPagerTemplate
