@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, HostListener, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener, ViewEncapsulation, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Athlete } from "../../dashboard/model";
@@ -19,6 +19,13 @@ import {
 } from '@angular/animations';
 import { GridComponent } from '@progress/kendo-angular-grid';
 import { ColumnBase } from '@progress/kendo-angular-grid';
+
+import {
+  filterBy,
+  CompositeFilterDescriptor,
+} from "@progress/kendo-data-query";
+import { FilterService } from "@progress/kendo-angular-grid";
+
 // this.filterData = [
 //   {
 //     text: "Heading 1",
@@ -45,6 +52,7 @@ interface lastOne {
   }];
 }
 const DEFAULT_DURATION = 300;
+
 @Component({
   encapsulation: ViewEncapsulation.None,
   selector: 'app-action',
@@ -66,10 +74,14 @@ const DEFAULT_DURATION = 300;
   ]
 })
 export class ActionComponent {
+  @ViewChild('athlete', { static: true }) athlete!: ElementRef;
+
+  public filter!: CompositeFilterDescriptor;
+
   // public expandedKeys: any[] = ["0", "1"];
   public checkedKeys: any[] = ["0_1"];
   public expandedKeys: any[] = [];
-  listChildChanged : any;
+  listChildChanged : any[]=[];
   // public checkedKeys: any[] = [];
   @ViewChild(DataBindingDirective) dataBinding!: DataBindingDirective;
   isFullScreen = false;
@@ -136,7 +148,8 @@ export class ActionComponent {
 
   public loading=true;
   public BASE_URL="";
-  public view!: Observable<Athlete[]>;
+  // public view!: Observable<Athlete[]>;
+  public view!: any;
 public keys:any[] = [];
 public source:any[] = [];
 public data:any[] = [];
@@ -147,7 +160,8 @@ public filterData:any[number]=[];
 public hiddenColumns: string[] = [];
 // public map!:lastOne[];
 public map:any; 
-
+// public rowFilter!: Observable<Athlete[]>;
+public rowFilter!: any;
 
   constructor(
     private router: Router,private http:HttpClient,
@@ -161,9 +175,11 @@ public map:any;
       map((response: Athlete[]) => response.slice(0, 50)), // Slice the response to get only the first 50 items
       tap(() => (this.loading = false))
     );
+
+   
         this.view.subscribe((value: any[]) => {
       this.fullData = value;
-     
+     this.rowFilter= this.fullData;
 
       this.keys = Object.keys(this.fullData[0]);
       this.data=this.keys;
@@ -175,7 +191,7 @@ public map:any;
         for (let i = 0; i < this.fullData.length; i++) {
  
             if (typeof this.fullData[i][clname] !== "undefined") {
-              this.item.push( { text: this.fullData[i][clname],checked:false});
+              this.item.push( { text: this.fullData[i][clname],checked:true});
               // this.lastOne.item.text.push( this.fullData[i][clname])
             }
 
@@ -517,9 +533,11 @@ for(let i=0;i<keys.length;i++) {
 
   // drop(grid: GridComponent,event: CdkDragDrop<string[]>,col:ColumnBase) {
     drop(grid: GridComponent,event: CdkDragDrop<string[]>) {
+      console.log(event);
     moveItemInArray(this.keys, event.previousIndex, event.currentIndex);
     this.keys[event.previousIndex];
-   
+    console.log(grid);
+ // grid.reorderColumn(this.athlete<ColumnBase>, 2);
    // grid.reorderColumn(grid.columns.get(),2);
     //grid.reorderColumn(col, event.currentIndex, { before: true });
    
@@ -551,28 +569,46 @@ for(let i=0;i<keys.length;i++) {
     });
   }
 
-  checkChild(parent_i:any, i:any) {
+  checkChild(parent_i:any, i:any,e:Event) {
+    console.log(this.map);
     this.map[parent_i].items[i].checked =
       !this.map[parent_i].items[i].checked;
     const count = this.map[parent_i].items.filter(
       (el:any) => el.checked == true
     ).length;
+    console.log(count);
     if (count == this.map[parent_i].items.length) {
       this.map[parent_i].checked = true;
     } else {
       this.map[parent_i].checked = false;
     }
-    if (
-      this.listChildChanged.findIndex(
-        (el:any) => el.id == this.map[parent_i].items[i].id
-      ) == -1
-    ) {
-      this.listChildChanged.push(this.map[parent_i].items[i]);
+
+
+    for(let i=0;i<this.map.length;i++){
+      let checkedlist=this.map[i].items.filter((el:any) => el.checked == true);
+      console.log(checkedlist);
+      this.fullData =   this.fullData.filter((element:any) => {
+        for(let j=0;j<checkedlist.length;j++)
+          {
+            console.log(this.map[i].text);
+            console.log(element.map[i].text);
+            console.log(checkedlist[i].text);
+            return element.text.toLowerCase() == checkedlist[i].text.toLowerCase();
+          }
+      });
+      return this.fullData;
     }
+  
+  
   }
 
   getListChildChanged() {
     console.log(this.listChildChanged);
+  }
+
+  public filterChange(filter: CompositeFilterDescriptor): void {
+    this.filter = filter;
+    this.fullData = filterBy(this.rowFilter, filter);
   }
  
 }

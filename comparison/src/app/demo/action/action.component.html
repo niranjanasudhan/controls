@@ -184,9 +184,13 @@
             >
             </kendo-autocomplete> -->
             </div>
+            <!-- <div cdkDropList
+            cdkDropListOrientation="vertical"
+            (cdkDropListDropped)="drop(grid,$event)"> -->
             <div cdkDropList
             cdkDropListOrientation="vertical"
             (cdkDropListDropped)="drop(grid,$event)">
+           
             <div *ngFor="let key of data" class="checkboxcls" cdkDrag >
                
               <input
@@ -266,7 +270,7 @@
                         (click)="checkChild(j, k)"> -->
                         <input kendoCheckBox type="checkbox" class="checkbox-blue chklist"  
                         [checked]="child.checked"
-                       (change)="checkChild(j, k)" 
+                       (change)="checkChild(j, k,$event)" 
                          />
 
                       <!-- </span> -->
@@ -279,7 +283,7 @@
           </div>
           <!-- </kendo-popup> -->
           <kendo-grid
-            [kendoGridBinding]="view | async"
+            [kendoGridBinding]="fullData"
             kendoGridSelectBy="id"
             [rowReorderable]="true"
             [reorderable]="true"
@@ -559,12 +563,11 @@
                 </div>
               </div>
             </ng-template>
-
+            <!-- <kendo-grid-rowreorder-column [width]="40"></kendo-grid-rowreorder-column> -->
             <kendo-grid-rowreorder-column
               [width]="40"
               [headerStyle]="{ 'background-color': '#6767A9'}"
-              field=""
-              title=""
+            
             ></kendo-grid-rowreorder-column>
             <kendo-grid-column
               [headerStyle]="{ 'background-color': '#6767A9', 'color' : 'white','padding':'5px 10px', 'font-weight' : 'inherit','text-wrap' : 'nowrap'}"
