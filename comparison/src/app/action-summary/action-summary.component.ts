@@ -12,6 +12,13 @@ import { GridComponent } from "@progress/kendo-angular-grid";
 
 import { SVGIcon, boldIcon, textboxIcon, xIcon, chevronDownIcon} from "@progress/kendo-svg-icons";
 
+interface ColumnSetting {
+  field: string;
+  title: string;
+  format?: string;
+  type: "text" | "numeric" | "boolean" | "date";
+}
+
 @Component({
   selector: 'app-action-summary',
   templateUrl: './action-summary.component.html',
@@ -131,7 +138,61 @@ export class ActionSummaryComponent {
 
 
   }
-  
+
+
+  public columnsArray: ColumnSetting[] = [
+    {
+      field: "athlete",
+      title: "Athlete Name",
+      type: "text",
+    },
+    {
+      field: "age",
+      title: "Age",
+      type: "numeric",
+    },
+    {
+      field: "sport",
+      title: "Sport",
+      type: "text",
+    },
+    {
+      field: "country",
+      title: "Country",
+      type: "text",
+    },
+    {
+      field: "date",
+      title: "Date",
+      type: "date",
+    },
+    {
+      field: "year",
+      title: "Year",
+      type: "date",
+    },
+    {
+      field: "gold",
+      title: "Gold",
+      type: "numeric",
+    },
+    {
+      field: "silver",
+      title: "Silver",
+      type: "numeric",
+    },
+    {
+      field: "bronze",
+      title: "Bronze",
+      type: "numeric",
+    },
+    {
+      field: "total",
+      title: "Total",
+      type: "numeric",
+    },
+  ]
+
   toggleFullScreen() {
     const gridElement = this.dataBinding.getGridElement();
 
