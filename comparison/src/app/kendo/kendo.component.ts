@@ -155,11 +155,7 @@ export class KendoComponent {
       route: '/kendo/grid',
      
     },
-    {
-      title: 'File Upload',
-      route: '/kendo/draganddrop',
-     
-    },
+   
   ];
   handleClick(selectedItem:any) {
     console.log(selectedItem);
