@@ -587,18 +587,18 @@ for(let i=0;i<keys.length;i++) {
     for(let i=0;i<this.map.length;i++){
       let checkedlist=this.map[i].items.filter((el:any) => el.checked == true);
       console.log(checkedlist);
-      this.fullData =   this.fullData.filter((element:any) => {
-        for(let j=0;j<checkedlist.length;j++)
-          {
-            console.log(this.map[i].text);
-            console.log(element.map[i].text);
-            console.log(checkedlist[i].text);
-            return element.text.toLowerCase() == checkedlist[i].text.toLowerCase();
-          }
-      });
+      // this.fullData =   this.fullData.filter((element:any) => {
+      //   for(let j=0;j<checkedlist.length;j++)
+      //     {
+      //       console.log(this.map[i].text);
+      //       console.log(element.map[i].text);
+      //       console.log(checkedlist[i].text);
+      //       return element.text.toLowerCase() == checkedlist[i].text.toLowerCase();
+      //     }
+      // });
       return this.fullData;
     }
-  
+    return this.fullData;
   
   }
 

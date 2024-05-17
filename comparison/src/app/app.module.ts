@@ -121,7 +121,7 @@ import { BarcodesModule } from "@progress/kendo-angular-barcodes";
 import { AggridbasicComponent } from './aggrid/aggridbasic/aggridbasic.component';
 import { AgGridAngular } from 'ag-grid-angular';
 import { AggridcolumnfilterComponent } from './aggrid/aggridcolumnfilter/aggridcolumnfilter.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AggridthemeComponent } from './aggrid/aggridtheme/aggridtheme.component';
@@ -160,6 +160,16 @@ import { ActionSummaryComponent } from './action-summary/action-summary.componen
 import { PivotGridModule } from "@progress/kendo-angular-pivotgrid";
 import { ActionComponent } from './demo/action/action.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { PlannerComponent } from './demo/planner/planner.component';
+import { SchedulerModule } from "@progress/kendo-angular-scheduler";
+import { DraganddropComponent,UploadInterceptor } from './kendo/draganddrop/draganddrop.component';
+import { UtilsModule } from "@progress/kendo-angular-utils";
+import { AuditComponent } from './demo/audit/audit.component';
+import { UploadsModule } from "@progress/kendo-angular-upload";
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -245,6 +255,9 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
       KendogridComponent,
       ActionSummaryComponent,
       ActionComponent,
+      PlannerComponent,
+      DraganddropComponent,
+      AuditComponent,
 
     
    
@@ -326,15 +339,25 @@ CustomButtonComponent,
 MissionResultRenderer,
 PriceRenderer,
 DropDownListModule,
+
     // HighchartsChartModule
     // NotificationService
     GridModule,
     NavigationModule,
     TreeViewModule ,
     PivotGridModule,
-    DragDropModule
+    DragDropModule,
+    SchedulerModule,
+    UtilsModule,
+    UploadsModule
   ],
-  providers: [NotificationService],
+  providers: [NotificationService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: UploadInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
   
 })
