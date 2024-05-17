@@ -160,8 +160,11 @@ import { ActionSummaryComponent } from './action-summary/action-summary.componen
 import { PivotGridModule } from "@progress/kendo-angular-pivotgrid";
 import { ActionComponent } from './demo/action/action.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { PlannerComponent } from './demo/planner/planner.component';
 import { SchedulerModule } from "@progress/kendo-angular-scheduler";
+import { DraganddropComponent,UploadInterceptor } from './kendo/draganddrop/draganddrop.component';
 import { UtilsModule } from "@progress/kendo-angular-utils";
+import { AuditComponent } from './demo/audit/audit.component';
 import { UploadsModule } from "@progress/kendo-angular-upload";
 
 
@@ -252,7 +255,9 @@ import { UploadsModule } from "@progress/kendo-angular-upload";
       KendogridComponent,
       ActionSummaryComponent,
       ActionComponent,
-      
+      PlannerComponent,
+      DraganddropComponent,
+      AuditComponent,
 
     
    
@@ -347,7 +352,11 @@ DropDownListModule,
     UploadsModule
   ],
   providers: [NotificationService,
-    
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: UploadInterceptor,
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent],
   

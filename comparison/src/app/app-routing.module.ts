@@ -78,6 +78,12 @@ import { RequisitionComponent } from './requisition/requisition.component';
 import { KendogridComponent } from './kendo/kendogrid/kendogrid.component';
 import { ActionSummaryComponent } from './action-summary/action-summary.component'
 import { ActionComponent } from './demo/action/action.component';
+import { PlannerComponent } from './demo/planner/planner.component';
+import { DraganddropComponent } from './kendo/draganddrop/draganddrop.component';
+import { AuditComponent } from './demo/audit/audit.component';
+
+
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -210,7 +216,9 @@ const routes: Routes = [
     {
       path:'grid',component:KendogridComponent
     },
-  
+    {
+      path:'draganddrop',component:DraganddropComponent
+    }
 
     
   ]
@@ -313,6 +321,8 @@ const routes: Routes = [
   {path:"requisition",component:RequisitionComponent},
   {path:"action-summary",component:ActionSummaryComponent},
   {path:"action",component:ActionComponent}, 
+  {path:"planner",component:PlannerComponent}, 
+  {path:"audit",component:AuditComponent}, 
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,0 +1,85 @@
+<div style="min-height: 1000px;">
+<!-- <kendo-upload
+    [saveUrl]="uploadSaveUrl"
+    [removeUrl]="uploadRemoveUrl">
+    <kendo-upload-messages
+        dropFilesHere="Drag and drop your file here"
+        >
+    </kendo-upload-messages>
+
+  </kendo-upload> -->
+
+
+    <div class="dropzone-wrapper">
+      <div class="upload-wrapper">
+        <!-- <kendo-uploaddropzone zoneId="myZone">
+          Only JPEG and PNG files are allowed.
+        </kendo-uploaddropzone> -->
+        <div class="custom-dropzone bordered largeGaps" kendoUploadDropZone="myZone">
+          <img src="../../../assets/Icons/file.png">
+          <p>Drag and drop your file here</p>
+
+        </div>
+        <kendo-upload
+          zoneId="myZone"
+          [saveUrl]="uploadSaveUrl"
+          [removeUrl]="uploadRemoveUrl"
+          (remove)="onRemove($event)"
+          (cancel)="onCancel($event)"
+          (success)="onUpload($event)"
+          [restrictions]="myRestrictions"
+          [showFileList]="false"
+        >
+        </kendo-upload>
+
+      </div>
+      <div class="images-wrapper">
+        <!-- <kendo-window
+        *ngIf="opened"
+        (close)="openClose(false)"
+        [(state)]="windowState"
+        [title]="myFiles[0].name"
+        class="stickclass"
+      > -->
+      <kendo-window
+      *ngIf="opened"
+      (close)="openClose(false)"
+      [(state)]="windowState"
+     
+      class="stickclass"
+    >
+    <kendo-window-titlebar>
+      <span class="k-window-title" *ngIf="myFiles[0]">{{myFiles[0].name}}</span>
+      <span class="k-window-title" *ngIf="!myFiles[0]"></span>
+      <!-- <button
+        kendoButton
+        (click)="onClick()"
+        [svgIcon]="folderIcon"
+        fillMode="flat"
+      ></button> -->
+      <!-- <button kendoWindowMaximizeAction></button>
+      <button kendoWindowMinimizeAction></button>
+      <button kendoWindowRestoreAction></button> -->
+      <button kendoWindowCloseAction></button>
+    </kendo-window-titlebar>
+      <div *ngIf="flag">
+      <div class="file-image" *ngFor="let image of myFiles">
+        <img [src]="image.src" [alt]="image.name" />
+      </div>
+    </div>
+    <div *ngIf="!flag">
+      <div class="file-image1" >
+        <img src="../../../assets/Icons/nopreview.png" alt="No Preview" />
+      </div>
+    </div>
+      </kendo-window>
+      
+      </div>
+    </div>
+  
+ 
+
+</div>
+
+  
+ 
