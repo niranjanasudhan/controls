@@ -1,3 +1,22 @@
+ <div>
+  <div class="container my-4">
+    <h4>Table Content drag and drop methods:</h4>
+    <table class="table" (dragover)="allowDrop($event)" (drop)="onDrop($event, 'table1')">
+        <caption class="table-header">Table 1</caption>
+        <tr *ngFor="let row of table1Data; let i=index">
+            <td *ngFor="let item of row; let j=index" class="table-cell" draggable="true"
+                (dragstart)="onDragStart($event, i, j, 'table1')">{{item}}</td>
+        </tr>
+    </table>
+    <table class="table" (dragover)="allowDrop($event)" (drop)="onDrop($event, 'table2')">
+        <caption class="table-header">Table 2</caption>
+        <tr *ngFor="let row of table2Data; let i=index">
+            <td *ngFor="let item of row; let j=index" class="table-cell" draggable="true"
+                (dragstart)="onDragStart($event, i, j, 'table2')">{{item}}</td>
+        </tr>
+    </table>
+
+</div>
  <kendo-scheduler
       [kendoSchedulerBinding]="events"
       [selectedDate]="selectedDate"
@@ -8,3 +27,4 @@
       </ng-template>
       <kendo-scheduler-week-view> </kendo-scheduler-week-view>
     </kendo-scheduler>
+ </div>
