@@ -166,6 +166,7 @@ import { DraganddropComponent,UploadInterceptor } from './kendo/draganddrop/drag
 import { UtilsModule } from "@progress/kendo-angular-utils";
 import { AuditComponent } from './demo/audit/audit.component';
 import { UploadsModule } from "@progress/kendo-angular-upload";
+import { GoogleTranslateWidgetComponent } from './google-translate-widget/google-translate-widget.component';
 
 
 
@@ -258,6 +259,7 @@ import { UploadsModule } from "@progress/kendo-angular-upload";
       PlannerComponent,
       DraganddropComponent,
       AuditComponent,
+      GoogleTranslateWidgetComponent,
 
     
    

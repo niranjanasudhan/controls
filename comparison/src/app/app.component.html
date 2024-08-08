@@ -337,8 +337,10 @@
       <a [routerLink]="['/demo']" routerLinkActive="active">Demo</a>
       <a [routerLink]="['/requisition']" routerLinkActive="active">Requisition</a>
       <a [routerLink]="['/action-summary']" routerLinkActive="active">Action Summary</a>
-      
-
+      <div style="margin-left: 60px;margin-top:30px">
+      <!-- <p style="color:aliceblue;    font-size: 12px;">Select Language</p> -->
+      <app-google-translate-widget></app-google-translate-widget>
+    </div>
       <!-- <kendo-dropdownlist
         [data]="fontSizes"
         [textField]="'text'"
