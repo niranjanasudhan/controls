@@ -18,7 +18,11 @@ export class AppComponent {
   sidebarOpen: boolean = false;
 
   public icons = { chevronlefticon: chevronLeftIcon,trashicon:trashIcon,pencilicon:pencilIcon,plusoutline:plusOutlineIcon };
-  
+  ngAfterViewInit() {
+    const googleTranslateScript = document.createElement('script');
+    googleTranslateScript.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    document.body.appendChild(googleTranslateScript);
+  }
   constructor(private sharedService: SharedService,private router:Router) {
     // subscribe to router navigation
     router.events.subscribe((val) => {

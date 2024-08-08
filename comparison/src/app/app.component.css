@@ -35,6 +35,10 @@ mat-toolbar
         align-items: center;
         background-color: #000080;
     }
+    .top-right-div
+    {
+        margin-right: 90px;
+    }
 }
 .setnone
 {
@@ -62,3 +66,10 @@ mat-toolbar
 {
     color: #ffffff;
 }
+.top-right-div {
+    position: absolute; /* Position the element relative to its nearest positioned ancestor */
+    top: 0; /* Align the div at the top */
+    right: 0; /* Align the div to the right */
+    margin: 10px; /* Optional: Add some margin for spacing */
+    z-index: 1000; /* Optional: Ensure the div stays on top of other elements */
+  }

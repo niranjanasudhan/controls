@@ -337,10 +337,8 @@
       <a [routerLink]="['/demo']" routerLinkActive="active">Demo</a>
       <a [routerLink]="['/requisition']" routerLinkActive="active">Requisition</a>
       <a [routerLink]="['/action-summary']" routerLinkActive="active">Action Summary</a>
-      <div style="margin-left: 60px;margin-top:30px">
-      <!-- <p style="color:aliceblue;    font-size: 12px;">Select Language</p> -->
-      <app-google-translate-widget></app-google-translate-widget>
-    </div>
+   
+
       <!-- <kendo-dropdownlist
         [data]="fontSizes"
         [textField]="'text'"
@@ -352,7 +350,9 @@
       ></kendo-dropdownlist> -->
 
     </mat-toolbar>
-
+<div class="top-right-div">
+  <app-google-translate-widget></app-google-translate-widget>
+</div>
     <mat-toolbar class="mobile-toolbar" [ngClass]="bgClass">
       <div>
         <button class="btn btn-none text-white fs-2" (click)="toggleSidebar()"><i class="bi bi-list"></i></button>
