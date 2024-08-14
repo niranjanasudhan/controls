@@ -63,10 +63,12 @@ export class GridstylingComponent {
   ];
   
   constructor(
-    private router: Router,private http:HttpClient
+    private router: Router,private http:HttpClient,
+
   ) { }
 
   ngOnInit() {
+   
     // this.BASE_URL="https://www.ag-grid.com/example-assets/olympic-winners.json";
     // const queryStr = ``;
     // this.view=   this.http.get(`${this.BASE_URL}`     

@@ -1,9 +1,19 @@
 
+<!-- This block will not be translated automatically -->
+<div class="notranslate">
+  This content will not be automatically translated by Google Translate.
+</div>
+
+<!-- This block can be translated automatically -->
+<div id="translatable-content">
+  This content will be translated by Google Translate.
+</div>
 <mat-grid-list cols="1" rows="1" rowHeight="2:1">
     <mat-grid-tile>
+      
         <!-- <mat-card class="flex-me"></mat-card> -->
         <mat-card class="flex-me">
-            <kendo-grid [data]="gridData" >
+            <kendo-grid [data]="gridData" class="notranslate">
                 <kendo-grid-column media="(max-width: 1000px)" title="Items" [headerClass]="'headerCustomClass'"  [headerStyle]="{ 'background-color': '#F2F4F7','height':'48px','color':'#444444' }">
                     <ng-template kendoGridCellTemplate let-dataItem>
                       <!-- template for mobile -->
