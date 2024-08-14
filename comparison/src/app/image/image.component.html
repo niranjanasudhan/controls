@@ -1,0 +1,10 @@
+<div class="upload-container">
+    <input type="file" (change)="onFileSelected($event)" />
+    <div class="frame">
+      <div class="image-container" *ngIf="imageSrc">
+        <img [src]="imageSrc" alt="Uploaded Image" />
+      </div>
+    </div>
+  </div>
+  
+  

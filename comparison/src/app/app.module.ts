@@ -167,7 +167,8 @@ import { UtilsModule } from "@progress/kendo-angular-utils";
 import { AuditComponent } from './demo/audit/audit.component';
 import { UploadsModule } from "@progress/kendo-angular-upload";
 import { GoogleTranslateWidgetComponent } from './google-translate-widget/google-translate-widget.component';
-
+import { ImageComponent } from './image/image.component';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -260,6 +261,7 @@ import { GoogleTranslateWidgetComponent } from './google-translate-widget/google
       DraganddropComponent,
       AuditComponent,
       GoogleTranslateWidgetComponent,
+      ImageComponent,
 
     
    
@@ -351,7 +353,8 @@ DropDownListModule,
     DragDropModule,
     SchedulerModule,
     UtilsModule,
-    UploadsModule
+    UploadsModule,
+    CommonModule
   ],
   providers: [NotificationService,
     {
