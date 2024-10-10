@@ -1,0 +1,192 @@
+.k-badge {
+    background-color: #e1dcdc;
+    padding: 3px;
+    margin-right: 5px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+  
+  .k-chip {
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+  }
+  
+  .k-chip-success {
+    background-color: green;
+  }
+  
+  .k-chip-error {
+    background-color: red;
+  }
+  .k-badge-success
+  {
+    color: #28a745;
+    font-weight: 600;
+  }
+  .k-badge-warning
+  {
+    color: red;
+    font-weight: 600;
+  }
+  
+  img {
+    /* border-radius: 50%; */
+  }
+  .container {
+    display: flex;
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Align items vertically */
+    padding: 0px;
+    border: 1px solid #ccc; /* Optional: border for visualization */
+    background-color: #f9f9f9; /* Optional: background color */
+    margin-top: 20px;
+  }
+  
+  .item {
+    flex: 1; /* Optional: Make items grow/shrink equally */
+    padding: 10px;
+    margin: 5px;
+    background-color: #e0e0e0; /* Optional: background color */
+    text-align: center;
+  }
+  .k-switch.k-switch-primary {
+    background-color: #45b0d7 !important; /* Custom primary color */
+  }
+  
+  .k-switch.k-switch-small {
+    height: 20px !important;  /* Adjust height */
+    width: 40px !important; /* Adjust width */
+  }
+  
+  .k-switch.k-switch-small .k-switch-knob {
+    background-color: #ffffff !important; /* Custom knob color */
+  }
+  ::ng-deep .toggle-blue.k-switch-off .k-switch-track {
+    border-color: #666666;
+    color: #ffffff;
+    background-color: #666666;
+}
+
+::ng-deep .toggle-blue.k-switch-on .k-switch-track {
+    border-color: #45b0d7;
+    color: #ffffff;
+    background-color: #45b0d7;
+}
+
+::ng-deep .toggle-blue.k-switch-on:focus .k-switch-track, .k-switch-on.k-focus .k-switch-track {
+    outline: 2px solid rgba(0, 0, 128, 0.25);
+}
+
+
+::ng-deep .toggle-blue.k-switch-sm .k-switch-thumb {
+    width: 18px;
+    height: 18px;
+}
+/* Change the background color of the grid header */
+::ng-deep .k-grid-header {
+    background-color: #dedfe3; /* Set your desired header background color */
+    /* color: white; Set the text color */
+  }
+  ::ng-deep .k-grid-header th {
+    background-color: #dedfe3;
+  }
+  
+  /* Change the hover color of the header cells */
+  ::ng-deep  .k-grid-header th:hover {
+    background-color: #dedfe3; /* Set a hover background color */
+  }
+
+  /* Button styles for edit action */
+.k-button.edit-button {
+    border-color: #45b0d7; /* Green border */
+    color: #45b0d7; /* Green text */
+    background-color: #ffffff;
+  }
+  
+  .k-button.edit-button .material-icons {
+    color: #45b0d7; /* Green icon */
+  }
+  
+  /* Button styles for publish action */
+  .k-button.publish-button {
+    border-color: #45b0d7; /* Blue border */
+    color: #45b0d7; /* Blue text */
+    background-color: #ffffff;
+  }
+  
+  .k-button.publish-button .material-icons {
+    color: #45b0d7; /* Blue icon */
+  }
+  
+  /* Button styles for delete action */
+  .k-button.delete-button {
+    border-color: #dc3545; /* Red border */
+    color: #dc3545; /* Red text */
+    background-color: #ffffff;
+  }
+  
+  .k-button.delete-button .material-icons {
+    color: #dc3545; /* Red icon */
+  }
+  
+  /* Button styles for print action */
+  .k-button.print-button {
+    border-color: #45b0d7; /* Yellow border */
+    color: #45b0d7; /* Yellow text */
+    background-color: #ffffff;
+  }
+  
+  .k-button.print-button .material-icons {
+    color: #45b0d7; /* Yellow icon */
+  }
+  
+  /* Optionally, set hover styles */
+  .k-button:hover {
+    opacity: 0.8; /* Slightly transparent on hover */
+  }
+  .k-button-md {
+    /* padding-block: 4px !important; */
+    padding-top: 3px !important;
+    padding-bottom: 0px !important;
+    padding-inline: 4px !important;
+    font-size: 14px;
+    /* line-height: 1.4285714286; */
+    margin-right: 6px;
+  }
+  .bold-text {
+    font-weight: bold; /* Bold text */
+  }
+  .play-button{
+    margin-top: -6px;
+    margin-left: 10px;
+  }
+  .schicon
+  {
+    font-size: 18px;
+    margin-top: 5px;
+  }
+  .schblock
+  {
+    display: flex;
+  }
+  .schblock p
+  {
+    margin: 3px 0px 0px 8px;
+  }
+  .version-block
+  {
+    margin-top:8px;
+  }
+  .icon-clr
+  {
+    color: #45b0d7; 
+  }
+
+  ::ng-deep .k-grid .k-header {
+    font-weight: bold; /* Set font weight to bold */
+  }
+
+
+

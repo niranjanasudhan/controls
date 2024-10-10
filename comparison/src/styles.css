@@ -151,6 +151,18 @@ body {
 }
 /* google translator style ends*/
 
+.k-switch.k-switch-primary {
+  background-color: #007bff !important; /* Custom primary color */
+}
+
+.k-switch.k-switch-small {
+  height: 20px !important;  /* Adjust height */
+  width: 40px !important; /* Adjust width */
+}
+
+.k-switch.k-switch-small .k-switch-knob {
+  background-color: #ffffff !important; /* Custom knob color */
+}
 
 
 

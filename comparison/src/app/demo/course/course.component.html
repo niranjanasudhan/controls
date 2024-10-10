@@ -1,0 +1,87 @@
+<div class="container">
+<kendo-grid [data]="gridData" [height]="500">
+    <!-- Image Column -->
+    <kendo-grid-column field="imageUrl" title="Course" [width]="450">
+      <ng-template kendoGridCellTemplate let-dataItem>
+        <div style="display: flex; align-items: center;">
+          <!-- <img [src]="dataItem.imageUrl" alt="{{dataItem.heading}}" width="50" height="50"> -->
+          <img [src]="dataItem.imageUrl" alt="{{dataItem.heading}}" >
+          <div style="margin-left: 10px;">
+            <strong>{{ dataItem.heading }}</strong>  <img src="../../../assets/playbtn.png" class="play-button"/>
+            <br>
+           <div class="schblock"> <span class="material-icons schicon" aria-hidden="true">schedule</span>    <p>24 min</p> </div>
+            
+          
+            <small>{{ dataItem.description }}</small>
+           <div class="version-block">
+            <small>Version: V1</small>
+        </div>
+          </div>
+        </div>
+      </ng-template>
+    </kendo-grid-column>
+  
+    <!-- Applicable To Column -->
+    <kendo-grid-column field="applicableTo" title="Applicable To" [width]="120">
+        <ng-template kendoGridCellTemplate let-dataItem>
+          <fa-icon class="icon-clr" *ngIf="dataItem.applicableTo === 'Ship'" [icon]="'ship'" size="lg"></fa-icon>
+          <fa-icon class="icon-clr" *ngIf="dataItem.applicableTo === 'Building'" [icon]="'building'" size="lg"></fa-icon>
+        </ng-template>
+      </kendo-grid-column>
+    <!-- Status Column -->
+    <kendo-grid-column field="status" title="Status" [width]="90">
+        <ng-template kendoGridCellTemplate let-dataItem>
+          <span [class.k-badge]="dataItem.status === 'New'" [class.k-badge-success]="dataItem.status === 'Published'" [class.k-badge-warning]="dataItem.status === 'Draft'">
+            {{ dataItem.status }}
+          </span>
+        </ng-template>
+  
+    </kendo-grid-column>
+  
+    <!-- Date Column -->
+    <kendo-grid-column field="date" class="bold-text" title="Date" format="{0:MM/dd/yyyy}" [width]="120"></kendo-grid-column>
+  
+    <!-- Tags Column -->
+    <kendo-grid-column field="tags" title="Tags" [width]="100" class="bold-text">
+      <ng-template kendoGridCellTemplate let-dataItem>
+        <span *ngFor="let tag of dataItem.tags" class="k-badge">{{tag}}</span>
+      </ng-template>
+    </kendo-grid-column>
+  
+    <!-- Unit/Chapters Column -->
+    <kendo-grid-column field="unitOrChapters" title="Unit/Chapters" class="bold-text" [width]="130"></kendo-grid-column>
+  
+    <!-- Active/Inactive Column -->
+    <kendo-grid-column field="isActive" title="Active/Inactive" [width]="130">
+      <!-- <ng-template kendoGridCellTemplate let-dataItem>
+        <span [class.k-chip]="dataItem.isActive" [class.k-chip-success]="dataItem.isActive" [class.k-chip-error]="!dataItem.isActive">
+          {{ dataItem.isActive ? 'Active' : 'Inactive' }}
+        </span>
+      </ng-template> -->
+      <ng-template kendoGridCellTemplate let-dataItem>
+        <kendo-switch class="toggle-blue mx-2" size="small" 
+        themeColor="primary" [(ngModel)]="dataItem.isActive" (valueChange)="onToggle(dataItem)"></kendo-switch>
+      </ng-template>
+    </kendo-grid-column>
+  
+    <!-- Actions Column -->
+    <kendo-grid-column title="Actions" [width]="190">
+        <ng-template kendoGridCellTemplate let-dataItem>
+            <button kendoButton class="publish-button" (click)="publishItem(dataItem)" title="Publish">
+                <span class="material-icons" aria-hidden="true">fact_check</span>
+              </button>
+              <button kendoButton class="print-button" (click)="printItem(dataItem)" title="Print">
+                <span class="material-icons" aria-hidden="true">print</span>
+              </button>
+            <button kendoButton class="edit-button" (click)="editItem(dataItem)" title="Edit">
+              <span class="material-icons" aria-hidden="true">edit</span>
+            </button>
+           
+            <button kendoButton class="delete-button" (click)="deleteItem(dataItem)" title="Delete">
+              <span class="material-icons" aria-hidden="true">delete</span>
+            </button>
+            
+          </ng-template>
+    </kendo-grid-column>
+  </kendo-grid>
+</div> 

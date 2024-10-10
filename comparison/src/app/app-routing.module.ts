@@ -82,6 +82,7 @@ import { PlannerComponent } from './demo/planner/planner.component';
 import { DraganddropComponent } from './kendo/draganddrop/draganddrop.component';
 import { AuditComponent } from './demo/audit/audit.component';
 import { ImageComponent } from './image/image.component';
+import { CourseComponent } from './demo/course/course.component';
 
 
 
@@ -325,6 +326,7 @@ const routes: Routes = [
   {path:"planner",component:PlannerComponent}, 
   {path:"audit",component:AuditComponent}, 
   {path:"image",component:ImageComponent}, 
+  {path:"course",component:CourseComponent}, 
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -169,8 +169,11 @@ import { UploadsModule } from "@progress/kendo-angular-upload";
 import { GoogleTranslateWidgetComponent } from './google-translate-widget/google-translate-widget.component';
 import { ImageComponent } from './image/image.component';
 import { CommonModule } from '@angular/common';
+import { CourseComponent } from './demo/course/course.component';
 
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faShip, faBuilding } from '@fortawesome/free-solid-svg-icons';
 
 
 @NgModule({
@@ -262,6 +265,7 @@ import { CommonModule } from '@angular/common';
       AuditComponent,
       GoogleTranslateWidgetComponent,
       ImageComponent,
+      CourseComponent,
 
     
    
@@ -354,7 +358,8 @@ DropDownListModule,
     SchedulerModule,
     UtilsModule,
     UploadsModule,
-    CommonModule
+    CommonModule,
+    FontAwesomeModule
   ],
   providers: [NotificationService,
     {
@@ -366,4 +371,8 @@ DropDownListModule,
   bootstrap: [AppComponent],
   
 })
-export class AppModule { }
+export class AppModule {
+  constructor(library: FaIconLibrary) {
+    library.addIcons(faShip, faBuilding);
+  }
+ }
