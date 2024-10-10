@@ -10,24 +10,30 @@
   }
   
   .frame {
-    width: 300px;
-    height: 300px;
-    background-image: url('/assets/frame.png'); /* Path to your frame image */
+    width: 400px;
+    height: 400px;
+    background-image: url('/assets/frame1.png'); /* Path to your frame image */
     background-size: cover;
     position: relative;
     overflow: hidden;
-    display: flex;
+    z-index: 2; /* Brings the frame to the front */
+    display: block;
     align-items: center;
     justify-content: center;
   }
   
   .image-container {
-    width: 80%; /* Adjust to fit your frame */
-    height: 80%;
+    /* width: 80%; 
+    height: 80%; */
+    width: 60%; 
+    height: 60%;
     position: absolute;
-    top: 10%; /* Center the image within the frame */
-    left: 10%;
-    display: flex;
+    /* top: 10%; 
+    left: 10%; */
+    top: 20%; /* Center the image within the frame */
+    left: 20%;
+    display: block;
+    z-index: 1; /* Keeps the image behind the frame */
     align-items: center;
     justify-content: center;
   }
