@@ -83,6 +83,7 @@ import { DraganddropComponent } from './kendo/draganddrop/draganddrop.component'
 import { AuditComponent } from './demo/audit/audit.component';
 import { ImageComponent } from './image/image.component';
 import { CourseComponent } from './demo/course/course.component';
+import { VideodemoComponent } from './demo/videodemo/videodemo.component';
 
 
 
@@ -327,6 +328,7 @@ const routes: Routes = [
   {path:"audit",component:AuditComponent}, 
   {path:"image",component:ImageComponent}, 
   {path:"course",component:CourseComponent}, 
+  {path:"videoplayer",component:VideodemoComponent}, 
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,0 +1,37 @@
+/* .video-js {
+  width: 100%;
+  height: auto;
+}
+
+.theater-mode {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+} */
+
+.theater-mode {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;  /* Full width in theater mode */
+  height: 400px; /* Fixed height in theater mode */
+    z-index: 1000; /* Ensure it's on top */
+    /* background: black; Optional: Add a background */
+  
+}
+
+.video-js {
+  width: 100%;
+  height: 100%;
+  /* width: 300px;
+  height: 200px; */
+  object-fit: cover; /* Fill the container without padding */
+}
+.video-container {
+  position: relative;
+  width: 1000px; /* Initial width */
+  height: auto; /* Initial height */
+}

@@ -174,6 +174,8 @@ import { CourseComponent } from './demo/course/course.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faShip, faBuilding } from '@fortawesome/free-solid-svg-icons';
+import { VideoPlayerComponent } from './demo/video-player/video-player.component';
+import { VideodemoComponent } from './demo/videodemo/videodemo.component';
 
 
 @NgModule({
@@ -266,6 +268,9 @@ import { faShip, faBuilding } from '@fortawesome/free-solid-svg-icons';
       GoogleTranslateWidgetComponent,
       ImageComponent,
       CourseComponent,
+      VideoPlayerComponent,
+      VideodemoComponent,
+      
 
     
    
