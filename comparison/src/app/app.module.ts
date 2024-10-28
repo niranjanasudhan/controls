@@ -126,7 +126,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AggridthemeComponent } from './aggrid/aggridtheme/aggridtheme.component';
 import { BaseComponent } from './base/base.component';
-// import { HighchartsChartModule } from 'highcharts-angular';
+import { HighchartsChartModule } from 'highcharts-angular';
 import {MatAccordion, MatExpansionModule} from '@angular/material/expansion';
 import { AggridselectionComponent } from './aggrid/aggridselection/aggridselection.component';
 import { AggrideditingComponent } from './aggrid/aggridediting/aggridediting.component';
@@ -176,6 +176,7 @@ import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faShip, faBuilding } from '@fortawesome/free-solid-svg-icons';
 import { VideoPlayerComponent } from './demo/video-player/video-player.component';
 import { VideodemoComponent } from './demo/videodemo/videodemo.component';
+import { ChartdemoComponent } from './demo/chartdemo/chartdemo.component';
 
 
 @NgModule({
@@ -270,6 +271,7 @@ import { VideodemoComponent } from './demo/videodemo/videodemo.component';
       CourseComponent,
       VideoPlayerComponent,
       VideodemoComponent,
+      ChartdemoComponent,
       
 
     
@@ -353,7 +355,7 @@ MissionResultRenderer,
 PriceRenderer,
 DropDownListModule,
 
-    // HighchartsChartModule
+    HighchartsChartModule,
     // NotificationService
     GridModule,
     NavigationModule,

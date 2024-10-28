@@ -84,6 +84,7 @@ import { AuditComponent } from './demo/audit/audit.component';
 import { ImageComponent } from './image/image.component';
 import { CourseComponent } from './demo/course/course.component';
 import { VideodemoComponent } from './demo/videodemo/videodemo.component';
+import { ChartdemoComponent } from './demo/chartdemo/chartdemo.component';
 
 
 
@@ -329,6 +330,7 @@ const routes: Routes = [
   {path:"image",component:ImageComponent}, 
   {path:"course",component:CourseComponent}, 
   {path:"videoplayer",component:VideodemoComponent}, 
+  {path:"chartdemo",component:ChartdemoComponent}, 
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

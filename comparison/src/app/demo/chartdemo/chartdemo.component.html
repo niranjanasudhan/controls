@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="row chart-section">
+        <div class="col-md-4">
+            <div class="p-3 border bg-light">
+                <div class="container">
+                    <h1>Near Miss/Unsafe Act/Condition Overview</h1>
+                    <h2></h2>
+                    <div class="scrolling-div" style="    margin-top: 34px;">
+                        <div class="column" *ngFor="let data of columnData1; let i = index">
+                          <div class="info-row">
+                              <div class="count">{{ data.count }}</div>
+                              <div class="arrow" [ngStyle]="{'color': data.arrowColor}">{{ data.arrow }}</div>
+                              <div class="percentage">{{ data.percentage }}%</div>
+                            </div>
+                          <div class="engine-room">Engine Room</div>
+                          <div *ngIf="i < columnData1.length - 1" class="vertical-line"></div>
+                        </div>
+                      </div>
+                <div style="width: 100%; height: 300px;">
+                    <highcharts-chart
+                      [Highcharts]="Highcharts"
+                      [options]="chartOptions2"
+                      style="width: 100%; height:300px; display: block;"
+                    ></highcharts-chart>
+                  </div>
+                  </div>
+                  
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-3 border bg-light">
+                <div class="container">
+                    <h1>Near Miss Area</h1>
+                    <h2>Top 5</h2>
+                  
+                    <div class="scrolling-div">
+                      <div class="column" *ngFor="let data of columnData; let i = index">
+                        <div class="info-row">
+                            <div class="count">{{ data.count }}</div>
+                            <div class="arrow" [ngStyle]="{'color': data.arrowColor}">{{ data.arrow }}</div>
+                            <div class="percentage">{{ data.percentage }}%</div>
+                          </div>
+                        <div class="engine-room">Engine Room</div>
+                        <div *ngIf="i < columnData.length - 1" class="vertical-line"></div>
+                      </div>
+                    </div>
+                  
+                    <div class="chart-container">
+                      <highcharts-chart
+                        [Highcharts]="Highcharts"
+                        [options]="chartOptions"
+                        style="width: 100%; height: 300px; display: block;"
+                      ></highcharts-chart>
+                    </div>
+                  </div>
+                  
+                  
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-3 border bg-light">Column 3</div>
+        </div>
+    </div>
+</div>

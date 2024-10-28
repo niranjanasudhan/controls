@@ -1,0 +1,103 @@
+.chart-section
+{
+    margin-top:20px;
+}
+.container {
+    padding: 0px;
+  }
+  
+  .scrolling-div {
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: nowrap; /* Prevents line breaks */
+    margin-top: 0px;
+    /* border: 1px solid #ccc;  */
+    /* padding: 10px; */
+    border-radius: 5px; /* Optional: Rounded corners */
+    background-color: #f9f9f9; /* Optional: Background color */
+  }
+  
+  .column {
+    display: inline-block;
+    width: 100px; /* Set a fixed width for columns */
+    text-align: center;
+    margin-right: 10px;
+  }
+  
+  .count {
+    font-size: 32px;
+    color:#5a97be;
+    font-weight: 600;
+  }
+  
+  .arrow {
+    font-size: 20px;
+  }
+  
+  .percentage {
+    font-size: 12px;
+  }
+  
+  .engine-room {
+    font-size: 14px; /* Font size for the "Engine Room" text */
+    margin-top: 5px; /* Add space above */
+  }
+  
+  /* .chart-container {
+    margin-top: 20px;
+    padding: 10px; 
+    border: 1px solid #ccc;
+    border-radius: 5px; 
+    background-color: #fff; 
+*/
+  .chart-container {
+    width: 100%; /* Full width of the parent */
+    max-width: 800px; /* Optional: Set a max width */
+    margin: auto; /* Center the chart container */
+    border: 1px solid #ccc; /* Optional: Add a border for visibility */
+    padding: 10px; /* Optional: Add some padding */
+    overflow: hidden; /* Prevent overflow */
+  }
+  .info-row {
+    display: flex; /* Use Flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+  }
+
+  
+
+  .chart-section h1
+{
+    text-align: left;
+    margin-bottom: 0px;
+    font-size: 20px !important;
+  
+}
+.chart-section h2
+{
+    font-size: 14px;
+    margin-top: -8px !important;
+    font-weight: 300 !important;
+    margin-bottom: 0px !important;
+}
+
+.column-container {
+    display: flex;
+    flex-direction: column; /* Arrange columns vertically */
+  }
+  
+  .column {
+    position: relative;
+    padding: 10px; /* Add some padding */
+    /* margin-bottom: 20px;  */
+  }
+  
+  .vertical-line {
+    position: absolute;
+    top: 0;
+    right: -10px; /* Adjust to position the line */
+    width: 2px; /* Line thickness */
+    height: 100%; /* Full height of the column */
+    background-color: #e3dede;
+    z-index: 2;
+  }
+  
