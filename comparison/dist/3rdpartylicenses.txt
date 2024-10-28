@@ -3036,6 +3036,9 @@ THE SOFTWARE.
 highcharts
 https://www.highcharts.com/license
 
+highcharts-angular
+SEE LICENSE IN <LICENSE>
+
 is-function
 MIT
 Copyright (c) 2013 Stephen Sugden
